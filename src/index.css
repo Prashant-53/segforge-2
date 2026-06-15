@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+body {
+    margin: 0;
+    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: 'JetBrains Mono', source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+        monospace;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif;
+}
+
+@layer base {
+  :root {
+        --background: 0 0% 100%;
+        --foreground: 222 47% 11%;
+        --card: 0 0% 100%;
+        --card-foreground: 222 47% 11%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 222 47% 11%;
+        --primary: 222 47% 11%;
+        --primary-foreground: 0 0% 98%;
+        --secondary: 210 40% 96%;
+        --secondary-foreground: 222 47% 11%;
+        --muted: 210 40% 96%;
+        --muted-foreground: 215 16% 47%;
+        --accent: 187 92% 44%;
+        --accent-foreground: 0 0% 98%;
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 214 32% 91%;
+        --input: 214 32% 91%;
+        --ring: 187 92% 44%;
+        --chart-1: 187 92% 44%;
+        --chart-2: 217 91% 60%;
+        --chart-3: 197 37% 24%;
+        --chart-4: 43 74% 66%;
+        --chart-5: 27 87% 67%;
+        --radius: 0.5rem;
+    }
+}
+.Gradient{
+  background: #020024;
+background: linear-gradient(253deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 0%, rgba(0, 212, 255, 1) 24%);
+}
+/* @layer base {
+  * {
+    @apply border-border;
+    }
+  body {
+    @apply bg-background text-foreground;
+    }
+} */
+
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 bg-blue-700 hover:bg-blue-600 text-white font-medium rounded-lg py-3 transition-all duration-300;
+  /* box-shadow: 0 0 0 1px rgba(96, 165, 250, 0.25), 0 8px 30px -10px rgba(37, 99, 235, 0.7); */
+} 
+.btn-primary:hover {
+  box-shadow: 0 0 0 1px rgba(96, 165, 250, 0.5), 0 12px 40px -8px rgba(8, 33, 88, 0.8);
+  transform: translateY(-1px);
+} 
+
+.btn-outline {
+  @apply inline-flex items-center justify-center gap-2 border bg-white  text-white font-medium rounded-lg px-6 py-3 transition-all duration-300;
+  background: rgba(255, 255, 255, 0.02);
+}
+.btn-outline:hover {
+  background: rgba(6, 182, 212, 0.06);
+  transform: translateY(-1px);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
