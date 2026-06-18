@@ -24,7 +24,13 @@ import Retail from "../pages/Solutions-pages/retail";
 import Manufacturing from "../pages/Solutions-pages/manufacturing";
 import Technology from "../pages/Solutions-pages/technology";
 import Telecom from "../pages/Solutions-pages/telecommunications";
-
+import MigrationServices from "../pages/Solutions-pages/migrationServices";
+import ArchitectureReview from "../pages/Solutions-pages/architectureReview";
+import DeploymentAssistance from "../pages/Solutions-pages/architectureReview";
+import PartnerEcosystem from "../pages/Solutions-pages/partnerEcosystem";
+import DataEngineering from "../pages/Solutions-pages/dataengineering";
+import AnalyticsTeam from "../pages/Solutions-pages/analyticsTeam";
+import MLOPSTeam from "../pages/Solutions-pages/MlOPS-Teams";
 function AppRoutes() {
   return (
     <BrowserRouter>
@@ -57,7 +63,33 @@ function AppRoutes() {
         <Route path="/solutions/manufacturing" element={<Manufacturing />} />
         <Route path="/solutions/technology" element={<Technology />} />
         <Route path="/solutions/telecommunications" element={<Telecom />} />
+        <Route
+          path="/solutions/data-enginnering"
+          element={<DataEngineering />}
+        />
 
+        <Route
+          path="/solutions/migration-services"
+          element={<MigrationServices />}
+        />
+        <Route
+          path="/solutions/architecture-review"
+          element={<ArchitectureReview />}
+        />
+        <Route
+          path="/solutions/deployment-assistance"
+          element={<DeploymentAssistance />}
+        />
+        <Route
+          path="/solutions/partner-ecosystem"
+          element={<PartnerEcosystem />}
+        />
+        <Route
+          path="/solutions/data-engineering"
+          element={<DataEngineering />}
+        />
+        <Route path="/solutions/analytics-team" element={<AnalyticsTeam />} />
+        <Route path="/solutions/ML-teams" element={<MLOPSTeam />} />
         {/* <Route path="/blog" element={<Blog />} /> */}
       </Routes>
     </BrowserRouter>

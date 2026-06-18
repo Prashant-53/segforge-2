@@ -21,6 +21,9 @@ import {
   Server,
   Activity,
   ArrowRight,
+  Factory,
+  TowerControl,
+  Handshake,
 } from "lucide-react";
 import { path } from "framer-motion/client";
 
@@ -180,7 +183,7 @@ const NAV_ITEMS = [
 
           {
             name: "Manufacturing",
-            icon: Cpu,
+            icon: Factory,
             path: "/solutions/manufacturing",
           },
           {
@@ -190,7 +193,7 @@ const NAV_ITEMS = [
           },
           {
             name: "Telecommunications",
-            icon: Cpu,
+            icon: TowerControl,
             path: "/solutions/telecommunications",
           },
         ],
@@ -217,47 +220,47 @@ const NAV_ITEMS = [
             path: "/solutions/deployment-assistance",
           },
 
-          {
-            name: "Training & Enablement",
-            icon: Cpu,
-            path: "/solutions/training&enablement",
-          },
+          // {
+          //   name: "Training & Enablement",
+          //   icon: Cpu,
+          //   path: "/solutions/training&enablement",
+          // },
           {
             name: "Partner Ecosystem",
-            icon: Cpu,
+            icon: Handshake,
             path: "/solutions/partner-ecosystem",
           },
         ],
       },
-      {
-        title: "Use Cases",
+      // {
+      //   title: "Use Cases",
 
-        links: [
-          {
-            name: "Real-Time Analytics",
-            icon: Activity,
-            path: "/solutions/real-time-analytics",
-          },
+      //   links: [
+      //     {
+      //       name: "Real-Time Analytics",
+      //       icon: Activity,
+      //       path: "/solutions/real-time-analytics",
+      //     },
 
-          {
-            name: "Operational Intelligence",
-            icon: BrainCircuit,
-            path: "/solutions/operational-intelligence",
-          },
+      //     {
+      //       name: "Operational Intelligence",
+      //       icon: BrainCircuit,
+      //       path: "/solutions/operational-intelligence",
+      //     },
 
-          {
-            name: "Enterprise Reporting",
-            icon: BookOpen,
-            path: "/solutions/enterprise-reporting",
-          },
+      //     {
+      //       name: "Enterprise Reporting",
+      //       icon: BookOpen,
+      //       path: "/solutions/enterprise-reporting",
+      //     },
 
-          {
-            name: "Predictive Maintenance",
-            icon: Cpu,
-            path: "/solutions/predictive-maintenance",
-          },
-        ],
-      },
+      //     {
+      //       name: "Predictive Maintenance",
+      //       icon: Cpu,
+      //       path: "/solutions/predictive-maintenance",
+      //     },
+      //   ],
+      // },
       {
         title: "By Team",
 
@@ -280,21 +283,21 @@ const NAV_ITEMS = [
             path: "/solutions/ML-teams",
           },
 
-          {
-            name: "PLatform Engineering",
-            icon: Cpu,
-            path: "/solutions/platform-engineering",
-          },
-          {
-            name: "Data Governance Teams",
-            icon: Cpu,
-            path: "/solutions/data-governance-teams",
-          },
-          {
-            name: "IT & Infrastructure",
-            icon: Cpu,
-            path: "/solutions/it&infrastructure",
-          },
+          // {
+          //   name: "PLatform Engineering",
+          //   icon: Cpu,
+          //   path: "/solutions/platform-engineering",
+          // },
+          // {
+          //   name: "Data Governance Teams",
+          //   icon: Cpu,
+          //   path: "/solutions/data-governance-teams",
+          // },
+          // {
+          //   name: "IT & Infrastructure",
+          //   icon: Cpu,
+          //   path: "/solutions/it&infrastructure",
+          // },
         ],
       },
     ],
@@ -641,7 +644,7 @@ const Navbar = () => {
                                     </div>{" "}
                                     <div>
                                       {" "}
-                                      <p className="text-[14px]  text-[#040914]  group-hover:text-[#9e9c9c] transition font-medium">
+                                      <p className="text-[14px] mt-2  text-[#040914]  group-hover:text-[#9e9c9c] transition font-medium">
                                         {" "}
                                         {link.name}{" "}
                                       </p>{" "}
