@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { AlertTriangle } from "lucide-react";
-import CostImg from "../../../assets/Solutions/costFragment.png";
+import CostImg from "../../../assets/Solutions/Finance/costFragment.png";
 
 const FragmentationChallenge = () => {
   const stats = [

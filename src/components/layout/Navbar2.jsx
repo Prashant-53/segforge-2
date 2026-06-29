@@ -324,17 +324,17 @@ const NAV_ITEMS = [
             path: "/resources/tutorials",
           },
 
-          {
-            name: "Webinars",
-            icon: Activity,
-            path: "/resources/webinars",
-          },
+          // {
+          //   name: "Webinars",
+          //   icon: Activity,
+          //   path: "/resources/webinars",
+          // },
 
-          {
-            name: "Certifications",
-            icon: ShieldCheck,
-            path: "/resources/certifications",
-          },
+          // {
+          //   name: "Certifications",
+          //   icon: ShieldCheck,
+          //   path: "/resources/certifications",
+          // },
         ],
       },
 
@@ -342,23 +342,23 @@ const NAV_ITEMS = [
         title: "Insights",
 
         links: [
-          {
-            name: "Engineering Blog",
-            icon: BookOpen,
-            path: "/resources/blog",
-          },
+          // {
+          //   name: "Engineering Blog",
+          //   icon: BookOpen,
+          //   path: "/resources/blog",
+          // },
 
-          {
-            name: "Whitepapers",
-            icon: Layers3,
-            path: "/resources/whitepapers",
-          },
+          // {
+          //   name: "Whitepapers",
+          //   icon: Layers3,
+          //   path: "/resources/whitepapers",
+          // },
 
-          {
-            name: "Case Studies",
-            icon: Database,
-            path: "/resources/case-studies",
-          },
+          // {
+          //   name: "Case Studies",
+          //   icon: Database,
+          //   path: "/resources/case-studies",
+          // },
 
           {
             name: "Changelog",

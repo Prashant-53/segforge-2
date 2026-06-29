@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ShieldCheck, CheckCircle2 } from "lucide-react";
-import ReportImg from "../../../assets/Solutions/report.png";
+import ReportImg from "../../../assets/Solutions/Finance/report.png";
 
 const RegulatoryReporting = () => {
   const features = [

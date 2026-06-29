@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Layers3 } from "lucide-react";
-import UnifiedWorkspaceImg from "../../../assets/Solutions/unifiedWorkspace.png";
+import UnifiedWorkspaceImg from "../../../assets/Solutions/Finance/unifiedWorkspace.png";
 
 const stats = [
   {

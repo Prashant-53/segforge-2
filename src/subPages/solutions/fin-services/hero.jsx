@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Play, Landmark } from "lucide-react";
-import FinHero from "../../../assets/Solutions/fin-hero.png";
+import FinHero from "../../../assets/Solutions/Finance/fin-hero.png";
 
 const FinancialServicesHero = () => {
   return (

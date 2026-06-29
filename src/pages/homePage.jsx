@@ -15,124 +15,214 @@ import { CTABanner } from "../components/BottomCTA";
 import MainLayout from "../layouts/mainLayout";
 
 const HomePage = () => {
+  const trustedCompanies = [
+    "Fortune 500",
+    "Global Telecom",
+    "Financial Services",
+    "Manufacturing",
+    "Healthcare",
+    "Retail",
+    "Logistics",
+    "Energy",
+  ];
   return (
     <MainLayout>
       <div className="min-h-screen bg-white">
         {/* Hero Section */}
-        <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-center max-w-4xl mx-auto"
-            >
-              <div className="inline-block px-4 py-2 bg-cyan-50 text-cyan-700 rounded-full text-sm font-medium mb-6">
-                Trusted by enterprise data teams worldwide
-              </div>
-              <h1 className="text-[2.375rem]/9 md:text-6xl font-bold text-slate-900 mb-6 ">
-                The Unified Data
-                <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">
+        <section className="bg-[#24DEC9] pt-32 pb-24 overflow-hidden">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              {/* LEFT CONTENT */}
+
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+              >
+                <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/30 backdrop-blur-sm text-slate-900 text-sm font-medium mb-8">
+                  Trusted by enterprise data teams worldwide
+                </div>
+
+                <h1 className="text-5xl lg:text-7xl font-bold text-white leading-[0.95]">
+                  The Unified Data
+                  <br />
                   Intelligence Platform
-                </span>
-              </h1>
-              <p className="text-md text-slate-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-                Build, orchestrate, and scale data pipelines with
-                enterprise-grade ETL, AI/ML capabilities, and open lakehouse
-                architecture.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-8 py-4 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition-colors font-medium flex items-center justify-center space-x-2">
-                  <span>Start Free Trial</span>
-                  <ArrowRight className="w-5 h-5" />
-                </button>
-                <button className="px-8 py-4 border-2 border-slate-900 text-slate-900 rounded-lg hover:bg-slate-50 transition-colors font-medium">
-                  View Documentation
-                </button>
-              </div>
-            </motion.div>
+                </h1>
 
-            {/* Dashboard Preview */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="mt-16"
-            >
-              <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 p-8">
-                <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-12">
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div className="bg-white rounded-lg p-6 shadow-sm">
-                      <div className="flex items-center space-x-3 mb-4">
-                        <div className="w-10 h-10 bg-cyan-100 rounded-lg flex items-center justify-center">
-                          <GitBranch className="w-5 h-5 text-cyan-600" />
-                        </div>
-                        <div>
-                          <div className="text-2xl font-bold text-slate-900">
-                            2,847
-                          </div>
-                          <div className="text-sm text-slate-600">
-                            Active Pipelines
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="bg-white rounded-lg p-6 shadow-sm">
-                      <div className="flex items-center space-x-3 mb-4">
-                        <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-                          <Database className="w-5 h-5 text-blue-600" />
-                        </div>
-                        <div>
-                          <div className="text-2xl font-bold text-slate-900">
-                            4.2 PB
-                          </div>
-                          <div className="text-sm text-slate-600">
-                            Data Processed
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="bg-white rounded-lg p-6 shadow-sm">
-                      <div className="flex items-center space-x-3 mb-4">
-                        <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
-                          <Zap className="w-5 h-5 text-green-600" />
-                        </div>
-                        <div>
-                          <div className="text-2xl font-bold text-slate-900">
-                            99.99%
-                          </div>
-                          <div className="text-sm text-slate-600">
-                            Uptime SLA
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </section>
+                <p className="mt-8 text-lg text-slate-800 max-w-xl leading-relaxed">
+                  Build, orchestrate, and scale data pipelines with
+                  enterprise-grade ETL, AI/ML capabilities, and open lakehouse
+                  architecture.
+                </p>
 
-        {/* Trusted By */}
-        <section className="py-16 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p className="text-center text-sm font-medium text-slate-600 mb-8">
-              TRUSTED BY LEADING ENTERPRISES
-            </p>
-            <div className="grid grid-cols-2 md:grid-cols-6 gap-8 items-center">
-              {trustedCompanies.map((company, index) => (
-                <div key={index} className="text-center">
-                  <div className="text-slate-400 font-semibold text-lg">
-                    {company}
-                  </div>
+                <div className="mt-10 flex flex-wrap gap-4">
+                  <button className="group relative inline-flex items-center justify-center overflow-hidden rounded-md border border-slate-900 px-6 py-3 font-semibold text-black hover:text-white">
+                    <span className="absolute inset-y-0 left-0 w-0 bg-slate-900 transition-all duration-300 group-hover:w-full"></span>
+
+                    <span className="relative z-10 flex items-center gap-2">
+                      Start Free Trial
+                      <ArrowRight className="w-4 h-4" />
+                    </span>
+                  </button>
+
+                  <button className="px-6 py-3 rounded-md border border-slate-900 text-slate-900 font-semibold bg-white/30 backdrop-blur-sm">
+                    View Documentation
+                  </button>
                 </div>
-              ))}
+              </motion.div>
+
+              {/* RIGHT VISUAL */}
+
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8 }}
+                className="relative h-[500px] flex items-center justify-center"
+              >
+                {/* Glow */}
+
+                <div className="absolute w-[450px] h-[450px] bg-white/10 rounded-full blur-3xl" />
+
+                {/* Orbit Ring */}
+
+                <motion.div
+                  animate={{ rotate: 360 }}
+                  transition={{
+                    duration: 45,
+                    repeat: Infinity,
+                    ease: "linear",
+                  }}
+                  className="absolute w-[420px] h-[420px] rounded-full border border-white/20"
+                >
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3 h-3 bg-white rounded-full" />
+                  <div className="absolute bottom-10 left-10 w-2 h-2 bg-white/80 rounded-full" />
+                  <div className="absolute top-1/3 right-8 w-2 h-2 bg-white/80 rounded-full" />
+                </motion.div>
+
+                {/* Crystal */}
+
+                <motion.svg
+                  width="340"
+                  height="340"
+                  viewBox="0 0 340 340"
+                  animate={{
+                    y: [0, -12, 0],
+                    rotate: [-2, 2, -2],
+                  }}
+                  transition={{
+                    duration: 7,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                >
+                  {/* Top */}
+
+                  <polygon
+                    points="170,40 250,150 90,150"
+                    fill="white"
+                    fillOpacity="0.95"
+                  />
+
+                  {/* Left */}
+
+                  <polygon
+                    points="90,150 170,150 130,250 50,250"
+                    fill="white"
+                    fillOpacity="0.7"
+                  />
+
+                  {/* Right */}
+
+                  <polygon
+                    points="170,150 250,150 290,250 210,250"
+                    fill="white"
+                    fillOpacity="0.7"
+                  />
+
+                  {/* Bottom */}
+
+                  <polygon
+                    points="130,250 210,250 170,300"
+                    fill="white"
+                    fillOpacity="0.95"
+                  />
+
+                  {/* Outline */}
+
+                  <polygon
+                    points="170,40 250,150 290,250 210,250 170,300 130,250 50,250 90,150"
+                    fill="none"
+                    stroke="rgba(255,255,255,0.35)"
+                    strokeWidth="2"
+                  />
+                </motion.svg>
+
+                {/* Floating Particles */}
+
+                {[...Array(8)].map((_, i) => (
+                  <motion.div
+                    key={i}
+                    animate={{
+                      y: [0, -20, 0],
+                      opacity: [0.3, 1, 0.3],
+                    }}
+                    transition={{
+                      duration: 3 + i,
+                      repeat: Infinity,
+                    }}
+                    className="absolute w-2 h-2 rounded-full bg-white"
+                    style={{
+                      left: `${15 + i * 10}%`,
+                      top: `${20 + (i % 4) * 15}%`,
+                    }}
+                  />
+                ))}
+              </motion.div>
             </div>
           </div>
         </section>
 
+        {/* Trusted By */}
+        <section className="py-16 bg-white border-y border-slate-200 overflow-hidden">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <p className="text-center text-sm font-semibold tracking-[0.2em] text-slate-500 uppercase mb-10">
+              Trusted By Enterprise Data Teams
+            </p>
+          </div>
+
+          <div className="relative overflow-hidden">
+            <motion.div
+              animate={{
+                x: ["0%", "-50%"],
+              }}
+              transition={{
+                duration: 20,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+              className="flex whitespace-nowrap"
+            >
+              {[...trustedCompanies, ...trustedCompanies].map(
+                (company, index) => (
+                  <div
+                    key={index}
+                    className="mx-12 text-xl font-semibold text-slate-400 hover:text-slate-700 transition-colors"
+                  >
+                    {company}
+                  </div>
+                ),
+              )}
+            </motion.div>
+
+            {/* Left Fade */}
+
+            <div className="absolute left-0 top-0 h-full w-32 bg-gradient-to-r from-white to-transparent pointer-events-none" />
+
+            {/* Right Fade */}
+
+            <div className="absolute right-0 top-0 h-full w-32 bg-gradient-to-l from-white to-transparent pointer-events-none" />
+          </div>
+        </section>
         {/* Platform Overview */}
         <section className="py-24 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">

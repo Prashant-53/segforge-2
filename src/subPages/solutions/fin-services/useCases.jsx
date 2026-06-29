@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-import CreditRiskImg from "../../../assets/Solutions/creditRisk.png";
-import ReportingImg from "../../../assets/Solutions/regulatoryReporting.png";
-import FraudImg from "../../../assets/Solutions/fraudDetection.png";
+import CreditRiskImg from "../../../assets/Solutions/Finance/creditRisk.png";
+import ReportingImg from "../../../assets/Solutions/Finance/regulatoryReporting.png";
+import FraudImg from "../../../assets/Solutions/Finance/fraudDetection.png";
 
 const useCases = [
   {

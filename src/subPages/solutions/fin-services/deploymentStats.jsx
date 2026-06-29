@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Rocket } from "lucide-react";
-import DeploymentImg from "../../../assets/Solutions/deploymentJourney.png";
+import DeploymentImg from "../../../assets/Solutions/Finance/deploymentJourney.png";
 
 const deploymentStats = [
   {

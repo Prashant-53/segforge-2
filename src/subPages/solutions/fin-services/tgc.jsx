@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ShieldCheck } from "lucide-react";
-import GovernanceImg from "../../../assets/Solutions/governanceArchitecture.png";
+import GovernanceImg from "../../../assets/Solutions/Finance/governanceArchitecture.png";
 
 const trustStats = [
   {
