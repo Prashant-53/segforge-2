@@ -32,6 +32,7 @@ import DataEngineering from "../pages/Solutions-pages/dataengineering";
 import AnalyticsTeam from "../pages/Solutions-pages/analyticsTeam";
 import MLOPSTeam from "../pages/Solutions-pages/MlOPS-Teams";
 import Pricing from "../pages/pricing";
+import Documentation from "../pages/Resources/documentation";
 function AppRoutes() {
   return (
     <BrowserRouter>
@@ -93,6 +94,7 @@ function AppRoutes() {
         <Route path="/solutions/ML-teams" element={<MLOPSTeam />} />
         <Route path="/pricing" element={<Pricing />} />
         {/* <Route path="/blog" element={<Blog />} /> */}
+        <Route path="/docs/:category/:page" element={<Documentation />} />
       </Routes>
     </BrowserRouter>
   );

@@ -315,7 +315,7 @@ const NAV_ITEMS = [
           {
             name: "Documentation",
             icon: BookOpen,
-            path: "/resources/documentation",
+            path: "/docs/getting-started/what-is-segforge",
           },
 
           {

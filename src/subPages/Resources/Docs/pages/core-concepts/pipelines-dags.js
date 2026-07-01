@@ -1,0 +1,345 @@
+const doc = {
+  title: "Pipelines & DAGs",
+
+  description:
+    "Build visual data pipelines using a drag-and-drop canvas and let SegForge generate optimized Flink SQL automatically.",
+
+  sections: [
+    {
+      heading: "What is a Pipeline?",
+      content: `
+A pipeline in SegForge is a visual representation of a data transformation workflow.
+
+You build pipelines by placing nodes on a canvas and connecting them into a Directed Acyclic Graph (DAG).
+
+A pipeline defines:
+
+• Where data comes from
+
+• How data is transformed
+
+• Where data is written
+
+SegForge converts the visual graph into executable Flink SQL and submits it to the execution engine.
+      `,
+    },
+
+    {
+      heading: "How Pipelines Work",
+      content: `
+The pipeline lifecycle follows four steps:
+
+1. Design visually using drag-and-drop nodes.
+
+2. Generate optimized Flink SQL.
+
+3. Submit SQL to the Flink SQL Gateway.
+
+4. Write results into the configured destination.
+      `,
+      code: `Source
+   ↓
+Filter
+   ↓
+Aggregate
+   ↓
+Iceberg Table
+
+↓
+
+Generated Flink SQL
+
+↓
+
+Flink Execution`,
+      language: "text",
+    },
+
+    {
+      heading: "Pipeline Architecture",
+      code: `
+┌────────┐
+│ Source │
+└────┬───┘
+     │
+     ▼
+┌────────┐
+│ Filter │
+└────┬───┘
+     │
+     ▼
+┌──────────┐
+│ Aggregate│
+└────┬─────┘
+     │
+     ▼
+┌──────────┐
+│ Iceberg  │
+└──────────┘`,
+      language: "text",
+    },
+
+    {
+      heading: "Source Nodes",
+      content: `
+Source nodes ingest data from external systems.
+
+Supported sources include:
+
+• Database Tables
+
+• CSV Files
+
+• JSON Files
+
+• Parquet Files
+
+• ORC Files
+
+• Avro Files
+
+• Kafka Topics
+
+• CDC Streams
+
+• REST APIs
+      `,
+    },
+
+    {
+      heading: "Database Sources",
+      content: `
+Supported databases:
+
+• PostgreSQL
+
+• MySQL
+
+• SQL Server
+
+• Oracle
+
+• IBM DB2
+
+• Snowflake
+
+• MongoDB
+      `,
+    },
+
+    {
+      heading: "Transformation Nodes",
+      content: `
+SegForge provides more than ninety transformation nodes that can be combined to build complex data workflows.
+      `,
+    },
+
+    {
+      heading: "Transformation Categories",
+      content: `
+Row Operations
+• Filter
+• Sort
+• Deduplicate
+• Limit
+• Sample
+
+Column Operations
+• Select
+• Rename
+• Cast
+• Drop
+• Derived Column
+
+Join & Combine
+• Inner Join
+• Left Join
+• Right Join
+• Full Join
+• Union
+• Lookup
+• Cross Join
+
+Aggregate & Window
+• Aggregate
+• Group By
+• Window Functions
+• Pivot
+• Unpivot
+
+String Functions
+• Trim
+• Replace
+• Substring
+• Regex Extract
+• Concat
+
+Date & Time
+• Date Format
+• Date Difference
+• Date Add
+• Timezone Conversion
+
+Data Quality
+• Null Handler
+• Validate
+• Assert
+• Outlier Detection
+• Profiler
+
+Advanced
+• Python UDF
+• SQL Expression
+• Hash
+• Encryption
+• Flatten
+
+ML Feature Engineering
+• Scaler
+• Encoder
+• Feature Selector
+• Binning
+• Imputer
+
+ML Operations
+• Train Model
+• Predict
+• Evaluate
+• Hyperparameter Tuning
+      `,
+    },
+
+    {
+      heading: "Destination Nodes",
+      content: `
+Destination nodes write data to external systems.
+
+Supported destinations:
+
+• Apache Iceberg Tables
+
+• Kafka Topics
+
+• Amazon S3
+
+• MinIO
+
+• Power BI
+
+• Tableau
+
+• Apache Superset
+      `,
+    },
+
+    {
+      heading: "Batch vs Streaming",
+      content: `
+Pipelines can run in either batch mode or streaming mode.
+
+Batch mode:
+
+• Processes all available data.
+• Finishes after execution.
+• Ideal for ETL and backfills.
+
+Streaming mode:
+
+• Runs continuously.
+• Processes new data as it arrives.
+• Ideal for CDC and real-time analytics.
+
+The same pipeline graph can execute in both modes.
+SegForge automatically generates the appropriate SQL for the selected execution model.
+      `,
+    },
+
+    {
+      heading: "Schema Propagation",
+      content: `
+Every node understands the schema produced by upstream nodes.
+
+This enables:
+
+• Automatic column pickers.
+
+• Instant validation.
+
+• Schema-aware configuration forms.
+
+• Elimination of manual column typing.
+
+If a column becomes invalid, SegForge highlights the issue immediately.
+      `,
+    },
+
+    {
+      heading: "Pipeline Lifecycle",
+      content: `
+Pipelines move through several states:
+
+• Draft
+• Running
+• Succeeded
+• Failed
+• Streaming
+• Scheduled
+
+Each execution creates metadata, logs, and performance metrics that can be viewed from the monitoring dashboard.
+      `,
+    },
+
+    {
+      heading: "Generated SQL",
+      content: `
+At any time, open the SQL tab to inspect the exact Flink SQL generated by your visual pipeline.
+
+This is useful for:
+
+• Understanding execution behavior.
+
+• Debugging issues.
+
+• Learning Flink SQL.
+
+• Exporting SQL outside SegForge.
+      `,
+    },
+
+    {
+      heading: "Example Generated SQL",
+      code: `CREATE TEMPORARY VIEW filtered_orders AS
+SELECT *
+FROM orders
+WHERE amount > 100;
+
+INSERT INTO iceberg.orders_curated
+SELECT *
+FROM filtered_orders;`,
+      language: "sql",
+    },
+
+    {
+      heading: "Why Visual DAGs?",
+      content: `
+Visual pipelines provide several advantages:
+
+• Easier onboarding.
+
+• Better collaboration.
+
+• Faster development.
+
+• Built-in validation.
+
+• Automatic documentation.
+
+• Transparency through generated SQL.
+
+SegForge gives teams the simplicity of visual engineering while preserving complete control over the underlying code.
+      `,
+    },
+  ],
+};
+
+export default doc;
