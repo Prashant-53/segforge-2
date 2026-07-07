@@ -27,7 +27,7 @@ const WhySegForgeHero = () => {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 mb-8"
+            className="inline-flex items-center gap-2 rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 mb-4"
           >
             <Sparkles className="w-4 h-4 text-cyan-600" />
             <span className="text-sm font-medium text-cyan-700">
@@ -68,7 +68,7 @@ const WhySegForgeHero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.35 }}
-            className="mt-10 flex flex-col sm:flex-row justify-center gap-4"
+            className="mt-6 flex flex-col sm:flex-row justify-center gap-4"
           >
             <button className="group relative inline-flex items-center justify-center overflow-hidden rounded-md border border-slate-800 px-6 py-3 font-semibold text-black transition-colors duration-300 hover:text-white">
               <span className="absolute inset-y-0 left-0 w-0 bg-[#18D0BB] transition-all duration-300 ease-out group-hover:w-full"></span>
@@ -93,11 +93,11 @@ const WhySegForgeHero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.45 }}
-            className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-4xl mx-auto"
+            className="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-4xl mx-auto"
           >
             <div className="rounded-3xl border border-slate-200 bg-white p-6 text-left shadow-sm">
               <Database className="w-6 h-6 text-cyan-600 mb-4" />
-              <h3 className="text-3xl font-bold text-slate-900">90+</h3>
+              <h3 className="text-3xl font-bold text-slate-900">22+</h3>
               <p className="mt-2 text-slate-600">Visual transformation nodes</p>
             </div>
 

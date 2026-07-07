@@ -33,6 +33,8 @@ import AnalyticsTeam from "../pages/Solutions-pages/analyticsTeam";
 import MLOPSTeam from "../pages/Solutions-pages/MlOPS-Teams";
 import Pricing from "../pages/pricing";
 import Documentation from "../pages/Resources/documentation";
+import APIs from "../pages/Developers/APIs";
+import SDKs from "../pages/Developers/SDKs";
 function AppRoutes() {
   return (
     <BrowserRouter>
@@ -95,6 +97,8 @@ function AppRoutes() {
         <Route path="/pricing" element={<Pricing />} />
         {/* <Route path="/blog" element={<Blog />} /> */}
         <Route path="/docs/:category/:page" element={<Documentation />} />
+        <Route path="/developers/apis" element={<APIs />} />
+        <Route path="/developers/sdks" element={<SDKs />} />
       </Routes>
     </BrowserRouter>
   );

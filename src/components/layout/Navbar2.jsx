@@ -510,7 +510,7 @@ const Navbar = () => {
                             openMenu === item.label ? null : item.label,
                           )
                         }
-                        className={`flex items-center gap-1.5 px-5 py-2.5 rounded-lg transition text-[14px] font-medium ${
+                        className={`flex items-center gap-1.5 px-5 py-2.5 rounded-lg transition text-[16px] font-medium ${
                           openMenu === item.label
                             ? "text-[#040914] bg-white/5"
                             : "text-[#040914] hover:text-[#2e55a7] hover:bg-white/5"
@@ -527,7 +527,7 @@ const Navbar = () => {
                     ) : (
                       <Link
                         to={item.path}
-                        className="flex items-center gap-1.5 px-5 py-2.5 rounded-lg transition text-[14px] font-medium text-black hover:text-[#2e55a7] hover:bg-white/5"
+                        className="flex items-center gap-1.5 px-5 py-2.5 rounded-lg transition text-[16px] font-medium text-black hover:text-[#2e55a7] hover:bg-white/5"
                       >
                         {item.label}
                       </Link>
@@ -539,26 +539,31 @@ const Navbar = () => {
 
             {/* CTA */}
             <div className="hidden xl:flex items-center gap-3">
-              <a
+              {/* <a
                 href="#"
-                className="text-sm text-black hover:text-[#2e55a7] transition"
+                className="text-md text-black hover:text-[#2e55a7] transition"
               >
                 Sign In
-              </a>
+              </a> */}
 
-              <a
-                href="#"
-                className="px-5 py-3 rounded-full border border-cyan-400/30 text-cyan-300 hover:bg-cyan-400/10 transition text-sm font-medium"
-              >
-                Contact Sales
-              </a>
+              <button className="group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-gray-200 px-6 py-3 font-semibold text-black transition-colors duration-300 hover:text-white">
+                <span className="absolute inset-y-0 left-0 w-0 bg-[#18D0BB] transition-all duration-300 ease-out group-hover:w-full"></span>
 
-              <a
+                <span className="relative z-10 flex items-center gap-2">
+                  Contact Sales
+                </span>
+              </button>
+              <button className="group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-gray-200 px-6 py-3 font-semibold text-black transition-colors duration-300 hover:text-white">
+                <span className="absolute inset-y-0 left-0 w-0 bg-[#18D0BB] transition-all duration-300 ease-out group-hover:w-full"></span>
+
+                <span className="relative z-10 flex items-center gap-2">
+                  Start Building
+                </span>
+              </button>
+              {/* <a
                 href="#"
                 className="px-6 py-3 rounded-full bg-cyan-400 hover:bg-cyan-300 text-black font-semibold transition text-sm"
-              >
-                Start Building
-              </a>
+              ></a> */}
             </div>
             {/* MOBILE TOGGLE */}
             <button
@@ -752,14 +757,21 @@ const Navbar = () => {
 
             {/* MOBILE CTA */}
             <div className="mt-6 flex flex-col gap-3">
-              <Link
+              {/* <Link
                 to="/contact-sales"
                 onClick={() => setMobileOpen(false)}
                 className="w-full py-3 rounded-full border border-cyan-400/30 text-black text-center"
               >
                 Contact Sales
-              </Link>
+              </Link> */}
+              <button className="group relative inline-flex items-center justify-center overflow-hidden rounded-md border border-slate-800 px-6 py-3 font-semibold text-black transition-colors duration-300 hover:text-white">
+                <span className="absolute inset-y-0 left-0 w-0 bg-[#18D0BB] transition-all duration-300 ease-out group-hover:w-full"></span>
 
+                <span className="relative z-10 flex items-center gap-2">
+                  Contact Sales
+                  <ArrowRight className="w-4 h-4" />
+                </span>
+              </button>
               <Link
                 to="/start-building"
                 onClick={() => setMobileOpen(false)}
