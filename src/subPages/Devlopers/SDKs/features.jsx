@@ -54,7 +54,7 @@ const Features = () => {
             Built for production-grade engineering teams.
           </h2>
 
-          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-600">
+          <p className="mx-auto mt-6 max-w-3xl text-md leading-8 text-slate-600">
             The Seg Forge SDKs are designed with type safety, resilient
             networking, automatic authentication, and intelligent orchestration
             primitives to simplify large-scale automation.

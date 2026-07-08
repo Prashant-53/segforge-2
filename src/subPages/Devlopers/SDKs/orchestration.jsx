@@ -69,7 +69,7 @@ const ProgrammaticOrchestration = () => {
             Automate pipelines entirely through code.
           </h2>
 
-          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-600">
+          <p className="mx-auto mt-6 max-w-3xl text-md leading-8 text-slate-600">
             Create, execute, monitor, and manage pipelines, CDC streams,
             notebooks, and jobs using simple, composable SDK primitives.
           </p>

@@ -66,11 +66,11 @@ const APIDesignPrinciples = () => {
             API Design Principles
           </span>
 
-          <h2 className="mt-6 text-5xl font-bold text-slate-900">
+          <h2 className="mt-6 text-4xl font-bold text-slate-900">
             Consistent and predictable by design.
           </h2>
 
-          <p className="mt-6 text-xl text-slate-600 leading-relaxed">
+          <p className="mt-2 text-md text-slate-600 leading-relaxed">
             The Seg Forge API follows a small set of conventions that make it
             easy to integrate, automate, and reason about at scale.
           </p>

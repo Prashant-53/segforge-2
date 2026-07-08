@@ -31,7 +31,7 @@ const UnifiedAnswer = () => {
               The Unified Answer
             </div>
 
-            <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 leading-[1.05]">
+            <h2 className="text-4xl lg:text-4xl font-bold text-slate-900 leading-[1.05]">
               One platform.
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">

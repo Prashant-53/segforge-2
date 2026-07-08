@@ -33,7 +33,7 @@ const SDKHero = () => {
               SDKs
             </div>
 
-            <h1 className="mt-8 text-5xl lg:text-7xl font-bold tracking-tight text-slate-900 leading-[1.05]">
+            <h1 className="mt-8 text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 leading-[1.05]">
               Native client libraries for
               <br />
               <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
@@ -41,7 +41,7 @@ const SDKHero = () => {
               </span>
             </h1>
 
-            <p className="mt-8 max-w-2xl text-xl leading-relaxed text-slate-600">
+            <p className="mt-8 max-w-2xl text-md leading-relaxed text-slate-600">
               Programmatically manage pipelines, CDC streams, catalogs,
               notebooks, and monitoring through type-safe, language-native SDKs.
             </p>

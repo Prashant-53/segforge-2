@@ -5,11 +5,11 @@ const InteractiveDocsHeader = () => {
         Interactive API Documentation
       </div>
 
-      <h2 className="mt-6 text-5xl font-bold text-slate-900">
+      <h2 className="mt-6 text-4xl font-bold text-slate-900">
         Explore and test the API live.
       </h2>
 
-      <p className="mt-6 text-xl text-slate-600 leading-relaxed">
+      <p className="mt-6 text-md text-slate-600 leading-relaxed">
         Every Seg Forge deployment ships with auto-generated documentation that
         always reflects the current API implementation.
       </p>

@@ -5,11 +5,11 @@ const ResourceHeader = () => {
         Core Resource APIs
       </div>
 
-      <h2 className="mt-6 text-5xl font-bold text-slate-900">
+      <h2 className="mt-6 text-4xl font-bold text-slate-900">
         Everything in Seg Forge is programmable.
       </h2>
 
-      <p className="mt-6 text-xl text-slate-600 leading-relaxed">
+      <p className="mt-6 text-md text-slate-600 leading-relaxed">
         Manage workspaces, build pipelines, orchestrate CDC, query notebooks,
         and monitor infrastructure through a consistent REST API.
       </p>

@@ -5,11 +5,11 @@ const QuickStartHeader = () => {
         Quick Start & Examples
       </div>
 
-      <h2 className="mt-6 text-5xl font-bold text-slate-900">
+      <h2 className="mt-6 text-4xl font-bold text-slate-900">
         Start automating Seg Forge in minutes.
       </h2>
 
-      <p className="mt-6 text-xl leading-relaxed text-slate-600">
+      <p className="mt-6 text-md leading-relaxed text-slate-600">
         Copy, paste, and modify these examples to authenticate, provision
         resources, execute pipelines, and monitor runs programmatically.
       </p>

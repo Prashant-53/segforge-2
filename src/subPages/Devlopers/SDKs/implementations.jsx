@@ -60,11 +60,11 @@ const SDKImplementations = () => {
             SDK Implementations
           </div>
 
-          <h2 className="mt-6 text-5xl font-bold text-slate-900">
+          <h2 className="mt-6 text-4xl font-bold text-slate-900">
             Official SDKs for every environment.
           </h2>
 
-          <p className="mt-6 text-xl leading-relaxed text-slate-600">
+          <p className="mt-6 text-md leading-relaxed text-slate-600">
             Build automation, integrate applications, and manage your entire
             data platform using native, language-specific client libraries.
           </p>

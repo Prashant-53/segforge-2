@@ -29,34 +29,37 @@ const HomePage = () => {
     <MainLayout>
       <div className="min-h-screen bg-white">
         {/* Hero Section */}
-        <section className="bg-[#24DEC9] pt-32 pb-24 overflow-hidden">
+        <section className="bg-[#24DEC9] mt-6 overflow-hidden pt-20 pb-16 sm:pt-24 lg:pt-32 lg:pb-24">
+          {" "}
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+              {" "}
               {/* LEFT CONTENT */}
-
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6 }}
+                className="text-center lg:text-left order-1"
               >
-                <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/30 backdrop-blur-sm text-slate-900 text-sm font-medium mb-8">
-                  Trusted by enterprise data teams worldwide
+                <div className="inline-flex mb-3 max-w-full items-center rounded-full bg-white/30 px-4 py-2 text-xs sm:text-sm font-medium text-slate-900 backdrop-blur-sm">
+                  Trusted by enterprise data teams
                 </div>
 
-                <h1 className="text-5xl lg:text-7xl font-bold text-white leading-[0.95]">
+                <h1 className="text-4xl sm:text-5xl  lg:text-7xl font-bold text-white leading-[0.95]">
                   The Unified Data
                   <br />
                   Intelligence Platform
                 </h1>
 
-                <p className="mt-8 text-lg text-slate-800 max-w-xl leading-relaxed">
+                <p className="mx-auto mt-6 max-w-xl text-base leading-8 text-slate-800 sm:text-lg lg:mx-0">
                   Build, orchestrate, and scale data pipelines with
-                  enterprise-grade ETL, AI/ML capabilities, and open lakehouse
-                  architecture.
+                  enterprise-grade ETL, AI/ML capabilities, and an open
+                  lakehouse architecture.
                 </p>
 
-                <div className="mt-10 flex flex-wrap gap-4">
-                  <button className="group relative inline-flex items-center justify-center overflow-hidden rounded-md border border-slate-900 px-6 py-3 font-semibold text-black hover:text-white">
+                <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:justify-center lg:justify-start">
+                  {" "}
+                  <button className="group w-full sm:w-auto relative inline-flex items-center justify-center overflow-hidden rounded-md border border-slate-900 px-6 py-3 font-semibold text-black hover:text-white">
                     <span className="absolute inset-y-0 left-0 w-0 bg-slate-900 transition-all duration-300 group-hover:w-full"></span>
 
                     <span className="relative z-10 flex items-center gap-2">
@@ -64,24 +67,25 @@ const HomePage = () => {
                       <ArrowRight className="w-4 h-4" />
                     </span>
                   </button>
-
                   <button className="px-6 py-3 rounded-md border border-slate-900 text-slate-900 font-semibold bg-white/30 backdrop-blur-sm">
                     View Documentation
                   </button>
                 </div>
               </motion.div>
-
               {/* RIGHT VISUAL */}
-
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8 }}
-                className="relative h-[500px] flex items-center justify-center"
+                className="relative order-2 flex h-[260px] items-center justify-center sm:h-[380px] lg:h-[500px]"
               >
                 {/* Glow */}
 
-                <div className="absolute w-[450px] h-[450px] bg-white/10 rounded-full blur-3xl" />
+                <div
+                  className="absolute w-[220px] h-[220px]
+sm:w-[320px] sm:h-[320px]
+lg:w-[450px] lg:h-[450px] bg-white/10 rounded-full blur-3xl"
+                />
 
                 {/* Orbit Ring */}
 
@@ -92,7 +96,7 @@ const HomePage = () => {
                     repeat: Infinity,
                     ease: "linear",
                   }}
-                  className="absolute w-[420px] h-[420px] rounded-full border border-white/20"
+                  className="absolute w-[220px] h-[220px] sm:w-[320px] sm:h-[320px]lg:w-[420px] lg:h-[420px] rounded-full border border-white/20"
                 >
                   <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3 h-3 bg-white rounded-full" />
                   <div className="absolute bottom-10 left-10 w-2 h-2 bg-white/80 rounded-full" />
@@ -102,8 +106,7 @@ const HomePage = () => {
                 {/* Crystal */}
 
                 <motion.svg
-                  width="340"
-                  height="340"
+                  className="w-40 sm:w-60 lg:w-80 h-auto"
                   viewBox="0 0 340 340"
                   animate={{
                     y: [0, -12, 0],
@@ -231,7 +234,7 @@ const HomePage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className=" mb-8"
+              className=" mb-8 text-center"
             >
               <h2 className="text-[2.375rem]/9 md:text-5xl font-bold text-slate-900 mb-6">
                 Enterprise-Grade Data Platform

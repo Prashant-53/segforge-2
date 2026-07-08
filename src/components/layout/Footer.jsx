@@ -1,170 +1,299 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaTwitter, FaLinkedin, FaGithub, FaMailBulk } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
 
-export const Footer = () => {
+const footerSections = [
+  {
+    title: "Product",
+    links: [
+      {
+        title: "ETL Studio",
+        to: "/product/etl-studio",
+      },
+      {
+        title: "Workflow Engine",
+        to: "/product/workflow-engine",
+      },
+      {
+        title: "Interactive Notebooks",
+        to: "/product/notebooks",
+      },
+      {
+        title: "Data Catalog",
+        to: "/product/catalog",
+      },
+      {
+        title: "Real-Time CDC",
+        to: "/product/cdc",
+      },
+      {
+        title: "Lakehouse",
+        to: "/product/lakehouse",
+      },
+      {
+        title: "ML & AI",
+        to: "/product/mlops",
+      },
+    ],
+  },
+  {
+    title: "Industries",
+    links: [
+      {
+        title: "Financial Services",
+        to: "/solutions/financial-services",
+      },
+      {
+        title: "Healthcare",
+        to: "/solutions/healthcare",
+      },
+      {
+        title: "Retail & E-Commerce",
+        to: "/solutions/retail",
+      },
+      {
+        title: "Manufacturing",
+        to: "/solutions/manufacturing",
+      },
+      {
+        title: "Technology",
+        to: "/solutions/technology",
+      },
+      {
+        title: "Telecommunications",
+        to: "/solutions/telecommunications",
+      },
+    ],
+  },
+
+  {
+    title: "Services & Adoption",
+    links: [
+      {
+        title: "Migration Services",
+        to: "/services/migration",
+      },
+      {
+        title: "Architecture Review",
+        to: "/services/architecture-review",
+      },
+      {
+        title: "Deployment Assistance",
+        to: "/services/deployment",
+      },
+      {
+        title: "Partner Ecosystem",
+        to: "/services/partners",
+      },
+    ],
+  },
+
+  {
+    title: "By Team",
+    links: [
+      {
+        title: "Data Engineering",
+        to: "/teams/data-engineering",
+      },
+      {
+        title: "Analytics Teams",
+        to: "/teams/analytics",
+      },
+      {
+        title: "Machine Learning Teams",
+        to: "/teams/ml",
+      },
+    ],
+  },
+
+  {
+    title: "Developers",
+    links: [
+      {
+        title: "Documentation",
+        to: "/docs",
+      },
+      {
+        title: "APIs",
+        to: "/developers/apis",
+      },
+      {
+        title: "SDKs",
+        to: "/developers/sdks",
+      },
+      {
+        title: "CLI",
+        to: "/developers/cli",
+      },
+      {
+        title: "Integrations",
+        to: "/developers/integrations",
+      },
+      {
+        title: "GitHub",
+        to: "/github",
+      },
+    ],
+  },
+
+  {
+    title: "Resources",
+    links: [
+      {
+        title: "Documentation",
+        to: "/docs",
+      },
+      {
+        title: "Tutorials",
+        to: "/tutorials",
+      },
+      {
+        title: "Quickstarts",
+        to: "/quickstarts",
+      },
+      {
+        title: "Reference Architectures",
+        to: "/reference-architectures",
+      },
+      {
+        title: "Changelog",
+        to: "/changelog",
+      },
+    ],
+  },
+
+  {
+    title: "Company",
+    links: [
+      {
+        title: "About",
+        to: "/about",
+      },
+      {
+        title: "Pricing",
+        to: "/pricing",
+      },
+      {
+        title: "Contact Sales",
+        to: "/contact",
+      },
+      {
+        title: "Security",
+        to: "/security",
+      },
+      {
+        title: "Compliance",
+        to: "/compliance",
+      },
+      {
+        title: "Privacy Policy",
+        to: "/privacy",
+      },
+      {
+        title: "Terms of Service",
+        to: "/terms",
+      },
+    ],
+  },
+];
+const Footer = () => {
   return (
     <footer className="bg-slate-900 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 py-16">
+        <div className="grid gap-14 lg:grid-cols-[1.5fr_repeat(4,1fr)]">
           {/* Brand */}
-          <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg"></div>
-              <span className="text-xl font-bold">SegForge</span>
+
+          <div>
+            <div className="flex items-center gap-3">
+              <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600" />
+
+              <span className="text-2xl font-bold">SegForge</span>
             </div>
-            <p className="text-slate-400 text-sm">
-              Unified enterprise ETL, orchestration, AI, and open lakehouse
-              platform.
+
+            <p className="mt-6 max-w-sm leading-7 text-slate-400">
+              Unified platform for ETL, CDC, lakehouse analytics, orchestration,
+              notebooks and AI.
             </p>
-            <div className="flex space-x-4">
+
+            <div className="mt-8 flex gap-5">
               <a
                 href="#"
-                className="text-slate-400 hover:text-cyan-400 transition-colors"
+                className="text-slate-400 transition hover:text-cyan-400"
               >
-                <FaGithub className="w-5 h-5" />
+                <FaGithub size={18} />
               </a>
+
               <a
                 href="#"
-                className="text-slate-400 hover:text-cyan-400 transition-colors"
+                className="text-slate-400 transition hover:text-cyan-400"
               >
-                <FaTwitter className="w-5 h-5" />
+                <FaLinkedin size={18} />
               </a>
+
               <a
                 href="#"
-                className="text-slate-400 hover:text-cyan-400 transition-colors"
+                className="text-slate-400 transition hover:text-cyan-400"
               >
-                <FaLinkedin className="w-5 h-5" />
+                <FaTwitter size={18} />
               </a>
+
               <a
                 href="#"
-                className="text-slate-400 hover:text-cyan-400 transition-colors"
+                className="text-slate-400 transition hover:text-cyan-400"
               >
-                <FaMailBulk className="w-5 h-5" />
+                <FaEnvelope size={18} />
               </a>
             </div>
           </div>
 
-          {/* Product */}
-          <div>
-            <h3 className="font-semibold mb-4">Product</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  to="/platform"
-                  className="text-slate-400 hover:text-cyan-400 transition-colors text-sm"
-                >
-                  Platform
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/platform/pipeline-studio"
-                  className="text-slate-400 hover:text-cyan-400 transition-colors text-sm"
-                >
-                  Pipeline Studio
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/"
-                  className="text-slate-400 hover:text-cyan-400 transition-colors text-sm"
-                >
-                  Pricing
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/"
-                  className="text-slate-400 hover:text-cyan-400 transition-colors text-sm"
-                >
-                  Documentation
-                </Link>
-              </li>
-            </ul>
-          </div>
+          {/* Dynamic Navigation */}
 
-          {/* Company */}
-          <div>
-            <h3 className="font-semibold mb-4">Company</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  to="/"
-                  className="text-slate-400 hover:text-cyan-400 transition-colors text-sm"
-                >
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/"
-                  className="text-slate-400 hover:text-cyan-400 transition-colors text-sm"
-                >
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/"
-                  className="text-slate-400 hover:text-cyan-400 transition-colors text-sm"
-                >
-                  Careers
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/"
-                  className="text-slate-400 hover:text-cyan-400 transition-colors text-sm"
-                >
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
+          {footerSections.map((section) => (
+            <div key={section.title}>
+              <h3 className="mb-6 text-sm font-semibold uppercase tracking-widest text-white">
+                {section.title}
+              </h3>
 
-          {/* Legal */}
-          <div>
-            <h3 className="font-semibold mb-4">Legal</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  to="/"
-                  className="text-slate-400 hover:text-cyan-400 transition-colors text-sm"
-                >
-                  Privacy
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/"
-                  className="text-slate-400 hover:text-cyan-400 transition-colors text-sm"
-                >
-                  Terms
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/"
-                  className="text-slate-400 hover:text-cyan-400 transition-colors text-sm"
-                >
-                  Security
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/"
-                  className="text-slate-400 hover:text-cyan-400 transition-colors text-sm"
-                >
-                  Compliance
-                </Link>
-              </li>
-            </ul>
-          </div>
+              <ul className="space-y-4">
+                {section.links.map((link) => {
+                  const Icon = link.icon;
+
+                  return (
+                    <li key={link.title}>
+                      <Link
+                        to={link.to}
+                        className="group flex items-center gap-3 text-sm text-slate-400 transition hover:text-cyan-400"
+                      >
+                        {Icon && (
+                          <Icon className="h-4 w-4 text-cyan-500 transition group-hover:scale-110" />
+                        )}
+
+                        {link.title}
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          ))}
         </div>
 
-        <div className="mt-12 pt-8 border-t border-slate-800 text-center text-slate-400 text-sm">
-          <p>&copy; 2026 SegForge. All rights reserved.</p>
+        <div className="mt-16 flex flex-col gap-4 border-t border-slate-800 pt-8 text-sm text-slate-500 md:flex-row md:items-center md:justify-between">
+          <p>© 2026 SegForge. All rights reserved.</p>
+
+          <div className="flex gap-6">
+            <Link to="/privacy" className="hover:text-cyan-400">
+              Privacy
+            </Link>
+
+            <Link to="/terms" className="hover:text-cyan-400">
+              Terms
+            </Link>
+
+            <Link to="/security" className="hover:text-cyan-400">
+              Security
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

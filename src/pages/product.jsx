@@ -23,28 +23,81 @@ const product = () => {
     <MainLayout>
       <div className="min-h-screen bg-white">
         {/* Hero Section */}
-        <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white">
-          <div className="max-w-7xl mx-auto">
+        <section className="relative overflow-hidden bg-gradient-to-b from-gray-50 via-white to-white pt-32 pb-24">
+          {/* Background */}
+
+          <div className="absolute inset-0 opacity-[0.04]">
+            <div
+              className="absolute inset-0"
+              style={{
+                backgroundImage: `
+          linear-gradient(to right,#06b6d4 1px,transparent 1px),
+          linear-gradient(to bottom,#06b6d4 1px,transparent 1px)
+        `,
+                backgroundSize: "80px 80px",
+              }}
+            />
+          </div>
+
+          <div className="absolute left-1/3 top-0 h-[420px] w-[420px] rounded-full bg-cyan-400/10 blur-[150px]" />
+          <div className="absolute right-0 bottom-0 h-[500px] w-[500px] rounded-full bg-blue-400/10 blur-[180px]" />
+
+          <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-center max-w-4xl mx-auto"
+              transition={{ duration: 0.7 }}
+              className="mx-auto max-w-5xl text-center"
             >
-              <div className="inline-block px-4 py-2 bg-cyan-50 text-cyan-700 rounded-full text-sm font-medium mb-6">
-                product Overview
+              {/* Announcement */}
+
+              <div className="inline-flex items-center gap-2 rounded-full border border-cyan-200 bg-cyan-50 px-5 py-2 text-sm font-medium text-cyan-700">
+                <span className="h-2 w-2 rounded-full bg-cyan-500 animate-pulse" />
+                Product Platform
               </div>
-              <h1 className="text-[2.375rem]/9 md:text-6xl font-bold text-slate-900 mb-6 ">
-                Everything You Need for
+
+              {/* Heading */}
+
+              <h1 className="mt-8 text-4xl font-bold leading-none tracking-tight text-slate-900 md:text-6xl">
+                One platform to build,
                 <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">
-                  Modern Data Engineering
+                move, govern and
+                <br />
+                <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
+                  operationalize data.
                 </span>
               </h1>
-              <p className="text-md text-slate-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-                A unified product for ETL, orchestration, AI/ML, and open
-                lakehouse architecture built for enterprise scale.
+
+              {/* Description */}
+
+              <p className="mx-auto mt-8 max-w-3xl text-md leading-6 text-slate-600">
+                Seg Forge unifies visual ETL, real-time CDC, orchestration,
+                lakehouse storage, notebooks, AI/ML, governance, and monitoring
+                into a single open platform designed for modern data engineering
+                teams.
               </p>
+
+              {/* Feature Pills */}
+
+              <div className="mt-12 flex flex-wrap items-center justify-center gap-3">
+                {[
+                  "90+ ETL Nodes",
+                  "Real-Time CDC",
+                  "Apache Flink",
+                  "Iceberg + Nessie",
+                  "Visual Pipelines",
+                  "AI & MLOps",
+                  "Data Governance",
+                  "Open APIs",
+                ].map((item) => (
+                  <div
+                    key={item}
+                    className="rounded-full border border-slate-200 bg-white px-5 py-2 text-sm font-medium text-slate-700 shadow-sm transition hover:border-cyan-300 hover:text-cyan-700"
+                  >
+                    {item}
+                  </div>
+                ))}
+              </div>
             </motion.div>
           </div>
         </section>

@@ -41,7 +41,7 @@ const Installation = () => {
             Get started in less than a minute.
           </h2>
 
-          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-600">
+          <p className="mx-auto mt-6 max-w-3xl text-md leading-8 text-slate-600">
             Install an official SDK, authenticate with your API key, and begin
             managing pipelines, CDC streams, catalogs, and notebooks directly
             from code.

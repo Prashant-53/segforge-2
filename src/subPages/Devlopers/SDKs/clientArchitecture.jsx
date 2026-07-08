@@ -44,13 +44,13 @@ const NativeClientArchitecture = () => {
             Native Client Architecture
           </div>
 
-          <h2 className="mt-6 text-5xl font-bold text-slate-900">
+          <h2 className="mt-6 text-4xl font-bold text-slate-900">
             Thin SDKs.
             <br />
             Powerful platform.
           </h2>
 
-          <p className="mt-6 text-xl leading-relaxed text-slate-600">
+          <p className="mt-6 text-md leading-relaxed text-slate-600">
             Seg Forge SDKs are lightweight, type-safe abstractions over the REST
             API, designed for predictable behavior, high performance, and native
             developer ergonomics.

@@ -91,11 +91,11 @@ const ResourceApiSurface = () => {
             Resource API Surface
           </div>
 
-          <h2 className="mt-6 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
+          <h2 className="mt-6 text-xl font-bold tracking-tight text-slate-900 sm:text-5xl">
             Everything in Seg Forge is exposed as a resource.
           </h2>
 
-          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-600">
+          <p className="mx-auto mt-6 max-w-3xl text-md leading-8 text-slate-600">
             The SDK organizes every platform capability into intuitive,
             discoverable resource controllers that mirror the Seg Forge
             architecture.

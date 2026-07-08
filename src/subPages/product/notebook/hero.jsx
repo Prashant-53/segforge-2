@@ -32,14 +32,23 @@ const Hero = () => {
             </p>
 
             <div className="flex flex-col items-center r sm:flex-row gap-4 mb-10">
-              <button className="px-8 py-4 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition-colors font-medium flex items-center justify-center gap-2">
-                Try Notebooks
-                <ArrowRight className="w-5 h-5" />
+              <button className="group relative inline-flex items-center justify-center overflow-hidden rounded-md border border-slate-800 px-6 py-3 font-semibold">
+                <span className="absolute inset-y-0 left-0 w-0 bg-[#18D0BB] transition-all duration-300 group-hover:w-full"></span>
+
+                <span className="relative z-10 flex items-center gap-2">
+                  Try NoteBooks
+                  <ArrowRight className="w-4 h-4" />
+                </span>
               </button>
 
-              <button className="px-8 py-4 border-2 border-slate-900 text-slate-900 rounded-lg hover:bg-slate-50 transition-colors font-medium flex items-center justify-center gap-2">
-                <Play className="w-4 h-4" />
-                Watch Demo
+              <button className="group relative inline-flex items-center justify-center overflow-hidden rounded-md border border-slate-800 px-6 py-3 font-semibold">
+                <span className="absolute inset-y-0 left-0 w-0 bg-[#18D0BB] transition-all duration-300 group-hover:w-full"></span>
+
+                <span className="relative z-10 flex items-center gap-2">
+                  <Play className="w-4 h-4" />
+                  Watch Demo
+                  <ArrowRight className="w-4 h-4" />
+                </span>
               </button>
             </div>
 

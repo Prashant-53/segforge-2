@@ -68,7 +68,7 @@ const APIsHero = () => {
               APIs
             </div>
 
-            <h1 className="text-5xl lg:text-7xl font-bold text-slate-900 leading-[1.05]">
+            <h1 className="text-5xl lg:text-6xl font-bold text-slate-900 leading-[1.05]">
               Programmatic control for
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">
@@ -76,7 +76,7 @@ const APIsHero = () => {
               </span>
             </h1>
 
-            <p className="mt-8 text-xl text-slate-600 leading-relaxed max-w-2xl">
+            <p className="mt-8 text-md text-slate-600 leading-relaxed max-w-2xl">
               Integrate pipelines, CDC streams, catalogs, notebooks, and
               monitoring directly into your applications and workflows.
             </p>

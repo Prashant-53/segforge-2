@@ -79,7 +79,7 @@ const OpenArchitectureSection = () => {
               Open Architecture
             </div>
 
-            <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 leading-tight">
+            <h2 className="text-4xl lg:text-4xl font-bold text-slate-900 leading-none">
               Built on technologies
               <br />
               you already trust.

@@ -11,7 +11,7 @@ import {
 
 const DataCatalogHero = () => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-gray-50 to-white pt-32 pb-24">
+    <section className="relative overflow-hidden bg-gradient-to-b from-gray-50 to-white pt-30 pb-24">
       {/* Background */}
       <div className="absolute inset-0 bg-grid opacity-[0.03]" />
 
@@ -53,42 +53,26 @@ const DataCatalogHero = () => {
 
             {/* Buttons */}
 
-            <div className="mt-10 flex flex-wrap gap-4">
-              <button className="px-8 py-4 bg-slate-900 text-white rounded-xl hover:bg-slate-800 transition flex items-center gap-2 font-medium">
-                Explore Catalog
-                <ArrowRight className="w-4 h-4" />
+            <div className="flex flex-col items-center r sm:flex-row gap-4 mt-5">
+              <button className="group relative inline-flex items-center justify-center overflow-hidden rounded-md border border-slate-800 px-6 py-3 font-semibold">
+                <span className="absolute inset-y-0 left-0 w-0 bg-[#18D0BB] transition-all duration-300 group-hover:w-full"></span>
+
+                <span className="relative z-10 flex items-center gap-2">
+                  Explore catalog <ArrowRight className="w-4 h-4" />
+                </span>
               </button>
 
-              <button className="px-8 py-4 border border-slate-300 text-slate-700 rounded-xl hover:bg-slate-50 transition flex items-center gap-2 font-medium">
-                <Play className="w-4 h-4" />
-                Book Demo
+              <button className="group relative inline-flex items-center justify-center overflow-hidden rounded-md border border-slate-800 px-6 py-3 font-semibold">
+                <span className="absolute inset-y-0 left-0 w-0 bg-[#18D0BB] transition-all duration-300 group-hover:w-full"></span>
+
+                <span className="relative z-10 flex items-center gap-2">
+                  <Play className="w-4 h-4" />
+                  Book Demo
+                </span>
               </button>
             </div>
 
             {/* Quick Highlights */}
-
-            <div className="mt-12 flex flex-wrap gap-6">
-              <div>
-                <h4 className="font-semibold text-slate-900">Data Discovery</h4>
-                <p className="text-sm text-slate-500 mt-1">
-                  Search & explore datasets
-                </p>
-              </div>
-
-              <div>
-                <h4 className="font-semibold text-slate-900">Metadata</h4>
-                <p className="text-sm text-slate-500 mt-1">
-                  Unified catalog management
-                </p>
-              </div>
-
-              <div>
-                <h4 className="font-semibold text-slate-900">Governance</h4>
-                <p className="text-sm text-slate-500 mt-1">
-                  Lineage & version tracking
-                </p>
-              </div>
-            </div>
           </motion.div>
 
           {/* RIGHT */}

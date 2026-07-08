@@ -77,7 +77,7 @@ const CompatibilityMatrix = () => {
             Stable versioning with predictable upgrades.
           </h2>
 
-          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-600">
+          <p className="mx-auto mt-6 max-w-3xl text-md leading-8 text-slate-600">
             Seg Forge follows strict compatibility guarantees between SDKs and
             platform APIs, ensuring long-term stability for production
             integrations.

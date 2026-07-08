@@ -166,7 +166,7 @@ const NAV_ITEMS = [
           {
             name: "Financial Services",
             icon: Database,
-            path: "/solutions/finance",
+            path: "/solutions/financial-services",
           },
 
           {

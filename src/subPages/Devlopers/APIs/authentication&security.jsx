@@ -24,11 +24,11 @@ const AuthenticationSecurity = () => {
             Authentication & Security
           </span>
 
-          <h2 className="mt-6 text-5xl font-bold text-slate-900">
+          <h2 className="mt-6 text-4xl font-bold text-slate-900">
             Secure every API request.
           </h2>
 
-          <p className="mt-6 text-xl text-slate-600 leading-relaxed">
+          <p className="mt-2 text-md text-slate-600 leading-relaxed">
             Seg Forge uses JWT authentication, enterprise SSO, API keys,
             workspace isolation, and RBAC authorization to secure every
             interaction with your data platform.

@@ -69,7 +69,7 @@ const WhyItMatters = () => {
             Why It Matters
           </div>
 
-          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 leading-tight">
+          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 leading-none">
             Run anywhere.
             <br />
             Own your data.

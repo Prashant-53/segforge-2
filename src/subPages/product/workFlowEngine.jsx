@@ -96,42 +96,203 @@ const WorkflowEngine = () => {
     <MainLayout>
       <div className="min-h-screen bg-white">
         {/* HERO */}
-        <section className="pt-32 pb-24 px-6 bg-gradient-to-b from-gray-50 to-white">
-          <div className="max-w-7xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 25 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="inline-flex px-4 py-2 rounded-full bg-cyan-50 text-cyan-700 text-sm font-medium mb-6">
-                Workflow Engine
-              </div>
+        <section className="relative overflow-hidden pt-32 pb-24 bg-gradient-to-b from-gray-50 to-white">
+          {/* Animated Grid */}
 
-              <h1 className="text-4xl/9 md:text-4xl xl:text-5xl font-bold text-slate-900 leading-tight mb-6">
-                Enterprise Workflow
-                <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">
-                  Execution & Orchestration
-                </span>
-              </h1>
+          <motion.div
+            animate={{
+              backgroundPosition: ["0px 0px", "120px 120px"],
+            }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+            className="absolute inset-0 opacity-[0.04]"
+            style={{
+              backgroundImage: `
+        linear-gradient(to right, #06b6d4 1px, transparent 1px),
+        linear-gradient(to bottom, #06b6d4 1px, transparent 1px)
+      `,
+              backgroundSize: "80px 80px",
+            }}
+          />
 
-              <p className="text-md text-slate-600 max-w-3xl mx-auto leading-relaxed mb-4">
-                Automate business processes, orchestrate pipelines, manage
-                dependencies, and execute workflows reliably across your entire
-                data ecosystem.
-              </p>
+          {/* Glow */}
 
-              <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <button className="px-8 py-4 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition flex items-center justify-center gap-2">
-                  Explore Workflow Engine
-                  <ArrowRight className="w-5 h-5" />
-                </button>
+          <motion.div
+            animate={{
+              scale: [1, 1.1, 1],
+              opacity: [0.15, 0.25, 0.15],
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="absolute left-1/2 top-[40%] -translate-x-1/2 w-[900px] h-[500px] bg-cyan-400 rounded-full blur-[170px]"
+          />
 
-                <button className="px-8 py-4 border-2 border-slate-900 text-slate-900 rounded-lg hover:bg-slate-50 transition">
-                  Request Demo
-                </button>
-              </div>
-            </motion.div>
+          <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-20 items-center">
+              {/* Left */}
+
+              <motion.div
+                initial={{ opacity: 0, x: -25 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.7 }}
+              >
+                <div className="inline-flex items-center rounded-full bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">
+                  Workflow Engine
+                </div>
+
+                <h1 className="mt-8 text-5xl lg:text-6xl font-bold text-slate-900 leading-[1.05]">
+                  Enterprise Workflow
+                  <br />
+                  <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
+                    Execution & Orchestration
+                  </span>
+                </h1>
+
+                <p className="mt-8 max-w-xl text-md leading-6 text-slate-600">
+                  Orchestrate data pipelines, automate complex workflows, manage
+                  dependencies, and execute reliable distributed jobs across
+                  your entire data platform.
+                </p>
+
+                <div className="mt-10 flex flex-wrap gap-4">
+                  {/* Primary */}
+
+                  <button className="group relative overflow-hidden rounded-md border px-6 py-3 font-semibold hover:border-none">
+                    <span className="absolute inset-y-0 left-0 w-0 bg-[#18D0BB] transition-all duration-300 group-hover:w-full" />
+
+                    <span className="relative z-10 flex items-center gap-2">
+                      Explore Workflow Engine
+                      <ArrowRight className="w-4 h-4" />
+                    </span>
+                  </button>
+
+                  {/* Secondary */}
+
+                  <button className="rounded-md border border-slate-300 bg-white px-6 py-3 font-semibold text-slate-700 transition hover:border-slate-400">
+                    Request Demo
+                  </button>
+                </div>
+              </motion.div>
+
+              {/* Right */}
+
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="relative"
+              >
+                <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-2xl">
+                  {/* Header */}
+
+                  <div className="flex items-center justify-between border-b border-slate-200 px-6 py-4">
+                    <div className="flex gap-2">
+                      <div className="h-3 w-3 rounded-full bg-red-400" />
+                      <div className="h-3 w-3 rounded-full bg-yellow-400" />
+                      <div className="h-3 w-3 rounded-full bg-green-400" />
+                    </div>
+
+                    <span className="text-sm font-medium text-slate-500">
+                      Workflow Dashboard
+                    </span>
+                  </div>
+
+                  {/* Workflow Preview */}
+
+                  <div className="p-8">
+                    <div className="space-y-6">
+                      {/* Workflow */}
+
+                      <div className="flex items-center justify-between rounded-xl border border-slate-200 p-4">
+                        <div>
+                          <p className="font-semibold text-slate-900">
+                            Daily Orders ETL
+                          </p>
+                          <p className="mt-1 text-sm text-slate-500">
+                            Scheduled • Every 2 Hours
+                          </p>
+                        </div>
+
+                        <span className="rounded-full bg-green-100 px-3 py-1 text-xs font-semibold text-green-700">
+                          Running
+                        </span>
+                      </div>
+
+                      {/* DAG */}
+
+                      <div className="rounded-2xl border border-slate-200 bg-slate-50 p-8">
+                        <div className="flex items-center justify-between">
+                          <div className="flex flex-col items-center">
+                            <div className="h-12 w-12 rounded-full bg-cyan-500" />
+                            <span className="mt-2 text-sm text-slate-600">
+                              Source
+                            </span>
+                          </div>
+
+                          <div className="h-1 flex-1 mx-4 bg-cyan-300" />
+
+                          <div className="flex flex-col items-center">
+                            <div className="h-12 w-12 rounded-full bg-blue-500" />
+                            <span className="mt-2 text-sm text-slate-600">
+                              Transform
+                            </span>
+                          </div>
+
+                          <div className="h-1 flex-1 mx-4 bg-cyan-300" />
+
+                          <div className="flex flex-col items-center">
+                            <div className="h-12 w-12 rounded-full bg-emerald-500" />
+                            <span className="mt-2 text-sm text-slate-600">
+                              Target
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Stats */}
+
+                      <div className="grid grid-cols-3 gap-4">
+                        <div className="rounded-xl bg-slate-50 p-4">
+                          <p className="text-xs uppercase tracking-wide text-slate-500">
+                            Active Jobs
+                          </p>
+
+                          <p className="mt-2 text-2xl font-bold text-slate-900">
+                            24
+                          </p>
+                        </div>
+
+                        <div className="rounded-xl bg-slate-50 p-4">
+                          <p className="text-xs uppercase tracking-wide text-slate-500">
+                            Success Rate
+                          </p>
+
+                          <p className="mt-2 text-2xl font-bold text-green-600">
+                            99.8%
+                          </p>
+                        </div>
+
+                        <div className="rounded-xl bg-slate-50 p-4">
+                          <p className="text-xs uppercase tracking-wide text-slate-500">
+                            Avg Runtime
+                          </p>
+
+                          <p className="mt-2 text-2xl font-bold text-cyan-600">
+                            42s
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
           </div>
         </section>
 

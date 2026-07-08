@@ -20,6 +20,8 @@ import {
   CheckCircle2,
   Clock,
 } from "lucide-react";
+import ETL from "../../assets/Products/ETL/ETL.png";
+import { CTABanner } from "../../components/BottomCTA";
 import MainLayout from "../../layouts/mainLayout";
 
 const ETLStudio = () => {
@@ -27,7 +29,7 @@ const ETLStudio = () => {
     <MainLayout>
       <div className="min-h-screen bg-white">
         {/* Hero Section */}
-        <section className="relative overflow-hidden pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white">
+        <section className="relative overflow-hidden bg-gradient-to-b from-gray-50 to-white pt-32 pb-24">
           {/* Animated Grid */}
 
           <motion.div
@@ -42,74 +44,107 @@ const ETLStudio = () => {
             className="absolute inset-0 opacity-[0.04]"
             style={{
               backgroundImage: `
-        linear-gradient(to right, #06b6d4 1px, transparent 1px),
-        linear-gradient(to bottom, #06b6d4 1px, transparent 1px)
+        linear-gradient(to right,#06b6d4 1px,transparent 1px),
+        linear-gradient(to bottom,#06b6d4 1px,transparent 1px)
       `,
               backgroundSize: "80px 80px",
             }}
           />
 
-          {/* Cyan Glow */}
+          {/* Background Glow */}
 
           <motion.div
             animate={{
-              scale: [1, 1.1, 1],
-              opacity: [0.15, 0.25, 0.15],
+              x: [-40, 40, -40],
+              y: [-20, 20, -20],
+              scale: [1, 1.08, 1],
             }}
             transition={{
-              duration: 8,
+              duration: 18,
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="absolute left-1/2 top-[40%] -translate-x-1/2 w-[900px] h-[500px] bg-cyan-400 rounded-full blur-[160px]"
+            className="absolute left-1/3 top-0 h-[500px] w-[500px] rounded-full bg-cyan-400/10 blur-[170px]"
           />
 
-          <div className="relative max-w-7xl mx-auto">
-            {/* Hero */}
+          <motion.div
+            animate={{
+              x: [40, -40, 40],
+              y: [20, -20, 20],
+              scale: [1, 1.1, 1],
+            }}
+            transition={{
+              duration: 22,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="absolute right-0 bottom-0 h-[600px] w-[600px] rounded-full bg-blue-400/10 blur-[180px]"
+          />
+
+          <div className="relative mx-auto grid max-w-7xl items-center gap-20 px-6 lg:grid-cols-2 lg:px-8">
+            {/* LEFT */}
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-center max-w-4xl mx-auto"
+              initial={{ opacity: 0, x: -25 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7 }}
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-50 text-cyan-700 text-sm font-medium mb-6">
+              <div className="inline-flex items-center rounded-full bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">
                 ETL Studio
               </div>
 
-              <h1 className="text-5xl lg:text-7xl font-bold text-slate-900 leading-[1.05]">
-                ETL Studio
+              <h1 className="mt-8 text-4xl font-bold leading-[1.05] text-slate-900 lg:text-6xl">
+                Build Visual Pipelines
                 <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">
+                <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
                   For Modern Data Teams
                 </span>
               </h1>
 
-              <p className="mt-8 text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              <p className="mt-8 max-w-xl text-md leading-8 text-slate-600">
                 Design, test, and deploy production-grade data pipelines through
                 a visual development experience powered by Apache Flink and
                 Iceberg.
               </p>
 
-              {/* Buttons */}
+              <div className="mt-10 flex flex-wrap gap-4">
+                {/* Primary */}
 
-              <div className="mt-10 flex flex-wrap justify-center gap-4">
-                <button className="group relative inline-flex items-center justify-center overflow-hidden rounded-md border hover:border-none  px-6 py-3 font-semibold">
-                  <span className="absolute inset-y-0 left-0 w-0 bg-[#18D0BB] transition-all duration-300 group-hover:w-full"></span>
+                <button className="group relative overflow-hidden rounded-xl bg-slate-900 px-8 py-4 font-medium text-white">
+                  <span className="absolute inset-0 origin-left scale-x-0 bg-cyan-500 transition-transform duration-500 group-hover:scale-x-100" />
 
-                  <span className="relative z-10 flex items-center gap-2">
+                  <span className="relative flex items-center gap-2">
                     Try Pipeline Studio
-                    <ArrowRight className="w-4 h-4" />
+                    <ArrowRight className="h-4 w-4" />
                   </span>
                 </button>
 
-                <button className="rounded-md border border-slate-300 bg-white px-6 py-3 hover:border-none font-semibold text-slate-700 hover:border-slate-400 transition">
-                  Watch Demo Video
+                {/* Secondary */}
+
+                <button className="group relative overflow-hidden rounded-xl border border-slate-300 bg-white px-8 py-4 font-medium text-slate-700">
+                  <span className="absolute inset-0 origin-left scale-x-0 bg-cyan-500 transition-transform duration-500 group-hover:scale-x-100" />
+
+                  <span className="relative transition-colors duration-300 group-hover:text-white">
+                    Watch Demo
+                  </span>
                 </button>
               </div>
             </motion.div>
 
-            {/* Studio Preview */}
+            {/* RIGHT */}
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="relative"
+            >
+              <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-2xl">
+                {/* Replace this with your ETL Studio screenshot */}
+
+                <img src={ETL} alt="ETL Studio" className="w-full" />
+              </div>
+            </motion.div>
           </div>
         </section>
 
@@ -431,32 +466,8 @@ pipeline.run()`}
         </section>
 
         {/* CTA Section */}
-        <section className="py-24 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <div
-              style={{
-                background: "#020024",
-                background:
-                  "linear-gradient(253deg, rgba(2, 0, 36, 1) 0%, rgba(0, 0, 255, 1) 0%, rgba(0, 212, 255, 1) 24%)",
-              }}
-              className="bg-slate-900 rounded-2xl p-12 text-center text-white "
-            >
-              <h2 className="text-4xl font-bold mb-4">
-                Start Building Pipelines Today
-              </h2>
-              <p className="text-xl text-slate-300 mb-8">
-                Try Pipeline Studio free for 30 days. No credit card required.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-8 py-4 bg-cyan-600 text-white rounded-lg hover:bg-cyan-700 transition-colors font-medium">
-                  Start Free Trial
-                </button>
-                <button className="px-8 py-4 border-2 border-white text-white rounded-lg hover:bg-white/10 transition-colors font-medium">
-                  Schedule Demo
-                </button>
-              </div>
-            </div>
-          </div>
+        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white-900">
+          <CTABanner />
         </section>
       </div>
     </MainLayout>

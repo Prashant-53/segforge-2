@@ -35,6 +35,7 @@ const CostOfFragmentation = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
+            className="order-2 lg:order-1"
           >
             <div className="bg-white border border-slate-200 rounded-[32px] overflow-hidden shadow-[0_30px_80px_rgba(15,23,42,0.08)]">
               <img
@@ -52,18 +53,19 @@ const CostOfFragmentation = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            className="order-1 lg:order-2"
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-50 text-red-700 text-sm font-medium mb-6">
               The Cost of Fragmentation
             </div>
 
-            <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 leading-[1.05]">
+            <h2 className="text-4xl lg:text-4xl font-bold text-slate-900 leading-[1.05]">
               The real cost isn't
               <br />
               the software.
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500">
                 {" "}
-                It's the glue.
+                It's the Middleware.
               </span>
             </h2>
 

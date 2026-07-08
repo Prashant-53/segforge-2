@@ -35,6 +35,8 @@ import Pricing from "../pages/pricing";
 import Documentation from "../pages/Resources/documentation";
 import APIs from "../pages/Developers/APIs";
 import SDKs from "../pages/Developers/SDKs";
+import CLI from "../pages/Developers/CLI";
+import Integrations from "../pages/Developers/Integrations";
 function AppRoutes() {
   return (
     <BrowserRouter>
@@ -61,7 +63,10 @@ function AppRoutes() {
           path="/product/hybrid-infrastructure"
           element={<HybridInfrastructure />}
         />
-        <Route path="/solutions/finance" element={<FinancialServices />} />
+        <Route
+          path="/solutions/financial-services"
+          element={<FinancialServices />}
+        />
         <Route path="/solutions/healthcare" element={<HealthCare />} />
         <Route path="/solutions/retail" element={<Retail />} />
         <Route path="/solutions/manufacturing" element={<Manufacturing />} />
@@ -95,10 +100,11 @@ function AppRoutes() {
         <Route path="/solutions/analytics-team" element={<AnalyticsTeam />} />
         <Route path="/solutions/ML-teams" element={<MLOPSTeam />} />
         <Route path="/pricing" element={<Pricing />} />
-        {/* <Route path="/blog" element={<Blog />} /> */}
         <Route path="/docs/:category/:page" element={<Documentation />} />
         <Route path="/developers/apis" element={<APIs />} />
         <Route path="/developers/sdks" element={<SDKs />} />
+        <Route path="/developers/cli" element={<CLI />} />
+        <Route path="/developers/integrations" element={<Integrations />} />
       </Routes>
     </BrowserRouter>
   );
