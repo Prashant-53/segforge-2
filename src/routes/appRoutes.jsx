@@ -37,6 +37,7 @@ import APIs from "../pages/Developers/APIs";
 import SDKs from "../pages/Developers/SDKs";
 import CLI from "../pages/Developers/CLI";
 import Integrations from "../pages/Developers/Integrations";
+import ContactSales from "../pages/contact";
 function AppRoutes() {
   return (
     <BrowserRouter>
@@ -105,6 +106,7 @@ function AppRoutes() {
         <Route path="/developers/sdks" element={<SDKs />} />
         <Route path="/developers/cli" element={<CLI />} />
         <Route path="/developers/integrations" element={<Integrations />} />
+        <Route path="/contact" element={<ContactSales />} />
       </Routes>
     </BrowserRouter>
   );

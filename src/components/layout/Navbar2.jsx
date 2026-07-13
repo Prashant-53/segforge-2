@@ -546,13 +546,16 @@ const Navbar = () => {
                 Sign In
               </a> */}
 
-              <button className="group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-gray-200 px-6 py-3 font-semibold text-black transition-colors duration-300 hover:text-white">
+              <Link
+                to="/contact"
+                className="group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-gray-200 px-6 py-3 font-semibold text-black transition-colors duration-300 hover:text-white"
+              >
                 <span className="absolute inset-y-0 left-0 w-0 bg-[#18D0BB] transition-all duration-300 ease-out group-hover:w-full"></span>
 
                 <span className="relative z-10 flex items-center gap-2">
                   Contact Sales
                 </span>
-              </button>
+              </Link>
               <button className="group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-gray-200 px-6 py-3 font-semibold text-black transition-colors duration-300 hover:text-white">
                 <span className="absolute inset-y-0 left-0 w-0 bg-[#18D0BB] transition-all duration-300 ease-out group-hover:w-full"></span>
 
