@@ -2,169 +2,153 @@ import React from "react";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
-  Play,
-  Database,
-  Brain,
-  Rocket,
+  BookOpen,
+  BrainCircuit,
+  Workflow,
+  Cpu,
   Activity,
+  Boxes,
+  Sparkles,
 } from "lucide-react";
+import { Link } from "react-router-dom";
+import Hero from "../../../assets/Products/ML&OPs/mlopsdashboard.png";
 
 const MLOpsHero = () => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-gray-50 to-white pt-16 pb-24">
-      {/* Background Effects */}
+    <section className="relative overflow-hidden bg-gradient-to-b from-gray-50 via-white to-white pt-36 pb-24">
+      {/* Animated Grid */}
 
-      <div className="absolute inset-0 bg-grid opacity-[0.03]" />
+      <motion.div
+        animate={{
+          backgroundPosition: ["0px 0px", "120px 120px"],
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+        className="absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right,#06b6d4 1px,transparent 1px),
+            linear-gradient(to bottom,#06b6d4 1px,transparent 1px)
+          `,
+          backgroundSize: "80px 80px",
+        }}
+      />
 
-      <div className="absolute top-0 right-0 w-[700px] h-[500px] bg-cyan-500/10 blur-[120px] rounded-full" />
+      {/* Glow */}
 
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
+      <div className="absolute left-1/2 top-20 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-cyan-400/10 blur-[180px]" />
+
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid items-center gap-20 lg:grid-cols-2">
           {/* LEFT CONTENT */}
 
           <motion.div
-            initial={{ opacity: 0, x: -25 }}
+            initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
-            className="-mt-[30px]"
           >
-            {/* Label */}
+            {/* Badge */}
 
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-50 text-cyan-700 text-sm font-medium mb-6">
-              <Brain className="w-4 h-4" />
-              MLOps Platform
+            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">
+              <Sparkles className="h-4 w-4" />
+              Machine Learning & MLOps
             </div>
 
             {/* Heading */}
 
-            <h1 className="text-[2.375rem] lg:text-6xl md:text-5xl font-bold tracking-tight text-slate-900 leading-[1.05]">
-              Build, train,
+            <h1 className="mt-8 text-4xl font-bold leading-none text-slate-900 lg:text-5xl">
+              Build, Train, Deploy,
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">
-                deploy, and monitor machine learning from one platform.
+              and Monitor AI
+              <br />
+              <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
+                from One Unified Platform.
               </span>
             </h1>
 
             {/* Description */}
 
-            <p className="mt-8 text-md text-slate-600 leading-relaxed max-w-xl">
-              Move from raw data to production-ready models without stitching
-              together tools. SegForge brings feature engineering,
-              experimentation, deployment, and monitoring into one workflow.
+            <p className="mt-8 max-w-2xl text-md leading-6 text-slate-600">
+              Design machine learning pipelines, engineer features, train
+              production-grade models, deploy real-time inference endpoints, and
+              monitor model health—all inside a unified enterprise MLOps
+              platform powered by Apache Flink and modern open-source AI
+              technologies.
             </p>
 
             {/* Buttons */}
 
-            <div className="mt-10 flex flex-wrap gap-4">
-              <button className="px-8 py-4 bg-slate-900 text-white rounded-xl hover:bg-slate-800 transition flex items-center gap-2 font-medium">
-                Launch MLOps Hub
-                <ArrowRight className="w-4 h-4" />
-              </button>
+            <div className="mt-12 flex flex-wrap gap-4">
+              <Link
+                to="/contact"
+                className="group relative inline-flex items-center justify-center overflow-hidden rounded-md border border-cyan-500 px-7 py-3 font-semibold text-slate-900 transition-colors duration-300 hover:text-white"
+              >
+                <span className="absolute inset-y-0 left-0 w-0 bg-[#18D0BB] transition-all duration-300 ease-out group-hover:w-full"></span>
 
-              <button className="px-8 py-4 border border-slate-300 text-slate-700 rounded-xl hover:bg-slate-50 transition flex items-center gap-2 font-medium">
-                <Play className="w-4 h-4" />
-                Explore Templates
-              </button>
+                <span className="relative z-10 flex items-center gap-2">
+                  Build Your First Model
+                  <ArrowRight className="h-4 w-4" />
+                </span>
+              </Link>
+
+              <Link
+                to="/documentation"
+                className="group inline-flex items-center gap-2 rounded-md border border-slate-300 bg-white px-7 py-3 font-semibold text-slate-700 transition hover:border-cyan-400 hover:text-cyan-600"
+              >
+                <BookOpen className="h-4 w-4" />
+                View Documentation
+              </Link>
             </div>
           </motion.div>
 
-          {/* RIGHT VISUAL */}
+          {/* RIGHT IMAGE */}
 
           <motion.div
-            initial={{ opacity: 0, x: 25 }}
+            initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            {/* Glow */}
+            {/* Product Screenshot */}
 
-            <div className="absolute inset-0 bg-cyan-500/10 blur-3xl rounded-full" />
+            <div className="overflow-hidden  border border-slate-200 bg-white shadow-2xl">
+              <img
+                src={Hero}
+                alt="Seg Forge Machine Learning Platform"
+                className="w-full"
+              />
+            </div>
 
-            {/* Workflow Visual */}
+            {/* Floating Card */}
 
-            <div className="relative bg-white border border-slate-200 rounded-[32px] p-2 shadow-[0_30px_80px_rgba(15,23,42,0.08)]">
-              {/* Data */}
+            <div className="absolute -left-6 -top-5 hidden rounded-2xl border border-cyan-200 bg-white px-5 py-4 shadow-xl lg:block">
+              <p className="text-sm font-semibold text-slate-900">
+                Visual ML Pipelines
+              </p>
 
-              <div className="flex justify-center">
-                <Node
-                  icon={Database}
-                  title="Data"
-                  color="bg-blue-50 text-blue-600"
-                />
-              </div>
+              <p className="mt-1 text-xs text-slate-500">
+                Drag • Train • Deploy
+              </p>
+            </div>
 
-              <Arrow />
+            {/* Floating Card */}
 
-              {/* Features */}
+            <div className="absolute -right-6 -bottom-5 hidden rounded-2xl border border-cyan-200 bg-white px-5 py-4 shadow-xl lg:block">
+              <p className="text-sm font-semibold text-slate-900">
+                Model Registry
+              </p>
 
-              <div className="flex justify-center">
-                <Node
-                  icon={Brain}
-                  title="Features"
-                  color="bg-cyan-50 text-cyan-600"
-                />
-              </div>
-
-              <Arrow />
-
-              {/* Training */}
-
-              <div className="flex justify-center">
-                <Node
-                  icon={Brain}
-                  title="Training"
-                  color="bg-purple-50 text-purple-600"
-                />
-              </div>
-
-              <Arrow />
-
-              {/* Deployment */}
-
-              <div className="flex justify-center">
-                <Node
-                  icon={Rocket}
-                  title="Deployment"
-                  color="bg-green-50 text-green-600"
-                />
-              </div>
-
-              <Arrow />
-
-              {/* Monitoring */}
-
-              <div className="flex justify-center">
-                <Node
-                  icon={Activity}
-                  title="Monitoring"
-                  color="bg-orange-50 text-orange-600"
-                />
-              </div>
+              <p className="mt-1 text-xs text-slate-500">
+                Version • Deploy • Monitor
+              </p>
             </div>
           </motion.div>
         </div>
       </div>
     </section>
-  );
-};
-
-const Arrow = () => (
-  <div className="flex justify-center py-4">
-    <div className="w-px h-10 bg-cyan-300" />
-  </div>
-);
-
-const Node = ({ icon: Icon, title, color }) => {
-  return (
-    <div className="w-full max-w-[260px] px-6 py-5 rounded-2xl border border-slate-200 bg-white flex items-center gap-4 shadow-sm">
-      <div
-        className={`w-12 h-12 rounded-xl flex items-center justify-center ${color}`}
-      >
-        <Icon className="w-5 h-5" />
-      </div>
-
-      <span className="font-semibold text-slate-900">{title}</span>
-    </div>
   );
 };
 

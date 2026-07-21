@@ -1,153 +1,187 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Play, Radio, Cpu, Database } from "lucide-react";
+import {
+  PlayCircle,
+  Code2,
+  Workflow,
+  Radio,
+  ArrowRight,
+  BookOpen,
+  Terminal,
+} from "lucide-react";
+import { Link } from "react-router-dom";
 
-const MultiEngineExecution = () => {
+const features = [
+  {
+    icon: PlayCircle,
+    title: "Programmatic Execution",
+    description:
+      "Execute notebook cells securely through REST APIs and integrate notebooks into your existing applications.",
+  },
+  {
+    icon: Code2,
+    title: "SDK Integration",
+    description:
+      "Use Python and TypeScript SDKs to build automation, analytics, and custom integrations.",
+  },
+  {
+    icon: Workflow,
+    title: "Workflow Automation",
+    description:
+      "Trigger notebooks directly from pipelines, schedules, and event-driven workflows.",
+  },
+  {
+    icon: Radio,
+    title: "Server-Sent Events",
+    description:
+      "Receive live execution progress, logs, and notebook results inside your applications.",
+  },
+];
+
+const NotebookAutomation = () => {
   return (
-    <section className="py-32 bg-gradient-to-b from-white to-slate-50 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        {/* Header */}
+    <section className="relative overflow-hidden bg-gradient-to-b from-white to-gray-50 py-28">
+      {/* Animated Grid */}
 
-        <div className="max-w-3xl mx-auto justify-center items-center">
-          <div className="inline-flex  gap-2 px-4 py-2 rounded-full bg-cyan-50 text-cyan-700 text-sm font-medium mb-6">
-            Multi-Engine Execution
-          </div>
+      <motion.div
+        animate={{
+          backgroundPosition: ["0px 0px", "120px 120px"],
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+        className="absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right,#06b6d4 1px,transparent 1px),
+            linear-gradient(to bottom,#06b6d4 1px,transparent 1px)
+          `,
+          backgroundSize: "80px 80px",
+        }}
+      />
 
-          <h2 className="text-2xl sm:text-4xl font-bold text-slate-900 leading-tight">
-            Execute notebooks across the engines that power modern data
-            platforms.
-          </h2>
+      <div className="absolute right-0 top-32 h-[500px] w-[500px] rounded-full bg-cyan-400/10 blur-[180px]" />
 
-          <p className="mt-6 text-md text-slate-600 leading-relaxed">
-            Develop once and execute across batch and streaming workloads using
-            the engine best suited for the job.
-          </p>
-        </div>
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid items-center gap-20 lg:grid-cols-2">
+          {/* LEFT CONTENT */}
 
-        {/* Architecture Diagram */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            <div className="inline-flex rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">
+              Notebook Automation
+            </div>
 
-        <div className="mt-24">
-          <div className="relative max-w-5xl mx-auto">
-            {/* Notebook */}
+            <h2 className="mt-6 text-4xl font-bold leading-none text-slate-900 lg:text-4xl">
+              Prototype Interactively.
+              <br />
+              Automate at Scale.
+            </h2>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="flex justify-center"
-            >
-              <div className="px-10 py-6 bg-white border border-slate-200 rounded-3xl shadow-lg">
-                <div className="text-center">
-                  <p className="text-sm uppercase tracking-widest text-cyan-600 mb-2">
-                    Interface
-                  </p>
+            <p className="mt-2 text-md leading-6 text-slate-600">
+              Move seamlessly from exploratory analysis to enterprise automation
+              using the Seg Forge Notebooks API, SDKs, CLI, and Workflow Engine.
+              Build once, automate forever.
+            </p>
 
-                  <h3 className="text-2xl font-semibold text-slate-900">
-                    SegForge Notebooks
-                  </h3>
+            {/* Feature Cards */}
+
+            <div className="mt-10 space-y-6">
+              {features.map((feature) => (
+                <div
+                  key={feature.title}
+                  className="flex gap-5 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-cyan-200 hover:shadow-lg"
+                >
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-cyan-50">
+                    <feature.icon className="h-7 w-7 text-cyan-600" />
+                  </div>
+
+                  <div>
+                    <h3 className="text-lg font-semibold text-slate-900">
+                      {feature.title}
+                    </h3>
+
+                    <p className="mt-2 leading-7 text-slate-600">
+                      {feature.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Buttons */}
+
+            <div className="mt-10 flex flex-wrap gap-4">
+              <Link
+                to="/documentation/notebooks-api"
+                className="group relative inline-flex items-center justify-center overflow-hidden rounded-md border border-cyan-500 px-7 py-3 font-semibold text-slate-900 hover:text-white"
+              >
+                <span className="absolute inset-y-0 left-0 w-0 bg-[#18D0BB] transition-all duration-300 group-hover:w-full" />
+
+                <span className="relative z-10 flex items-center gap-2">
+                  <BookOpen className="h-4 w-4" />
+                  Explore Notebook API
+                </span>
+              </Link>
+
+              <Link
+                to="/contact"
+                className="group relative inline-flex items-center justify-center overflow-hidden rounded-md border border-slate-300 bg-white px-7 py-3 font-semibold text-slate-700 transition hover:border-cyan-400 hover:text-cyan-600"
+              >
+                <span className="flex items-center gap-2">
+                  <Terminal className="h-4 w-4" />
+                  Create Your First Notebook
+                </span>
+              </Link>
+            </div>
+          </motion.div>
+
+          {/* RIGHT IMAGE */}
+
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            {/* Architecture */}
+
+            <div className="mt-8 rounded-3xl border border-slate-200 bg-white p-8 shadow-lg">
+              <div className="flex flex-col items-center gap-4 text-center">
+                <div className="rounded-xl bg-cyan-50 px-6 py-3 font-semibold text-cyan-700">
+                  Notebook
+                </div>
+
+                <ArrowRight className="rotate-90 text-cyan-500" />
+
+                <div className="rounded-xl bg-cyan-50 px-6 py-3 font-semibold text-cyan-700">
+                  REST API
+                </div>
+
+                <ArrowRight className="rotate-90 text-cyan-500" />
+
+                <div className="rounded-xl bg-cyan-50 px-6 py-3 font-semibold text-cyan-700">
+                  Workflow Engine
+                </div>
+
+                <ArrowRight className="rotate-90 text-cyan-500" />
+
+                <div className="rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 px-6 py-3 font-semibold text-white">
+                  Production Pipeline
                 </div>
               </div>
-            </motion.div>
-
-            {/* Line */}
-
-            <div className="h-20 flex justify-center">
-              <div className="w-px bg-gradient-to-b from-cyan-400 to-blue-500" />
             </div>
-
-            {/* Execution Layer */}
-
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="flex justify-center"
-            >
-              <div className="px-12 py-6 rounded-3xl bg-gradient-to-r from-cyan-50 to-blue-50 border border-cyan-200">
-                <h3 className="text-xl font-semibold text-slate-900 text-center">
-                  Execution Layer
-                </h3>
-              </div>
-            </motion.div>
-
-            {/* Line */}
-
-            <div className="h-20 flex justify-center">
-              <div className="w-px bg-gradient-to-b from-cyan-400 to-blue-500" />
-            </div>
-
-            {/* Engines */}
-
-            <div className="grid md:grid-cols-3 gap-8">
-              {[
-                {
-                  title: "Flink SQL",
-                  icon: Database,
-                },
-                {
-                  title: "PyFlink",
-                  icon: Cpu,
-                },
-                {
-                  title: "Trino",
-                  icon: Play,
-                },
-              ].map((engine) => {
-                const Icon = engine.icon;
-
-                return (
-                  <motion.div
-                    key={engine.title}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="bg-white border border-slate-200 rounded-3xl p-8 text-center shadow-sm"
-                  >
-                    <div className="w-14 h-14 mx-auto rounded-2xl bg-cyan-50 flex items-center justify-center mb-4">
-                      <Icon className="w-6 h-6 text-cyan-600" />
-                    </div>
-
-                    <h3 className="text-xl font-semibold text-slate-900">
-                      {engine.title}
-                    </h3>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-
-        {/* Runtime Capabilities */}
-
-        <div className="mt-24 flex flex-wrap justify-center gap-8">
-          <div className="flex items-center gap-3">
-            <Play className="w-5 h-5 text-cyan-600" />
-            <span className="text-slate-700 font-medium">Batch Mode</span>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <Radio className="w-5 h-5 text-cyan-600" />
-            <span className="text-slate-700 font-medium">Streaming Mode</span>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <Radio className="w-5 h-5 text-cyan-600" />
-            <span className="text-slate-700 font-medium">
-              Real-Time Streaming
-            </span>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <Cpu className="w-5 h-5 text-cyan-600" />
-            <span className="text-slate-700 font-medium">
-              Distributed Execution
-            </span>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
   );
 };
 
-export default MultiEngineExecution;
+export default NotebookAutomation;

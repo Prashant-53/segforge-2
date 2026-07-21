@@ -7,7 +7,7 @@ export const CTABanner = () => {
     <section
       id="cta "
       data-testid="cta-section "
-      className="relative section-pad "
+      className="relative section-pad  py-5"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8 ">
         <motion.div

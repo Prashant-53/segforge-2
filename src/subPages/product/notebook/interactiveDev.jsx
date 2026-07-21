@@ -1,122 +1,166 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Database, Code2, BarChart3, Sparkles } from "lucide-react";
-
-const FEATURES = [
-  {
-    icon: Database,
-    title: "Jupyter-style experience",
-    description:
-      "Work in a familiar notebook environment designed for modern data teams and enterprise workflows.",
-  },
-  {
-    icon: BarChart3,
-    title: "Rich visualizations",
-    description:
-      "Generate charts, dashboards, and interactive insights directly from notebook outputs.",
-  },
-  {
-    icon: Code2,
-    title: "SQL + Python workflows",
-    description:
-      "Combine SQL, Python, and Spark within a single notebook to build end-to-end analytical workflows.",
-  },
-  {
-    icon: Sparkles,
-    title: "AI-assisted analytics",
-    description:
-      "Accelerate exploration with AI-powered recommendations, summaries, and intelligent code assistance.",
-  },
-];
-
+import { Code2, Database, PlayCircle, CheckCircle2 } from "lucide-react";
+import NoteBookVid from "../../../assets/Products/NoteBook/notebook.mp4";
 const InteractiveDevelopment = () => {
   return (
-    <section className="py-28 px-4 pb-0 sm:px-6 lg:px-8 bg-white">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
-          {/* LEFT */}
-          <motion.div
-            initial={{ opacity: 0, x: 25 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="relative"
-          >
-            {/* Background Glow */}
+    <section className="relative overflow-hidden bg-gradient-to-b from-white to-gray-50 py-28">
+      {/* Background */}
 
-            <div className="absolute inset-0 bg-cyan-500/10 blur-3xl rounded-full" />
+      <motion.div
+        animate={{
+          backgroundPosition: ["0px 0px", "120px 120px"],
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+        className="absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right,#06b6d4 1px,transparent 1px),
+            linear-gradient(to bottom,#06b6d4 1px,transparent 1px)
+          `,
+          backgroundSize: "80px 80px",
+        }}
+      />
 
-            {/* Screenshot Container */}
+      <div className="absolute left-1/2 top-40 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-cyan-400/10 blur-[180px]" />
 
-            <div className="relative bg-white border border-slate-200 rounded-[32px] overflow-hidden shadow-[0_25px_80px_rgba(15,23,42,0.08)]">
-              <img
-                src="/images/notebook-workspace.png"
-                alt="SegForge Notebook Workspace"
-                className="w-full h-auto object-cover"
-              />
-            </div>
-          </motion.div>
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        {/* Header */}
 
-          {/* RIGHT */}
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <span className="inline-block px-4 py-1 rounded-full bg-cyan-50 text-cyan-700 text-sm font-medium mb-6">
-              Interactive Development
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mx-auto max-w-4xl text-center"
+        >
+          <div className="inline-flex rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">
+            Interactive Notebook
+          </div>
+
+          <h2 className="mt-6 text-4xl font-bold leading-none text-slate-900 lg:text-5xl">
+            Write Once.
+            <br />
+            <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
+              Execute Anywhere.
             </span>
+          </h2>
 
-            <h2 className="text-2xl sm:text-4xl font-bold text-slate-900 leading-tight">
-              Develop, analyze,
-              <br />
-              and experiment in one place.
-            </h2>
+          <p className="mx-auto mt-6 max-w-3xl text-md leading-6 text-slate-600">
+            Switch seamlessly between Flink SQL, PyFlink, and Trino while
+            choosing between historical batch execution or continuously updating
+            streaming queries—all inside the same notebook.
+          </p>
+        </motion.div>
 
-            <p className="mt-6 text-md text-slate-600 leading-relaxed max-w-xl">
-              SegForge Notebooks provide a collaborative environment for data
-              engineering, analytics, and machine learning. Write code,
-              visualize results, and move from exploration to production without
-              switching tools.
-            </p>
+        {/* Large Screenshot */}
 
-            {/* Features */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="mx-auto mt-16 max-w-6xl"
+        >
+          <div className="overflow-hidden  border border-slate-200 bg-white shadow-2xl">
+            <video
+              src={NoteBookVid}
+              className="w-full h-auto"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+            >
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </motion.div>
 
-            <div className="mt-10 space-y-8">
-              {FEATURES.map((feature, index) => {
-                const Icon = feature.icon;
+        {/* Feature Cards */}
 
-                return (
-                  <motion.div
-                    key={feature.title}
-                    initial={{ opacity: 0, x: -25 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{
-                      duration: 0.5,
-                      delay: index * 0.1,
-                    }}
-                    className="flex gap-5"
-                  >
-                    <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-cyan-50 border border-cyan-100 flex items-center justify-center">
-                      <Icon className="w-5 h-5 text-cyan-600" />
-                    </div>
+        <div className="mt-14 grid gap-6 lg:grid-cols-3">
+          {/* Languages */}
 
-                    <div>
-                      <h3 className="text-lg font-semibold text-slate-900">
-                        {feature.title}
-                      </h3>
-
-                      <p className="mt-2 text-slate-600 leading-relaxed">
-                        {feature.description}
-                      </p>
-                    </div>
-                  </motion.div>
-                );
-              })}
+          <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+            <div className="mb-5 flex items-center gap-3">
+              <Code2 className="h-7 w-7 text-cyan-600" />
+              <h3 className="text-xl font-semibold text-slate-900">
+                Languages
+              </h3>
             </div>
-          </motion.div>
+
+            <div className="space-y-4">
+              {["Flink SQL", "Python (PyFlink)", "Markdown"].map((item) => (
+                <div key={item} className="flex items-center gap-3">
+                  <CheckCircle2 className="h-5 w-5 text-cyan-500" />
+                  <span className="text-slate-700">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Engines */}
+
+          <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+            <div className="mb-5 flex items-center gap-3">
+              <Database className="h-7 w-7 text-cyan-600" />
+              <h3 className="text-xl font-semibold text-slate-900">
+                Execution Engines
+              </h3>
+            </div>
+
+            <div className="space-y-4">
+              {["Apache Flink SQL", "PyFlink", "Trino"].map((item) => (
+                <div key={item} className="flex items-center gap-3">
+                  <CheckCircle2 className="h-5 w-5 text-cyan-500" />
+                  <span className="text-slate-700">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Modes */}
+
+          <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+            <div className="mb-5 flex items-center gap-3">
+              <PlayCircle className="h-7 w-7 text-cyan-600" />
+              <h3 className="text-xl font-semibold text-slate-900">
+                Execution Modes
+              </h3>
+            </div>
+
+            <div className="space-y-4">
+              {["Batch Processing", "Streaming Analytics"].map((item) => (
+                <div key={item} className="flex items-center gap-3">
+                  <CheckCircle2 className="h-5 w-5 text-cyan-500" />
+                  <span className="text-slate-700">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Banner */}
+
+        <div className="mt-16 rounded-[32px] bg-gradient-to-r from-cyan-500 to-blue-600 p-[1px] shadow-xl">
+          <div className="rounded-[31px] bg-white px-10 py-12 text-center">
+            <h3 className="text-3xl font-bold text-slate-900">
+              One Notebook.
+              <br />
+              Multiple Languages. Multiple Engines.
+            </h3>
+
+            <p className="mx-auto mt-6 max-w-3xl text-md leading-6 text-slate-600">
+              From ad-hoc exploration to production-ready pipelines, work with
+              the language and execution engine that best fits your workload—all
+              inside one collaborative notebook experience.
+            </p>
+          </div>
         </div>
       </div>
     </section>

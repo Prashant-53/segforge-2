@@ -7,8 +7,27 @@ import {
   Layers,
   Shield,
   GitBranch,
+  Container,
   Zap,
+  Terminal,
+  Landmark,
+  HeartPulse,
+  ShoppingCart,
+  Factory,
+  Laptop2,
+  RadioTower,
+  Braces,
+  Rocket,
+  Code2,
+  CheckCircle2,
+  ShieldCheck,
+  Cloud,
+  LockOpen,
 } from "lucide-react";
+
+import { Workflow, Layers3, BrainCircuit } from "lucide-react";
+import { Boxes, DatabaseZap, Route } from "lucide-react";
+
 import { Link } from "react-router-dom";
 import { trustedCompanies } from "../mock";
 import { CTABanner } from "../components/BottomCTA";
@@ -24,6 +43,248 @@ const HomePage = () => {
     "Retail",
     "Logistics",
     "Energy",
+  ];
+  const workflowSteps = [
+    {
+      icon: Database,
+      title: "Enterprise Sources",
+      description:
+        "Connect databases, cloud storage, Kafka streams, APIs, and enterprise applications through native connectors.",
+    },
+    {
+      icon: Workflow,
+      title: "Visual ETL",
+      description:
+        "Design production-grade pipelines using an intuitive drag-and-drop workspace with 90+ transformation nodes.",
+    },
+    {
+      icon: Cpu,
+      title: "Apache Flink",
+      description:
+        "Execute high-performance batch and streaming workloads using a unified distributed processing engine.",
+    },
+    {
+      icon: Layers3,
+      title: "Apache Iceberg",
+      description:
+        "Store governed datasets with ACID transactions, schema evolution, and open table formats.",
+    },
+    {
+      icon: BrainCircuit,
+      title: "Analytics & AI",
+      description:
+        "Power dashboards, machine learning, notebooks, and enterprise AI directly from governed lakehouse data.",
+    },
+  ];
+
+  const highlights = [
+    "Enterprise Connectivity",
+    "Visual Pipeline Design",
+    "Real-Time Processing",
+    "Lakehouse Storage",
+    "AI & BI Consumption",
+  ];
+  const capabilities = [
+    {
+      icon: Boxes,
+      title: "90+ Transformation Nodes",
+      description:
+        "Design production-grade data pipelines visually using a rich library of enterprise transformation components.",
+    },
+    {
+      icon: DatabaseZap,
+      title: "Real-Time CDC",
+      description:
+        "Continuously synchronize operational databases with sub-second latency using intelligent Change Data Capture.",
+    },
+    {
+      icon: Route,
+      title: "Smart Routing Engine",
+      description:
+        "Automatically choose the optimal execution engine for every workload based on data size and processing requirements.",
+    },
+    {
+      icon: GitBranch,
+      title: "Git-like Data Versioning",
+      description:
+        "Branch, merge, rollback, and manage datasets using Apache Nessie with complete lineage and governance.",
+    },
+    {
+      icon: Workflow,
+      title: "Workflow Automation",
+      description:
+        "Schedule, recover, retry, and orchestrate complex pipelines through a resilient visual workflow engine.",
+    },
+    {
+      icon: Code2,
+      title: "Open APIs & SDKs",
+      description:
+        "Automate every platform operation using REST APIs, SDKs, and CLI built for modern engineering teams.",
+    },
+  ];
+
+  const industries = [
+    {
+      icon: Landmark,
+      title: "Financial Services",
+      solutions: [
+        "Real-time Fraud Detection",
+        "Regulatory Reporting",
+        "Customer Risk Analytics",
+      ],
+    },
+    {
+      icon: HeartPulse,
+      title: "Healthcare",
+      solutions: [
+        "Unified Patient Records",
+        "Clinical Analytics",
+        "Predictive Healthcare",
+      ],
+    },
+    {
+      icon: ShoppingCart,
+      title: "Retail & E-Commerce",
+      solutions: ["Customer 360", "Demand Forecasting", "Dynamic Pricing"],
+    },
+    {
+      icon: Factory,
+      title: "Manufacturing",
+      solutions: [
+        "IoT Analytics",
+        "Predictive Maintenance",
+        "Supply Chain Optimization",
+      ],
+    },
+    {
+      icon: Laptop2,
+      title: "Technology",
+      solutions: [
+        "SaaS Analytics",
+        "Product Telemetry",
+        "Operational Intelligence",
+      ],
+    },
+    {
+      icon: RadioTower,
+      title: "Telecommunications",
+      solutions: [
+        "Network Monitoring",
+        "Subscriber Analytics",
+        "Usage Optimization",
+      ],
+    },
+  ];
+
+  const developerFeatures = [
+    {
+      icon: Container,
+      title: "Docker Deployment",
+      description:
+        "Deploy the complete Seg Forge platform locally in minutes using Docker Compose.",
+    },
+    {
+      icon: Braces,
+      title: "REST APIs",
+      description:
+        "Integrate every platform capability into your applications through secure REST APIs.",
+    },
+    {
+      icon: Code2,
+      title: "Python & TypeScript SDKs",
+      description:
+        "Automate workflows using fully featured SDKs with type-safe models and modern developer tooling.",
+    },
+    {
+      icon: Terminal,
+      title: "Powerful CLI",
+      description:
+        "Provision infrastructure, deploy pipelines, manage CDC streams, and automate every workflow from the terminal.",
+    },
+    {
+      icon: GitBranch,
+      title: "CI/CD Automation",
+      description:
+        "Deploy and validate data pipelines automatically using GitHub Actions and modern DevOps workflows.",
+    },
+    {
+      icon: Workflow,
+      title: "Infrastructure as Code",
+      description:
+        "Version, review, and deploy complete data platforms using Git-based infrastructure workflows.",
+    },
+  ];
+
+  const features = [
+    {
+      icon: Container,
+      title: "Docker Deployment",
+      description:
+        "Spin up the complete Seg Forge platform locally in minutes using Docker Compose.",
+    },
+    {
+      icon: Braces,
+      title: "REST APIs",
+      description:
+        "Integrate every platform capability through secure REST APIs built for automation.",
+    },
+    {
+      icon: Code2,
+      title: "Python & TypeScript SDKs",
+      description:
+        "Develop faster using modern SDKs with type-safe models and IDE autocomplete.",
+    },
+    {
+      icon: Terminal,
+      title: "CLI Automation",
+      description:
+        "Deploy pipelines, manage workflows, and operate your platform directly from the terminal.",
+    },
+    {
+      icon: Workflow,
+      title: "CI/CD Ready",
+      description:
+        "Automate deployments using GitHub Actions and enterprise DevOps pipelines.",
+    },
+    {
+      icon: GitBranch,
+      title: "Infrastructure as Code",
+      description:
+        "Version, review, and deploy your complete data platform using Git workflows.",
+    },
+  ];
+
+  const technologies = [
+    {
+      icon: Workflow,
+      title: "Apache Flink",
+      subtitle: "Distributed Stream & Batch Processing",
+    },
+    {
+      icon: Layers3,
+      title: "Apache Iceberg",
+      subtitle: "Open Lakehouse Table Format",
+    },
+    {
+      icon: GitBranch,
+      title: "Apache Nessie",
+      subtitle: "Git-like Data Version Control",
+    },
+    {
+      icon: Database,
+      title: "Apache Kafka",
+      subtitle: "Event Streaming Platform",
+    },
+  ];
+
+  const benefits = [
+    "Open Table Formats",
+    "Cloud Agnostic Deployment",
+    "No Proprietary Storage",
+    "Customer-Owned Infrastructure",
+    "Git-like Data Versioning",
+    "Enterprise Governance",
+    "Standards-Based Architecture",
   ];
   return (
     <MainLayout>
@@ -227,266 +488,209 @@ lg:w-[450px] lg:h-[450px] bg-white/10 rounded-full blur-3xl"
           </div>
         </section>
         {/* Platform Overview */}
-        <section className="py-24 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className=" mb-8 text-center"
-            >
-              <h2 className="text-[2.375rem]/9 md:text-5xl font-bold text-slate-900 mb-6">
-                Enterprise-Grade Data Platform
-              </h2>
-              <p className="text-md text-slate-600 max-w-3xl mx-auto">
-                Everything you need to build, deploy, and scale modern data
-                applications with confidence.
-              </p>
-            </motion.div>
+        <section className="relative overflow-hidden bg-white py-28">
+          {/* Background Grid */}
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="absolute inset-0 opacity-[0.04]">
+            <div
+              className="absolute inset-0"
+              style={{
+                backgroundImage: `
+              linear-gradient(to right,#06b6d4 1px,transparent 1px),
+              linear-gradient(to bottom,#06b6d4 1px,transparent 1px)
+            `,
+                backgroundSize: "80px 80px",
+              }}
+            />
+          </div>
+
+          {/* Glow */}
+
+          <div className="absolute right-0 top-24 h-[500px] w-[500px] rounded-full bg-cyan-400/10 blur-[180px]" />
+
+          <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="grid items-center gap-20 lg:grid-cols-2">
+              {/* LEFT CONTENT */}
+
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-shadow"
+                transition={{ duration: 0.7 }}
               >
-                <div className="w-12 h-12 bg-cyan-100 rounded-xl flex items-center justify-center mb-6">
-                  <Database className="w-6 h-6 text-cyan-600" />
+                <div className="inline-flex items-center rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">
+                  Unified Platform
                 </div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-4">
-                  Data Engineering
-                </h3>
-                <p className="text-slate-600 mb-6 leading-relaxed">
-                  Build, orchestrate, and monitor data pipelines at scale with
-                  enterprise-grade reliability and observability.
+
+                <h2 className="mt-6 text-4xl font-bold leading-tight text-slate-900 lg:text-5xl">
+                  One Workspace.
+                  <br />
+                  <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
+                    Every Data Workflow.
+                  </span>
+                </h2>
+
+                <p className="mt-6 text-md leading-6 text-slate-600">
+                  Move from raw enterprise data to production-ready analytics
+                  without switching between disconnected tools. Design,
+                  orchestrate, transform, govern, and monitor every workflow
+                  inside one intelligent platform built for modern data
+                  engineering.
                 </p>
-                <Link
-                  to="/platform"
-                  className="text-cyan-600 hover:text-cyan-700 font-medium flex items-center space-x-2"
-                >
-                  <span>Learn more</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
+
+                {/* Workflow */}
+
+                <div className="mt-12 space-y-6">
+                  {workflowSteps.map((step, index) => (
+                    <div key={step.title}>
+                      <div className="flex items-start gap-5">
+                        <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-cyan-50">
+                          <step.icon className="h-7 w-7 text-cyan-600" />
+                        </div>
+
+                        <div>
+                          <h3 className="text-xl font-semibold text-slate-900">
+                            {step.title}
+                          </h3>
+
+                          <p className="mt-2 leading-7 text-slate-600">
+                            {step.description}
+                          </p>
+                        </div>
+                      </div>
+
+                      {index !== workflowSteps.length - 1 && (
+                        <div className="ml-7 my-4 flex">
+                          <ArrowRight className="h-5 w-5 rotate-90 text-cyan-400" />
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+
+                {/* Highlights */}
+
+                <div className="mt-12 rounded-3xl border border-cyan-100 bg-gradient-to-r from-cyan-50 to-white p-6">
+                  <h3 className="text-lg font-semibold text-slate-900">
+                    Platform Highlights
+                  </h3>
+
+                  <div className="mt-5 flex flex-wrap gap-3">
+                    {highlights.map((item) => (
+                      <span
+                        key={item}
+                        className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm"
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-shadow"
-              >
-                <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
-                  <Cpu className="w-6 h-6 text-blue-600" />
-                </div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-4">
-                  AI & ML
-                </h3>
-                <p className="text-slate-600 mb-6 leading-relaxed">
-                  Deploy machine learning models with integrated MLOps,
-                  real-time inference, and automated model versioning.
-                </p>
-                <Link
-                  to="/platform"
-                  className="text-cyan-600 hover:text-cyan-700 font-medium flex items-center space-x-2"
-                >
-                  <span>Learn more</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </motion.div>
+              {/* RIGHT IMAGE */}
 
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-shadow"
+                transition={{ duration: 0.7 }}
               >
-                <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
-                  <Layers className="w-6 h-6 text-purple-600" />
+                <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
+                  <img
+                    src="/images/unified-platform.webp"
+                    alt="Unified Platform Architecture"
+                    className="w-full"
+                  />
                 </div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-4">
-                  Open Lakehouse
-                </h3>
-                <p className="text-slate-600 mb-6 leading-relaxed">
-                  Unified data storage with Delta Lake, Apache Iceberg, and open
-                  table formats for maximum flexibility.
-                </p>
-                <Link
-                  to="/platform"
-                  className="text-cyan-600 hover:text-cyan-700 font-medium flex items-center space-x-2"
-                >
-                  <span>Learn more</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-shadow"
-              >
-                <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-6">
-                  <Shield className="w-6 h-6 text-green-600" />
-                </div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-4">
-                  Governance
-                </h3>
-                <p className="text-slate-600 mb-6 leading-relaxed">
-                  Complete data lineage, RBAC, compliance, and observability
-                  across your entire data platform.
-                </p>
-                <Link
-                  to="/platform"
-                  className="text-cyan-600 hover:text-cyan-700 font-medium flex items-center space-x-2"
-                >
-                  <span>Learn more</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
               </motion.div>
             </div>
           </div>
         </section>
 
         {/* Workflow Orchestration */}
-        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-              >
-                <div className="inline-block px-4 py-2 bg-cyan-50 text-cyan-700 rounded-full text-sm font-medium mb-6">
-                  Workflow Orchestration
-                </div>
-                <h2 className="text-[2.375rem]/9 md:text-5xl font-bold text-slate-900 mb-6">
-                  Build Pipelines
-                  <br />
-                  Visually
-                </h2>
-                <p className="text-md text-slate-600 mb-8 leading-relaxed">
-                  Drag-and-drop pipeline builder with real-time validation,
-                  automatic dependency resolution, and built-in error handling.
-                </p>
-                <ul className="space-y-4 mb-8">
-                  <li className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-cyan-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <div className="w-2 h-2 bg-cyan-600 rounded-full"></div>
-                    </div>
-                    <div>
-                      <div className="font-semibold text-slate-900">
-                        Visual Pipeline Designer
-                      </div>
-                      <div className="text-slate-600">
-                        Build complex data workflows without writing code
-                      </div>
-                    </div>
-                  </li>
-                  <li className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-cyan-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <div className="w-2 h-2 bg-cyan-600 rounded-full"></div>
-                    </div>
-                    <div>
-                      <div className="font-semibold text-slate-900">
-                        Smart Scheduling
-                      </div>
-                      <div className="text-slate-600">
-                        Cron-based, event-driven, or custom triggers
-                      </div>
-                    </div>
-                  </li>
-                  <li className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-cyan-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <div className="w-2 h-2 bg-cyan-600 rounded-full"></div>
-                    </div>
-                    <div>
-                      <div className="font-semibold text-slate-900">
-                        Real-time Monitoring
-                      </div>
-                      <div className="text-slate-600">
-                        Track pipeline health and performance metrics
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-                <Link
-                  to="/platform/pipeline-studio"
-                  className="inline-flex items-center space-x-2 text-cyan-600 hover:text-cyan-700 font-medium"
-                >
-                  <span>Explore Pipeline Studio</span>
-                  <ArrowRight className="w-5 h-5" />
-                </Link>
-              </motion.div>
+        <section className="relative overflow-hidden bg-gradient-to-b from-white to-gray-50 py-28">
+          {/* Background */}
+
+          <div className="absolute inset-0 opacity-[0.04]">
+            <div
+              className="absolute inset-0"
+              style={{
+                backgroundImage: `
+              linear-gradient(to right,#06b6d4 1px,transparent 1px),
+              linear-gradient(to bottom,#06b6d4 1px,transparent 1px)
+            `,
+                backgroundSize: "80px 80px",
+              }}
+            />
+          </div>
+
+          <div className="absolute left-0 top-1/3 h-[450px] w-[450px] rounded-full bg-cyan-400/10 blur-[160px]" />
+
+          <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="grid items-center gap-20 lg:grid-cols-2">
+              {/* LEFT IMAGE */}
 
               <motion.div
-                initial={{ opacity: 0, x: 20 }}
+                initial={{ opacity: 0, x: -40 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="bg-white rounded-2xl shadow-xl border border-gray-200 p-8"
+                transition={{ duration: 0.7 }}
               >
-                <div className="space-y-4">
-                  <div className="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg">
-                    <div className="w-12 h-12 bg-cyan-500 rounded-lg flex items-center justify-center">
-                      <Database className="w-6 h-6 text-white" />
-                    </div>
-                    <div className="flex-1">
-                      <div className="font-medium text-slate-900">
-                        Data Ingestion
+                <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
+                  <img
+                    src="/images/platform-capabilities.webp"
+                    alt="Seg Forge Platform Capabilities"
+                    className="w-full"
+                  />
+                </div>
+              </motion.div>
+
+              {/* RIGHT CONTENT */}
+
+              <motion.div
+                initial={{ opacity: 0, x: 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+              >
+                <div className="inline-flex rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">
+                  Platform Capabilities
+                </div>
+
+                <h2 className="mt-6 text-4xl font-bold leading-tight text-slate-900 lg:text-5xl">
+                  Everything Required to
+                  <br />
+                  <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
+                    Build Modern Data Platforms
+                  </span>
+                </h2>
+
+                <p className="mt-6 text-lg leading-8 text-slate-600">
+                  Seg Forge combines powerful data engineering capabilities into
+                  a single enterprise platform. Replace fragmented tooling with
+                  one intelligent workspace that accelerates development,
+                  governance, automation, and analytics at scale.
+                </p>
+
+                <div className="mt-10 space-y-6">
+                  {capabilities.map((feature) => (
+                    <div key={feature.title} className="flex gap-5">
+                      <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-cyan-50">
+                        <feature.icon className="h-7 w-7 text-cyan-600" />
                       </div>
-                      <div className="text-sm text-slate-600">
-                        Source: PostgreSQL
+
+                      <div>
+                        <h3 className="text-lg font-semibold text-slate-900">
+                          {feature.title}
+                        </h3>
+
+                        <p className="mt-2 leading-7 text-slate-600">
+                          {feature.description}
+                        </p>
                       </div>
                     </div>
-                    <div className="text-xs font-mono text-green-600 bg-green-50 px-2 py-1 rounded">
-                      Running
-                    </div>
-                  </div>
-                  <div className="flex justify-center">
-                    <div className="w-px h-8 bg-gray-300"></div>
-                  </div>
-                  <div className="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg">
-                    <div className="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center">
-                      <GitBranch className="w-6 h-6 text-white" />
-                    </div>
-                    <div className="flex-1">
-                      <div className="font-medium text-slate-900">
-                        Transform
-                      </div>
-                      <div className="text-sm text-slate-600">
-                        Clean & Normalize
-                      </div>
-                    </div>
-                    <div className="text-xs font-mono text-blue-600 bg-blue-50 px-2 py-1 rounded">
-                      Processing
-                    </div>
-                  </div>
-                  <div className="flex justify-center">
-                    <div className="w-px h-8 bg-gray-300"></div>
-                  </div>
-                  <div className="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg">
-                    <div className="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center">
-                      <Layers className="w-6 h-6 text-white" />
-                    </div>
-                    <div className="flex-1">
-                      <div className="font-medium text-slate-900">
-                        Load to Lakehouse
-                      </div>
-                      <div className="text-sm text-slate-600">
-                        Delta Lake Format
-                      </div>
-                    </div>
-                    <div className="text-xs font-mono text-gray-600 bg-gray-200 px-2 py-1 rounded">
-                      Queued
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </motion.div>
             </div>
@@ -494,240 +698,415 @@ lg:w-[450px] lg:h-[450px] bg-white/10 rounded-full blur-3xl"
         </section>
 
         {/* Open Lakehouse */}
-        <section className="py-24 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <section className="relative overflow-hidden bg-white py-28">
+          {/* Background */}
+
+          <div className="absolute inset-0 opacity-[0.04]">
+            <div
+              className="absolute inset-0"
+              style={{
+                backgroundImage: `
+              linear-gradient(to right,#06b6d4 1px,transparent 1px),
+              linear-gradient(to bottom,#06b6d4 1px,transparent 1px)
+            `,
+                backgroundSize: "80px 80px",
+              }}
+            />
+          </div>
+
+          <div className="absolute right-0 top-32 h-[450px] w-[450px] rounded-full bg-cyan-400/10 blur-[180px]" />
+
+          <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="grid items-center gap-20 lg:grid-cols-2">
+              {/* LEFT CONTENT */}
+
               <motion.div
-                initial={{ opacity: 0, x: -20 }}
+                initial={{ opacity: 0, x: -40 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="order-2 lg:order-1"
+                transition={{ duration: 0.7 }}
               >
-                <div className="bg-white rounded-2xl shadow-xl border border-gray-200 p-8">
-                  <div className="space-y-6">
-                    <div className="border-l-4 border-cyan-500 pl-4">
-                      <div className="text-sm font-mono text-slate-600 mb-2">
-                        Storage Layer
+                <div className="inline-flex rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">
+                  Industry Solutions
+                </div>
+
+                <h2 className="mt-6 text-4xl font-bold leading-tight text-slate-900 lg:text-5xl">
+                  Built for Every
+                  <br />
+                  <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
+                    Data-Driven Industry
+                  </span>
+                </h2>
+
+                <p className="mt-6 text-lg leading-8 text-slate-600">
+                  Whether you're modernizing financial platforms, enabling
+                  real-time healthcare insights, or building AI-powered customer
+                  experiences, Seg Forge provides a unified platform that adapts
+                  to every industry while maintaining enterprise reliability and
+                  governance.
+                </p>
+
+                <div className="mt-12 grid gap-5 sm:grid-cols-2">
+                  {industries.map((industry) => (
+                    <div
+                      key={industry.title}
+                      className="rounded-2xl border border-slate-200 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-200 hover:shadow-xl"
+                    >
+                      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-50">
+                        <industry.icon className="h-6 w-6 text-cyan-600" />
                       </div>
-                      <div className="font-semibold text-slate-900">
-                        Delta Lake / Iceberg
-                      </div>
+
+                      <h3 className="text-lg font-semibold text-slate-900">
+                        {industry.title}
+                      </h3>
+
+                      <ul className="mt-4 space-y-2">
+                        {industry.solutions.map((item) => (
+                          <li key={item} className="text-sm text-slate-600">
+                            • {item}
+                          </li>
+                        ))}
+                      </ul>
                     </div>
-                    <div className="border-l-4 border-blue-500 pl-4">
-                      <div className="text-sm font-mono text-slate-600 mb-2">
-                        Query Engine
-                      </div>
-                      <div className="font-semibold text-slate-900">
-                        Spark / Presto / Trino
-                      </div>
-                    </div>
-                    <div className="border-l-4 border-purple-500 pl-4">
-                      <div className="text-sm font-mono text-slate-600 mb-2">
-                        Catalog
-                      </div>
-                      <div className="font-semibold text-slate-900">
-                        Unified Metadata Store
-                      </div>
-                    </div>
-                    <div className="border-l-4 border-green-500 pl-4">
-                      <div className="text-sm font-mono text-slate-600 mb-2">
-                        Governance
-                      </div>
-                      <div className="font-semibold text-slate-900">
-                        RBAC + Data Lineage
-                      </div>
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </motion.div>
 
+              {/* RIGHT IMAGE */}
+
               <motion.div
-                initial={{ opacity: 0, x: 20 }}
+                initial={{ opacity: 0, x: 40 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="order-1 lg:order-2"
+                transition={{ duration: 0.7 }}
               >
-                <div className="inline-block px-4 py-2 bg-purple-50 text-purple-700 rounded-full text-sm font-medium mb-6">
-                  Open Lakehouse Architecture
+                <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
+                  <img
+                    src="/images/industry-solutions.webp"
+                    alt="Industry Solutions"
+                    className="w-full"
+                  />
                 </div>
-                <h2 className="text-[2.375rem]/9 md:text-5xl font-bold text-slate-900 mb-6">
-                  One Platform,
-                  <br />
-                  All Your Data
-                </h2>
-                <p className="text-md text-slate-600 mb-8 leading-relaxed">
-                  Built on open standards with Delta Lake and Apache Iceberg. No
-                  vendor lock-in, maximum flexibility.
-                </p>
-                <ul className="space-y-4">
-                  <li className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
-                    </div>
-                    <div>
-                      <div className="font-semibold text-slate-900">
-                        ACID Transactions
-                      </div>
-                      <div className="text-slate-600">
-                        Guaranteed data consistency and reliability
-                      </div>
-                    </div>
-                  </li>
-                  <li className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
-                    </div>
-                    <div>
-                      <div className="font-semibold text-slate-900">
-                        Time Travel
-                      </div>
-                      <div className="text-slate-600">
-                        Query historical data versions instantly
-                      </div>
-                    </div>
-                  </li>
-                  <li className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
-                    </div>
-                    <div>
-                      <div className="font-semibold text-slate-900">
-                        Schema Evolution
-                      </div>
-                      <div className="text-slate-600">
-                        Adapt to changing data structures seamlessly
-                      </div>
-                    </div>
-                  </li>
-                </ul>
               </motion.div>
             </div>
           </div>
         </section>
 
         {/* AI & ML Section */}
-        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className=" mb-8"
-            >
-              <div className="inline-block px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-medium mb-6">
-                AI & Machine Learning
-              </div>
-              <h2 className="text-[2.375rem]/9 md:text-5xl font-bold text-slate-900 mb-6">
-                Production-Ready ML Platform
-              </h2>
-              <p className="text-md text-slate-600 max-w-3xl mx-auto">
-                Train, deploy, and monitor machine learning models with
-                integrated MLOps capabilities.
-              </p>
-            </motion.div>
+        <section className="relative overflow-hidden bg-white py-28">
+          {/* Background */}
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="absolute inset-0 opacity-[0.04]">
+            <div
+              className="absolute inset-0"
+              style={{
+                backgroundImage: `
+              linear-gradient(to right,#06b6d4 1px,transparent 1px),
+              linear-gradient(to bottom,#06b6d4 1px,transparent 1px)
+            `,
+                backgroundSize: "80px 80px",
+              }}
+            />
+          </div>
+
+          <div className="absolute left-1/3 top-32 h-[450px] w-[450px] rounded-full bg-cyan-400/10 blur-[180px]" />
+
+          <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="grid items-center gap-20 lg:grid-cols-2">
+              {/* LEFT CONTENT */}
+
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, x: -40 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="bg-white rounded-xl p-8 border border-gray-200"
+                transition={{ duration: 0.7 }}
               >
-                <div className="text-4xl font-bold text-cyan-500 mb-2">01</div>
+                <div className="inline-flex rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">
+                  Developer Experience
+                </div>
 
-                <h3 className="text-xl font-bold text-slate-900 mb-4">
-                  Model Training
-                </h3>
-                <p className="text-slate-600">
-                  Distributed training with GPU acceleration and automatic
-                  hyperparameter tuning.
+                <h2 className="mt-6 text-4xl font-bold leading-tight text-slate-900 lg:text-5xl">
+                  Built for Developers.
+                  <br />
+                  <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
+                    Ready for Enterprise.
+                  </span>
+                </h2>
+
+                <p className="mt-6 text-lg leading-8 text-slate-600">
+                  From local development to enterprise deployment, Seg Forge
+                  provides everything engineering teams need to automate,
+                  integrate, and operate modern data platforms with confidence.
                 </p>
+
+                {/* Features */}
+
+                <div className="mt-10 grid gap-6">
+                  {developerFeatures.map((feature) => (
+                    <div key={feature.title} className="flex items-start gap-5">
+                      <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-cyan-50">
+                        <feature.icon className="h-7 w-7 text-cyan-600" />
+                      </div>
+
+                      <div>
+                        <h3 className="text-lg font-semibold text-slate-900">
+                          {feature.title}
+                        </h3>
+
+                        <p className="mt-2 leading-7 text-slate-600">
+                          {feature.description}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Terminal Preview */}
+
+                <div className="mt-12 overflow-hidden rounded-2xl border border-slate-200 bg-slate-950 shadow-xl">
+                  <div className="flex items-center gap-2 border-b border-slate-800 px-5 py-3">
+                    <div className="h-3 w-3 rounded-full bg-red-500" />
+                    <div className="h-3 w-3 rounded-full bg-yellow-500" />
+                    <div className="h-3 w-3 rounded-full bg-green-500" />
+                  </div>
+
+                  <div className="space-y-4 p-6 font-mono text-sm">
+                    <div>
+                      <span className="text-cyan-400">$</span>{" "}
+                      <span className="text-white">docker compose up -d</span>
+                    </div>
+
+                    <div className="text-green-400">
+                      ✔ Seg Forge Platform Running
+                    </div>
+
+                    <div className="text-cyan-300">
+                      ✔ Start Building Pipelines
+                    </div>
+                  </div>
+                </div>
               </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className="bg-white rounded-xl p-8 border border-gray-200"
-              >
-                <div className="text-4xl font-bold text-cyan-500 mb-2">02</div>
-                <h3 className="text-xl font-bold text-slate-900 mb-4">
-                  Model Registry
-                </h3>
-                <p className="text-slate-600">
-                  Version control, lineage tracking, and model governance in a
-                  centralized registry.
-                </p>
-              </motion.div>
+              {/* RIGHT IMAGE */}
 
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, x: 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="bg-white rounded-xl p-8 border border-gray-200"
+                transition={{ duration: 0.7 }}
               >
-                <div className="text-4xl font-bold text-cyan-500 mb-2">03</div>
-                <h3 className="text-xl font-bold text-slate-900 mb-4">
-                  Model Serving
-                </h3>
-                <p className="text-slate-600">
-                  Real-time and batch inference with auto-scaling and A/B
-                  testing capabilities.
-                </p>
+                <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
+                  <img
+                    src="/images/developer-experience.webp"
+                    alt="Developer Experience"
+                    className="w-full"
+                  />
+                </div>
               </motion.div>
             </div>
           </div>
         </section>
 
         {/* Infrastructure Section */}
-        <section className="py-24 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className=" mb-16"
-            >
-              <div className="inline-block px-4 py-2 bg-green-50 text-green-700 rounded-full text-sm font-medium mb-6">
-                Enterprise Infrastructure
-              </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-                Deploy Anywhere
-              </h2>
-              <p className="text-md text-slate-600 max-w-3xl mx-auto">
-                Kubernetes-native platform with multi-cloud and hybrid
-                deployment options.
-              </p>
-            </motion.div>
+        <section className="relative overflow-hidden bg-gradient-to-b from-gray-50 to-white py-28">
+          {/* Background */}
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                { title: "Kubernetes", desc: "Cloud-native orchestration" },
-                { title: "Multi-Cloud", desc: "AWS, Azure, GCP support" },
-                { title: "Hybrid", desc: "On-premise + cloud" },
-                { title: "99.99% SLA", desc: "High availability" },
-              ].map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-white border border-gray-200 rounded-xl p-6 text-center"
-                >
-                  <h3 className="text-lg font-bold text-slate-900 mb-2">
-                    {item.title}
+          <motion.div
+            animate={{
+              backgroundPosition: ["0px 0px", "120px 120px"],
+            }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+            className="absolute inset-0 opacity-[0.04]"
+            style={{
+              backgroundImage: `
+            linear-gradient(to right,#06b6d4 1px,transparent 1px),
+            linear-gradient(to bottom,#06b6d4 1px,transparent 1px)
+          `,
+              backgroundSize: "80px 80px",
+            }}
+          />
+
+          <div className="absolute left-0 top-1/3 h-[500px] w-[500px] rounded-full bg-cyan-400/10 blur-[180px]" />
+
+          <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="grid items-center gap-20 lg:grid-cols-2">
+              {/* LEFT IMAGE */}
+
+              <motion.div
+                initial={{ opacity: 0, x: -40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+              >
+                <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
+                  <img
+                    src="/images/open-standards.webp"
+                    alt="Open Standards Architecture"
+                    className="w-full"
+                  />
+                </div>
+              </motion.div>
+
+              {/* RIGHT CONTENT */}
+
+              <motion.div
+                initial={{ opacity: 0, x: 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+              >
+                {/* Badge */}
+
+                <div className="inline-flex items-center rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">
+                  Open Standards
+                </div>
+
+                {/* Heading */}
+
+                <h2 className="mt-6 text-4xl font-bold leading-tight text-slate-900 lg:text-5xl">
+                  Built on Open Standards.
+                  <br />
+                  <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
+                    Free from Vendor Lock-In.
+                  </span>
+                </h2>
+
+                {/* Description */}
+
+                <p className="mt-6 text-lg leading-8 text-slate-600">
+                  Your infrastructure. Your data. Your ownership.
+                </p>
+
+                <p className="mt-4 leading-8 text-slate-600">
+                  Seg Forge is built on the industry's most trusted open-source
+                  technologies, allowing you to deploy anywhere while keeping
+                  complete control over your data. Your tables remain in your
+                  own Amazon S3 or MinIO storage, your metadata stays under your
+                  control, and your pipelines are built on open formats that
+                  evolve with your business—not your vendor.
+                </p>
+
+                {/* Technology Cards */}
+
+                <div className="mt-10 grid gap-4">
+                  {technologies.map((tech) => (
+                    <motion.div
+                      key={tech.title}
+                      whileHover={{ y: -3 }}
+                      className="flex items-center gap-5 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:border-cyan-200 hover:shadow-lg"
+                    >
+                      <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-cyan-50">
+                        <tech.icon className="h-7 w-7 text-cyan-600" />
+                      </div>
+
+                      <div>
+                        <h3 className="text-lg font-semibold text-slate-900">
+                          {tech.title}
+                        </h3>
+
+                        <p className="mt-1 text-sm text-slate-600">
+                          {tech.subtitle}
+                        </p>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+                {/* Platform Benefits */}
+
+                <div className="mt-10 rounded-3xl border border-cyan-100 bg-gradient-to-r from-cyan-50 to-white p-6">
+                  <h3 className="text-lg font-semibold text-slate-900">
+                    Platform Benefits
                   </h3>
-                  <p className="text-slate-600 text-sm">{item.desc}</p>
-                </motion.div>
-              ))}
+
+                  <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                    {benefits.map((benefit) => (
+                      <div key={benefit} className="flex items-center gap-3">
+                        <CheckCircle2 className="h-5 w-5 shrink-0 text-cyan-500" />
+
+                        <span className="text-sm font-medium text-slate-700">
+                          {benefit}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Trust Statement */}
+
+                <div className="mt-10 overflow-hidden rounded-3xl border border-cyan-100 bg-gradient-to-r from-cyan-500 to-blue-600 p-[1px] shadow-xl">
+                  <div className="rounded-[22px] bg-white p-8">
+                    <div className="flex items-start gap-4">
+                      <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-cyan-50">
+                        <ShieldCheck className="h-7 w-7 text-cyan-600" />
+                      </div>
+
+                      <div>
+                        <h3 className="text-xl font-semibold text-slate-900">
+                          Your Infrastructure. Your Data.
+                        </h3>
+
+                        <p className="mt-4 leading-8 text-slate-600">
+                          Your tables live in your own Amazon S3 or MinIO
+                          buckets using open formats. You retain complete
+                          ownership of your infrastructure, metadata, and data
+                          while Seg Forge provides the intelligence to build,
+                          orchestrate, and operate your modern data platform.
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Trust Badges */}
+
+                    <div className="mt-8 grid gap-4 sm:grid-cols-3">
+                      <div className="flex items-center gap-3 rounded-2xl border border-slate-200 p-4">
+                        <Cloud className="h-6 w-6 text-cyan-600" />
+
+                        <div>
+                          <p className="font-semibold text-slate-900">
+                            Cloud Agnostic
+                          </p>
+
+                          <p className="text-sm text-slate-500">
+                            Deploy Anywhere
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="flex items-center gap-3 rounded-2xl border border-slate-200 p-4">
+                        <LockOpen className="h-6 w-6 text-cyan-600" />
+
+                        <div>
+                          <p className="font-semibold text-slate-900">
+                            No Vendor Lock-In
+                          </p>
+
+                          <p className="text-sm text-slate-500">
+                            Open Standards
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="flex items-center gap-3 rounded-2xl border border-slate-200 p-4">
+                        <Database className="h-6 w-6 text-cyan-600" />
+
+                        <div>
+                          <p className="font-semibold text-slate-900">
+                            Customer Owned
+                          </p>
+
+                          <p className="text-sm text-slate-500">
+                            Data & Infrastructure
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
             </div>
           </div>
         </section>

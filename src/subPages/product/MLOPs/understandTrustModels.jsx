@@ -1,149 +1,197 @@
 import React from "react";
 import { motion } from "framer-motion";
 import {
-  Brain,
-  BarChart3,
-  PieChart,
-  TrendingUp,
+  Activity,
+  Server,
+  Clock3,
+  Gauge,
+  CalendarClock,
+  Database,
+  Boxes,
+  History,
   CheckCircle2,
 } from "lucide-react";
+import ModelDeploy from "../../../assets/Products/ML&OPs/deployment.png";
 
-const features = [
-  "SHAP Analysis",
-  "Feature Importance",
-  "Confusion Matrix",
-  "ROC & AUC",
-  "RMSE & F1",
+const deploymentModes = [
+  {
+    icon: Activity,
+    title: "Real-Time Inference",
+    items: ["REST APIs", "Low Latency", "Autoscaling", "Live Predictions"],
+  },
+  {
+    icon: Database,
+    title: "Batch Inference",
+    items: [
+      "Historical Processing",
+      "Scheduled Jobs",
+      "Distributed Execution",
+      "Large Dataset Scoring",
+    ],
+  },
 ];
 
-const UnderstandTrustModels = () => {
+const platformFeatures = [
+  {
+    icon: Boxes,
+    title: "Stable Runtime Versions",
+    description:
+      "Deploy reproducible models using versioned enterprise runtime environments.",
+  },
+  {
+    icon: Server,
+    title: "Endpoint Management",
+    description:
+      "Manage inference endpoints, scaling policies, authentication, and monitoring from one dashboard.",
+  },
+  {
+    icon: Gauge,
+    title: "Model Registry Integration",
+    description:
+      "Deploy directly from the Model Registry while preserving lineage and version history.",
+  },
+  {
+    icon: History,
+    title: "Deployment History",
+    description:
+      "Track every deployment, rollback, configuration update, and runtime change.",
+  },
+];
+
+const MLInferenceSection = () => {
   return (
-    <section className="py-32 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
+    <section className="relative overflow-hidden bg-gradient-to-b from-white to-gray-50 py-20">
+      {/* Animated Grid */}
+
+      <motion.div
+        animate={{
+          backgroundPosition: ["0px 0px", "120px 120px"],
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+        className="absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right,#06b6d4 1px,transparent 1px),
+            linear-gradient(to bottom,#06b6d4 1px,transparent 1px)
+          `,
+          backgroundSize: "80px 80px",
+        }}
+      />
+
+      {/* Glow */}
+
+      <div className="absolute right-0 top-32 h-[500px] w-[500px] rounded-full bg-cyan-400/10 blur-[180px]" />
+
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid items-center gap-20 lg:grid-cols-2">
           {/* LEFT CONTENT */}
 
           <motion.div
-            initial={{ opacity: 0, x: -25 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
           >
-            <div className="inline-flex px-4 py-2 rounded-full bg-cyan-50 text-cyan-700 text-sm font-medium mb-6">
-              Model Insights
+            {/* Badge */}
+
+            <div className="inline-flex rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">
+              Model Deployment
             </div>
 
-            <h2 className="text-2xl sm:text-4xl font-bold text-slate-900 leading-tight">
-              Know why your model made a prediction.
+            {/* Heading */}
+
+            <h2 className="mt-6 text-4xl font-bold leading-none text-slate-900 lg:text-4xl">
+              Deploy Models
+              <br />
+              <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
+                Wherever Decisions Happen.
+              </span>
             </h2>
 
-            <p className="mt-6 text-md text-slate-600 leading-relaxed max-w-xl">
-              Go beyond accuracy scores. Understand feature impact, compare
-              model performance, and confidently explain predictions to
-              technical and business teams.
+            {/* Description */}
+
+            <p className="mt-6 text-md leading-6 text-slate-600">
+              Serve predictions in milliseconds through real-time APIs or
+              process billions of records using scheduled batch inference— both
+              from the same validated model.
             </p>
 
-            <div className="mt-10 space-y-4">
-              {features.map((feature) => (
-                <div key={feature} className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-cyan-600" />
+            {/* Deployment Modes */}
 
-                  <span className="text-slate-700">{feature}</span>
+            <div className="mt-10 grid gap-6 md:grid-cols-2">
+              {deploymentModes.map((mode) => (
+                <div
+                  key={mode.title}
+                  className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+                >
+                  <div className="flex items-center gap-3">
+                    <mode.icon className="h-7 w-7 text-cyan-600" />
+
+                    <h3 className="text-xl font-semibold text-slate-900">
+                      {mode.title}
+                    </h3>
+                  </div>
+
+                  <div className="mt-6 space-y-3">
+                    {mode.items.map((item) => (
+                      <div key={item} className="flex items-center gap-3">
+                        <CheckCircle2 className="h-4 w-4 text-cyan-500" />
+
+                        <span className="text-slate-700">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Platform Features */}
+
+            <div className="mt-10 space-y-5">
+              {platformFeatures.map((feature) => (
+                <div
+                  key={feature.title}
+                  className="flex gap-5 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-cyan-200 hover:shadow-lg"
+                >
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-cyan-50">
+                    <feature.icon className="h-7 w-7 text-cyan-600" />
+                  </div>
+
+                  <div>
+                    <h3 className="text-lg font-semibold text-slate-900">
+                      {feature.title}
+                    </h3>
+
+                    <p className="mt-2 leading-7 text-slate-600">
+                      {feature.description}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
           </motion.div>
 
-          {/* RIGHT VISUAL */}
+          {/* RIGHT IMAGE */}
 
           <motion.div
-            initial={{ opacity: 0, x: 25 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="relative"
           >
-            <div className="bg-white border border-slate-200 rounded-[32px] overflow-hidden shadow-[0_30px_80px_rgba(15,23,42,0.08)]">
-              {/* Header */}
+            <div className="absolute inset-0 rounded-[36px] bg-cyan-400/10 blur-3xl" />
 
-              <div className="px-8 py-5 border-b border-slate-200 bg-slate-50 flex justify-between items-center">
-                <div>
-                  <h3 className="font-semibold text-slate-900">
-                    Prediction Insights
-                  </h3>
-
-                  <p className="text-sm text-slate-500">
-                    Understand what drives model decisions
-                  </p>
-                </div>
-
-                <Brain className="w-5 h-5 text-cyan-600" />
-              </div>
-
-              {/* SHAP Style Chart */}
-
-              <div className="p-8">
-                <div className="mb-8">
-                  <div className="flex items-center gap-2 mb-5">
-                    <BarChart3 className="w-4 h-4 text-cyan-600" />
-                    <span className="font-medium text-slate-900">
-                      Feature Importance
-                    </span>
-                  </div>
-
-                  <div className="space-y-4">
-                    {[
-                      { label: "Customer Activity", value: 90 },
-                      { label: "Purchase Frequency", value: 75 },
-                      { label: "Account Age", value: 60 },
-                      { label: "Region", value: 40 },
-                      { label: "Support Tickets", value: 25 },
-                    ].map((item) => (
-                      <div key={item.label}>
-                        <div className="flex justify-between text-sm mb-2">
-                          <span className="text-slate-700">{item.label}</span>
-
-                          <span className="text-slate-500">{item.value}%</span>
-                        </div>
-
-                        <div className="h-3 rounded-full bg-slate-100 overflow-hidden">
-                          <div
-                            className="h-full rounded-full bg-cyan-500"
-                            style={{
-                              width: `${item.value}%`,
-                            }}
-                          />
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Bottom Metrics */}
-
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="rounded-2xl border border-slate-200 p-5">
-                    <div className="flex items-center gap-2 mb-3">
-                      <PieChart className="w-4 h-4 text-cyan-600" />
-                      <span className="text-sm font-medium text-slate-900">
-                        ROC AUC
-                      </span>
-                    </div>
-
-                    <div className="text-3xl font-bold text-slate-900">
-                      0.97
-                    </div>
-                  </div>
-
-                  <div className="rounded-2xl border border-slate-200 p-5">
-                    <div className="flex items-center gap-2 mb-3">
-                      <TrendingUp className="w-4 h-4 text-cyan-600" />
-                      <span className="text-sm font-medium text-slate-900">
-                        F1 Score
-                      </span>
-                    </div>
-
-                    <div className="text-3xl font-bold text-slate-900">94%</div>
-                  </div>
-                </div>
-              </div>
+            <div className="overflow-hidden  border border-slate-200 bg-white shadow-2xl">
+              <img
+                src={ModelDeploy}
+                alt="Real-Time & Batch Inference"
+                className="w-full"
+              />
             </div>
           </motion.div>
         </div>
@@ -152,4 +200,4 @@ const UnderstandTrustModels = () => {
   );
 };
 
-export default UnderstandTrustModels;
+export default MLInferenceSection;

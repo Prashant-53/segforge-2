@@ -103,15 +103,14 @@ const NAV_ITEMS = [
 
         links: [
           {
-            name: "Data Lineage",
-            icon: Layers3,
-            path: "/product/data-lineage",
-          },
-
-          {
             name: "Access Control",
             icon: ShieldCheck,
             path: "/product/access-control",
+          },
+          {
+            name: "Lakehouse Governance",
+            icon: Layers3,
+            path: "/product/lakehouse-governance",
           },
 
           {

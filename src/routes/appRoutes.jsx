@@ -3,21 +3,21 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "../pages/homePage";
 import WhySegforge from "../pages/whySegforge";
 import Product from "../pages/product";
-import ETLStudio from "../subPages/product/ETL-Studio";
-import WorkflowEngine from "../subPages/product/workFlowEngine";
-import NoteBooks from "../pages/noteBooks";
-import DataCatalog from "../pages/dataCatalog";
-import MLOPs from "../pages/MLOPs";
-import DataLakeHouse from "../pages/dataLakeHouse";
-import RealTimeCDC from "../pages/realTimeCDC";
-import Analytics from "../pages/analytics";
-import DataLineage from "../pages/dataLineage";
-import AccessControl from "../pages/accessControl";
-import Compliance from "../pages/compliance";
-import Observability from "../pages/observability";
-import SelfHosted from "../pages/selfhosted";
-import MultiCloud from "../pages/multiCloud";
-import HybridInfrastructure from "../pages/hybridInfrastructure";
+import ETLStudio from "../pages/Product-pages/etlStudio";
+// import WorkflowEngine from "../pages/Product-pages/workflowEngine";
+import NoteBooks from "../pages/Product-pages/noteBooks";
+import DataCatalog from "../pages/Product-pages/dataCatalog";
+import MLOPs from "../pages/Product-pages/MLOPs";
+import DataLakeHouse from "../pages/Product-pages/dataLakeHouse";
+import RealTimeCDC from "../pages/Product-pages/realTimeCDC";
+import Analytics from "../pages/Product-pages/analytics";
+import LakehouseGovernance from "../pages/Product-pages/lakehouseGovernance";
+import AccessControl from "../pages/Product-pages/accessControl";
+import Compliance from "../pages/Product-pages/compliance";
+import Observability from "../pages/Product-pages/observability";
+import SelfHosted from "../pages/Product-pages/selfhosted";
+import MultiCloud from "../pages/Product-pages/multiCloud";
+import HybridInfrastructure from "../pages/Product-pages/hybridInfrastructure";
 import FinancialServices from "../pages/Solutions-pages/financialServices";
 import HealthCare from "../pages/Solutions-pages/healthCare";
 import Retail from "../pages/Solutions-pages/retail";
@@ -38,6 +38,7 @@ import SDKs from "../pages/Developers/SDKs";
 import CLI from "../pages/Developers/CLI";
 import Integrations from "../pages/Developers/Integrations";
 import ContactSales from "../pages/contact";
+import PrivacyPolicy from "../pages/Legal/privacy-Policy";
 function AppRoutes() {
   return (
     <BrowserRouter>
@@ -47,14 +48,17 @@ function AppRoutes() {
 
         <Route path="/why-segforge" element={<WhySegforge />} />
         <Route path="/product/ETL-Studio" element={<ETLStudio />} />
-        <Route path="/product/workflow-engine" element={<WorkflowEngine />} />
+        {/* <Route path="/product/workflow-engine" element={<WorkflowEngine />} /> */}
         <Route path="/product/notebooks" element={<NoteBooks />} />
         <Route path="/product/data-Catalog" element={<DataCatalog />} />
         <Route path="/product/ml-ops" element={<MLOPs />} />
         <Route path="/product/data-lakehouse" element={<DataLakeHouse />} />
         <Route path="/product/real-time-cdc" element={<RealTimeCDC />} />
         <Route path="/product/analytics" element={<Analytics />} />
-        <Route path="/product/data-lineage" element={<DataLineage />} />
+        <Route
+          path="/product/lakehouse-governance"
+          element={<LakehouseGovernance />}
+        />
         <Route path="/product/access-control" element={<AccessControl />} />
         <Route path="/product/compliance" element={<Compliance />} />
         <Route path="/product/observability" element={<Observability />} />
@@ -107,6 +111,7 @@ function AppRoutes() {
         <Route path="/developers/cli" element={<CLI />} />
         <Route path="/developers/integrations" element={<Integrations />} />
         <Route path="/contact" element={<ContactSales />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
       </Routes>
     </BrowserRouter>
   );

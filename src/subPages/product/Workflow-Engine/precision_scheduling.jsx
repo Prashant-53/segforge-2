@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { CalendarClock, PlayCircle, Bell, Workflow } from "lucide-react";
 
-import SchedulingVisual from "../../assets/workflow/scheduling.png";
+import Hero from "../../../assets/Products/WorkflowEngine/etlhero.jpg";
 
 const stats = [
   {
@@ -129,7 +129,7 @@ const PrecisionScheduling = () => {
           >
             <div className="bg-white border border-slate-200 rounded-[32px] overflow-hidden shadow-[0_30px_80px_rgba(15,23,42,0.08)]">
               <img
-                src={SchedulingVisual}
+                src={Hero}
                 alt="Workflow Scheduling"
                 className="w-full object-cover"
               />

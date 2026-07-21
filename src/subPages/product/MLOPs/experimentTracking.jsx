@@ -1,118 +1,155 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FlaskConical, Brain, BarChart3, Trophy } from "lucide-react";
+import {
+  BrainCircuit,
+  Cpu,
+  History,
+  SlidersHorizontal,
+  BarChart3,
+  GitCompare,
+  CheckCircle2,
+} from "lucide-react";
+import ModelTrain from "../../../assets/Products/ML&OPs/ModelTrain.png";
 
-const features = [
-  "MLflow Integration",
-  "XGBoost",
-  "Random Forest",
-  "Neural Networks",
-  "Hyperparameter Tuning",
+const trainingFeatures = [
+  {
+    icon: Cpu,
+    title: "Distributed Training",
+    description:
+      "Scale training across multiple compute nodes for faster model development.",
+  },
+  {
+    icon: SlidersHorizontal,
+    title: "Hyperparameter Configuration",
+    description:
+      "Configure and tune model parameters through an intuitive enterprise interface.",
+  },
+  {
+    icon: History,
+    title: "Experiment History",
+    description:
+      "Every training run is automatically versioned with complete execution history.",
+  },
+  {
+    icon: BarChart3,
+    title: "Metrics Tracking",
+    description:
+      "Monitor accuracy, precision, recall, loss curves, and training performance in real time.",
+  },
+  {
+    icon: GitCompare,
+    title: "Model Comparison",
+    description:
+      "Compare multiple experiments side-by-side to identify the highest-performing model.",
+  },
+  {
+    icon: BrainCircuit,
+    title: "Reproducible Runs",
+    description:
+      "Recreate any experiment instantly using stored configurations, datasets, and parameters.",
+  },
 ];
 
-const ExperimentTracking = () => {
+const ModelTrainingSection = () => {
   return (
-    <section className="py-32 bg-slate-50 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
-          {/* LEFT */}
+    <section className="relative overflow-hidden bg-gradient-to-b from-white to-gray-50 py-20">
+      {/* Animated Grid */}
+
+      <motion.div
+        animate={{
+          backgroundPosition: ["0px 0px", "120px 120px"],
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+        className="absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right,#06b6d4 1px,transparent 1px),
+            linear-gradient(to bottom,#06b6d4 1px,transparent 1px)
+          `,
+          backgroundSize: "80px 80px",
+        }}
+      />
+
+      <div className="absolute left-0 top-32 h-[500px] w-[500px] rounded-full bg-cyan-400/10 blur-[180px]" />
+
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid items-center gap-20 lg:grid-cols-2">
+          {/* IMAGE */}
 
           <motion.div
-            initial={{ opacity: 0, x: -25 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
           >
-            <div className="inline-flex px-4 py-2 rounded-full bg-cyan-50 text-cyan-700 text-sm font-medium mb-6">
-              Experiment Tracking
-            </div>
-
-            <h2 className="text-2xl sm:text-4xl font-bold text-slate-900 leading-tight">
-              Keep every experiment organized and reproducible.
-            </h2>
-
-            <p className="mt-6 text-md text-slate-600 leading-relaxed max-w-xl">
-              Track parameters, metrics, artifacts, and model versions from a
-              single workspace. Compare runs, evaluate performance, and quickly
-              identify your best model.
-            </p>
-
-            <div className="mt-10 space-y-4">
-              {features.map((feature) => (
-                <div key={feature} className="flex items-center gap-3">
-                  <div className="w-2 h-2 rounded-full bg-cyan-500" />
-
-                  <span className="text-slate-700">{feature}</span>
-                </div>
-              ))}
+            <div className="overflow-hidden border border-slate-200 bg-white shadow-2xl">
+              <img
+                src={ModelTrain}
+                alt="Model Training Dashboard"
+                className="w-full"
+              />
             </div>
           </motion.div>
 
-          {/* RIGHT */}
+          {/* CONTENT */}
 
           <motion.div
-            initial={{ opacity: 0, x: 25 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
           >
-            <div className="bg-white border border-slate-200 rounded-[32px] overflow-hidden shadow-[0_30px_80px_rgba(15,23,42,0.08)]">
-              {/* Header */}
+            {/* Badge */}
 
-              <div className="px-8 py-5 border-b border-slate-200 bg-slate-50 flex justify-between items-center">
-                <div>
-                  <h3 className="font-semibold text-slate-900">
-                    Experiment Dashboard
-                  </h3>
+            <div className="inline-flex rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">
+              Model Training
+            </div>
 
-                  <p className="text-sm text-slate-500">
-                    Compare runs in real time
-                  </p>
-                </div>
+            {/* Heading */}
 
-                <FlaskConical className="w-5 h-5 text-cyan-600" />
-              </div>
+            <h2 className="mt-6 text-4xl font-bold leading-none text-slate-900 lg:text-4xl">
+              Train Smarter.
+              <br />
+              <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
+                Compare Faster. Deploy Better.
+              </span>
+            </h2>
 
-              {/* Runs */}
+            {/* Description */}
 
-              <div className="p-8 space-y-5">
-                <ExperimentRun
-                  name="Run #124"
-                  model="Random Forest"
-                  score="96.8%"
-                />
+            <p className="mt-6 text-md leading-6 text-slate-600">
+              Launch distributed training jobs, configure hyperparameters,
+              compare experiments, and reproduce every model with complete
+              execution history from a single enterprise MLOps platform.
+            </p>
 
-                <ExperimentRun name="Run #125" model="XGBoost" score="95.4%" />
+            {/* Features */}
 
-                <ExperimentRun
-                  name="Run #126"
-                  model="Neural Network"
-                  score="97.3%"
-                  winner
-                />
-              </div>
-
-              {/* Metrics */}
-
-              <div className="px-8 pb-8">
-                <div className="border border-slate-200 rounded-2xl p-6">
-                  <div className="flex items-center gap-2 mb-5">
-                    <BarChart3 className="w-4 h-4 text-cyan-600" />
-
-                    <span className="font-medium text-slate-900">
-                      Performance Trend
-                    </span>
+            <div className="mt-10 space-y-5">
+              {trainingFeatures.map((feature) => (
+                <div
+                  key={feature.title}
+                  className="flex gap-5 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-cyan-200 hover:shadow-lg"
+                >
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-cyan-50">
+                    <feature.icon className="h-7 w-7 text-cyan-600" />
                   </div>
 
-                  <div className="flex items-end gap-3 h-32">
-                    {[45, 70, 85, 60, 95, 80].map((h, i) => (
-                      <div
-                        key={i}
-                        className="flex-1 bg-cyan-100 rounded-t-xl"
-                        style={{ height: `${h}%` }}
-                      />
-                    ))}
+                  <div>
+                    <h3 className="text-lg font-semibold text-slate-900">
+                      {feature.title}
+                    </h3>
+
+                    <p className="mt-2 leading-7 text-slate-600">
+                      {feature.description}
+                    </p>
                   </div>
                 </div>
-              </div>
+              ))}
             </div>
           </motion.div>
         </div>
@@ -121,26 +158,4 @@ const ExperimentTracking = () => {
   );
 };
 
-const ExperimentRun = ({ name, model, score, winner }) => {
-  return (
-    <div
-      className={`p-5 rounded-2xl border flex justify-between items-center ${
-        winner ? "border-cyan-200 bg-cyan-50" : "border-slate-200"
-      }`}
-    >
-      <div>
-        <h4 className="font-semibold text-slate-900">{name}</h4>
-
-        <p className="text-sm text-slate-500">{model}</p>
-      </div>
-
-      <div className="flex items-center gap-3">
-        {winner && <Trophy className="w-4 h-4 text-cyan-600" />}
-
-        <span className="font-semibold text-slate-900">{score}</span>
-      </div>
-    </div>
-  );
-};
-
-export default ExperimentTracking;
+export default ModelTrainingSection;

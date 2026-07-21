@@ -2,132 +2,146 @@ import React from "react";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
-  Play,
+  BookOpen,
+  GitBranch,
+  Network,
+  Search,
   ShieldCheck,
-  Lock,
-  Users,
-  Database,
+  Sparkles,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
-const SecurityHero = () => {
+const DataLineageHero = () => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-gray-50 to-white pt-32 pb-24">
-      {/* Background */}
+    <section className="relative overflow-hidden bg-gradient-to-b from-gray-50 via-white to-white pt-36 pb-24">
+      {/* Animated Grid */}
 
-      <div className="absolute inset-0 bg-grid opacity-[0.03]" />
+      <motion.div
+        animate={{
+          backgroundPosition: ["0px 0px", "120px 120px"],
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+        className="absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right,#06b6d4 1px,transparent 1px),
+            linear-gradient(to bottom,#06b6d4 1px,transparent 1px)
+          `,
+          backgroundSize: "80px 80px",
+        }}
+      />
 
-      <div className="absolute top-0 right-0 w-[700px] h-[500px] bg-cyan-500/10 blur-[120px] rounded-full" />
+      {/* Glow */}
 
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
-          {/* LEFT */}
+      <div className="absolute left-1/2 top-20 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-cyan-400/10 blur-[180px]" />
+
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid items-center gap-20 lg:grid-cols-2">
+          {/* LEFT CONTENT */}
 
           <motion.div
-            initial={{ opacity: 0, x: -25 }}
+            initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-50 text-cyan-700 text-sm font-medium mb-6">
-              <ShieldCheck className="w-4 h-4" />
-              Security & Access Control
+            {/* Badge */}
+
+            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">
+              <Sparkles className="h-4 w-4" />
+              Data Lineage
             </div>
 
-            <h1 className="text-[2.375rem] lg:text-6xl md:text-5xl font-bold tracking-tight text-slate-900 leading-[1.05]">
-              Enterprise security
+            {/* Heading */}
+
+            <h1 className="mt-8 text-4xl font-bold leading-none text-slate-900 lg:text-5xl">
+              Trace Every Byte
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">
-                without slowing teams down.
+              <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
+                from Source to Insight.
               </span>
             </h1>
 
-            <p className="mt-8 text-md text-slate-600 leading-relaxed max-w-xl">
-              Give every team a secure environment to build, analyze, and
-              collaborate.
+            {/* Description */}
+
+            <p className="mt-8 max-w-2xl text-md leading-6 text-slate-600">
+              Understand exactly where your data originated, how it was
+              transformed, and where it is consumed. Seg Forge automatically
+              builds end-to-end lineage across ingestion, ETL, notebooks,
+              machine learning, analytics, and governance—down to the individual
+              column.
             </p>
 
-            <p className="mt-4 text-md text-slate-600 leading-relaxed max-w-xl">
-              From workspace isolation and role-based permissions to enterprise
-              authentication and encrypted credentials, SegForge keeps your data
-              protected at every layer.
-            </p>
+            {/* Buttons */}
 
-            <div className="mt-10 flex flex-col sm:flex-row gap-4">
-              <button className="w-full sm:w-auto px-6 py-4 bg-slate-900 text-white rounded-xl hover:bg-slate-800 transition flex items-center gap-2 font-medium">
-                Manage Permissions
-                <ArrowRight className="w-4 h-4" />
-              </button>
+            <div className="mt-12 flex flex-wrap gap-4">
+              <Link
+                to="/contact"
+                className="group relative inline-flex items-center justify-center overflow-hidden rounded-md border border-cyan-500 px-7 py-3 font-semibold text-slate-900 transition-colors duration-300 hover:text-white"
+              >
+                <span className="absolute inset-y-0 left-0 w-0 bg-[#18D0BB] transition-all duration-300 ease-out group-hover:w-full"></span>
 
-              <button className="w-full sm:w-auto px-6 py-4 border border-slate-300 text-slate-700 rounded-xl hover:bg-slate-50 transition flex items-center gap-2 font-medium">
-                <Play className="w-4 h-4" />
-                Read Security Overview
-              </button>
+                <span className="relative z-10 flex items-center gap-2">
+                  Explore Data Lineage
+                  <ArrowRight className="h-4 w-4" />
+                </span>
+              </Link>
+
+              <Link
+                to="/documentation"
+                className="group inline-flex items-center gap-2 rounded-md border border-slate-300 bg-white px-7 py-3 font-semibold text-slate-700 transition hover:border-cyan-400 hover:text-cyan-600"
+              >
+                <BookOpen className="h-4 w-4" />
+                View Documentation
+              </Link>
             </div>
           </motion.div>
 
-          {/* RIGHT VISUAL */}
+          {/* RIGHT IMAGE */}
 
           <motion.div
-            initial={{ opacity: 0, x: 25 }}
+            initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
+            className="relative"
           >
-            <div className="bg-white border border-slate-200 rounded-[32px] p-5 sm:p-10 shadow-[0_30px_80px_rgba(15,23,42,0.08)]">
-              {/* Workspaces */}
+            {/* Glow */}
 
-              <div className="grid grid-cols-3 gap-4">
-                <WorkspaceCard title="Workspace A" />
+            <div className="absolute inset-0 rounded-[36px] bg-cyan-400/10 blur-3xl" />
 
-                <WorkspaceCard title="Workspace B" />
+            {/* Product Screenshot */}
 
-                <WorkspaceCard title="Workspace C" />
-              </div>
+            <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
+              <img
+                src="/images/data-lineage-hero.webp"
+                alt="Seg Forge Data Lineage"
+                className="w-full"
+              />
+            </div>
 
-              {/* Connector */}
+            {/* Floating Card */}
 
-              <div className="flex justify-center py-6">
-                <div className="w-px h-10 bg-cyan-300" />
-              </div>
+            <div className="absolute -left-6 top-10 hidden rounded-2xl border border-cyan-200 bg-white px-5 py-4 shadow-xl lg:block">
+              <p className="text-sm font-semibold text-slate-900">
+                OpenLineage
+              </p>
 
-              {/* Security Layer */}
+              <p className="mt-1 text-xs text-slate-500">End-to-End Tracking</p>
+            </div>
 
-              <div className="flex justify-center">
-                <div className="w-full max-w-[340px] rounded-3xl bg-gradient-to-br from-cyan-50 to-blue-50 border border-cyan-200 p-8 text-center">
-                  <ShieldCheck className="w-10 h-10 text-cyan-600 mx-auto mb-4" />
+            {/* Floating Card */}
 
-                  <h3 className="font-semibold text-slate-900 text-lg">
-                    Access Control Layer
-                  </h3>
+            <div className="absolute -right-6 bottom-10 hidden rounded-2xl border border-cyan-200 bg-white px-5 py-4 shadow-xl lg:block">
+              <p className="text-sm font-semibold text-slate-900">
+                Column Lineage
+              </p>
 
-                  <p className="text-sm text-slate-500 mt-2">
-                    Authentication, RBAC, Workspace Isolation
-                  </p>
-                </div>
-              </div>
-
-              {/* Connector */}
-
-              <div className="flex justify-center py-6">
-                <div className="w-px h-10 bg-cyan-300" />
-              </div>
-
-              {/* Resources */}
-
-              <div className="grid grid-cols-3 gap-4">
-                <ResourceCard icon={Database} title="Data" />
-
-                <ResourceCard icon={Users} title="Projects" />
-
-                <ResourceCard icon={Lock} title="Secrets" />
-              </div>
-
-              {/* Status */}
-
-              <div className="mt-8 flex justify-center">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-50 text-green-700 text-sm font-medium">
-                  <ShieldCheck className="w-4 h-4" />
-                  Protected Resources
-                </div>
-              </div>
+              <p className="mt-1 text-xs text-slate-500">
+                Full Impact Analysis
+              </p>
             </div>
           </motion.div>
         </div>
@@ -136,20 +150,4 @@ const SecurityHero = () => {
   );
 };
 
-const WorkspaceCard = ({ title }) => (
-  <div className="border border-slate-200 rounded-2xl p-4 bg-slate-50 text-center">
-    <Users className="w-5 h-5 text-cyan-600 mx-auto mb-2" />
-
-    <h4 className="text-sm font-medium text-slate-900">{title}</h4>
-  </div>
-);
-
-const ResourceCard = ({ icon: Icon, title }) => (
-  <div className="border border-slate-200 rounded-2xl p-5 text-center bg-white">
-    <Icon className="w-6 h-6 text-cyan-600 mx-auto mb-3" />
-
-    <h4 className="font-medium text-slate-900">{title}</h4>
-  </div>
-);
-
-export default SecurityHero;
+export default DataLineageHero;

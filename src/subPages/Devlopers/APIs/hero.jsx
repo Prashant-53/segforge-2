@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Code2 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const APIsHero = () => {
   return (
@@ -68,8 +69,8 @@ const APIsHero = () => {
               APIs
             </div>
 
-            <h1 className="text-5xl lg:text-6xl font-bold text-slate-900 leading-[1.05]">
-              Programmatic control for
+            <h1 className="text-5xl lg:text-5xl font-bold text-slate-900 leading-[1.05]">
+              Programmatically control
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">
                 your entire data platform.
@@ -80,26 +81,26 @@ const APIsHero = () => {
               Integrate pipelines, CDC streams, catalogs, notebooks, and
               monitoring directly into your applications and workflows.
             </p>
+            <div className="mt-12 flex flex-wrap gap-4">
+              <Link
+                to="/resources/api-reference"
+                className="group relative inline-flex items-center justify-center overflow-hidden rounded-md border border-cyan-500 px-7 py-3 font-semibold text-slate-900 transition-colors duration-300 hover:text-white"
+              >
+                <span className="absolute inset-y-0 left-0 w-0 bg-[#18D0BB] transition-all duration-300 ease-out group-hover:w-full"></span>
 
-            <div className="mt-10 flex flex-col sm:flex-row gap-5">
-              {/* Primary Button */}
-
-              <button className="group relative overflow-hidden rounded-2xl bg-slate-900 px-8 py-4 font-medium text-white">
-                <span className="absolute inset-0 bg-cyan-500 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500" />
-
-                <span className="relative flex items-center gap-2">
+                <span className="relative z-10 flex items-center gap-2">
                   Explore API Reference
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="h-4 w-4" />
                 </span>
-              </button>
+              </Link>
 
-              {/* Secondary */}
-
-              <button className="group relative overflow-hidden rounded-2xl border border-slate-300 bg-white px-8 py-4 font-medium text-slate-700 hover:border-cyan-300 transition">
-                <span className="absolute inset-0 bg-cyan-50 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500" />
-
-                <span className="relative">View SDKs</span>
-              </button>
+              <Link
+                to="/developers/sdks"
+                className="group inline-flex items-center gap-2 rounded-md border border-slate-300 bg-white px-7 py-3 font-semibold text-slate-700 transition hover:border-cyan-400 hover:text-cyan-600"
+              >
+                <Code2 className="h-4 w-4" />
+                View SDKs
+              </Link>
             </div>
           </motion.div>
 

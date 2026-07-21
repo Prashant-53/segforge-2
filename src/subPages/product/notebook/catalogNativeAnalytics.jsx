@@ -2,115 +2,154 @@ import React from "react";
 import { motion } from "framer-motion";
 import {
   Database,
-  GitBranch,
-  Layers3,
-  ShieldCheck,
-  FolderTree,
+  Search,
+  Wand2,
+  Table2,
+  BarChart3,
+  Download,
+  CheckCircle2,
 } from "lucide-react";
 
-const FEATURES = [
-  {
-    icon: Database,
-    title: "Apache Iceberg",
-    description:
-      "Analyze data directly on open Iceberg tables without proprietary lock-in.",
-  },
-  {
-    icon: GitBranch,
-    title: "Nessie Catalog",
-    description:
-      "Branch, version, and manage enterprise data with Git-like operations.",
-  },
-  {
-    icon: Layers3,
-    title: "Unified Metadata",
-    description:
-      "Discover datasets, schemas, ownership, and lineage from a single catalog.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Versioned Data Access",
-    description:
-      "Reproduce experiments and queries using historical table versions.",
-  },
-  {
-    icon: FolderTree,
-    title: "Open Table Formats",
-    description:
-      "Work with Iceberg and open ecosystem standards across the platform.",
-  },
-];
-
-const CatalogNativeAnalytics = () => {
+const HeroCatalogNativeAnalytics = () => {
   return (
-    <section className="py-32 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
-          {/* LEFT IMAGE */}
+    <section className="relative overflow-hidden bg-gradient-to-b from-gray-50 to-white py-28">
+      {/* Background Grid */}
+
+      <motion.div
+        animate={{
+          backgroundPosition: ["0px 0px", "120px 120px"],
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+        className="absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right,#06b6d4 1px,transparent 1px),
+            linear-gradient(to bottom,#06b6d4 1px,transparent 1px)
+          `,
+          backgroundSize: "80px 80px",
+        }}
+      />
+
+      <div className="absolute right-0 top-20 h-[500px] w-[500px] rounded-full bg-cyan-400/10 blur-[180px]" />
+
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid items-center gap-20 lg:grid-cols-2">
+          {/* RIGHT */}
+
           <motion.div
-            initial={{ opacity: 0, x: -25 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-cyan-50 text-cyan-700 text-sm font-medium mb-6">
-              Catalog-Native Analytics
-            </div>
-
-            <h2 className="text-2xl sm:text-4xl font-bold text-slate-900 leading-tight">
-              Work directly on governed enterprise data.
-            </h2>
-
-            <p className="mt-6 text-md text-slate-600 leading-relaxed">
-              SegForge Notebooks connect natively with your catalog and
-              lakehouse architecture, providing trusted access to governed
-              datasets, metadata, lineage, and versioned data assets.
-            </p>
-
-            {/* Features */}
-
-            <div className="mt-10 space-y-8">
-              {FEATURES.map((feature) => {
-                const Icon = feature.icon;
-
-                return (
-                  <div key={feature.title} className="flex gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-cyan-50 border border-cyan-100 flex items-center justify-center flex-shrink-0">
-                      <Icon className="w-5 h-5 text-cyan-600" />
-                    </div>
-
-                    <div>
-                      <h3 className="text-lg font-semibold text-slate-900">
-                        {feature.title}
-                      </h3>
-
-                      <p className="mt-2 text-slate-600 leading-relaxed">
-                        {feature.description}
-                      </p>
-                    </div>
-                  </div>
-                );
-              })}
+            <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
+              <img
+                src="/images/notebook-explorer.webp"
+                alt="Notebook Data Explorer"
+                className="w-full"
+              />
             </div>
           </motion.div>
-
-          {/* RIGHT CONTENT */}
+          {/* LEFT */}
 
           <motion.div
-            initial={{ opacity: 0, x: 25 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="relative"
           >
-            <div className="absolute inset-0 bg-cyan-500/10 blur-3xl rounded-full" />
+            <div className="inline-flex rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">
+              Data Exploration
+            </div>
 
-            <div className="relative bg-white border border-slate-200 rounded-[32px] overflow-hidden shadow-[0_30px_80px_rgba(15,23,42,0.08)]">
-              <img
-                src="/images/iceberg-catalog.png"
-                alt="Apache Iceberg Catalog"
-                className="w-full h-auto object-cover"
-              />
+            <h2 className="mt-6 text-4xl font-bold leading-none text-slate-900 lg:text-4xl">
+              Understand Your Data
+              <br />
+              Before You Build.
+            </h2>
+
+            <p className="mt-4 text-md leading-6 text-slate-600">
+              Browse schemas, inspect Iceberg tables, execute queries instantly,
+              and visualize results without leaving the notebook. Everything you
+              need for exploration lives in one collaborative workspace.
+            </p>
+
+            {/* Feature Cards */}
+
+            <div className="mt-10 space-y-5">
+              <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                <div className="flex items-center gap-3">
+                  <Database className="h-6 w-6 text-cyan-600" />
+                  <h3 className="text-lg font-semibold">Live Schema Browser</h3>
+                </div>
+
+                <p className="mt-3 text-slate-600 leading-7">
+                  Explore namespaces, Iceberg catalogs, databases, tables,
+                  columns, and data types through an integrated catalog browser.
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                <div className="flex items-center gap-3">
+                  <Wand2 className="h-6 w-6 text-cyan-600" />
+                  <h3 className="text-lg font-semibold">
+                    Auto Query Generation
+                  </h3>
+                </div>
+
+                <p className="mt-3 text-slate-600 leading-7">
+                  Double-click any table to automatically generate a SELECT
+                  statement and begin exploring immediately.
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                <div className="flex items-center gap-3">
+                  <Search className="h-6 w-6 text-cyan-600" />
+                  <h3 className="text-lg font-semibold">Interactive Results</h3>
+                </div>
+
+                <div className="mt-4 grid grid-cols-2 gap-3">
+                  {[
+                    "Sort Columns",
+                    "Copy Cell Values",
+                    "Query Statistics",
+                    "CSV Export",
+                  ].map((item) => (
+                    <div key={item} className="flex items-center gap-2">
+                      <CheckCircle2 className="h-4 w-4 text-cyan-500" />
+                      <span className="text-sm text-slate-700">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                <div className="flex items-center gap-3">
+                  <BarChart3 className="h-6 w-6 text-cyan-600" />
+                  <h3 className="text-lg font-semibold">
+                    Built-in Visualization
+                  </h3>
+                </div>
+
+                <div className="mt-4 flex flex-wrap gap-3">
+                  <span className="rounded-full bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">
+                    Tables
+                  </span>
+
+                  <span className="rounded-full bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">
+                    Charts
+                  </span>
+
+                  <span className="rounded-full bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">
+                    CSV Export
+                  </span>
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>
@@ -119,4 +158,4 @@ const CatalogNativeAnalytics = () => {
   );
 };
 
-export default CatalogNativeAnalytics;
+export default HeroCatalogNativeAnalytics;

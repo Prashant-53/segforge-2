@@ -1,195 +1,161 @@
 import React from "react";
 import { motion } from "framer-motion";
 import {
+  Database,
+  Shuffle,
+  ScanSearch,
+  Scale,
   SlidersHorizontal,
   Binary,
-  Sparkles,
-  SplitSquareVertical,
   CheckCircle2,
+  BarChart3,
 } from "lucide-react";
+import FeatureEng from "../../../assets/Products/ML&OPs/featureEng.mp4";
 
-const steps = [
+const featureCards = [
   {
-    icon: SlidersHorizontal,
-    title: "Scaling & normalization",
+    icon: Database,
+    title: "Data Preparation",
+    items: [
+      "Dataset Management",
+      "Data Sampling",
+      "Missing Value Handling",
+      "Outlier Detection",
+    ],
   },
   {
-    icon: Binary,
-    title: "Categorical encoding",
+    icon: Scale,
+    title: "Feature Engineering",
+    items: [
+      "Standard Scaler",
+      "Min-Max Scaler",
+      "Label Encoding",
+      "One-Hot Encoding",
+      "Feature Generation",
+      "Feature Selection",
+    ],
   },
   {
-    icon: Sparkles,
-    title: "Missing value handling",
-  },
-  {
-    icon: Sparkles,
-    title: "Feature crossing",
-  },
-  {
-    icon: SplitSquareVertical,
-    title: "Train / test splitting",
+    icon: ScanSearch,
+    title: "Data Validation",
+    items: [
+      "Null Checks",
+      "Distribution Analysis",
+      "Schema Validation",
+      "Feature Statistics",
+    ],
   },
 ];
 
 const FeatureEngineering = () => {
   return (
-    <section className="py-32 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
-          {/* LEFT CONTENT */}
+    <section className="relative overflow-hidden bg-gradient-to-b from-gray-50 to-white py-28">
+      {/* Animated Background */}
 
-          <motion.div
-            initial={{ opacity: 0, x: -25 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="inline-flex px-4 py-2 rounded-full bg-cyan-50 text-cyan-700 text-sm font-medium mb-6">
-              Feature Engineering
-            </div>
+      <motion.div
+        animate={{
+          backgroundPosition: ["0px 0px", "120px 120px"],
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+        className="absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right,#06b6d4 1px,transparent 1px),
+            linear-gradient(to bottom,#06b6d4 1px,transparent 1px)
+          `,
+          backgroundSize: "80px 80px",
+        }}
+      />
 
-            <h2 className="text-2xl sm:text-4xl font-bold text-slate-900 leading-tight">
-              Turn raw data into training-ready features.
-            </h2>
+      <div className="absolute left-1/2 top-32 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-cyan-400/10 blur-[180px]" />
 
-            <p className="mt-6 text-md text-slate-600 leading-relaxed max-w-xl">
-              Prepare datasets visually using feature engineering tools built
-              directly into SegForge workflows. Clean, transform, and prepare
-              data without switching between notebooks and pipelines.
-            </p>
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        {/* Header */}
 
-            {/* Capabilities */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mx-auto max-w-4xl text-center"
+        >
+          <div className="inline-flex rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">
+            Automated Feature Engineering
+          </div>
 
-            <div className="mt-10 space-y-5">
-              {steps.map((step) => {
-                const Icon = step.icon;
+          <h2 className="mt-6 text-4xl font-bold text-slate-900 lg:text-5xl">
+            Transform Raw Data
+            <br />
+            <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
+              into Intelligent Features.
+            </span>
+          </h2>
 
-                return (
-                  <div key={step.title} className="flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-cyan-50 border border-cyan-100 flex items-center justify-center">
-                      <Icon className="w-4 h-4 text-cyan-600" />
-                    </div>
+          <p className="mx-auto mt-6 max-w-3xl text-md leading-6 text-slate-600">
+            Prepare enterprise datasets using visual feature engineering
+            pipelines with automatic preprocessing, transformations, encoding,
+            scaling, and data quality validation before model training.
+          </p>
+        </motion.div>
 
-                    <span className="text-slate-700 text-lg">{step.title}</span>
-                  </div>
-                );
-              })}
-            </div>
-          </motion.div>
+        {/* Large Screenshot */}
 
-          {/* RIGHT VISUAL */}
-          <motion.div
-            initial={{ opacity: 0, x: 25 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-          >
-            <div className="relative bg-white border border-slate-200 rounded-[32px] overflow-hidden shadow-[0_30px_80px_rgba(15,23,42,0.08)]">
-              {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="mx-auto mt-16 max-w-6xl"
+        >
+          <div className="overflow-hidden  border border-slate-200 bg-white shadow-2xl">
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+              className="block w-full h-auto object-cover"
+            >
+              <source src={FeatureEng} type="video/mp4" />
+            </video>
+          </div>
+        </motion.div>
 
-              <div className="px-8 py-5 border-b border-slate-200 bg-slate-50">
-                <h3 className="font-semibold text-slate-900">
-                  Feature Engineering Workspace
-                </h3>
+        {/* Feature Cards */}
+
+        <div className="mt-16 grid gap-8 lg:grid-cols-3">
+          {featureCards.map((card) => (
+            <motion.div
+              key={card.title}
+              whileHover={{ y: -6 }}
+              className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition hover:border-cyan-200 hover:shadow-xl"
+            >
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-50">
+                <card.icon className="h-7 w-7 text-cyan-600" />
               </div>
 
-              {/* Canvas */}
+              <h3 className="mt-6 text-2xl font-semibold text-slate-900">
+                {card.title}
+              </h3>
 
-              <div className="p-8">
-                <div className="grid grid-cols-2 gap-10">
-                  {/* Raw Dataset */}
+              <div className="mt-6 space-y-4">
+                {card.items.map((item) => (
+                  <div key={item} className="flex items-center gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-cyan-500" />
 
-                  <div>
-                    <h4 className="text-sm font-medium text-slate-500 uppercase tracking-wider mb-4">
-                      Raw Dataset
-                    </h4>
-
-                    <div className="space-y-3">
-                      {[
-                        "customer_id",
-                        "revenue",
-                        "region",
-                        "last_purchase",
-                      ].map((item) => (
-                        <div
-                          key={item}
-                          className="px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-700"
-                        >
-                          {item}
-                        </div>
-                      ))}
-                    </div>
+                    <span className="text-slate-700">{item}</span>
                   </div>
-
-                  {/* Feature Store */}
-
-                  <div>
-                    <h4 className="text-sm font-medium text-slate-500 uppercase tracking-wider mb-4">
-                      Model Features
-                    </h4>
-
-                    <div className="space-y-3">
-                      {[
-                        "customer_score",
-                        "revenue_scaled",
-                        "region_encoded",
-                        "engagement_index",
-                      ].map((item) => (
-                        <div
-                          key={item}
-                          className="px-4 py-3 rounded-xl bg-cyan-50 border border-cyan-100 text-cyan-700"
-                        >
-                          {item}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Transformations */}
-
-                <div className="mt-10 pt-8 border-t border-slate-200">
-                  <div className="flex flex-wrap justify-center gap-3">
-                    {[
-                      "Normalize",
-                      "Encode",
-                      "Impute",
-                      "Feature Cross",
-                      "Train/Test Split",
-                    ].map((item) => (
-                      <div
-                        key={item}
-                        className="px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-700 text-sm"
-                      >
-                        {item}
-                      </div>
-                    ))}
-                  </div>
-                </div>
+                ))}
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
-  );
-};
-
-const FlowLine = () => (
-  <div className="flex justify-center py-4">
-    <div className="w-px h-10 bg-cyan-300" />
-  </div>
-);
-
-const WorkflowNode = ({ title, color }) => {
-  return (
-    <div className="flex justify-center">
-      <div
-        className={`w-full max-w-[320px] px-6 py-5 rounded-2xl border border-slate-200 flex items-center justify-center font-medium ${color}`}
-      >
-        {title}
-      </div>
-    </div>
   );
 };
 

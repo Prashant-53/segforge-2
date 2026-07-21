@@ -1,152 +1,208 @@
 import React from "react";
 import { motion } from "framer-motion";
 import {
+  Layers3,
   ShieldCheck,
-  CheckCircle2,
   Lock,
-  KeyRound,
-  Database,
-  ArrowDown,
-  Server,
+  CheckCircle2,
+  Users,
+  Building2,
 } from "lucide-react";
 
-const features = [
-  "Fernet Encryption",
-  "Secure Credential Storage",
-  "API Authorization",
-  "Workspace Validation",
-  "Runtime Decryption Only",
-  "Audit Protection",
+const capabilityGroups = [
+  {
+    icon: Layers3,
+    title: "Workspace Isolation",
+    items: [
+      "Independent Projects",
+      "Dedicated Resources",
+      "Separate Credentials",
+      "Environment Isolation",
+    ],
+  },
+  {
+    icon: ShieldCheck,
+    title: "Enterprise Protection",
+    items: [
+      "Secure Connections",
+      "Credential Isolation",
+      "Resource Ownership",
+      "Environment Separation",
+    ],
+  },
 ];
 
-const SecurityProtectionSection = () => {
+const workspaceFeatures = [
+  {
+    icon: Users,
+    title: "Secure Collaboration",
+    description:
+      "Invite users only to the workspaces they need. Every member inherits permissions specific to that workspace while remaining isolated from unrelated projects and environments.",
+  },
+  {
+    icon: Building2,
+    title: "Enterprise Boundaries",
+    description:
+      "Keep development, staging, and production environments securely separated within the same deployment while maintaining complete operational isolation and governance.",
+  },
+];
+
+const WorkspaceSecuritySection = () => {
   return (
-    <section className="py-32 bg-slate-50 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 xl:gap-20 items-center">
-          {/* LEFT CONTENT */}
+    <section className="relative overflow-hidden bg-gradient-to-b from-gray-50 to-white py-28">
+      {/* Animated Grid */}
+
+      <motion.div
+        animate={{
+          backgroundPosition: ["0px 0px", "120px 120px"],
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+        className="absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right,#06b6d4 1px,transparent 1px),
+            linear-gradient(to bottom,#06b6d4 1px,transparent 1px)
+          `,
+          backgroundSize: "80px 80px",
+        }}
+      />
+
+      {/* Glow */}
+
+      <div className="absolute right-0 top-32 h-[500px] w-[500px] rounded-full bg-cyan-400/10 blur-[180px]" />
+
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid items-center gap-20 lg:grid-cols-2">
+          {/* LEFT IMAGE */}
 
           <motion.div
-            initial={{ opacity: 0, x: -25 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="relative"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-50 text-cyan-700 text-sm font-medium mb-6">
-              <ShieldCheck className="w-4 h-4" />
-              Encryption & API Security
-            </div>
+            {/* Glow */}
 
-            <h2 className="text-2xl sm:text-4xl font-bold text-slate-900 leading-tight">
-              Security built into every request.
-            </h2>
+            <div className="absolute inset-0 rounded-[36px] bg-cyan-400/10 blur-3xl" />
 
-            <p className="mt-6 text-md text-slate-600 leading-relaxed max-w-xl">
-              Credentials are encrypted, permissions are validated, and access
-              is continuously verified.
-            </p>
+            {/* Product Screenshot */}
 
-            <p className="mt-4 text-md text-slate-600 leading-relaxed max-w-xl">
-              From API calls to database connections, every interaction is
-              protected by multiple layers of security designed for enterprise
-              environments.
-            </p>
-
-            <div className="mt-10 space-y-4">
-              {features.map((feature) => (
-                <div key={feature} className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-cyan-600" />
-
-                  <span className="text-slate-700">{feature}</span>
-                </div>
-              ))}
+            <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
+              <img
+                src="/images/workspace-security-dashboard.webp"
+                alt="Multi-Tenant Workspace Security"
+                className="w-full"
+              />
             </div>
           </motion.div>
 
-          {/* RIGHT VISUAL */}
+          {/* RIGHT CONTENT */}
 
           <motion.div
-            initial={{ opacity: 0, x: 25 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
           >
-            <div className="bg-white border border-slate-200 rounded-[32px] overflow-hidden shadow-[0_30px_80px_rgba(15,23,42,0.08)]">
-              <div className="px-6 py-5 border-b border-slate-200 bg-slate-50">
-                <h3 className="font-semibold text-slate-900">
-                  Request Protection Flow
-                </h3>
-              </div>
+            {/* Badge */}
 
-              <div className="p-6 sm:p-8">
-                {/* Credentials */}
+            <div className="inline-flex rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">
+              Multi-Tenant Security
+            </div>
 
-                <FlowCard
-                  icon={KeyRound}
-                  title="Encrypted Credentials"
-                  subtitle="Stored securely at rest"
-                />
+            {/* Heading */}
 
-                <FlowConnector />
+            <h2 className="mt-6 text-4xl font-bold leading-none text-slate-900 lg:text-4xl">
+              Every Workspace.
+              <br />
+              Completely Isolated.
+            </h2>
 
-                {/* Security Layer */}
+            {/* Description */}
 
-                <div className="relative">
-                  <div className="absolute inset-0 bg-cyan-500/10 blur-3xl rounded-full" />
+            <p className="mt-6 text-md leading-6 text-slate-600">
+              Every pipeline, notebook, connection, machine learning model,
+              dashboard, and credential belongs to a dedicated workspace
+              protected by strict isolation boundaries.
+            </p>
 
-                  <div className="relative border border-cyan-200 bg-gradient-to-br from-cyan-50 to-blue-50 rounded-[28px] p-8 text-center">
-                    <div className="w-20 h-20 rounded-full bg-white border border-cyan-200 flex items-center justify-center mx-auto mb-5">
-                      <ShieldCheck className="w-10 h-10 text-cyan-600" />
-                    </div>
+            {/* Capability Groups */}
+
+            <div className="mt-10 grid gap-6 md:grid-cols-2">
+              {capabilityGroups.map((group) => (
+                <div
+                  key={group.title}
+                  className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+                >
+                  <div className="flex items-center gap-3">
+                    <group.icon className="h-7 w-7 text-cyan-600" />
 
                     <h3 className="text-xl font-semibold text-slate-900">
-                      Security Layer
+                      {group.title}
                     </h3>
+                  </div>
 
-                    <p className="text-sm text-slate-500 mt-2">
-                      Encryption • Validation • Authorization
-                    </p>
+                  <div className="mt-6 space-y-3">
+                    {group.items.map((item) => (
+                      <div key={item} className="flex items-center gap-3">
+                        <CheckCircle2 className="h-4 w-4 text-cyan-500" />
 
-                    <div className="grid grid-cols-3 gap-3 mt-6">
-                      <MiniSecurityTag text="RBAC" />
-
-                      <MiniSecurityTag text="JWT" />
-
-                      <MiniSecurityTag text="Audit" />
-                    </div>
+                        <span className="text-slate-700">{item}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
+              ))}
+            </div>
 
-                <FlowConnector />
+            {/* Supporting Features */}
 
-                {/* API Requests */}
+            <div className="mt-10 space-y-5">
+              {workspaceFeatures.map((feature) => (
+                <div
+                  key={feature.title}
+                  className="flex gap-5 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-cyan-200 hover:shadow-lg"
+                >
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-cyan-50">
+                    <feature.icon className="h-7 w-7 text-cyan-600" />
+                  </div>
 
-                <FlowCard
-                  icon={Server}
-                  title="API Requests"
-                  subtitle="Validated before execution"
-                />
+                  <div>
+                    <h3 className="text-lg font-semibold text-slate-900">
+                      {feature.title}
+                    </h3>
 
-                <FlowConnector />
-
-                {/* Authorized Access */}
-
-                <div className="rounded-3xl bg-slate-900 text-white p-8 text-center">
-                  <Lock className="w-10 h-10 mx-auto mb-4" />
-
-                  <h3 className="text-lg font-semibold">Authorized Access</h3>
-
-                  <p className="text-sm text-slate-400 mt-2">
-                    Access granted only after verification
-                  </p>
+                    <p className="mt-2 leading-7 text-slate-600">
+                      {feature.description}
+                    </p>
+                  </div>
                 </div>
+              ))}
+            </div>
 
-                {/* Footer Stats */}
+            {/* Bottom Highlight */}
 
-                <div className="grid grid-cols-3 gap-4 mt-8">
-                  <MetricCard value="AES" label="Encryption" />
+            <div className="mt-10 rounded-3xl border border-cyan-100 bg-gradient-to-r from-cyan-50 to-white p-6">
+              <div className="flex items-start gap-4">
+                <Lock className="mt-1 h-7 w-7 text-cyan-600" />
 
-                  <MetricCard value="RBAC" label="Validation" />
+                <div>
+                  <h3 className="text-xl font-semibold text-slate-900">
+                    Your Users, Data, and Infrastructure Remain Securely
+                    Isolated at Every Level.
+                  </h3>
 
-                  <MetricCard value="24/7" label="Protection" />
+                  <p className="mt-3 leading-7 text-slate-600">
+                    Seg Forge enforces strict workspace boundaries that isolate
+                    users, credentials, pipelines, notebooks, machine learning
+                    assets, dashboards, and production environments while
+                    enabling secure collaboration across enterprise teams.
+                  </p>
                 </div>
               </div>
             </div>
@@ -157,38 +213,4 @@ const SecurityProtectionSection = () => {
   );
 };
 
-const FlowConnector = () => (
-  <div className="flex justify-center py-4">
-    <ArrowDown className="w-5 h-5 text-cyan-400" />
-  </div>
-);
-
-const FlowCard = ({ icon: Icon, title, subtitle }) => (
-  <div className="border border-slate-200 rounded-2xl p-5 flex items-center gap-4">
-    <div className="w-12 h-12 rounded-xl bg-cyan-50 flex items-center justify-center">
-      <Icon className="w-5 h-5 text-cyan-600" />
-    </div>
-
-    <div>
-      <h4 className="font-semibold text-slate-900">{title}</h4>
-
-      <p className="text-sm text-slate-500 mt-1">{subtitle}</p>
-    </div>
-  </div>
-);
-
-const MiniSecurityTag = ({ text }) => (
-  <div className="bg-white border border-slate-200 rounded-xl py-2 text-sm font-medium text-slate-700">
-    {text}
-  </div>
-);
-
-const MetricCard = ({ value, label }) => (
-  <div className="border border-slate-200 rounded-2xl p-4 text-center">
-    <div className="text-xl font-bold text-slate-900">{value}</div>
-
-    <div className="text-sm text-slate-500 mt-1">{label}</div>
-  </div>
-);
-
-export default SecurityProtectionSection;
+export default WorkspaceSecuritySection;

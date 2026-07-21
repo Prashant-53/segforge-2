@@ -1,145 +1,118 @@
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  Database,
-  ArrowRight,
-  Play,
-  Activity,
-  Brain,
-  BarChart3,
-  Server,
-} from "lucide-react";
+import { ArrowRight, BookOpen, Sparkles } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const RealTimeCDCHero = () => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-gray-50 to-white pt-32 pb-24">
-      <div className="absolute inset-0 bg-grid opacity-[0.03]" />
+    <section className="relative overflow-hidden bg-gradient-to-b from-gray-50 via-white to-white pt-36 pb-24">
+      {/* Animated Grid */}
 
-      <div className="absolute top-0 right-0 w-[700px] h-[500px] bg-cyan-500/10 blur-[120px] rounded-full" />
+      <motion.div
+        animate={{
+          backgroundPosition: ["0px 0px", "120px 120px"],
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+        className="absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right,#06b6d4 1px,transparent 1px),
+            linear-gradient(to bottom,#06b6d4 1px,transparent 1px)
+          `,
+          backgroundSize: "80px 80px",
+        }}
+      />
 
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
+      {/* Glow */}
+
+      <div className="absolute left-1/2 top-20 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-cyan-400/10 blur-[180px]" />
+
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid items-center gap-20 lg:grid-cols-2">
           {/* LEFT */}
 
           <motion.div
-            initial={{ opacity: 0, x: -25 }}
+            initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-50 text-cyan-700 text-sm font-medium mb-6">
-              <Activity className="w-4 h-4" />
-              Real-Time CDC
+            {/* Badge */}
+
+            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">
+              <Sparkles className="h-4 w-4" />
+              Change Data Capture
             </div>
 
-            <h1 className="text-4xl lg:text-5xl xl:text-7xl font-bold text-slate-900 leading-[1.05]">
-              Keep your
+            {/* Heading */}
+
+            <h1 className="mt-8 text-4xl font-bold leading-none text-slate-900 lg:text-5xl">
+              Real-Time Synchronization
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">
-                lakehouse continuously up to date.
+              <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
+                for the Modern Lakehouse.
               </span>
             </h1>
 
-            <p className="mt-8 text-md text-slate-600 leading-relaxed max-w-xl">
-              Capture inserts, updates, and deletes from production databases in
-              real time without impacting application performance.
+            {/* Description */}
+
+            <p className="mt-8 max-w-2xl text-md leading-6 text-slate-600">
+              Capture every <strong>INSERT</strong>, <strong>UPDATE</strong>,
+              and <strong>DELETE</strong> from production databases and
+              continuously stream changes into Apache Iceberg tables with
+              sub-second latency. Eliminate batch windows, manual exports, and
+              fragile ETL jobs using enterprise-grade log-based Change Data
+              Capture.
             </p>
 
-            <div className="mt-10 flex flex-wrap gap-4">
-              <button className="px-8 py-4 bg-slate-900 text-white rounded-xl hover:bg-slate-800 transition flex items-center gap-2 font-medium">
-                Start Your First Stream
-                <ArrowRight className="w-4 h-4" />
-              </button>
+            {/* Buttons */}
 
-              <button className="px-8 py-4 border border-slate-300 text-slate-700 rounded-xl hover:bg-slate-50 transition flex items-center gap-2 font-medium">
-                <Play className="w-4 h-4" />
-                View CDC Architecture
-              </button>
-            </div>
+            <div className="mt-12 flex flex-wrap gap-4">
+              <Link
+                to="/contact"
+                className="group relative inline-flex items-center justify-center overflow-hidden rounded-md border border-cyan-500 px-7 py-3 font-semibold text-slate-900 transition-colors duration-300 hover:text-white"
+              >
+                <span className="absolute inset-y-0 left-0 w-0 bg-[#18D0BB] transition-all duration-300 ease-out group-hover:w-full" />
 
-            <div className="mt-12 flex flex-wrap gap-8">
-              <div>
-                <h4 className="font-semibold text-slate-900">
-                  Sub-Second Latency
-                </h4>
-                <p className="text-sm text-slate-500 mt-1">
-                  Real-time synchronization
-                </p>
-              </div>
+                <span className="relative z-10 flex items-center gap-2">
+                  Start Streaming Data
+                  <ArrowRight className="h-4 w-4" />
+                </span>
+              </Link>
 
-              <div>
-                <h4 className="font-semibold text-slate-900">
-                  Log-Based Capture
-                </h4>
-                <p className="text-sm text-slate-500 mt-1">
-                  Minimal source impact
-                </p>
-              </div>
-
-              <div>
-                <h4 className="font-semibold text-slate-900">
-                  Automated Recovery
-                </h4>
-                <p className="text-sm text-slate-500 mt-1">
-                  Self-healing streams
-                </p>
-              </div>
+              <Link
+                to="/documentation"
+                className="group inline-flex items-center gap-2 rounded-md border border-slate-300 bg-white px-7 py-3 font-semibold text-slate-700 transition hover:border-cyan-400 hover:text-cyan-600"
+              >
+                <BookOpen className="h-4 w-4" />
+                View Documentation
+              </Link>
             </div>
           </motion.div>
 
-          {/* RIGHT VISUAL */}
+          {/* RIGHT */}
 
           <motion.div
-            initial={{ opacity: 0, x: 25 }}
+            initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
+            className="relative"
           >
-            <div className="relative bg-white border border-slate-200 rounded-[32px] p-10 shadow-[0_30px_80px_rgba(15,23,42,0.08)]">
-              {/* Sources */}
+            {/* Glow */}
 
-              <div className="grid grid-cols-2 gap-4">
-                <SourceNode label="PostgreSQL" />
-                <SourceNode label="MySQL" />
-                <SourceNode label="Oracle" />
-                <SourceNode label="SQL Server" />
-              </div>
+            <div className="absolute inset-0 rounded-[36px] bg-cyan-400/10 blur-3xl" />
 
-              {/* Connector */}
+            {/* Product Screenshot */}
 
-              <div className="flex justify-center py-6">
-                <div className="w-px h-12 bg-cyan-300" />
-              </div>
-
-              {/* CDC Engine */}
-
-              <div className="flex justify-center">
-                <div className="w-64 h-40 rounded-3xl bg-gradient-to-br from-cyan-50 to-blue-50 border border-cyan-200 flex flex-col items-center justify-center">
-                  <Activity className="w-10 h-10 text-cyan-600 mb-3" />
-
-                  <h3 className="font-bold text-slate-900 text-xl">
-                    SegForge CDC
-                  </h3>
-
-                  <p className="text-slate-500 text-sm mt-1">
-                    Real-Time Change Capture
-                  </p>
-                </div>
-              </div>
-
-              {/* Connector */}
-
-              <div className="flex justify-center py-6">
-                <div className="w-px h-12 bg-cyan-300" />
-              </div>
-
-              {/* Consumers */}
-
-              <div className="grid grid-cols-3 gap-4">
-                <ConsumerNode icon={Server} label="Lakehouse" />
-
-                <ConsumerNode icon={BarChart3} label="Analytics" />
-
-                <ConsumerNode icon={Brain} label="AI" />
-              </div>
+            <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
+              <img
+                src="/images/cdc-hero.webp"
+                alt="Seg Forge Change Data Capture"
+                className="w-full"
+              />
             </div>
           </motion.div>
         </div>
@@ -147,21 +120,5 @@ const RealTimeCDCHero = () => {
     </section>
   );
 };
-
-const SourceNode = ({ label }) => (
-  <div className="p-4 rounded-2xl border border-slate-200 bg-slate-50 flex items-center gap-3">
-    <Database className="w-5 h-5 text-cyan-600" />
-
-    <span className="font-medium text-slate-700">{label}</span>
-  </div>
-);
-
-const ConsumerNode = ({ icon: Icon, label }) => (
-  <div className="p-4 rounded-2xl border border-slate-200 bg-white flex flex-col items-center text-center">
-    <Icon className="w-5 h-5 text-cyan-600 mb-2" />
-
-    <span className="text-sm font-medium text-slate-700">{label}</span>
-  </div>
-);
 
 export default RealTimeCDCHero;

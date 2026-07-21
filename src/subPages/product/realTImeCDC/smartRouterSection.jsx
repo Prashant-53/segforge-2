@@ -1,166 +1,188 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { GitBranch, Zap, Boxes, CheckCircle2, ArrowRight } from "lucide-react";
+import {
+  Cpu,
+  Zap,
+  Workflow,
+  RefreshCw,
+  CheckCircle2,
+  ArrowRightLeft,
+} from "lucide-react";
 
-const features = [
-  "Smart Router",
-  "Automatic Optimization",
-  "PyIceberg Fast Path",
-  "Apache Flink Scale Path",
-  "Zero Manual Tuning",
+const executionModes = [
+  {
+    icon: Zap,
+    title: "PyIceberg Path",
+    items: [
+      "Tables under 10 GB",
+      "Lightweight Execution",
+      "Minimal Infrastructure",
+      "Fast Startup",
+    ],
+  },
+  {
+    icon: Cpu,
+    title: "Apache Flink Path",
+    items: [
+      "Tables over 10 GB",
+      "Distributed Execution",
+      "Parallel Processing",
+      "Enterprise Scale",
+    ],
+  },
+];
+
+const intelligentFeatures = [
+  {
+    icon: RefreshCw,
+    title: "Automatic Failover",
+    description:
+      "If lightweight execution encounters limitations, Seg Forge automatically retries the workload using Apache Flink without requiring manual intervention.",
+  },
+  {
+    icon: ArrowRightLeft,
+    title: "Adaptive Routing",
+    description:
+      "Continuously analyze workload size, execution characteristics, and processing requirements to automatically select the fastest and most cost-efficient execution engine.",
+  },
 ];
 
 const SmartRouterSection = () => {
   return (
-    <section className="py-16 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-20 ">
-          {/* LEFT CONTENT */}
+    <section className="relative overflow-hidden bg-gradient-to-b from-gray-50 to-white py-28">
+      {/* Animated Grid */}
+
+      <motion.div
+        animate={{
+          backgroundPosition: ["0px 0px", "120px 120px"],
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+        className="absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right,#06b6d4 1px,transparent 1px),
+            linear-gradient(to bottom,#06b6d4 1px,transparent 1px)
+          `,
+          backgroundSize: "80px 80px",
+        }}
+      />
+
+      {/* Glow */}
+
+      <div className="absolute right-0 top-32 h-[500px] w-[500px] rounded-full bg-cyan-400/10 blur-[180px]" />
+
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid items-center gap-20 lg:grid-cols-2">
+          {/* LEFT IMAGE */}
 
           <motion.div
-            initial={{ opacity: 0, x: -25 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="relative"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-50 text-cyan-700 text-sm font-medium mb-6">
-              <GitBranch className="w-4 h-4" />
-              Smart Router
-            </div>
+            {/* Glow */}
 
-            <h2 className="text-2xl sm:text-4xl font-bold text-slate-900 leading-tight">
-              Use the right engine
-              <br />
-              for every workload.
-            </h2>
+            <div className="absolute inset-0 rounded-[36px] bg-cyan-400/10 blur-3xl" />
 
-            <p className="mt-6 text-md  text-slate-600 leading-relaxed max-w-xl">
-              Not every table needs the same processing path. SegForge
-              automatically chooses the most efficient execution strategy based
-              on table size, throughput requirements, and workload
-              characteristics.
-            </p>
+            {/* Product Screenshot */}
 
-            <p className="mt-4 text-md  text-slate-600 leading-relaxed max-w-xl">
-              Smaller datasets move quickly with lightweight processing, while
-              larger workloads scale seamlessly across distributed
-              infrastructure.
-            </p>
-
-            <div className="mt-10 space-y-4">
-              {features.map((feature) => (
-                <div key={feature} className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-cyan-600" />
-
-                  <span className="text-slate-700">{feature}</span>
-                </div>
-              ))}
+            <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
+              <img
+                src="/images/smart-router-dashboard.webp"
+                alt="Seg Forge Smart Router"
+                className="w-full"
+              />
             </div>
           </motion.div>
 
-          {/* RIGHT VISUAL */}
+          {/* RIGHT CONTENT */}
 
           <motion.div
-            initial={{ opacity: 0, x: 25 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
           >
-            <div className="relative bg-white border border-slate-200 rounded-[32px] p-10 shadow-[0_30px_80px_rgba(15,23,42,0.08)]">
-              {/* Source Table */}
+            {/* Badge */}
 
-              <div className="flex justify-center">
-                <div className="w-full max-w-xs rounded-2xl border border-slate-200 bg-slate-50 p-5 text-center">
-                  <h3 className="font-semibold text-slate-900">Source Table</h3>
+            <div className="inline-flex rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">
+              Smart Router
+            </div>
 
-                  <p className="text-sm text-slate-500 mt-2">
-                    Incoming CDC workload
-                  </p>
-                </div>
-              </div>
+            {/* Heading */}
 
-              {/* Connector */}
+            <h2 className="mt-6 text-4xl font-bold leading-none text-slate-900 lg:text-4xl">
+              Automatically Choose the
+              <br />
+              Fastest Execution Path.
+            </h2>
 
-              <div className="flex justify-center py-6">
-                <div className="w-px h-12 bg-cyan-300" />
-              </div>
+            {/* Description */}
 
-              {/* Smart Router */}
+            <p className="mt-6 text-md leading-6 text-slate-600">
+              Seg Forge intelligently selects the optimal processing engine
+              based on workload size, ensuring maximum performance while
+              minimizing infrastructure costs and operational complexity.
+            </p>
 
-              <div className="flex justify-center">
-                <div className="w-full max-w-sm rounded-3xl bg-gradient-to-br from-cyan-50 to-blue-50 border border-cyan-200 p-8 text-center">
-                  <GitBranch className="w-10 h-10 text-cyan-600 mx-auto mb-4" />
+            {/* Execution Modes */}
 
-                  <h3 className="text-xl font-bold text-slate-900">
-                    Smart Router
-                  </h3>
-
-                  <p className="text-sm text-slate-500 mt-2">
-                    Selects the optimal execution path
-                  </p>
-                </div>
-              </div>
-
-              {/* Branches */}
-
-              <div className="relative mt-12">
-                <div className="absolute top-0 left-1/2 w-px h-10 bg-cyan-300 -translate-x-1/2" />
-
-                <svg
-                  className="absolute top-0 left-0 w-full h-24"
-                  viewBox="0 0 500 100"
+            <div className="mt-10 grid gap-6 md:grid-cols-2">
+              {executionModes.map((mode) => (
+                <div
+                  key={mode.title}
+                  className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
                 >
-                  <path
-                    d="M250 0 C250 30 180 40 120 80"
-                    stroke="#22d3ee"
-                    strokeWidth="2"
-                    fill="none"
-                    strokeDasharray="6 6"
-                  />
+                  <div className="flex items-center gap-3">
+                    <mode.icon className="h-7 w-7 text-cyan-600" />
 
-                  <path
-                    d="M250 0 C250 30 320 40 380 80"
-                    stroke="#22d3ee"
-                    strokeWidth="2"
-                    fill="none"
-                    strokeDasharray="6 6"
-                  />
-                </svg>
-
-                <div className="grid grid-cols-2 gap-8 pt-16">
-                  {/* Fast Path */}
-
-                  <div className="border border-slate-200 rounded-3xl p-6 bg-slate-50">
-                    <div className="w-12 h-12 rounded-xl bg-cyan-100 flex items-center justify-center mb-4">
-                      <Zap className="w-5 h-5 text-cyan-700" />
-                    </div>
-
-                    <h4 className="font-semibold text-slate-900">Fast Path</h4>
-
-                    <p className="text-sm text-slate-500 mt-2">PyIceberg</p>
-
-                    <div className="mt-4 inline-flex items-center gap-2 text-cyan-700 text-sm">
-                      Small Tables
-                      <ArrowRight className="w-4 h-4" />
-                    </div>
+                    <h3 className="text-xl font-semibold text-slate-900">
+                      {mode.title}
+                    </h3>
                   </div>
 
-                  {/* Scale Path */}
+                  <div className="mt-6 space-y-3">
+                    {mode.items.map((item) => (
+                      <div key={item} className="flex items-center gap-3">
+                        <CheckCircle2 className="h-4 w-4 text-cyan-500" />
 
-                  <div className="border border-slate-200 rounded-3xl p-6 bg-slate-50">
-                    <div className="w-12 h-12 rounded-xl bg-cyan-100 flex items-center justify-center mb-4">
-                      <Boxes className="w-5 h-5 text-cyan-700" />
-                    </div>
-
-                    <h4 className="font-semibold text-slate-900">Scale Path</h4>
-
-                    <p className="text-sm text-slate-500 mt-2">Apache Flink</p>
-
-                    <div className="mt-4 inline-flex items-center gap-2 text-cyan-700 text-sm">
-                      Large Tables
-                      <ArrowRight className="w-4 h-4" />
-                    </div>
+                        <span className="text-slate-700">{item}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
-              </div>
+              ))}
+            </div>
+
+            {/* Intelligent Features */}
+
+            <div className="mt-10 space-y-5">
+              {intelligentFeatures.map((feature) => (
+                <div
+                  key={feature.title}
+                  className="flex gap-5 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-cyan-200 hover:shadow-lg"
+                >
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-cyan-50">
+                    <feature.icon className="h-7 w-7 text-cyan-600" />
+                  </div>
+
+                  <div>
+                    <h3 className="text-lg font-semibold text-slate-900">
+                      {feature.title}
+                    </h3>
+
+                    <p className="mt-2 leading-7 text-slate-600">
+                      {feature.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
           </motion.div>
         </div>

@@ -1,144 +1,209 @@
 import React from "react";
 import { motion } from "framer-motion";
 import {
-  ShieldCheck,
-  CheckCircle2,
   Building2,
   KeyRound,
-  Users,
-  AppWindow,
-  Server,
+  ShieldCheck,
+  CheckCircle2,
+  UserCheck,
+  LockKeyhole,
 } from "lucide-react";
 
-const features = [
-  "Azure AD SSO",
-  "JWT Authentication",
-  "API Keys",
-  "Token Revocation",
-  "Secure Service Access",
+const capabilityGroups = [
+  {
+    icon: Building2,
+    title: "Identity Providers",
+    items: [
+      "Azure Active Directory",
+      "OpenID Connect",
+      "OAuth 2.0",
+      "JWT Authentication",
+    ],
+  },
+  {
+    icon: KeyRound,
+    title: "Authentication",
+    items: [
+      "Single Sign-On",
+      "Secure Sessions",
+      "Token Validation",
+      "Automatic Login",
+    ],
+  },
 ];
 
-const IdentityAuthenticationSection = () => {
+const identityFeatures = [
+  {
+    icon: UserCheck,
+    title: "Enterprise Integration",
+    description:
+      "Connect Seg Forge to your existing enterprise identity provider in minutes. Eliminate duplicate user management while enabling seamless authentication across every workspace and platform service.",
+  },
+  {
+    icon: LockKeyhole,
+    title: "Centralized Identity",
+    description:
+      "Manage users through your corporate identity platform instead of maintaining separate accounts. Authentication, provisioning, and access policies remain centralized and consistent.",
+  },
+];
+
+const IdentitySSOSection = () => {
   return (
-    <section className="py-32 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 xl:gap-20 items-center">
+    <section className="relative overflow-hidden bg-gradient-to-b from-white to-gray-50 py-28">
+      {/* Animated Grid */}
+
+      <motion.div
+        animate={{
+          backgroundPosition: ["0px 0px", "120px 120px"],
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+        className="absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right,#06b6d4 1px,transparent 1px),
+            linear-gradient(to bottom,#06b6d4 1px,transparent 1px)
+          `,
+          backgroundSize: "80px 80px",
+        }}
+      />
+
+      {/* Glow */}
+
+      <div className="absolute left-0 top-32 h-[500px] w-[500px] rounded-full bg-cyan-400/10 blur-[180px]" />
+
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid items-center gap-20 lg:grid-cols-2">
           {/* LEFT CONTENT */}
 
           <motion.div
-            initial={{ opacity: 0, x: -25 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-50 text-cyan-700 text-sm font-medium mb-6">
-              <ShieldCheck className="w-4 h-4" />
-              Identity & Authentication
+            {/* Badge */}
+
+            <div className="inline-flex rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">
+              Enterprise Identity
             </div>
 
-            <h2 className="text-2xl sm:text-4xl font-bold text-slate-900 leading-tight">
-              Authenticate users through trusted identity providers.
+            {/* Heading */}
+
+            <h2 className="mt-6 text-4xl font-bold leading-none text-slate-900 lg:text-4xl">
+              Authenticate Once.
+              <br />
+              Access Everything Securely.
             </h2>
 
-            <p className="mt-6 text-md text-slate-600 leading-relaxed max-w-xl">
-              Allow employees to access SegForge using their existing corporate
-              credentials.
+            {/* Description */}
+
+            <p className="mt-6 text-md leading-6 text-slate-600">
+              Integrate Seg Forge with your existing enterprise identity
+              provider through secure Single Sign-On and centralized
+              authentication for every user, workspace, and API.
             </p>
 
-            <p className="mt-4 text-md text-slate-600 leading-relaxed max-w-xl">
-              Centralized identity management reduces administrative overhead
-              while ensuring secure authentication across teams, applications,
-              and services.
-            </p>
+            {/* Capability Groups */}
 
-            <div className="mt-10 space-y-4">
-              {features.map((feature) => (
-                <div key={feature} className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-cyan-600" />
+            <div className="mt-10 grid gap-6 md:grid-cols-2">
+              {capabilityGroups.map((group) => (
+                <div
+                  key={group.title}
+                  className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+                >
+                  <div className="flex items-center gap-3">
+                    <group.icon className="h-7 w-7 text-cyan-600" />
 
-                  <span className="text-slate-700">{feature}</span>
+                    <h3 className="text-xl font-semibold text-slate-900">
+                      {group.title}
+                    </h3>
+                  </div>
+
+                  <div className="mt-6 space-y-3">
+                    {group.items.map((item) => (
+                      <div key={item} className="flex items-center gap-3">
+                        <CheckCircle2 className="h-4 w-4 text-cyan-500" />
+
+                        <span className="text-slate-700">{item}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               ))}
             </div>
+
+            {/* Supporting Features */}
+
+            <div className="mt-10 space-y-5">
+              {identityFeatures.map((feature) => (
+                <div
+                  key={feature.title}
+                  className="flex gap-5 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-cyan-200 hover:shadow-lg"
+                >
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-cyan-50">
+                    <feature.icon className="h-7 w-7 text-cyan-600" />
+                  </div>
+
+                  <div>
+                    <h3 className="text-lg font-semibold text-slate-900">
+                      {feature.title}
+                    </h3>
+
+                    <p className="mt-2 leading-7 text-slate-600">
+                      {feature.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Bottom Highlight */}
+
+            <div className="mt-10 rounded-3xl border border-cyan-100 bg-gradient-to-r from-cyan-50 to-white p-6">
+              <div className="flex items-start gap-4">
+                <ShieldCheck className="mt-1 h-7 w-7 text-cyan-600" />
+
+                <div>
+                  <h3 className="text-xl font-semibold text-slate-900">
+                    Enterprise Authentication Without Operational Complexity.
+                  </h3>
+
+                  <p className="mt-3 leading-7 text-slate-600">
+                    Enable secure Single Sign-On using your existing enterprise
+                    identity platform while maintaining centralized user
+                    management, strong authentication, and seamless access
+                    across the entire Seg Forge platform.
+                  </p>
+                </div>
+              </div>
+            </div>
           </motion.div>
 
-          {/* RIGHT VISUAL */}
+          {/* RIGHT IMAGE */}
 
           <motion.div
-            initial={{ opacity: 0, x: 25 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="relative"
           >
-            <div className="bg-white border border-slate-200 rounded-[32px] overflow-hidden shadow-[0_30px_80px_rgba(15,23,42,0.08)]">
-              {/* Header */}
+            {/* Glow */}
 
-              <div className="px-6 py-5 border-b border-slate-200 bg-slate-50">
-                <h3 className="font-semibold text-slate-900">
-                  Enterprise Identity Flow
-                </h3>
-              </div>
+            <div className="absolute inset-0 rounded-[36px] bg-cyan-400/10 blur-3xl" />
 
-              <div className="p-6 sm:p-8">
-                {/* Azure AD */}
+            {/* Product Screenshot */}
 
-                <div className="flex justify-center">
-                  <div className="w-full max-w-[280px] rounded-3xl border border-slate-200 bg-slate-50 p-6 text-center">
-                    <Building2 className="w-8 h-8 text-cyan-600 mx-auto mb-3" />
-
-                    <h4 className="font-semibold text-slate-900">Azure AD</h4>
-
-                    <p className="text-sm text-slate-500 mt-2">
-                      Enterprise Identity Provider
-                    </p>
-                  </div>
-                </div>
-
-                {/* Connector */}
-
-                <div className="flex justify-center py-5">
-                  <div className="w-px h-10 bg-cyan-300" />
-                </div>
-
-                {/* Identity Layer */}
-
-                <div className="flex justify-center">
-                  <div className="w-full max-w-[340px] rounded-3xl border border-cyan-200 bg-gradient-to-br from-cyan-50 to-blue-50 p-8 text-center">
-                    <KeyRound className="w-10 h-10 text-cyan-600 mx-auto mb-4" />
-
-                    <h4 className="font-semibold text-slate-900 text-lg">
-                      Identity Layer
-                    </h4>
-
-                    <p className="text-sm text-slate-500 mt-2">
-                      SSO • JWT • API Keys • Access Tokens
-                    </p>
-                  </div>
-                </div>
-
-                {/* Connector */}
-
-                <div className="flex justify-center py-5">
-                  <div className="w-px h-10 bg-cyan-300" />
-                </div>
-
-                {/* Consumers */}
-
-                <div className="grid grid-cols-3 gap-4">
-                  <ConsumerCard icon={Users} title="Users" />
-
-                  <ConsumerCard icon={AppWindow} title="Applications" />
-
-                  <ConsumerCard icon={Server} title="Services" />
-                </div>
-
-                {/* Status */}
-
-                <div className="mt-8 flex justify-center">
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-50 text-green-700 text-sm font-medium">
-                    <ShieldCheck className="w-4 h-4" />
-                    Authenticated & Authorized
-                  </div>
-                </div>
-              </div>
+            <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
+              <img
+                src="/images/enterprise-sso-dashboard.webp"
+                alt="Enterprise Identity & Single Sign-On"
+                className="w-full"
+              />
             </div>
           </motion.div>
         </div>
@@ -147,12 +212,4 @@ const IdentityAuthenticationSection = () => {
   );
 };
 
-const ConsumerCard = ({ icon: Icon, title }) => (
-  <div className="border border-slate-200 rounded-2xl p-5 text-center bg-white">
-    <Icon className="w-6 h-6 text-cyan-600 mx-auto mb-3" />
-
-    <h4 className="font-medium text-slate-900">{title}</h4>
-  </div>
-);
-
-export default IdentityAuthenticationSection;
+export default IdentitySSOSection;

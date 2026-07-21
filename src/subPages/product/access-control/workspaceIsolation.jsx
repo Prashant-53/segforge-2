@@ -1,126 +1,204 @@
 import React from "react";
 import { motion } from "framer-motion";
 import {
+  Users,
+  Briefcase,
   ShieldCheck,
   CheckCircle2,
-  FolderTree,
-  Database,
-  GitBranch,
+  UserCog,
   Lock,
 } from "lucide-react";
 
-const features = [
-  "Workspace Isolation",
-  "Dedicated Catalogs",
-  "Independent Resources",
-  "Nessie Branch Separation",
-  "Iceberg Namespace Isolation",
+const capabilityGroups = [
+  {
+    icon: UserCog,
+    title: "Engineering Roles",
+    items: [
+      "Data Engineers",
+      "Platform Engineers",
+      "ML Engineers",
+      "Administrators",
+    ],
+  },
+  {
+    icon: Briefcase,
+    title: "Business Roles",
+    items: ["Data Analysts", "BI Users", "Auditors", "Executives"],
+  },
 ];
 
-const WorkspaceIsolationSection = () => {
+const roleFeatures = [
+  {
+    icon: Users,
+    title: "Custom Permission Profiles",
+    description:
+      "Create organization-specific roles by combining module-level permissions for every platform capability, enabling teams to work securely without unnecessary access.",
+  },
+  {
+    icon: Lock,
+    title: "Production Protection",
+    description:
+      "Protect production environments from accidental modifications while enabling secure collaboration between engineering, analytics, and business teams through least-privilege access.",
+  },
+];
+
+const EnterpriseRolesSection = () => {
   return (
-    <section className="py-32 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 xl:gap-20 items-center">
-          {/* LEFT CONTENT */}
+    <section className="relative overflow-hidden bg-gradient-to-b from-gray-50 to-white py-28">
+      {/* Animated Grid */}
+
+      <motion.div
+        animate={{
+          backgroundPosition: ["0px 0px", "120px 120px"],
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+        className="absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right,#06b6d4 1px,transparent 1px),
+            linear-gradient(to bottom,#06b6d4 1px,transparent 1px)
+          `,
+          backgroundSize: "80px 80px",
+        }}
+      />
+
+      {/* Glow */}
+
+      <div className="absolute right-0 top-32 h-[500px] w-[500px] rounded-full bg-cyan-400/10 blur-[180px]" />
+
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid items-center gap-20 lg:grid-cols-2">
+          {/* LEFT IMAGE */}
 
           <motion.div
-            initial={{ opacity: 0, x: -25 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="relative"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-50 text-cyan-700 text-sm font-medium mb-6">
-              <ShieldCheck className="w-4 h-4" />
-              Workspace Isolation
-            </div>
+            {/* Glow */}
 
-            <h2 className="text-2xl sm:text-4xl font-bold text-slate-900 leading-tight">
-              Give every team its own secure environment.
-            </h2>
+            <div className="absolute inset-0 rounded-[36px] bg-cyan-400/10 blur-3xl" />
 
-            <p className="mt-6 text-md text-slate-600 leading-relaxed max-w-xl">
-              Every workspace operates as an isolated environment with its own
-              resources, data boundaries, and governance controls.
-            </p>
+            {/* Product Screenshot */}
 
-            <p className="mt-4 text-md text-slate-600 leading-relaxed max-w-xl">
-              Teams can work independently without worrying about accidental
-              access to projects, pipelines, or datasets belonging to other
-              groups.
-            </p>
-
-            <div className="mt-10 space-y-4">
-              {features.map((feature) => (
-                <div key={feature} className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-cyan-600" />
-
-                  <span className="text-slate-700">{feature}</span>
-                </div>
-              ))}
+            <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
+              <img
+                src="/images/enterprise-roles-dashboard.webp"
+                alt="Enterprise Roles & Least Privilege"
+                className="w-full"
+              />
             </div>
           </motion.div>
 
-          {/* RIGHT VISUAL */}
+          {/* RIGHT CONTENT */}
 
           <motion.div
-            initial={{ opacity: 0, x: 25 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
           >
-            <div className="bg-white border border-slate-200 rounded-[32px] p-5 sm:p-8 shadow-[0_30px_80px_rgba(15,23,42,0.08)]">
-              {/* Workspace Stack */}
+            {/* Badge */}
 
-              <div className="space-y-5">
-                <WorkspaceCard
-                  title="Engineering Workspace"
-                  icon={FolderTree}
-                  color="bg-cyan-50 border-cyan-200"
-                />
+            <div className="inline-flex rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">
+              Enterprise Roles
+            </div>
 
-                <div className="flex justify-center">
-                  <div className="w-px h-8 bg-slate-300" />
+            {/* Heading */}
+
+            <h2 className="mt-6 text-4xl font-bold leading-none text-slate-900 lg:text-4xl">
+              Give Every Team
+              <br />
+              Exactly the Access They Need.
+            </h2>
+
+            {/* Description */}
+
+            <p className="mt-6 text-md leading-6 text-slate-600">
+              Implement the principle of least privilege through customizable
+              enterprise roles that balance productivity with operational
+              security across engineering, analytics, and business teams.
+            </p>
+
+            {/* Capability Groups */}
+
+            <div className="mt-10 grid gap-6 md:grid-cols-2">
+              {capabilityGroups.map((group) => (
+                <div
+                  key={group.title}
+                  className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+                >
+                  <div className="flex items-center gap-3">
+                    <group.icon className="h-7 w-7 text-cyan-600" />
+
+                    <h3 className="text-xl font-semibold text-slate-900">
+                      {group.title}
+                    </h3>
+                  </div>
+
+                  <div className="mt-6 space-y-3">
+                    {group.items.map((item) => (
+                      <div key={item} className="flex items-center gap-3">
+                        <CheckCircle2 className="h-4 w-4 text-cyan-500" />
+
+                        <span className="text-slate-700">{item}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
+              ))}
+            </div>
 
-                <WorkspaceCard
-                  title="Marketing Workspace"
-                  icon={Database}
-                  color="bg-slate-50 border-slate-200"
-                />
+            {/* Supporting Features */}
 
-                <div className="flex justify-center">
-                  <div className="w-px h-8 bg-slate-300" />
+            <div className="mt-10 space-y-5">
+              {roleFeatures.map((feature) => (
+                <div
+                  key={feature.title}
+                  className="flex gap-5 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-cyan-200 hover:shadow-lg"
+                >
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-cyan-50">
+                    <feature.icon className="h-7 w-7 text-cyan-600" />
+                  </div>
+
+                  <div>
+                    <h3 className="text-lg font-semibold text-slate-900">
+                      {feature.title}
+                    </h3>
+
+                    <p className="mt-2 leading-7 text-slate-600">
+                      {feature.description}
+                    </p>
+                  </div>
                 </div>
+              ))}
+            </div>
 
-                <WorkspaceCard
-                  title="Finance Workspace"
-                  icon={GitBranch}
-                  color="bg-slate-50 border-slate-200"
-                />
-              </div>
+            {/* Bottom Highlight */}
 
-              {/* Isolation Layer */}
+            <div className="mt-10 rounded-3xl border border-cyan-100 bg-gradient-to-r from-cyan-50 to-white p-6">
+              <div className="flex items-start gap-4">
+                <ShieldCheck className="mt-1 h-7 w-7 text-cyan-600" />
 
-              <div className="mt-10 border border-cyan-200 bg-gradient-to-r from-cyan-50 to-blue-50 rounded-3xl p-6 text-center">
-                <Lock className="w-8 h-8 text-cyan-600 mx-auto mb-3" />
+                <div>
+                  <h3 className="text-xl font-semibold text-slate-900">
+                    Least Privilege by Default. Productivity by Design.
+                  </h3>
 
-                <h3 className="font-semibold text-slate-900">
-                  Completely Isolated
-                </h3>
-
-                <p className="text-sm text-slate-500 mt-2">
-                  Independent catalogs, namespaces, branches, permissions, and
-                  resources.
-                </p>
-              </div>
-
-              {/* Bottom Indicators */}
-
-              <div className="grid grid-cols-3 gap-3 mt-8">
-                <MiniTag text="Catalogs" />
-
-                <MiniTag text="Branches" />
-
-                <MiniTag text="Namespaces" />
+                  <p className="mt-3 leading-7 text-slate-600">
+                    Give every employee exactly the permissions they require—
+                    nothing more, nothing less. Seg Forge combines customizable
+                    enterprise roles with granular access control to protect
+                    production systems while enabling secure collaboration
+                    across the entire organization.
+                  </p>
+                </div>
               </div>
             </div>
           </motion.div>
@@ -130,28 +208,4 @@ const WorkspaceIsolationSection = () => {
   );
 };
 
-const WorkspaceCard = ({ title, icon: Icon, color }) => (
-  <div className={`border rounded-3xl p-5 ${color}`}>
-    <div className="flex items-center gap-4">
-      <div className="w-12 h-12 rounded-xl bg-white border border-slate-200 flex items-center justify-center">
-        <Icon className="w-5 h-5 text-cyan-600" />
-      </div>
-
-      <div>
-        <h4 className="font-semibold text-slate-900">{title}</h4>
-
-        <p className="text-sm text-slate-500 mt-1">
-          Dedicated resources and governance
-        </p>
-      </div>
-    </div>
-  </div>
-);
-
-const MiniTag = ({ text }) => (
-  <div className="rounded-xl border border-slate-200 py-3 text-center text-sm text-slate-600 bg-slate-50">
-    {text}
-  </div>
-);
-
-export default WorkspaceIsolationSection;
+export default EnterpriseRolesSection;

@@ -1,221 +1,215 @@
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  Database,
-  GitBranch,
-  Clock3,
-  RefreshCw,
-  Activity,
-  Layers3,
-} from "lucide-react";
+import { GitBranch, History, Tag, RotateCcw, CheckCircle2 } from "lucide-react";
 
-const technologies = [
-  {
-    icon: Database,
-    title: "Apache Iceberg",
-    description:
-      "Open table format designed for large-scale analytics and reliable data management.",
-  },
+const capabilityGroups = [
   {
     icon: GitBranch,
-    title: "Nessie Catalog",
-    description:
-      "Git-style branching and versioning for experimentation and safe collaboration.",
+    title: "Branches",
+    items: ["Zero-copy Workspaces", "Development Environments"],
   },
   {
-    icon: Activity,
-    title: "Apache Kafka",
-    description:
-      "Stream events and data changes into the lakehouse in real time.",
-  },
-  {
-    icon: Activity,
-    title: "Apache Flink",
-    description:
-      "Power large-scale batch and streaming workloads from a unified platform.",
-  },
-  {
-    icon: Clock3,
-    title: "Time Travel",
-    description:
-      "Query historical versions of data and recover from mistakes instantly.",
-  },
-  {
-    icon: RefreshCw,
-    title: "Schema Evolution",
-    description:
-      "Adapt to changing business requirements without rebuilding datasets.",
+    icon: History,
+    title: "Commits",
+    items: ["Track Schema Changes", "Data Updates", "Metadata Changes"],
   },
 ];
 
-const OpenLakehouseFoundation = () => {
+const nessieFeatures = [
+  {
+    icon: Tag,
+    title: "Tags",
+    description:
+      "Create production checkpoints and snapshot releases to promote validated datasets through your development lifecycle.",
+  },
+  {
+    icon: RotateCcw,
+    title: "Rollbacks",
+    description:
+      "Recover instantly from mistakes, undo unwanted changes, and deploy updates safely with complete confidence.",
+  },
+];
+
+const NessieSection = () => {
   return (
-    <section className="py-32 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        {/* Header */}
+    <section className="relative overflow-hidden bg-gradient-to-b from-white to-gray-50 py-28">
+      {/* Animated Grid */}
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="max-w-3xl mx-auto "
-        >
-          <div className="inline-flex px-4 py-2 rounded-full bg-cyan-50 text-cyan-700 text-sm font-medium mb-6">
-            Open Lakehouse Foundation
-          </div>
+      <motion.div
+        animate={{
+          backgroundPosition: ["0px 0px", "120px 120px"],
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+        className="absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right,#06b6d4 1px,transparent 1px),
+            linear-gradient(to bottom,#06b6d4 1px,transparent 1px)
+          `,
+          backgroundSize: "80px 80px",
+        }}
+      />
 
-          <h2 className="text-2xl sm:text-4xl font-bold text-slate-900 leading-tight">
-            Built on open standards,
-            <br />
-            not proprietary lock-in.
-          </h2>
+      {/* Glow */}
 
-          <p className="mt-6 text-md text-slate-600 leading-relaxed">
-            Store data once and use it everywhere. SegForge combines Apache
-            Iceberg, Nessie, and open ecosystem technologies to create a
-            lakehouse that grows with your platform.
-          </p>
-        </motion.div>
+      <div className="absolute right-0 top-32 h-[500px] w-[500px] rounded-full bg-cyan-400/10 blur-[180px]" />
 
-        {/* Architecture */}
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid items-center gap-20 lg:grid-cols-2">
+          {/* LEFT IMAGE */}
 
-        <div className="mt-24 relative min-h-[700px]">
-          {/* Center Core */}
-
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="w-[300px] h-[300px] rounded-full bg-gradient-to-br from-cyan-50 to-blue-50 border border-cyan-200 flex flex-col items-center justify-center text-center shadow-[0_25px_80px_rgba(15,23,42,0.08)]"
-            >
-              <Layers3 className="w-14 h-14 text-cyan-600 mb-5" />
-
-              <h3 className="text-3xl font-bold text-slate-900">SegForge</h3>
-
-              <p className="mt-2 text-slate-600">Lakehouse Core</p>
-            </motion.div>
-          </div>
-
-          {/* Orbiting Technologies */}
-
-          <div className="grid lg:grid-cols-2 gap-y-20">
-            <OrbitItem
-              className="lg:absolute left-0 top-10"
-              icon={Database}
-              title="Apache Iceberg"
-              description="Open table format for reliable analytics."
-            />
-
-            <OrbitItem
-              className="lg:absolute right-0 top-10"
-              icon={GitBranch}
-              title="Nessie Catalog"
-              description="Git-like versioning and branching."
-            />
-
-            <OrbitItem
-              className="lg:absolute left-0 top-1/2 -translate-y-1/2"
-              icon={Activity}
-              title="Apache Kafka"
-              description="Real-time streaming and CDC."
-            />
-
-            <OrbitItem
-              className="lg:absolute right-0 top-1/2 -translate-y-1/2"
-              icon={Activity}
-              title="Apache Flink"
-              description="Unified batch and stream processing."
-            />
-
-            <OrbitItem
-              className="lg:absolute left-0 bottom-10"
-              icon={Clock3}
-              title="Time Travel"
-              description="Access historical versions of data."
-            />
-
-            <OrbitItem
-              className="lg:absolute right-0 bottom-10"
-              icon={RefreshCw}
-              title="Schema Evolution"
-              description="Adapt schemas without disruption."
-            />
-          </div>
-
-          {/* Connector Lines */}
-
-          <svg
-            className="hidden lg:block absolute inset-0 w-full h-full pointer-events-none"
-            viewBox="0 0 1200 700"
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="relative"
           >
-            <path
-              d="M250 120 C450 180 500 250 600 350"
-              stroke="#22d3ee"
-              strokeWidth="1.5"
-              fill="none"
-              strokeDasharray="6 6"
-            />
+            {/* Glow */}
 
-            <path
-              d="M950 120 C750 180 700 250 600 350"
-              stroke="#22d3ee"
-              strokeWidth="1.5"
-              fill="none"
-              strokeDasharray="6 6"
-            />
+            <div className="absolute inset-0 rounded-[36px] bg-cyan-400/10 blur-3xl" />
 
-            <path
-              d="M250 350 L450 350"
-              stroke="#22d3ee"
-              strokeWidth="1.5"
-              fill="none"
-              strokeDasharray="6 6"
-            />
+            {/* Screenshot */}
 
-            <path
-              d="M750 350 L950 350"
-              stroke="#22d3ee"
-              strokeWidth="1.5"
-              fill="none"
-              strokeDasharray="6 6"
-            />
+            <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
+              <img
+                src="/images/apache-nessie-dashboard.webp"
+                alt="Apache Nessie Version Control"
+                className="w-full"
+              />
+            </div>
 
-            <path
-              d="M950 580 C750 520 700 450 600 350"
-              stroke="#22d3ee"
-              strokeWidth="1.5"
-              fill="none"
-              strokeDasharray="6 6"
-            />
-          </svg>
+            {/* Floating Card */}
+
+            <div className="absolute -left-6 top-8 hidden rounded-2xl border border-cyan-200 bg-white px-5 py-4 shadow-xl lg:block">
+              <p className="text-sm font-semibold text-slate-900">Branches</p>
+
+              <p className="mt-1 text-xs text-slate-500">
+                Zero-copy Development
+              </p>
+            </div>
+
+            {/* Floating Card */}
+
+            <div className="absolute -right-6 bottom-8 hidden rounded-2xl border border-cyan-200 bg-white px-5 py-4 shadow-xl lg:block">
+              <p className="text-sm font-semibold text-slate-900">Rollback</p>
+
+              <p className="mt-1 text-xs text-slate-500">Instant Recovery</p>
+            </div>
+          </motion.div>
+
+          {/* RIGHT CONTENT */}
+
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            {/* Badge */}
+
+            <div className="inline-flex rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">
+              Apache Nessie
+            </div>
+
+            {/* Heading */}
+
+            <h2 className="mt-6 text-4xl font-bold leading-none text-slate-900 lg:text-4xl">
+              Version Your Data
+              <br />
+              Like You Version Code.
+            </h2>
+
+            {/* Description */}
+
+            <p className="mt-6 text-md leading-6 text-slate-600">
+              Experiment safely using isolated branches, merge validated changes
+              into production, and recover instantly using Git-inspired data
+              versioning.
+            </p>
+
+            {/* Capability Groups */}
+
+            <div className="mt-10 grid gap-6 md:grid-cols-2">
+              {capabilityGroups.map((group) => (
+                <div
+                  key={group.title}
+                  className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+                >
+                  <div className="flex items-center gap-3">
+                    <group.icon className="h-7 w-7 text-cyan-600" />
+
+                    <h3 className="text-xl font-semibold text-slate-900">
+                      {group.title}
+                    </h3>
+                  </div>
+
+                  <div className="mt-6 space-y-3">
+                    {group.items.map((item) => (
+                      <div key={item} className="flex items-center gap-3">
+                        <CheckCircle2 className="h-4 w-4 text-cyan-500" />
+
+                        <span className="text-slate-700">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Supporting Features */}
+
+            <div className="mt-10 space-y-5">
+              {nessieFeatures.map((feature) => (
+                <div
+                  key={feature.title}
+                  className="flex gap-5 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-cyan-200 hover:shadow-lg"
+                >
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-cyan-50">
+                    <feature.icon className="h-7 w-7 text-cyan-600" />
+                  </div>
+
+                  <div>
+                    <h3 className="text-lg font-semibold text-slate-900">
+                      {feature.title}
+                    </h3>
+
+                    <p className="mt-2 leading-7 text-slate-600">
+                      {feature.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Bottom Highlight */}
+
+            <div className="mt-10 rounded-3xl border border-cyan-100 bg-gradient-to-r from-cyan-50 to-white p-6">
+              <div className="flex items-start gap-4">
+                <CheckCircle2 className="mt-1 h-7 w-7 text-cyan-600" />
+
+                <div>
+                  <h3 className="text-xl font-semibold text-slate-900">
+                    Every Dataset Has a Complete Version History.
+                  </h3>
+
+                  <p className="mt-3 leading-7 text-slate-600">
+                    Build, test, merge, and recover data changes with Git-style
+                    version control that enables safe experimentation and
+                    enterprise-scale collaboration across your lakehouse.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>
   );
 };
 
-const OrbitItem = ({ icon: Icon, title, description, className }) => {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 15 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      className={`max-w-xs ${className}`}
-    >
-      <div className="flex gap-4">
-        <div className="w-12 h-12 rounded-xl bg-cyan-50 border border-cyan-100 flex items-center justify-center flex-shrink-0">
-          <Icon className="w-5 h-5 text-cyan-600" />
-        </div>
-
-        <div>
-          <h3 className="font-semibold text-slate-900">{title}</h3>
-
-          <p className="mt-2 text-slate-600 leading-relaxed">{description}</p>
-        </div>
-      </div>
-    </motion.div>
-  );
-};
-
-export default OpenLakehouseFoundation;
+export default NessieSection;

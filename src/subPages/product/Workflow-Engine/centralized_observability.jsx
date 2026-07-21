@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Activity, History, BarChart3, FileText } from "lucide-react";
 
-import ObservabilityImg from "../../assets/workflow/observability.png";
+import Hero from "../../../assets/Products/WorkflowEngine/etlhero.jpg";
 
 const stats = [
   {
@@ -127,7 +127,7 @@ const CentralizedObservability = () => {
           >
             <div className="bg-white border border-slate-200 rounded-[32px] overflow-hidden shadow-[0_30px_80px_rgba(15,23,42,0.08)]">
               <img
-                src={ObservabilityImg}
+                src={Hero}
                 alt="Centralized Observability"
                 className="w-full object-cover"
               />

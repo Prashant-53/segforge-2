@@ -2,162 +2,176 @@ import React from "react";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
-  Play,
+  BookOpen,
   Database,
-  Brain,
-  BarChart3,
-  Server,
-  FileText,
-  Activity,
+  GitBranch,
+  ShieldCheck,
+  Cloud,
+  Layers3,
+  Sparkles,
 } from "lucide-react";
+import { Link } from "react-router-dom";
+
+const highlights = [
+  {
+    icon: Database,
+    title: "Apache Iceberg Native",
+  },
+  {
+    icon: GitBranch,
+    title: "Git-like Versioning",
+  },
+  {
+    icon: ShieldCheck,
+    title: "ACID Transactions",
+  },
+  {
+    icon: Cloud,
+    title: "Multi-Cloud Storage",
+  },
+  {
+    icon: Layers3,
+    title: "Open Lakehouse",
+  },
+];
 
 const LakehouseHero = () => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-gray-50 to-white pt-32 pb-24">
-      {/* Background */}
+    <section className="relative overflow-hidden bg-gradient-to-b from-gray-50 via-white to-white pt-36 pb-24">
+      {/* Animated Grid */}
 
-      <div className="absolute inset-0 bg-grid opacity-[0.03]" />
+      <motion.div
+        animate={{
+          backgroundPosition: ["0px 0px", "120px 120px"],
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+        className="absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right,#06b6d4 1px,transparent 1px),
+            linear-gradient(to bottom,#06b6d4 1px,transparent 1px)
+          `,
+          backgroundSize: "80px 80px",
+        }}
+      />
 
-      <div className="absolute top-0 right-0 w-[700px] h-[500px] bg-cyan-500/10 blur-[120px] rounded-full" />
+      {/* Glow */}
 
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
-          {/* LEFT */}
+      <div className="absolute left-1/2 top-20 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-cyan-400/10 blur-[180px]" />
+
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid items-center gap-20 lg:grid-cols-2">
+          {/* LEFT CONTENT */}
 
           <motion.div
-            initial={{ opacity: 0, x: -25 }}
+            initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-50 text-cyan-700 text-sm font-medium mb-6">
-              <Database className="w-4 h-4" />
+            {/* Badge */}
+
+            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">
+              <Sparkles className="h-4 w-4" />
               Data Lakehouse
             </div>
 
-            <h1 className="text-4xl  md:text-6xl font-bold tracking-tight text-slate-900 leading-[1.05]">
-              One platform for
+            {/* Heading */}
+
+            <h1 className="mt-8 text-4xl font-bold leading-none text-slate-900 lg:text-5xl">
+              The Open Lakehouse
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">
-                storing, processing, and analyzing enterprise data.
+              Foundation.
+              <br />
+              <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
+                Built on Standards, Not Silos.
               </span>
             </h1>
 
-            <p className="mt-8 text-md text-slate-600 leading-relaxed max-w-xl">
-              Combine the flexibility of a data lake with the performance,
-              governance, and reliability of a modern warehouse. Build once and
-              support analytics, AI, and operational workloads from the same
-              foundation.
+            {/* Description */}
+
+            <p className="mt-8 max-w-2xl text-md leading-6 text-slate-600">
+              Unify enterprise storage, governance, and analytics using Apache
+              Iceberg and Apache Nessie. Deploy an open lakehouse on your own
+              infrastructure while retaining complete ownership of your data,
+              metadata, and compute.
             </p>
 
-            <div className="mt-10 flex flex-wrap gap-4">
-              <button className="px-8 py-4 bg-slate-900 text-white rounded-xl hover:bg-slate-800 transition flex items-center gap-2 font-medium">
-                Explore Lakehouse
-                <ArrowRight className="w-4 h-4" />
-              </button>
+            {/* Buttons */}
 
-              <button className="px-8 py-4 border border-slate-300 text-slate-700 rounded-xl hover:bg-slate-50 transition flex items-center gap-2 font-medium">
-                <Play className="w-4 h-4" />
-                Book Demo
-              </button>
-            </div>
+            <div className="mt-12 flex flex-wrap gap-4">
+              <Link
+                to="/contact"
+                className="group relative inline-flex items-center justify-center overflow-hidden rounded-md border border-cyan-500 px-7 py-3 font-semibold text-slate-900 transition-colors duration-300 hover:text-white"
+              >
+                <span className="absolute inset-y-0 left-0 w-0 bg-[#18D0BB] transition-all duration-300 ease-out group-hover:w-full" />
 
-            <div className="mt-12 flex flex-wrap gap-8">
-              <div>
-                <h4 className="font-semibold text-slate-900">Open Standards</h4>
-                <p className="text-sm text-slate-500 mt-1">Iceberg & Nessie</p>
-              </div>
+                <span className="relative z-10 flex items-center gap-2">
+                  Deploy Your Lakehouse
+                  <ArrowRight className="h-4 w-4" />
+                </span>
+              </Link>
 
-              <div>
-                <h4 className="font-semibold text-slate-900">
-                  Unified Storage
-                </h4>
-                <p className="text-sm text-slate-500 mt-1">Batch & Streaming</p>
-              </div>
-
-              <div>
-                <h4 className="font-semibold text-slate-900">
-                  Analytics Ready
-                </h4>
-                <p className="text-sm text-slate-500 mt-1">BI, AI & SQL</p>
-              </div>
+              <Link
+                to="/documentation"
+                className="group inline-flex items-center gap-2 rounded-md border border-slate-300 bg-white px-7 py-3 font-semibold text-slate-700 transition hover:border-cyan-400 hover:text-cyan-600"
+              >
+                <BookOpen className="h-4 w-4" />
+                View Documentation
+              </Link>
             </div>
           </motion.div>
 
-          {/* RIGHT VISUAL */}
+          {/* RIGHT IMAGE */}
 
           <motion.div
-            initial={{ opacity: 0, x: 25 }}
+            initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
+            className="relative"
           >
-            <div className="relative bg-white border border-slate-200 rounded-[32px] overflow-hidden shadow-[0_30px_80px_rgba(15,23,42,0.08)] p-10">
-              {/* Sources */}
+            {/* Glow */}
 
-              <div className="grid grid-cols-2 gap-4">
-                <SourceNode icon={Database} label="PostgreSQL" />
-                <SourceNode icon={Database} label="MySQL" />
-                <SourceNode icon={Activity} label="Kafka" />
-                <SourceNode icon={FileText} label="Files" />
-              </div>
+            <div className="absolute inset-0 rounded-[36px] bg-cyan-400/10 blur-3xl" />
 
-              {/* Connector */}
+            {/* Product Screenshot */}
 
-              <div className="flex justify-center py-6">
-                <div className="w-px h-12 bg-cyan-300" />
-              </div>
+            <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
+              <img
+                src="/images/lakehouse-hero.webp"
+                alt="Seg Forge Data Lakehouse"
+                className="w-full"
+              />
+            </div>
 
-              {/* Lakehouse Core */}
+            {/* Floating Card */}
 
-              <div className="flex justify-center">
-                <div className="w-full max-w-xs rounded-3xl h-64 rounded-full bg-gradient-to-br from-cyan-50 to-blue-50 border border-cyan-200 flex flex-col items-center justify-center text-center">
-                  <Server className="w-12 h-12 text-cyan-600 mb-4" />
+            <div className="absolute -left-6 top-10 hidden rounded-2xl border border-cyan-200 bg-white px-5 py-4 shadow-xl lg:block">
+              <p className="text-sm font-semibold text-slate-900">
+                Apache Iceberg
+              </p>
 
-                  <h3 className="text-2xl font-bold text-slate-900">
-                    SegForge
-                  </h3>
+              <p className="mt-1 text-xs text-slate-500">Open Table Format</p>
+            </div>
 
-                  <p className="text-slate-600">Lakehouse</p>
-                </div>
-              </div>
+            {/* Floating Card */}
 
-              {/* Connector */}
+            <div className="absolute -right-6 bottom-10 hidden rounded-2xl border border-cyan-200 bg-white px-5 py-4 shadow-xl lg:block">
+              <p className="text-sm font-semibold text-slate-900">
+                Apache Nessie
+              </p>
 
-              <div className="flex justify-center py-6">
-                <div className="w-px h-12 bg-cyan-300" />
-              </div>
-
-              {/* Consumers */}
-
-              <div className="grid grid-cols-3 gap-4">
-                <ConsumerNode icon={BarChart3} label="Analytics" />
-
-                <ConsumerNode icon={Brain} label="AI / ML" />
-
-                <ConsumerNode icon={Database} label="BI" />
-              </div>
+              <p className="mt-1 text-xs text-slate-500">
+                Git-like Data Versioning
+              </p>
             </div>
           </motion.div>
         </div>
       </div>
     </section>
-  );
-};
-
-const SourceNode = ({ icon: Icon, label }) => {
-  return (
-    <div className="p-4 rounded-2xl border border-slate-200 bg-slate-50 flex items-center gap-3">
-      <Icon className="w-5 h-5 text-cyan-600" />
-      <span className="font-medium text-slate-700">{label}</span>
-    </div>
-  );
-};
-
-const ConsumerNode = ({ icon: Icon, label }) => {
-  return (
-    <div className="p-4 rounded-2xl border border-slate-200 bg-white flex flex-col items-center text-center">
-      <Icon className="w-5 h-5 text-cyan-600 mb-2" />
-      <span className="text-sm font-medium text-slate-700">{label}</span>
-    </div>
   );
 };
 

@@ -2,213 +2,169 @@ import React from "react";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
-  Play,
-  Search,
+  BookOpen,
   Database,
-  FileText,
   GitBranch,
+  Search,
+  ShieldCheck,
+  Layers3,
+  Sparkles,
 } from "lucide-react";
+import { Link } from "react-router-dom";
+
+const highlights = [
+  {
+    icon: Layers3,
+    title: "Apache Iceberg Native",
+  },
+  {
+    icon: GitBranch,
+    title: "Git-like Versioning",
+  },
+  {
+    icon: Search,
+    title: "Data Discovery",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Enterprise Governance",
+  },
+  {
+    icon: Database,
+    title: "Open Lakehouse",
+  },
+];
 
 const DataCatalogHero = () => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-gray-50 to-white pt-30 pb-24">
-      {/* Background */}
-      <div className="absolute inset-0 bg-grid opacity-[0.03]" />
+    <section className="relative overflow-hidden bg-gradient-to-b from-gray-50 via-white to-white pt-36 pb-24">
+      {/* Animated Grid */}
 
-      <div className="absolute top-0 right-0 w-[700px] h-[500px] bg-cyan-500/10 blur-[120px] rounded-full" />
+      <motion.div
+        animate={{
+          backgroundPosition: ["0px 0px", "120px 120px"],
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+        className="absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right,#06b6d4 1px,transparent 1px),
+            linear-gradient(to bottom,#06b6d4 1px,transparent 1px)
+          `,
+          backgroundSize: "80px 80px",
+        }}
+      />
 
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-20  items-center">
-          {/* LEFT */}
+      {/* Glow */}
+
+      <div className="absolute left-1/2 top-20 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-cyan-400/10 blur-[180px]" />
+
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid items-center gap-20 lg:grid-cols-2">
+          {/* LEFT CONTENT */}
 
           <motion.div
-            initial={{ opacity: 0, x: -25 }}
+            initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
           >
-            {/* Label */}
+            {/* Badge */}
 
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-50 text-cyan-700 text-sm font-medium mb-6">
-              <Database className="w-4 h-4" />
-              Data Catalog
+            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">
+              <Sparkles className="h-4 w-4" />
+              Intelligent Data Catalog
             </div>
 
             {/* Heading */}
 
-            <h1 className="text-[2.375rem] lg:text-6xl md:text-5xl font-bold  text-slate-900 leading-[1.05]">
-              Find, understand,
+            <h1 className="mt-8 text-4xl font-bold leading-none text-slate-900 lg:text-5xl">
+              The Intelligent Catalog
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">
-                and govern enterprise data at scale.
+              <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
+                for Your Modern Lakehouse.
               </span>
             </h1>
 
             {/* Description */}
 
-            <p className="mt-8 text-md text-slate-600 leading-relaxed max-w-xl">
-              One place to discover datasets, track lineage, manage metadata,
-              and collaborate across teams across your entire lakehouse
-              ecosystem.
+            <p className="mt-8 max-w-2xl text-md leading-6 text-slate-600">
+              Discover, govern, version, and manage enterprise data through a
+              unified catalog powered by Apache Iceberg and Apache Nessie. Build
+              trusted data products with complete visibility, version control,
+              and enterprise governance across your entire lakehouse.
             </p>
+
+            {/* Highlights */}
 
             {/* Buttons */}
 
-            <div className="flex flex-col items-center r sm:flex-row gap-4 mt-5">
-              <button className="group relative inline-flex items-center justify-center overflow-hidden rounded-md border border-slate-800 px-6 py-3 font-semibold">
-                <span className="absolute inset-y-0 left-0 w-0 bg-[#18D0BB] transition-all duration-300 group-hover:w-full"></span>
+            <div className="mt-12 flex flex-wrap gap-4">
+              <Link
+                to="/contact"
+                className="group relative inline-flex items-center justify-center overflow-hidden rounded-md border border-cyan-500 px-7 py-3 font-semibold text-slate-900 transition-colors duration-300 hover:text-white"
+              >
+                <span className="absolute inset-y-0 left-0 w-0 bg-[#18D0BB] transition-all duration-300 ease-out group-hover:w-full"></span>
 
                 <span className="relative z-10 flex items-center gap-2">
-                  Explore catalog <ArrowRight className="w-4 h-4" />
+                  Explore the Catalog
+                  <ArrowRight className="h-4 w-4" />
                 </span>
-              </button>
+              </Link>
 
-              <button className="group relative inline-flex items-center justify-center overflow-hidden rounded-md border border-slate-800 px-6 py-3 font-semibold">
-                <span className="absolute inset-y-0 left-0 w-0 bg-[#18D0BB] transition-all duration-300 group-hover:w-full"></span>
-
-                <span className="relative z-10 flex items-center gap-2">
-                  <Play className="w-4 h-4" />
-                  Book Demo
-                </span>
-              </button>
+              <Link
+                to="/documentation"
+                className="group inline-flex items-center gap-2 rounded-md border border-slate-300 bg-white px-7 py-3 font-semibold text-slate-700 transition hover:border-cyan-400 hover:text-cyan-600"
+              >
+                <BookOpen className="h-4 w-4" />
+                View Documentation
+              </Link>
             </div>
-
-            {/* Quick Highlights */}
           </motion.div>
 
-          {/* RIGHT */}
+          {/* RIGHT IMAGE */}
 
           <motion.div
-            initial={{ opacity: 0, x: 25 }}
+            initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <div className="relative bg-white border border-slate-200 rounded-[32px] overflow-hidden shadow-[0_30px_80px_rgba(15,23,42,0.08)]">
-              {/* Top Bar */}
+            {/* Glow */}
 
-              <div className="border-b border-slate-200 bg-slate-50 px-5 py-4 flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 bg-red-400 rounded-full" />
-                  <div className="w-3 h-3 bg-yellow-400 rounded-full" />
-                  <div className="w-3 h-3 bg-green-400 rounded-full" />
-                </div>
+            <div className="absolute inset-0 rounded-[36px] bg-cyan-400/10 blur-3xl" />
 
-                <div className="text-sm text-slate-500">
-                  SegForge Data Catalog
-                </div>
-              </div>
+            {/* Image */}
 
-              {/* Catalog UI */}
+            <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
+              <img
+                src="/images/catalog-hero.webp"
+                alt="Seg Forge Data Catalog"
+                className="w-full"
+              />
+            </div>
 
-              <div className="grid grid-cols-12 min-h-[520px]">
-                {/* Sidebar */}
+            {/* Floating Card */}
 
-                <div className="col-span-4 border-r border-slate-200 bg-slate-50 p-5">
-                  <div className="flex items-center gap-2 text-slate-500 mb-5">
-                    <Search className="w-4 h-4" />
-                    <span className="text-sm">Search datasets</span>
-                  </div>
+            <div className="absolute -left-6 top-10 hidden rounded-2xl border border-cyan-200 bg-white px-5 py-4 shadow-xl lg:block">
+              <p className="text-sm font-semibold text-slate-900">
+                Apache Iceberg
+              </p>
 
-                  <div className="space-y-4 text-sm">
-                    <div>
-                      <p className="font-medium text-slate-800">raw</p>
+              <p className="mt-1 text-xs text-slate-500">Open Table Format</p>
+            </div>
 
-                      <div className="ml-4 mt-2 space-y-2 text-slate-500">
-                        <p>customer_events</p>
-                        <p>transactions</p>
-                        <p>orders</p>
-                      </div>
-                    </div>
+            {/* Floating Card */}
 
-                    <div>
-                      <p className="font-medium text-slate-800">staged</p>
+            <div className="absolute -right-6 bottom-10 hidden rounded-2xl border border-cyan-200 bg-white px-5 py-4 shadow-xl lg:block">
+              <p className="text-sm font-semibold text-slate-900">
+                Apache Nessie
+              </p>
 
-                      <div className="ml-4 mt-2 space-y-2 text-slate-500">
-                        <p>sales_cleaned</p>
-                        <p>customer_profiles</p>
-                      </div>
-                    </div>
-
-                    <div>
-                      <p className="font-medium text-cyan-600">curated</p>
-
-                      <div className="ml-4 mt-2 space-y-2 text-slate-500">
-                        <p>revenue_dashboard</p>
-                        <p>forecast_data</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Main Panel */}
-
-                <div className="col-span-8 p-6">
-                  <div className="flex items-center gap-2 mb-5">
-                    <FileText className="w-4 h-4 text-cyan-600" />
-                    <span className="font-semibold text-slate-900">
-                      revenue_dashboard
-                    </span>
-                  </div>
-
-                  {/* Metadata */}
-
-                  <div className="grid grid-cols-3 gap-4 mb-6">
-                    <div className="bg-slate-50 rounded-xl p-4">
-                      <p className="text-xs text-slate-500">Rows</p>
-                      <p className="font-semibold text-slate-900 mt-1">24.3M</p>
-                    </div>
-
-                    <div className="bg-slate-50 rounded-xl p-4">
-                      <p className="text-xs text-slate-500">Format</p>
-                      <p className="font-semibold text-slate-900 mt-1">
-                        Iceberg
-                      </p>
-                    </div>
-
-                    <div className="bg-slate-50 rounded-xl p-4">
-                      <p className="text-xs text-slate-500">Storage</p>
-                      <p className="font-semibold text-slate-900 mt-1">S3</p>
-                    </div>
-                  </div>
-
-                  {/* Schema */}
-
-                  <div className="border border-slate-200 rounded-xl overflow-hidden">
-                    <div className="bg-slate-50 px-4 py-3 border-b border-slate-200 font-medium text-slate-900">
-                      Schema Preview
-                    </div>
-
-                    <div className="p-4 space-y-3 text-sm">
-                      <div className="flex justify-between">
-                        <span>customer_id</span>
-                        <span className="text-slate-500">bigint</span>
-                      </div>
-
-                      <div className="flex justify-between">
-                        <span>region</span>
-                        <span className="text-slate-500">string</span>
-                      </div>
-
-                      <div className="flex justify-between">
-                        <span>revenue</span>
-                        <span className="text-slate-500">decimal</span>
-                      </div>
-
-                      <div className="flex justify-between">
-                        <span>created_at</span>
-                        <span className="text-slate-500">timestamp</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Lineage */}
-
-                  <div className="mt-6 flex items-center gap-2 text-cyan-600 text-sm font-medium">
-                    <GitBranch className="w-4 h-4" />
-                    Lineage & Version History Available
-                  </div>
-                </div>
-              </div>
+              <p className="mt-1 text-xs text-slate-500">Git-like Versioning</p>
             </div>
           </motion.div>
         </div>
