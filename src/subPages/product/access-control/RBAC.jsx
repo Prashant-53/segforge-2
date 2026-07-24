@@ -8,6 +8,7 @@ import {
   Eye,
   Pencil,
 } from "lucide-react";
+import RBAC from "../../../assets/Products/Access-Control/RBAC.webp";
 
 const capabilityGroups = [
   {
@@ -191,7 +192,7 @@ const RBACSection = () => {
 
             <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
               <img
-                src="/images/rbac-permission-matrix.webp"
+                src={RBAC}
                 alt="Role Based Access Control"
                 className="w-full"
               />

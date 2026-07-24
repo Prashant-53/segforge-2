@@ -41,14 +41,21 @@ const FinancialServicesHero = () => {
             </p>
 
             <div className="mt-10 flex  flex-row flex-wrap gap-4">
-              <button className="px-8 py-4 bg-slate-900 text-white rounded-xl hover:bg-slate-800 transition flex items-center gap-2 font-medium">
-                Explore Financial Solutions
-                <ArrowRight className="w-4 h-4" />
+              <button className="group relative inline-flex items-center justify-center overflow-hidden rounded-md border border-slate-800 px-6 py-3 font-semibold text-black transition-colors duration-300 hover:text-white">
+                <span className="absolute inset-y-0 left-0 w-0 bg-[#18D0BB] transition-all duration-300 ease-out group-hover:w-full"></span>
+
+                <span className="relative z-10 flex items-center gap-2">
+                  Explore Financial Solutions
+                  <ArrowRight className="w-4 h-4" />
+                </span>
               </button>
 
-              <button className="px-8 py-4 border border-slate-300 text-slate-700 rounded-xl hover:bg-slate-50 transition flex items-center gap-2 font-medium">
-                <Play className="w-4 h-4" />
-                Request Architecture Review
+              <button className="group relative inline-flex items-center justify-center overflow-hidden rounded-md border border-slate-800 px-6 py-3 font-semibold text-black transition-colors duration-300 hover:text-white">
+                <span className="absolute inset-y-0 left-0 w-0 bg-[#18D0BB] transition-all duration-300 ease-out group-hover:w-full"></span>
+
+                <span className="relative z-10">
+                  Request Architecture Review
+                </span>
               </button>
             </div>
           </motion.div>

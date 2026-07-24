@@ -2,98 +2,118 @@ import React from "react";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
-  Play,
+  BookOpen,
   Cloud,
+  CloudCog,
   Database,
-  Globe,
-  Network,
+  Layers3,
+  Sparkles,
 } from "lucide-react";
+import { Link } from "react-router-dom";
+import Hero from "../../../assets/Products/Multi-Cloud/hero.webp";
 
 const MultiCloudHero = () => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-gray-50 to-white pt-32 pb-24">
-      <div className="absolute inset-0 bg-grid opacity-[0.03]" />
+    <section className="relative overflow-hidden bg-gradient-to-b from-gray-50 via-white to-white pt-36 pb-24">
+      {/* Animated Grid */}
 
-      <div className="absolute top-0 right-0 w-[700px] h-[500px] bg-cyan-500/10 blur-[120px] rounded-full" />
+      <motion.div
+        animate={{
+          backgroundPosition: ["0px 0px", "120px 120px"],
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+        className="absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right,#06b6d4 1px,transparent 1px),
+            linear-gradient(to bottom,#06b6d4 1px,transparent 1px)
+          `,
+          backgroundSize: "80px 80px",
+        }}
+      />
 
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
-          {/* LEFT */}
+      {/* Glow */}
+
+      <div className="absolute left-1/2 top-20 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-cyan-400/10 blur-[180px]" />
+
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid items-center gap-20 lg:grid-cols-2">
+          {/* LEFT CONTENT */}
 
           <motion.div
-            initial={{ opacity: 0, x: -25 }}
+            initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-50 text-cyan-700 text-sm font-medium mb-6">
-              <Globe className="w-4 h-4" />
-              Multi-Cloud Platform
+            {/* Badge */}
+
+            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">
+              <Sparkles className="h-4 w-4" />
+              Multi-Cloud Deployment
             </div>
 
-            <h1 className="text-4xl sm:text-4xl lg:text-6xl font-bold text-slate-900 leading-[1.05]">
-              Run your data platform
+            {/* Heading */}
+
+            <h1 className="mt-8 text-4xl font-bold leading-none text-slate-900 lg:text-5xl">
+              Deploy Anywhere.
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">
-                across every cloud.
+              <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
+                Own Everything.
               </span>
             </h1>
 
-            <p className="mt-8 text-md text-slate-600 leading-relaxed max-w-xl">
-              Deploy workloads, store data, and connect systems across cloud
-              providers and on-premises environments from a single platform.
+            {/* Description */}
+
+            <p className="mt-8 max-w-2xl text-md leading-6 text-slate-600">
+              Deploy Seg Forge wherever your business operates while maintaining
+              complete ownership of your data, metadata, and infrastructure. Run
+              the same enterprise lakehouse on AWS, Microsoft Azure, Google
+              Cloud, or hybrid environments using open technologies like Apache
+              Iceberg and Parquet—eliminating vendor lock-in without sacrificing
+              performance, scalability, or flexibility.
             </p>
 
-            <p className="mt-4 text-md text-slate-600 leading-relaxed max-w-xl">
-              Build once, operate anywhere, and keep the flexibility to evolve
-              your infrastructure strategy over time.
-            </p>
+            {/* Buttons */}
 
-            <div className="mt-10 flex flex-col sm:flex-row gap-4">
-              <button className="w-full sm:w-auto px-6 py-4 bg-slate-900 text-white rounded-xl flex items-center justify-center gap-2">
-                Explore Multi-Cloud
-                <ArrowRight className="w-4 h-4" />
-              </button>
+            <div className="mt-12 flex flex-wrap gap-2">
+              <Link
+                to="/contact"
+                className="group relative inline-flex items-center justify-center overflow-hidden rounded-md border border-cyan-500 px-6 py-3 font-semibold text-slate-900 transition-colors duration-300 hover:text-white"
+              >
+                <span className="absolute inset-y-0 left-0 w-0 bg-[#18D0BB] transition-all duration-300 ease-out group-hover:w-full"></span>
 
-              <button className="w-full sm:w-auto px-6 py-4 border border-slate-300 rounded-xl text-slate-700 flex items-center justify-center gap-2">
-                <Play className="w-4 h-4" />
-                View Deployment Options
-              </button>
+                <span className="relative z-10 flex items-center gap-2">
+                  Launch Multi-Cloud Workspace
+                  <ArrowRight className="h-4 w-4" />
+                </span>
+              </Link>
             </div>
           </motion.div>
 
-          {/* RIGHT */}
+          {/* RIGHT IMAGE */}
 
           <motion.div
-            initial={{ opacity: 0, x: 25 }}
+            initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
+            className="relative"
           >
-            <div className="bg-white border border-slate-200 rounded-[32px] p-5 sm:p-10 shadow-[0_30px_80px_rgba(15,23,42,0.08)]">
-              <div className="relative flex justify-center items-center h-[420px]">
-                {/* Center */}
+            {/* Glow */}
 
-                <div className="absolute w-44 h-44 rounded-full bg-gradient-to-br from-cyan-50 to-blue-50 border border-cyan-200 flex flex-col items-center justify-center z-10">
-                  <Database className="w-10 h-10 text-cyan-600 mb-3" />
-                  <span className="font-semibold text-slate-900">SegForge</span>
-                </div>
+            <div className="absolute inset-0 rounded-[36px] bg-cyan-400/10 blur-3xl" />
 
-                {/* Top Clouds */}
+            {/* Product Screenshot */}
 
-                <CloudNode title="AWS" top="0" left="15%" />
-                <CloudNode title="Azure" top="0" right="15%" />
-                <CloudNode title="GCP" top="120px" right="0" />
-
-                {/* Bottom */}
-
-                <CloudNode title="On-Prem" bottom="40px" left="35%" />
-
-                {/* Unified Data */}
-
-                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-56 rounded-2xl bg-slate-900 text-white p-5 text-center">
-                  <Network className="w-6 h-6 mx-auto mb-2" />
-                  Unified Data
-                </div>
-              </div>
+            <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
+              <img
+                src={Hero}
+                alt="Seg Forge Multi-Cloud Platform"
+                className="w-full"
+              />
             </div>
           </motion.div>
         </div>
@@ -101,13 +121,5 @@ const MultiCloudHero = () => {
     </section>
   );
 };
-
-const CloudNode = ({ title, ...position }) => (
-  <div className="absolute" style={position}>
-    <div className="w-28 h-28 rounded-2xl border border-slate-200 bg-white flex items-center justify-center font-medium text-slate-700 shadow-sm">
-      {title}
-    </div>
-  </div>
-);
 
 export default MultiCloudHero;

@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Play, CheckCircle2 } from "lucide-react";
 import { Link } from "react-router-dom";
-import ETLHero from "../../../assets/Products/ETL/etlhero.jpg";
+import ETLHero from "../../../assets/Products/ETL/etlhero.webp";
 
 const ETLStudioHero = () => {
   return (
@@ -83,10 +83,13 @@ const ETLStudioHero = () => {
 
               {/* Secondary */}
 
-              <button className="group inline-flex items-center gap-2 rounded-md border border-slate-300 bg-white px-7 py-3 font-semibold text-slate-700 transition hover:border-cyan-400 hover:text-cyan-600">
+              <Link
+                to="/docs/core-concepts/pipelines-dags"
+                className="group inline-flex items-center gap-2 rounded-md border border-slate-300 bg-white px-7 py-3 font-semibold text-slate-700 transition hover:border-cyan-400 hover:text-cyan-600"
+              >
                 <Play className="h-4 w-4 fill-current" />
-                Watch Demo
-              </button>
+                View Documentation
+              </Link>
             </div>
           </motion.div>
 

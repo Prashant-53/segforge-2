@@ -8,6 +8,7 @@ import {
   Server,
   Lock,
 } from "lucide-react";
+import SuperSet from "../../../assets/Products/Analytics/superset.webp";
 
 const capabilityGroups = [
   {
@@ -169,7 +170,7 @@ const EmbeddedSupersetSection = () => {
 
             <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
               <img
-                src="/images/superset-dashboard.webp"
+                src={SuperSet}
                 alt="Embedded Apache Superset"
                 className="w-full"
               />

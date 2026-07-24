@@ -1,142 +1,213 @@
 import React from "react";
 import { motion } from "framer-motion";
 import {
+  CloudCog,
   Network,
-  CheckCircle2,
-  Database,
   Workflow,
-  Layers,
+  Scaling,
+  CheckCircle2,
+  ServerCog,
 } from "lucide-react";
+import Orchestration from "../../../assets/Products/Multi-Cloud/multiorchestration.webp";
 
-const features = [
-  "Snowflake",
-  "PostgreSQL",
-  "MySQL",
-  "SQL Server",
-  "Oracle",
-  "Kafka",
-  "Cross-Cloud Pipelines",
+const capabilityGroups = [
+  {
+    icon: Scaling,
+    title: "Auto-Scaling Compute",
+    items: [
+      "Apache Flink",
+      "Apache Kafka",
+      "Dynamic Scaling",
+      "Cloud Independent",
+    ],
+  },
+  {
+    icon: Workflow,
+    title: "Unified Operations",
+    items: [
+      "Single Pane of Glass",
+      "Cross-Cloud Pipelines",
+      "Unified Connections",
+      "Provider-Agnostic DAGs",
+    ],
+  },
 ];
 
-const CrossCloudConnectivitySection = () => {
+const orchestrationFeatures = [
+  {
+    icon: CloudCog,
+    title: "Seamless Multi-Cloud Management",
+    description:
+      "Manage clusters, pipelines, storage connections, and workloads across AWS, Microsoft Azure, and Google Cloud from one unified control plane without switching consoles.",
+  },
+  {
+    icon: Network,
+    title: "Provider-Agnostic Data Pipelines",
+    description:
+      "Design a pipeline once using the visual workflow builder and execute it anywhere. Whether data moves from Amazon RDS to Google Cloud Storage or Azure SQL to Amazon S3, the workflow remains identical.",
+  },
+];
+
+const MultiCloudOrchestrationSection = () => {
   return (
-    <section className="py-32 bg-slate-50  overflow-x-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 grid-col-1 gap-16 xl:gap-20 items-center">
-          {/* CONTENT */}
+    <section className="relative overflow-hidden bg-gradient-to-b from-white to-gray-50 py-28">
+      {/* Animated Grid */}
+
+      <motion.div
+        animate={{
+          backgroundPosition: ["0px 0px", "120px 120px"],
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+        className="absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right,#06b6d4 1px,transparent 1px),
+            linear-gradient(to bottom,#06b6d4 1px,transparent 1px)
+          `,
+          backgroundSize: "80px 80px",
+        }}
+      />
+
+      {/* Glow */}
+
+      <div className="absolute left-0 top-32 h-[500px] w-[500px] rounded-full bg-cyan-400/10 blur-[180px]" />
+
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid items-center gap-20 lg:grid-cols-2">
+          {/* LEFT CONTENT */}
 
           <motion.div
-            initial={{ opacity: 0, x: -25 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-50 text-cyan-700 text-sm font-medium mb-6">
-              <Network className="w-4 h-4" />
-              Unified Connectivity
+            {/* Badge */}
+
+            <div className="inline-flex rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">
+              Multi-Cloud Orchestration
             </div>
 
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 ">
-              Break down cloud silos without moving everything.
+            {/* Heading */}
+
+            <h2 className="mt-6 text-4xl font-bold leading-none text-slate-900 lg:text-4xl">
+              One Control Plane.
+              <br />
+              <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
+                Every Cloud.
+              </span>
             </h2>
 
-            <p className="mt-6 text-md text-slate-600 leading-relaxed max-w-xl">
-              Build pipelines that span clouds, regions, and environments from a
-              single workspace.
+            {/* Description */}
+
+            <p className="mt-6 text-md leading-6 text-slate-600">
+              Automatically orchestrate compute resources, streaming clusters,
+              and data pipelines across AWS, Microsoft Azure, and Google Cloud
+              through one unified platform. Build once and execute anywhere
+              without cloud-specific workflows.
             </p>
 
-            <p className="mt-4 text-md text-slate-600 leading-relaxed max-w-xl">
-              Connect databases, streaming platforms, and analytics systems
-              regardless of where they are hosted.
-            </p>
+            {/* Capability Groups */}
 
-            <p className="mt-4 text-md text-slate-600 leading-relaxed max-w-xl">
-              Create a unified data platform without forcing every workload into
-              a single cloud provider.
-            </p>
+            <div className="mt-10 grid gap-6 md:grid-cols-2">
+              {capabilityGroups.map((group) => (
+                <div
+                  key={group.title}
+                  className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+                >
+                  <div className="flex items-center gap-3">
+                    <group.icon className="h-7 w-7 text-cyan-600" />
 
-            <div className="mt-10 space-y-4">
-              {features.map((feature) => (
-                <div key={feature} className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-cyan-600" />
-                  <span className="text-slate-700">{feature}</span>
+                    <h3 className="text-xl font-semibold text-slate-900">
+                      {group.title}
+                    </h3>
+                  </div>
+
+                  <div className="mt-6 space-y-3">
+                    {group.items.map((item) => (
+                      <div key={item} className="flex items-center gap-3">
+                        <CheckCircle2 className="h-4 w-4 text-cyan-500" />
+
+                        <span className="text-slate-700">{item}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               ))}
             </div>
+
+            {/* Supporting Features */}
+
+            <div className="mt-10 space-y-5">
+              {orchestrationFeatures.map((feature) => (
+                <div
+                  key={feature.title}
+                  className="flex gap-5 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-cyan-200 hover:shadow-lg"
+                >
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-cyan-50">
+                    <feature.icon className="h-7 w-7 text-cyan-600" />
+                  </div>
+
+                  <div>
+                    <h3 className="text-lg font-semibold text-slate-900">
+                      {feature.title}
+                    </h3>
+
+                    <p className="mt-2 leading-7 text-slate-600">
+                      {feature.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Bottom Highlight */}
+
+            <div className="mt-10 rounded-3xl border border-cyan-100 bg-gradient-to-r from-cyan-50 to-white p-6">
+              <div className="flex items-start gap-4">
+                <ServerCog className="mt-1 h-7 w-7 text-cyan-600" />
+
+                <div>
+                  <h3 className="text-xl font-semibold text-slate-900">
+                    Build Once. Deploy Across Every Cloud.
+                  </h3>
+
+                  <p className="mt-3 leading-7 text-slate-600">
+                    Autoscale Apache Flink and Kafka clusters, orchestrate
+                    provider-agnostic pipelines, and manage every cloud
+                    deployment from a single enterprise control plane without
+                    changing your workflows.
+                  </p>
+                </div>
+              </div>
+            </div>
           </motion.div>
 
-          {/* VISUAL */}
+          {/* RIGHT IMAGE */}
 
           <motion.div
-            initial={{ opacity: 0, x: 25 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="relative"
           >
-            <div className="bg-white border border-slate-200 rounded-[32px] p-8 shadow-[0_30px_80px_rgba(15,23,42,0.08)]">
-              {/* Source */}
+            {/* Glow */}
 
-              <div className="flex justify-start">
-                <div className="w-full max-w-xs rounded-3xl border border-slate-200 bg-slate-50 p-6">
-                  <Database className="w-7 h-7 text-cyan-600 mb-3" />
+            <div className="absolute inset-0 rounded-[36px] bg-cyan-400/10 blur-3xl" />
 
-                  <h3 className="font-semibold text-slate-900">
-                    AWS PostgreSQL
-                  </h3>
+            {/* Screenshot */}
 
-                  <p className="text-sm text-slate-500 mt-2">
-                    Production operational database
-                  </p>
-                </div>
-              </div>
-
-              {/* Pipeline */}
-
-              <div className="flex justify-center py-8">
-                <div className="w-full max-w-sm  rounded-3xl border border-cyan-200 bg-gradient-to-br from-cyan-50 to-blue-50 p-8 text-center">
-                  <Workflow className="w-10 h-10 text-cyan-600 mx-auto mb-4" />
-
-                  <h3 className="font-semibold text-slate-900 text-lg">
-                    Cross-Cloud Pipeline
-                  </h3>
-
-                  <p className="text-sm text-slate-500 mt-2">
-                    Move and transform data across environments.
-                  </p>
-                </div>
-              </div>
-
-              {/* Target */}
-
-              <div className="flex justify-end">
-                <div className="w-full max-w-sm  rounded-3xl border border-slate-200 bg-slate-50 p-6">
-                  <Layers className="w-7 h-7 text-cyan-600 mb-3" />
-
-                  <h3 className="font-semibold text-slate-900">
-                    Azure Iceberg
-                  </h3>
-
-                  <p className="text-sm text-slate-500 mt-2">
-                    Curated analytics lakehouse
-                  </p>
-                </div>
-              </div>
-
-              {/* Connector */}
-
-              <div className="flex justify-center py-8">
-                <div className="w-px h-12 bg-cyan-300" />
-              </div>
-
-              {/* Unified Workspace */}
-
-              <div className="rounded-3xl bg-slate-900 text-white p-8 text-center">
-                <Network className="w-8 h-8 mx-auto mb-3" />
-
-                <h3 className="font-semibold text-lg">Unified Workspace</h3>
-
-                <p className="text-slate-400 text-sm mt-2">
-                  Manage cross-cloud operations from one platform.
-                </p>
-              </div>
+            <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
+              <img
+                src={Orchestration}
+                alt="Intelligent Multi-Cloud Resource Orchestration"
+                className="w-full"
+              />
             </div>
           </motion.div>
         </div>
@@ -145,4 +216,4 @@ const CrossCloudConnectivitySection = () => {
   );
 };
 
-export default CrossCloudConnectivitySection;
+export default MultiCloudOrchestrationSection;

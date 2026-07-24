@@ -8,6 +8,7 @@ import {
   CheckCircle2,
   FileCode2,
 } from "lucide-react";
+import SQLLab from "../../../assets/Products/Analytics/SQLlab.webp";
 
 const capabilityGroups = [
   {
@@ -190,11 +191,7 @@ const SQLLabSection = () => {
             {/* Product Screenshot */}
 
             <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
-              <img
-                src="/images/sql-lab-dashboard.webp"
-                alt="SQL Lab"
-                className="w-full"
-              />
+              <img src={SQLLab} alt="SQL Lab" className="w-full" />
             </div>
           </motion.div>
         </div>

@@ -95,7 +95,7 @@ const MLOpsHero = () => {
               </Link>
 
               <Link
-                to="/documentation"
+                to="/docs/user-guide/mlops-platform"
                 className="group inline-flex items-center gap-2 rounded-md border border-slate-300 bg-white px-7 py-3 font-semibold text-slate-700 transition hover:border-cyan-400 hover:text-cyan-600"
               >
                 <BookOpen className="h-4 w-4" />

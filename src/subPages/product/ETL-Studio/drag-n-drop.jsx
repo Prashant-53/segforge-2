@@ -7,7 +7,7 @@ import {
   TerminalSquare,
   CheckCircle2,
 } from "lucide-react";
-import Pipeline from "../../../assets/Products/ETL/pipeline.png";
+import Pipeline from "../../../assets/Products/ETL/pipeline.webp";
 const features = [
   {
     icon: PanelTop,
@@ -86,15 +86,13 @@ const ETLWorkspace = () => {
               Visual Workspace
             </div>
 
-            <h2 className="mt-6 text-4xl font-bold leading-tight text-slate-900 lg:text-5xl">
+            <h2 className="mt-6 text-4xl font-bold leading-none text-slate-900 lg:text-4xl">
               One Workspace.
               <br />
-              <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
-                Every Pipeline.
-              </span>
+              Every Pipeline.
             </h2>
 
-            <p className="mt-6 text-lg leading-8 text-slate-600">
+            <p className="mt-6 text-md leading-6 text-slate-600">
               ETL Studio provides a unified development environment where
               engineers can visually build, configure, test, execute, and
               monitor enterprise data pipelines. From drag-and-drop

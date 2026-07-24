@@ -8,7 +8,7 @@ import {
   Upload,
   CheckCircle2,
 } from "lucide-react";
-
+import EnterpriseOPs from "../../../assets/Products/Data-Catalog/enterprisedataoprations.webp";
 const features = [
   {
     icon: Database,
@@ -80,7 +80,7 @@ const EnterpriseOperations = () => {
           >
             <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
               <img
-                src="/images/enterprise-table-management.webp"
+                src={EnterpriseOPs}
                 alt="Enterprise Table Management"
                 className="w-full"
               />
@@ -103,17 +103,15 @@ const EnterpriseOperations = () => {
 
             {/* Heading */}
 
-            <h2 className="mt-6 text-4xl font-bold leading-tight text-slate-900 lg:text-5xl">
+            <h2 className="mt-6 text-4xl font-bold leading-none text-slate-900 lg:text-4xl">
               From Data Ingestion
               <br />
-              <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
-                to Production Tables.
-              </span>
+              to Production Tables.
             </h2>
 
             {/* Description */}
 
-            <p className="mt-6 text-lg leading-8 text-slate-600">
+            <p className="mt-6 text-md leading-6 text-slate-600">
               Automatically create, evolve, and manage enterprise lakehouse
               tables using Apache Iceberg while maintaining transactional
               consistency, open standards, and production-grade reliability.

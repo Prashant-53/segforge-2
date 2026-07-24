@@ -11,7 +11,7 @@ import {
   Server,
   Layers,
 } from "lucide-react";
-import ArchitectureImg from "../../assets/why-segforge/architecture.png";
+import ArchitectureImg from "../../assets/why-segforge/architecture.webp";
 
 const engines = [
   {

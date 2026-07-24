@@ -7,7 +7,7 @@ import {
   BrainCircuit,
   ArrowRight,
 } from "lucide-react";
-import TransformationIMG from "../../../assets/Products/ETL/transformation.png";
+import TransformationIMG from "../../../assets/Products/ETL/transformation.webp";
 
 const categories = [
   {
@@ -68,14 +68,11 @@ const TransformationEngine = () => {
               Transformation Engine
             </div>
 
-            <h2 className="mt-6 text-4xl lg:text-5xl font-bold leading-tight text-slate-900">
-              90+ Production-Ready
-              <span className="block bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
-                Transformation Nodes
-              </span>
+            <h2 className="mt-6 text-4xl lg:text-4xl font-bold leading-none text-slate-900">
+              90+ Production-Ready Transformation Nodes
             </h2>
 
-            <p className="mt-6 text-lg leading-8 text-slate-600">
+            <p className="mt-6 text-md leading-6 text-slate-600">
               Accelerate data engineering with an extensive library of
               production-ready components. Connect virtually any source,
               transform data visually, enforce quality standards, and prepare

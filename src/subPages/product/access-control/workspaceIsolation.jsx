@@ -8,6 +8,7 @@ import {
   UserCog,
   Lock,
 } from "lucide-react";
+import Roles from "../../../assets/Products/Access-Control/enterpriseRoles.webp";
 
 const capabilityGroups = [
   {
@@ -89,7 +90,7 @@ const EnterpriseRolesSection = () => {
 
             <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
               <img
-                src="/images/enterprise-roles-dashboard.webp"
+                src={Roles}
                 alt="Enterprise Roles & Least Privilege"
                 className="w-full"
               />

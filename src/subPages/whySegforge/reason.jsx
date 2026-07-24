@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Layers } from "lucide-react";
-import ProblemImg from "../../assets/why-segforge/problem.png";
+import ProblemImg from "../../assets/why-segforge/problem.webp";
 
 const WhySegForgeSection = () => {
   return (

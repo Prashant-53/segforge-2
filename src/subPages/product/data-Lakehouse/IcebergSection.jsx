@@ -7,6 +7,7 @@ import {
   History,
   CheckCircle2,
 } from "lucide-react";
+import Iceberg from "../../../assets/Products/DataLakehouse/iceberg.png";
 
 const capabilityGroups = [
   {
@@ -193,34 +194,10 @@ const IcebergSection = () => {
 
             <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
               <img
-                src="/images/apache-iceberg-dashboard.webp"
+                src={Iceberg}
                 alt="Apache Iceberg Table Management"
                 className="w-full"
               />
-            </div>
-
-            {/* Floating Card */}
-
-            <div className="absolute -left-6 top-8 hidden rounded-2xl border border-cyan-200 bg-white px-5 py-4 shadow-xl lg:block">
-              <p className="text-sm font-semibold text-slate-900">
-                ACID Transactions
-              </p>
-
-              <p className="mt-1 text-xs text-slate-500">
-                Consistent & Reliable
-              </p>
-            </div>
-
-            {/* Floating Card */}
-
-            <div className="absolute -right-6 bottom-8 hidden rounded-2xl border border-cyan-200 bg-white px-5 py-4 shadow-xl lg:block">
-              <p className="text-sm font-semibold text-slate-900">
-                Time Travel
-              </p>
-
-              <p className="mt-1 text-xs text-slate-500">
-                Historical Snapshots
-              </p>
             </div>
           </motion.div>
         </div>

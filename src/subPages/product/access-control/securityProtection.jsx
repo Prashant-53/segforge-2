@@ -8,6 +8,7 @@ import {
   Users,
   Building2,
 } from "lucide-react";
+import MultiTenant from "../../../assets/Products/Access-Control/multiTenant.webp";
 
 const capabilityGroups = [
   {
@@ -94,7 +95,7 @@ const WorkspaceSecuritySection = () => {
 
             <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
               <img
-                src="/images/workspace-security-dashboard.webp"
+                src={MultiTenant}
                 alt="Multi-Tenant Workspace Security"
                 className="w-full"
               />

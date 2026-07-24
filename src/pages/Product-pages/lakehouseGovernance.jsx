@@ -1,19 +1,21 @@
 import React from "react";
-import DataLineageHero from "../../subPages/product/Lakehouse-Governance/hero";
-import FullJourneySection from "../../subPages/product/Lakehouse-Governance/journey";
-import ColumnLineageSection from "../../subPages/product/Lakehouse-Governance/columnLineage";
-import ImpactAnalysisSection from "../../subPages/product/Lakehouse-Governance/impactAnalysis";
-import GovernanceComplianceSection from "../../subPages/product/Lakehouse-Governance/governCompliance";
+import GovernanceHero from "../../subPages/product/Lakehouse-Governance/hero";
+import GitForDataSection from "../../subPages/product/Lakehouse-Governance/journey";
+import ZeroCopyBranchingSection from "../../subPages/product/Lakehouse-Governance/columnLineage";
+import TimeTravelSection from "../../subPages/product/Lakehouse-Governance/impactAnalysis";
+import EnterpriseGovernanceSection from "../../subPages/product/Lakehouse-Governance/governCompliance";
 import MainLayout from "../../layouts/mainLayout";
+import { CTABanner } from "../../components/BottomCTA";
 
 const LakehouseGovernance = () => {
   return (
     <MainLayout>
-      <DataLineageHero />
-      <FullJourneySection />
-      <ColumnLineageSection />
-      <ImpactAnalysisSection />
-      <GovernanceComplianceSection />
+      <GovernanceHero />
+      <GitForDataSection />
+      <ZeroCopyBranchingSection />
+      <TimeTravelSection />
+      <EnterpriseGovernanceSection />
+      <CTABanner />
     </MainLayout>
   );
 };

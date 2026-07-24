@@ -32,6 +32,11 @@ import { Link } from "react-router-dom";
 import { trustedCompanies } from "../mock";
 import { CTABanner } from "../components/BottomCTA";
 import MainLayout from "../layouts/mainLayout";
+import UnifiedPlatform from "../assets/homepage/UnifiedPlatform.webp";
+import Industries from "../assets/homepage/industries.webp";
+import OpenStandard from "../assets/homepage/openStandard.webp";
+import PlatformCapabalities from "../assets/homepage/platformCapabilities.webp";
+import DevExperience from "../assets/homepage/devexp.webp";
 
 const HomePage = () => {
   const trustedCompanies = [
@@ -320,17 +325,23 @@ const HomePage = () => {
 
                 <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:justify-center lg:justify-start">
                   {" "}
-                  <button className="group w-full sm:w-auto relative inline-flex items-center justify-center overflow-hidden rounded-md border border-slate-900 px-6 py-3 font-semibold text-black hover:text-white">
+                  <Link
+                    to="/contact"
+                    className="group w-full sm:w-auto relative inline-flex items-center justify-center overflow-hidden rounded-md border border-slate-900 px-6 py-3 font-semibold text-black hover:text-white"
+                  >
                     <span className="absolute inset-y-0 left-0 w-0 bg-slate-900 transition-all duration-300 group-hover:w-full"></span>
 
                     <span className="relative z-10 flex items-center gap-2">
                       Start Free Trial
                       <ArrowRight className="w-4 h-4" />
                     </span>
-                  </button>
-                  <button className="px-6 py-3 rounded-md border border-slate-900 text-slate-900 font-semibold bg-white/30 backdrop-blur-sm">
+                  </Link>
+                  <a
+                    href="/docs/getting-started/what-is-segforge"
+                    className="px-6 py-3 rounded-md border border-slate-900 text-slate-900 font-semibold bg-white/30 backdrop-blur-sm"
+                  >
                     View Documentation
-                  </button>
+                  </a>
                 </div>
               </motion.div>
               {/* RIGHT VISUAL */}
@@ -342,11 +353,7 @@ const HomePage = () => {
               >
                 {/* Glow */}
 
-                <div
-                  className="absolute w-[220px] h-[220px]
-sm:w-[320px] sm:h-[320px]
-lg:w-[450px] lg:h-[450px] bg-white/10 rounded-full blur-3xl"
-                />
+                <div className="absolute w-[220px] h-[220px] sm:w-[320px] sm:h-[320px] lg:w-[450px] lg:h-[450px] bg-white/10 rounded-full blur-3xl" />
 
                 {/* Orbit Ring */}
 
@@ -450,7 +457,7 @@ lg:w-[450px] lg:h-[450px] bg-white/10 rounded-full blur-3xl"
         <section className="py-16 bg-white border-y border-slate-200 overflow-hidden">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <p className="text-center text-sm font-semibold tracking-[0.2em] text-slate-500 uppercase mb-10">
-              Trusted By Enterprise Data Teams
+              Trusted By Enterprise Data Teams in
             </p>
           </div>
 
@@ -522,12 +529,10 @@ lg:w-[450px] lg:h-[450px] bg-white/10 rounded-full blur-3xl"
                   Unified Platform
                 </div>
 
-                <h2 className="mt-6 text-4xl font-bold leading-tight text-slate-900 lg:text-5xl">
+                <h2 className="mt-6 text-4xl font-bold leading-none text-slate-900 lg:text-4xl">
                   One Workspace.
                   <br />
-                  <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
-                    Every Data Workflow.
-                  </span>
+                  Every Data Workflow.
                 </h2>
 
                 <p className="mt-6 text-md leading-6 text-slate-600">
@@ -567,25 +572,6 @@ lg:w-[450px] lg:h-[450px] bg-white/10 rounded-full blur-3xl"
                     </div>
                   ))}
                 </div>
-
-                {/* Highlights */}
-
-                <div className="mt-12 rounded-3xl border border-cyan-100 bg-gradient-to-r from-cyan-50 to-white p-6">
-                  <h3 className="text-lg font-semibold text-slate-900">
-                    Platform Highlights
-                  </h3>
-
-                  <div className="mt-5 flex flex-wrap gap-3">
-                    {highlights.map((item) => (
-                      <span
-                        key={item}
-                        className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm"
-                      >
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-                </div>
               </motion.div>
 
               {/* RIGHT IMAGE */}
@@ -598,7 +584,7 @@ lg:w-[450px] lg:h-[450px] bg-white/10 rounded-full blur-3xl"
               >
                 <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
                   <img
-                    src="/images/unified-platform.webp"
+                    src={UnifiedPlatform}
                     alt="Unified Platform Architecture"
                     className="w-full"
                   />
@@ -608,7 +594,7 @@ lg:w-[450px] lg:h-[450px] bg-white/10 rounded-full blur-3xl"
           </div>
         </section>
 
-        {/* Workflow Orchestration */}
+        {/* Platform Capabilities */}
         <section className="relative overflow-hidden bg-gradient-to-b from-white to-gray-50 py-28">
           {/* Background */}
 
@@ -636,10 +622,11 @@ lg:w-[450px] lg:h-[450px] bg-white/10 rounded-full blur-3xl"
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7 }}
+                className="lg:order-1 order-2"
               >
                 <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
                   <img
-                    src="/images/platform-capabilities.webp"
+                    src={PlatformCapabalities}
                     alt="Seg Forge Platform Capabilities"
                     className="w-full"
                   />
@@ -653,20 +640,19 @@ lg:w-[450px] lg:h-[450px] bg-white/10 rounded-full blur-3xl"
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7 }}
+                className="lg:order-2 order-1"
               >
                 <div className="inline-flex rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">
                   Platform Capabilities
                 </div>
 
-                <h2 className="mt-6 text-4xl font-bold leading-tight text-slate-900 lg:text-5xl">
+                <h2 className="mt-6 text-4xl font-bold leading-none text-slate-900 lg:text-4xl">
                   Everything Required to
                   <br />
-                  <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
-                    Build Modern Data Platforms
-                  </span>
+                  Build Modern Data Platforms
                 </h2>
 
-                <p className="mt-6 text-lg leading-8 text-slate-600">
+                <p className="mt-6 text-md leading-8 text-slate-600">
                   Seg Forge combines powerful data engineering capabilities into
                   a single enterprise platform. Replace fragmented tooling with
                   one intelligent workspace that accelerates development,
@@ -730,15 +716,13 @@ lg:w-[450px] lg:h-[450px] bg-white/10 rounded-full blur-3xl"
                   Industry Solutions
                 </div>
 
-                <h2 className="mt-6 text-4xl font-bold leading-tight text-slate-900 lg:text-5xl">
+                <h2 className="mt-6 text-4xl font-bold leading-none text-slate-900 lg:text-4xl">
                   Built for Every
                   <br />
-                  <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
-                    Data-Driven Industry
-                  </span>
+                  Data-Driven Industry
                 </h2>
 
-                <p className="mt-6 text-lg leading-8 text-slate-600">
+                <p className="mt-6 text-md leading-8 text-slate-600">
                   Whether you're modernizing financial platforms, enabling
                   real-time healthcare insights, or building AI-powered customer
                   experiences, Seg Forge provides a unified platform that adapts
@@ -782,7 +766,7 @@ lg:w-[450px] lg:h-[450px] bg-white/10 rounded-full blur-3xl"
               >
                 <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
                   <img
-                    src="/images/industry-solutions.webp"
+                    src={Industries}
                     alt="Industry Solutions"
                     className="w-full"
                   />
@@ -828,12 +812,10 @@ lg:w-[450px] lg:h-[450px] bg-white/10 rounded-full blur-3xl"
                 <h2 className="mt-6 text-4xl font-bold leading-tight text-slate-900 lg:text-5xl">
                   Built for Developers.
                   <br />
-                  <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
-                    Ready for Enterprise.
-                  </span>
+                  Ready for Enterprise.
                 </h2>
 
-                <p className="mt-6 text-lg leading-8 text-slate-600">
+                <p className="mt-6 text-md leading-8 text-slate-600">
                   From local development to enterprise deployment, Seg Forge
                   provides everything engineering teams need to automate,
                   integrate, and operate modern data platforms with confidence.
@@ -897,7 +879,7 @@ lg:w-[450px] lg:h-[450px] bg-white/10 rounded-full blur-3xl"
               >
                 <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
                   <img
-                    src="/images/developer-experience.webp"
+                    src={DevExperience}
                     alt="Developer Experience"
                     className="w-full"
                   />
@@ -941,10 +923,11 @@ lg:w-[450px] lg:h-[450px] bg-white/10 rounded-full blur-3xl"
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7 }}
+                className="lg:order-1 order-2"
               >
                 <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
                   <img
-                    src="/images/open-standards.webp"
+                    src={OpenStandard}
                     alt="Open Standards Architecture"
                     className="w-full"
                   />
@@ -958,6 +941,7 @@ lg:w-[450px] lg:h-[450px] bg-white/10 rounded-full blur-3xl"
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7 }}
+                className="lg:order-2 order-1"
               >
                 {/* Badge */}
 
@@ -967,21 +951,19 @@ lg:w-[450px] lg:h-[450px] bg-white/10 rounded-full blur-3xl"
 
                 {/* Heading */}
 
-                <h2 className="mt-6 text-4xl font-bold leading-tight text-slate-900 lg:text-5xl">
+                <h2 className="mt-6 text-4xl font-bold leading-tight text-slate-900 lg:text-4xl">
                   Built on Open Standards.
                   <br />
-                  <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
-                    Free from Vendor Lock-In.
-                  </span>
+                  Free from Vendor Lock-In.
                 </h2>
 
                 {/* Description */}
 
-                <p className="mt-6 text-lg leading-8 text-slate-600">
+                <p className="mt-6 text-md leading-8 text-slate-600">
                   Your infrastructure. Your data. Your ownership.
                 </p>
 
-                <p className="mt-4 leading-8 text-slate-600">
+                <p className="mt-4 text-md leading-8 text-slate-600">
                   Seg Forge is built on the industry's most trusted open-source
                   technologies, allowing you to deploy anywhere while keeping
                   complete control over your data. Your tables remain in your
@@ -1014,25 +996,6 @@ lg:w-[450px] lg:h-[450px] bg-white/10 rounded-full blur-3xl"
                       </div>
                     </motion.div>
                   ))}
-                </div>
-                {/* Platform Benefits */}
-
-                <div className="mt-10 rounded-3xl border border-cyan-100 bg-gradient-to-r from-cyan-50 to-white p-6">
-                  <h3 className="text-lg font-semibold text-slate-900">
-                    Platform Benefits
-                  </h3>
-
-                  <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                    {benefits.map((benefit) => (
-                      <div key={benefit} className="flex items-center gap-3">
-                        <CheckCircle2 className="h-5 w-5 shrink-0 text-cyan-500" />
-
-                        <span className="text-sm font-medium text-slate-700">
-                          {benefit}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
                 </div>
 
                 {/* Trust Statement */}

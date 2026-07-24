@@ -119,7 +119,7 @@ const NotebookAutomation = () => {
 
             <div className="mt-10 flex flex-wrap gap-4">
               <Link
-                to="/documentation/notebooks-api"
+                to="/docs/api-reference/notebooks"
                 className="group relative inline-flex items-center justify-center overflow-hidden rounded-md border border-cyan-500 px-7 py-3 font-semibold text-slate-900 hover:text-white"
               >
                 <span className="absolute inset-y-0 left-0 w-0 bg-[#18D0BB] transition-all duration-300 group-hover:w-full" />
@@ -127,16 +127,6 @@ const NotebookAutomation = () => {
                 <span className="relative z-10 flex items-center gap-2">
                   <BookOpen className="h-4 w-4" />
                   Explore Notebook API
-                </span>
-              </Link>
-
-              <Link
-                to="/contact"
-                className="group relative inline-flex items-center justify-center overflow-hidden rounded-md border border-slate-300 bg-white px-7 py-3 font-semibold text-slate-700 transition hover:border-cyan-400 hover:text-cyan-600"
-              >
-                <span className="flex items-center gap-2">
-                  <Terminal className="h-4 w-4" />
-                  Create Your First Notebook
                 </span>
               </Link>
             </div>

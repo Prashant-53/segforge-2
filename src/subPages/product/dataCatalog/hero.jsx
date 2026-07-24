@@ -11,29 +11,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { Link } from "react-router-dom";
-
-const highlights = [
-  {
-    icon: Layers3,
-    title: "Apache Iceberg Native",
-  },
-  {
-    icon: GitBranch,
-    title: "Git-like Versioning",
-  },
-  {
-    icon: Search,
-    title: "Data Discovery",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Enterprise Governance",
-  },
-  {
-    icon: Database,
-    title: "Open Lakehouse",
-  },
-];
+import Hero from "../../../assets/Products/Data-Catalog/cataloghero.webp";
 
 const DataCatalogHero = () => {
   return (
@@ -115,13 +93,13 @@ const DataCatalogHero = () => {
                 </span>
               </Link>
 
-              <Link
+              {/* <Link
                 to="/documentation"
                 className="group inline-flex items-center gap-2 rounded-md border border-slate-300 bg-white px-7 py-3 font-semibold text-slate-700 transition hover:border-cyan-400 hover:text-cyan-600"
               >
                 <BookOpen className="h-4 w-4" />
                 View Documentation
-              </Link>
+              </Link> */}
             </div>
           </motion.div>
 
@@ -140,31 +118,7 @@ const DataCatalogHero = () => {
             {/* Image */}
 
             <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
-              <img
-                src="/images/catalog-hero.webp"
-                alt="Seg Forge Data Catalog"
-                className="w-full"
-              />
-            </div>
-
-            {/* Floating Card */}
-
-            <div className="absolute -left-6 top-10 hidden rounded-2xl border border-cyan-200 bg-white px-5 py-4 shadow-xl lg:block">
-              <p className="text-sm font-semibold text-slate-900">
-                Apache Iceberg
-              </p>
-
-              <p className="mt-1 text-xs text-slate-500">Open Table Format</p>
-            </div>
-
-            {/* Floating Card */}
-
-            <div className="absolute -right-6 bottom-10 hidden rounded-2xl border border-cyan-200 bg-white px-5 py-4 shadow-xl lg:block">
-              <p className="text-sm font-semibold text-slate-900">
-                Apache Nessie
-              </p>
-
-              <p className="mt-1 text-xs text-slate-500">Git-like Versioning</p>
+              <img src={Hero} alt="Seg Forge Data Catalog" className="w-full" />
             </div>
           </motion.div>
         </div>

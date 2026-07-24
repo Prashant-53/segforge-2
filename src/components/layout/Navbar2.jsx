@@ -24,6 +24,7 @@ import {
   Factory,
   TowerControl,
   Handshake,
+  Gpu,
 } from "lucide-react";
 import { path } from "framer-motion/client";
 
@@ -73,6 +74,11 @@ const NAV_ITEMS = [
           },
 
           {
+            name: "AI",
+            icon: Gpu,
+            path: "/product/ai",
+          },
+          {
             name: "ML&OPs",
             icon: Brain,
             path: "/product/ml-ops",
@@ -114,16 +120,16 @@ const NAV_ITEMS = [
           },
 
           {
-            name: "Compliance",
+            name: "Data Lineage",
             icon: ShieldCheck,
-            path: "/product/compliance",
+            path: "/product/data-lineage",
           },
 
-          {
-            name: "Observability",
-            icon: Activity,
-            path: "/product/observability",
-          },
+          // {
+          //   name: "Observability",
+          //   icon: Activity,
+          //   path: "/product/observability",
+          // },
         ],
       },
 
@@ -555,13 +561,13 @@ const Navbar = () => {
                   Contact Sales
                 </span>
               </Link>
-              <button className="group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-gray-200 px-6 py-3 font-semibold text-black transition-colors duration-300 hover:text-white">
+              {/* <button className="group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-gray-200 px-6 py-3 font-semibold text-black transition-colors duration-300 hover:text-white">
                 <span className="absolute inset-y-0 left-0 w-0 bg-[#18D0BB] transition-all duration-300 ease-out group-hover:w-full"></span>
 
                 <span className="relative z-10 flex items-center gap-2">
                   Start Building
                 </span>
-              </button>
+              </button> */}
               {/* <a
                 href="#"
                 className="px-6 py-3 rounded-full bg-cyan-400 hover:bg-cyan-300 text-black font-semibold transition text-sm"

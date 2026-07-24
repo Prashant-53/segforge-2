@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Send, Check, Mail, Phone, Clock3, CheckCircle2 } from "lucide-react";
 import MainLayout from "../layouts/mainLayout";
-
+import emailjs from "@emailjs/browser";
 import { useState, useRef } from "react";
 
 const ContactSales = () => {
@@ -271,14 +271,38 @@ const ContactSales = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const isValid = validateForm();
+    // Prevent double submission
+    if (submitting) return;
 
-    if (!isValid) {
-      const firstInvalid = Object.keys(errors)[0];
+    /* ---------------------------------
+     Validate form synchronously
+  ----------------------------------*/
 
-      if (firstInvalid && refs[firstInvalid]?.current) {
-        refs[firstInvalid].current.focus();
+    const newErrors = {};
+
+    Object.keys(formData).forEach((key) => {
+      const error = validateField(key, formData[key]);
+
+      if (error) {
+        newErrors[key] = error;
       }
+    });
+
+    setErrors(newErrors);
+
+    // Mark everything as touched
+    const touchedFields = {};
+    Object.keys(formData).forEach((key) => {
+      touchedFields[key] = true;
+    });
+
+    setTouched(touchedFields);
+
+    // Focus first invalid field
+    if (Object.keys(newErrors).length > 0) {
+      const firstInvalid = Object.keys(newErrors)[0];
+
+      refs[firstInvalid]?.current?.focus();
 
       return;
     }
@@ -286,14 +310,37 @@ const ContactSales = () => {
     try {
       setSubmitting(true);
 
-      /*
-      await axios.post("/api/contact", formData)
-    */
-
-      console.log(formData);
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          first_name: formData.firstName.trim(),
+          last_name: formData.lastName.trim(),
+          company_name: formData.company.trim(),
+          job_function: formData.jobFunction.trim(),
+          job_title: formData.jobTitle.trim(),
+          email: formData.email.trim(),
+          phone: formData.phone.trim(),
+          country: formData.country.trim(),
+          company_size: formData.companySize,
+          industry: formData.industry,
+          deployment: formData.deployment,
+          cloud_provider: formData.cloudProvider,
+          data_volume: formData.expectedVolume,
+          message: formData.message.trim(),
+          marketing_consent: formData.consent ? "Yes" : "No",
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+      );
 
       setSubmitted(true);
 
+      // Hide success message after 5 seconds
+      setTimeout(() => {
+        setSubmitted(false);
+      }, 5000);
+
+      // Reset form
       setFormData({
         firstName: "",
         lastName: "",
@@ -312,10 +359,12 @@ const ContactSales = () => {
         consent: false,
       });
 
-      setTouched({});
       setErrors({});
+      setTouched({});
     } catch (err) {
-      console.error(err);
+      console.error("EmailJS Error:", err);
+
+      alert("Failed to send your request. Please try again in a few moments.");
     } finally {
       setSubmitting(false);
     }
@@ -595,7 +644,7 @@ const ContactSales = () => {
                       autoComplete="country-name"
                       maxLength={60}
                       className={`w-full rounded-xl  ${
-                        errors.firstName ? "border-red-500" : "border-slate-300"
+                        errors.country ? "border-red-500" : "border-slate-300"
                       } border-slate-300 bg-white px-4 py-3 outline-none transition focus:border-cyan-500 focus:ring-4 focus:ring-cyan-100`}
                     />
                     {errors.country && (
@@ -622,7 +671,7 @@ const ContactSales = () => {
                       onBlur={handleBlur}
                       className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 outline-none transition focus:border-cyan-500 focus:ring-4 focus:ring-cyan-100"
                     >
-                      <option>Select Company Size</option>
+                      <option value="">Select Company Size</option>
                       <option>1-50</option>
                       <option>51-200</option>
                       <option>201-1000</option>
@@ -643,7 +692,7 @@ const ContactSales = () => {
                       onBlur={handleBlur}
                       className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 outline-none transition focus:border-cyan-500 focus:ring-4 focus:ring-cyan-100"
                     >
-                      <option>Select Industry</option>
+                      <option value="">Select Industry</option>
                       <option>Financial Services</option>
                       <option>Healthcare</option>
                       <option>Retail</option>
@@ -672,6 +721,8 @@ const ContactSales = () => {
                       onBlur={handleBlur}
                       className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 outline-none transition focus:border-cyan-500 focus:ring-4 focus:ring-cyan-100"
                     >
+                      <option value="">Select Deployment Type</option>
+
                       <option>Cloud</option>
                       <option>Self Hosted</option>
                       <option>Hybrid</option>
@@ -692,6 +743,8 @@ const ContactSales = () => {
                       onBlur={handleBlur}
                       className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 outline-none transition focus:border-cyan-500 focus:ring-4 focus:ring-cyan-100"
                     >
+                      <option value="">Select Cloud Provider</option>
+
                       <option>AWS</option>
                       <option>Azure</option>
                       <option>Google Cloud</option>
@@ -716,10 +769,11 @@ const ContactSales = () => {
                     onBlur={handleBlur}
                     className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 outline-none transition focus:border-cyan-500 focus:ring-4 focus:ring-cyan-100"
                   >
-                    <option>&lt; 1 TB</option>
-                    <option>1–10 TB</option>
-                    <option>10–100 TB</option>
-                    <option>100+ TB</option>
+                    <option value="">Select Expected Data Volume</option>
+                    <option value="Less than 1 TB">Less than 1 TB</option>
+                    <option value="1 TB - 10 TB">1 TB - 10 TB</option>
+                    <option value="10 TB - 100 TB">10 TB - 100 TB</option>
+                    <option value="More than 100 TB">More than 100 TB</option>
                   </select>
                 </div>
 
@@ -820,7 +874,7 @@ const ContactSales = () => {
                       <p className="text-sm text-slate-500">Email</p>
 
                       <p className="font-medium text-slate-900">
-                        sales@segforge.ai
+                        enquiry@seganalytics.com
                       </p>
                     </div>
                   </div>
@@ -834,7 +888,7 @@ const ContactSales = () => {
                       <p className="text-sm text-slate-500">Phone</p>
 
                       <p className="font-medium text-slate-900">
-                        +1 (555) 123-4567
+                        +91-9920322489{" "}
                       </p>
                     </div>
                   </div>
@@ -852,7 +906,7 @@ const ContactSales = () => {
                       </p>
 
                       <p className="text-sm text-slate-600">
-                        9:00 AM – 6:00 PM UTC
+                        10:00 AM – 7:00 PM UTC
                       </p>
                     </div>
                   </div>

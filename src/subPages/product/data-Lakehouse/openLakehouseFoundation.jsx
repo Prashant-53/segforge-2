@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { GitBranch, History, Tag, RotateCcw, CheckCircle2 } from "lucide-react";
+import Nessie from "../../../assets/Products/DataLakehouse/iceberg.png";
 
 const capabilityGroups = [
   {
@@ -77,28 +78,10 @@ const NessieSection = () => {
 
             <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
               <img
-                src="/images/apache-nessie-dashboard.webp"
+                src={Nessie}
                 alt="Apache Nessie Version Control"
                 className="w-full"
               />
-            </div>
-
-            {/* Floating Card */}
-
-            <div className="absolute -left-6 top-8 hidden rounded-2xl border border-cyan-200 bg-white px-5 py-4 shadow-xl lg:block">
-              <p className="text-sm font-semibold text-slate-900">Branches</p>
-
-              <p className="mt-1 text-xs text-slate-500">
-                Zero-copy Development
-              </p>
-            </div>
-
-            {/* Floating Card */}
-
-            <div className="absolute -right-6 bottom-8 hidden rounded-2xl border border-cyan-200 bg-white px-5 py-4 shadow-xl lg:block">
-              <p className="text-sm font-semibold text-slate-900">Rollback</p>
-
-              <p className="mt-1 text-xs text-slate-500">Instant Recovery</p>
             </div>
           </motion.div>
 

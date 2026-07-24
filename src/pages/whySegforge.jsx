@@ -4,7 +4,8 @@ import CostOfFragmentation from "../subPages/whySegforge/cost";
 import UnifiedAnswer from "../subPages/whySegforge/answer";
 import OpenArchitectureSection from "../subPages/whySegforge/architecture";
 import WhyItMatters from "../subPages/whySegforge/matters";
-import WhySegForgeCTA from "../subPages/whySegforge/cta";
+import CTABanner from "../components/BottomCTA";
+
 import MainLayout from "../layouts/mainLayout";
 
 const WhySegforge = () => {
@@ -16,7 +17,7 @@ const WhySegforge = () => {
       <UnifiedAnswer />
       <OpenArchitectureSection />
       <WhyItMatters />
-      <WhySegForgeCTA />
+      <CTABanner />
     </MainLayout>
   );
 };

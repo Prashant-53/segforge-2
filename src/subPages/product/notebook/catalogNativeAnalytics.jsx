@@ -9,6 +9,7 @@ import {
   Download,
   CheckCircle2,
 } from "lucide-react";
+import NotebookAssist from "../../../assets/Products/NoteBook/notebookassist.webp";
 
 const HeroCatalogNativeAnalytics = () => {
   return (
@@ -48,7 +49,7 @@ const HeroCatalogNativeAnalytics = () => {
           >
             <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
               <img
-                src="/images/notebook-explorer.webp"
+                src={NotebookAssist}
                 alt="Notebook Data Explorer"
                 className="w-full"
               />

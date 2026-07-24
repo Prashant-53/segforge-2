@@ -7,6 +7,7 @@ import {
   Eye,
   CheckCircle2,
 } from "lucide-react";
+import CatalogExplorer from "../../../assets/Products/DataLakehouse/catalog.png";
 
 const capabilityGroups = [
   {
@@ -190,34 +191,10 @@ const CatalogExplorerSection = () => {
 
             <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
               <img
-                src="/images/catalog-explorer-dashboard.webp"
+                src={CatalogExplorer}
                 alt="Catalog Explorer"
                 className="w-full"
               />
-            </div>
-
-            {/* Floating Card */}
-
-            <div className="absolute -left-6 top-8 hidden rounded-2xl border border-cyan-200 bg-white px-5 py-4 shadow-xl lg:block">
-              <p className="text-sm font-semibold text-slate-900">
-                1,284 Tables
-              </p>
-
-              <p className="mt-1 text-xs text-slate-500">
-                Across 32 Namespaces
-              </p>
-            </div>
-
-            {/* Floating Card */}
-
-            <div className="absolute -right-6 bottom-8 hidden rounded-2xl border border-cyan-200 bg-white px-5 py-4 shadow-xl lg:block">
-              <p className="text-sm font-semibold text-slate-900">
-                Live Preview
-              </p>
-
-              <p className="mt-1 text-xs text-slate-500">
-                First 100 Rows Loaded
-              </p>
             </div>
           </motion.div>
         </div>
