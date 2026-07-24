@@ -2,107 +2,116 @@ import React from "react";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
-  Play,
+  BookOpen,
   Server,
-  Cloud,
-  Database,
-  Brain,
-  BarChart3,
+  Boxes,
+  Container,
+  ShieldCheck,
+  Sparkles,
 } from "lucide-react";
+import { Link } from "react-router-dom";
+import Hero from "../../../assets/Products/Self-Hosted/selfhosthero.webp";
 
 const SelfHostedHero = () => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-gray-50 to-white pt-32 pb-24">
-      <div className="absolute inset-0 bg-grid opacity-[0.03]" />
+    <section className="relative overflow-hidden bg-gradient-to-b from-gray-50 via-white to-white pt-36 pb-24">
+      {/* Animated Grid */}
 
-      <div className="absolute top-0 right-0 w-[700px] h-[500px] bg-cyan-500/10 blur-[120px] rounded-full" />
+      <motion.div
+        animate={{
+          backgroundPosition: ["0px 0px", "120px 120px"],
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+        className="absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right,#06b6d4 1px,transparent 1px),
+            linear-gradient(to bottom,#06b6d4 1px,transparent 1px)
+          `,
+          backgroundSize: "80px 80px",
+        }}
+      />
 
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
-          {/* LEFT */}
+      {/* Glow */}
+
+      <div className="absolute left-1/2 top-20 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-cyan-400/10 blur-[180px]" />
+
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid items-center gap-20 lg:grid-cols-2">
+          {/* LEFT CONTENT */}
 
           <motion.div
-            initial={{ opacity: 0, x: -25 }}
+            initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-50 text-cyan-700 text-sm font-medium mb-6">
-              <Server className="w-4 h-4" />
-              Self Hosted Deployment
+            {/* Badge */}
+
+            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">
+              <Sparkles className="h-4 w-4" />
+              Self-Hosted Deployment
             </div>
 
-            <h1 className="text-4xl sm:text-4xl lg:text-6xl font-bold text-slate-900 leading-[1.05]">
-              Run SegForge on your
+            {/* Heading */}
+
+            <h1 className="mt-8 text-4xl font-bold leading-none text-slate-900 lg:text-5xl">
+              Your Infrastructure.
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">
-                infrastructure, on your terms.
+              <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
+                Your Data. Total Control.
               </span>
             </h1>
 
-            <p className="mt-8 text-md text-slate-600 leading-relaxed max-w-xl">
-              Keep data, workloads, and infrastructure entirely under your
-              control.
+            {/* Description */}
+
+            <p className="mt-8 max-w-2xl text-md leading-6 text-slate-600">
+              Deploy Seg Forge on your own infrastructure while maintaining
+              complete ownership of your data, metadata, networking, and
+              compute. From local development to enterprise Kubernetes clusters,
+              build a modern open lakehouse without vendor lock-in.
             </p>
 
-            <p className="mt-4 text-md text-slate-600 leading-relaxed max-w-xl">
-              Deploy SegForge in your own environment while maintaining the
-              flexibility, scalability, and reliability expected from a modern
-              data platform.
-            </p>
+            {/* Buttons */}
 
-            <div className="mt-10 flex flex-col sm:flex-row gap-4">
-              <button className="w-full sm:w-auto px-6 py-4 bg-slate-900 text-white rounded-xl hover:bg-slate-800 transition flex items-center gap-2 font-medium">
-                Deploy SegForge
-                <ArrowRight className="w-4 h-4" />
-              </button>
+            <div className="mt-12 flex flex-wrap gap-4">
+              <Link
+                to="/contact"
+                className="group relative inline-flex items-center justify-center overflow-hidden rounded-md border border-cyan-500 px-7 py-3 font-semibold text-slate-900 transition-colors duration-300 hover:text-white"
+              >
+                <span className="absolute inset-y-0 left-0 w-0 bg-[#18D0BB] transition-all duration-300 ease-out group-hover:w-full" />
 
-              <button className="w-full sm:w-auto px-6 py-4 border border-slate-300 text-slate-700 rounded-xl hover:bg-slate-50 transition flex items-center gap-2 font-medium">
-                <Play className="w-4 h-4" />
+                <span className="relative z-10 flex items-center gap-2">
+                  Deploy Seg Forge
+                  <ArrowRight className="h-4 w-4" />
+                </span>
+              </Link>
+
+              <Link
+                to="/documentation"
+                className="group inline-flex items-center gap-2 rounded-md border border-slate-300 bg-white px-7 py-3 font-semibold text-slate-700 transition hover:border-cyan-400 hover:text-cyan-600"
+              >
+                <BookOpen className="h-4 w-4" />
                 View Deployment Guide
-              </button>
+              </Link>
             </div>
           </motion.div>
 
-          {/* RIGHT */}
+          {/* RIGHT IMAGE */}
 
           <motion.div
-            initial={{ opacity: 0, x: 25 }}
+            initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
+            className="relative"
           >
-            <div className="bg-white border border-slate-200 rounded-[32px] p-5 sm:p-10 shadow-[0_30px_80px_rgba(15,23,42,0.08)]">
-              <div className="grid grid-cols-2 gap-4">
-                <InfraCard title="AWS" />
-                <InfraCard title="Azure" />
-                <InfraCard title="GCP" />
-                <InfraCard title="On-Prem" />
-              </div>
+            {/* Product Screenshot */}
 
-              <Connector />
-
-              <div className="flex justify-center">
-                <div className="w-full max-w-[340px] rounded-3xl border border-cyan-200 bg-gradient-to-br from-cyan-50 to-blue-50 p-8 text-center">
-                  <Cloud className="w-10 h-10 text-cyan-600 mx-auto mb-4" />
-
-                  <h3 className="font-semibold text-slate-900 text-lg">
-                    SegForge Platform
-                  </h3>
-
-                  <p className="text-sm text-slate-500 mt-2">
-                    Fully deployed inside your environment
-                  </p>
-                </div>
-              </div>
-
-              <Connector />
-
-              <div className="grid grid-cols-3 gap-4">
-                <OutcomeCard icon={Database} title="Data" />
-
-                <OutcomeCard icon={BarChart3} title="Analytics" />
-
-                <OutcomeCard icon={Brain} title="AI" />
-              </div>
+            <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
+              <img src={Hero} alt="Self Hosted Seg Forge" className="w-full" />
             </div>
           </motion.div>
         </div>
@@ -110,24 +119,5 @@ const SelfHostedHero = () => {
     </section>
   );
 };
-
-const Connector = () => (
-  <div className="flex justify-center py-6">
-    <div className="w-px h-10 bg-cyan-300" />
-  </div>
-);
-
-const InfraCard = ({ title }) => (
-  <div className="border border-slate-200 rounded-2xl p-5 text-center bg-slate-50">
-    <h4 className="font-medium text-slate-900">{title}</h4>
-  </div>
-);
-
-const OutcomeCard = ({ icon: Icon, title }) => (
-  <div className="border border-slate-200 rounded-2xl p-5 text-center bg-slate-50">
-    <Icon className="w-6 h-6 text-cyan-600 mx-auto mb-3" />
-    <h4 className="font-medium text-slate-900">{title}</h4>
-  </div>
-);
 
 export default SelfHostedHero;

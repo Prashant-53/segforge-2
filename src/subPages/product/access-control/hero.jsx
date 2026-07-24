@@ -3,15 +3,15 @@ import { motion } from "framer-motion";
 import {
   ArrowRight,
   BookOpen,
-  GitBranch,
-  Network,
-  Search,
   ShieldCheck,
+  Lock,
+  KeyRound,
+  Users,
   Sparkles,
 } from "lucide-react";
 import { Link } from "react-router-dom";
-
-const DataLineageHero = () => {
+import Hero from "../../../assets/Products/Access-Control/accessHero.webp";
+const SecurityHero = () => {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-gray-50 via-white to-white pt-36 pb-24">
       {/* Animated Grid */}
@@ -52,27 +52,28 @@ const DataLineageHero = () => {
 
             <div className="inline-flex items-center gap-2 rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">
               <Sparkles className="h-4 w-4" />
-              Data Lineage
+              Enterprise Security
             </div>
 
             {/* Heading */}
 
             <h1 className="mt-8 text-4xl font-bold leading-none text-slate-900 lg:text-5xl">
-              Trace Every Byte
+              Zero-Trust Identity
               <br />
               <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
-                from Source to Insight.
+                for the Open Data Cloud.
               </span>
             </h1>
 
             {/* Description */}
 
             <p className="mt-8 max-w-2xl text-md leading-6 text-slate-600">
-              Understand exactly where your data originated, how it was
-              transformed, and where it is consumed. Seg Forge automatically
-              builds end-to-end lineage across ingestion, ETL, notebooks,
-              machine learning, analytics, and governance—down to the individual
-              column.
+              Secure every enterprise data asset through a zero-trust security
+              architecture. Every request in Seg Forge is validated using JWT
+              authentication, active user verification, and workspace-level
+              permissions before any operation is executed—ensuring security is
+              built into the platform from the core, not added as an
+              afterthought.
             </p>
 
             {/* Buttons */}
@@ -85,13 +86,13 @@ const DataLineageHero = () => {
                 <span className="absolute inset-y-0 left-0 w-0 bg-[#18D0BB] transition-all duration-300 ease-out group-hover:w-full"></span>
 
                 <span className="relative z-10 flex items-center gap-2">
-                  Explore Data Lineage
+                  Explore Security
                   <ArrowRight className="h-4 w-4" />
                 </span>
               </Link>
 
               <Link
-                to="/documentation"
+                to="/docs/user-guide/users-access-control"
                 className="group inline-flex items-center gap-2 rounded-md border border-slate-300 bg-white px-7 py-3 font-semibold text-slate-700 transition hover:border-cyan-400 hover:text-cyan-600"
               >
                 <BookOpen className="h-4 w-4" />
@@ -116,32 +117,10 @@ const DataLineageHero = () => {
 
             <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
               <img
-                src="/images/data-lineage-hero.webp"
-                alt="Seg Forge Data Lineage"
+                src={Hero}
+                alt="Seg Forge Zero Trust Security"
                 className="w-full"
               />
-            </div>
-
-            {/* Floating Card */}
-
-            <div className="absolute -left-6 top-10 hidden rounded-2xl border border-cyan-200 bg-white px-5 py-4 shadow-xl lg:block">
-              <p className="text-sm font-semibold text-slate-900">
-                OpenLineage
-              </p>
-
-              <p className="mt-1 text-xs text-slate-500">End-to-End Tracking</p>
-            </div>
-
-            {/* Floating Card */}
-
-            <div className="absolute -right-6 bottom-10 hidden rounded-2xl border border-cyan-200 bg-white px-5 py-4 shadow-xl lg:block">
-              <p className="text-sm font-semibold text-slate-900">
-                Column Lineage
-              </p>
-
-              <p className="mt-1 text-xs text-slate-500">
-                Full Impact Analysis
-              </p>
             </div>
           </motion.div>
         </div>
@@ -150,4 +129,4 @@ const DataLineageHero = () => {
   );
 };
 
-export default DataLineageHero;
+export default SecurityHero;

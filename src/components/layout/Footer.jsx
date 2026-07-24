@@ -1,6 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaTwitter,
+  FaEnvelope,
+  FaYoutube,
+} from "react-icons/fa";
 
 const footerSections = [
   {
@@ -141,15 +147,15 @@ const footerSections = [
     links: [
       {
         title: "Documentation",
-        to: "/docs",
+        to: "/docs/getting-started/what-is-segforge",
       },
       {
         title: "Tutorials",
-        to: "/tutorials",
+        to: "/resources/tutorials",
       },
       {
         title: "Quickstarts",
-        to: "/quickstarts",
+        to: "/resources/quickstarts",
       },
       {
         title: "Reference Architectures",
@@ -157,51 +163,51 @@ const footerSections = [
       },
       {
         title: "Changelog",
-        to: "/changelog",
+        to: "/resources/changelog",
       },
     ],
   },
 
-  {
-    title: "Company",
-    links: [
-      {
-        title: "About",
-        to: "/about",
-      },
-      {
-        title: "Pricing",
-        to: "/pricing",
-      },
-      {
-        title: "Contact Sales",
-        to: "/contact",
-      },
-      {
-        title: "Security",
-        to: "/security",
-      },
-      {
-        title: "Compliance",
-        to: "/compliance",
-      },
-      {
-        title: "Privacy Policy",
-        to: "/privacy",
-      },
-      {
-        title: "Terms of Service",
-        to: "/terms",
-      },
-    ],
-  },
+  // {
+  //   title: "Company",
+  //   links: [
+  //     {
+  //       title: "About",
+  //       to: "/about",
+  //     },
+  //     {
+  //       title: "Pricing",
+  //       to: "/pricing",
+  //     },
+  //     {
+  //       title: "Contact Sales",
+  //       to: "/contact",
+  //     },
+  //     {
+  //       title: "Security",
+  //       to: "/security",
+  //     },
+  //     {
+  //       title: "Compliance",
+  //       to: "/compliance",
+  //     },
+  //     {
+  //       title: "Privacy Policy",
+  //       to: "/privacy",
+  //     },
+  //     {
+  //       title: "Terms of Service",
+  //       to: "/terms",
+  //     },
+  //   ],
+  // },
 ];
 const Footer = () => {
   return (
     <footer className="bg-slate-900 text-white">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8 py-16">
-        <div className="grid gap-14 lg:grid-cols-[1.5fr_repeat(4,1fr)]">
-          {/* Brand */}
+      <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+        <div className="grid gap-20 lg:grid-cols-[340px_1fr]">
+          {/* ================= LEFT ================= */}
 
           <div>
             <div className="flex items-center gap-3">
@@ -217,82 +223,78 @@ const Footer = () => {
 
             <div className="mt-8 flex gap-5">
               <a
-                href="#"
+                href="https://github.com/vaibhav-zoro/ETL-Studio-development/tree/kubernetes"
                 className="text-slate-400 transition hover:text-cyan-400"
               >
                 <FaGithub size={18} />
               </a>
 
               <a
-                href="#"
+                href="https://www.linkedin.com/company/segmetriq-analytics-llp/"
                 className="text-slate-400 transition hover:text-cyan-400"
               >
                 <FaLinkedin size={18} />
               </a>
-
               <a
-                href="#"
+                href="https://www.youtube.com/@seganalytics"
                 className="text-slate-400 transition hover:text-cyan-400"
               >
-                <FaTwitter size={18} />
-              </a>
-
-              <a
-                href="#"
-                className="text-slate-400 transition hover:text-cyan-400"
-              >
-                <FaEnvelope size={18} />
+                <FaYoutube size={18} />
               </a>
             </div>
           </div>
 
-          {/* Dynamic Navigation */}
+          {/* ================= RIGHT ================= */}
 
-          {footerSections.map((section) => (
-            <div key={section.title}>
-              <h3 className="mb-6 text-sm font-semibold uppercase tracking-widest text-white">
-                {section.title}
-              </h3>
+          <div className="grid grid-cols-2 gap-x-14 gap-y-14 md:grid-cols-3 xl:grid-cols-4">
+            {footerSections.map((section) => (
+              <div key={section.title}>
+                <h3 className="mb-6 text-sm font-semibold uppercase tracking-widest text-white">
+                  {section.title}
+                </h3>
 
-              <ul className="space-y-4">
-                {section.links.map((link) => {
-                  const Icon = link.icon;
+                <ul className="space-y-4">
+                  {section.links.map((link) => {
+                    const Icon = link.icon;
 
-                  return (
-                    <li key={link.title}>
-                      <Link
-                        to={link.to}
-                        className="group flex items-center gap-3 text-sm text-slate-400 transition hover:text-cyan-400"
-                      >
-                        {Icon && (
-                          <Icon className="h-4 w-4 text-cyan-500 transition group-hover:scale-110" />
-                        )}
+                    return (
+                      <li key={link.title}>
+                        <Link
+                          to={link.to}
+                          className="group flex items-center gap-3 text-sm text-slate-400 transition hover:text-cyan-400"
+                        >
+                          {Icon && (
+                            <Icon className="h-4 w-4 text-cyan-500 transition group-hover:scale-110" />
+                          )}
 
-                        {link.title}
-                      </Link>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-          ))}
+                          {link.title}
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
+
+        {/* ================= Bottom ================= */}
 
         <div className="mt-16 flex flex-col gap-4 border-t border-slate-800 pt-8 text-sm text-slate-500 md:flex-row md:items-center md:justify-between">
           <p>© 2026 SegForge. All rights reserved.</p>
 
           <div className="flex gap-6">
             <Link to="/privacy" className="hover:text-cyan-400">
-              Privacy
+              Privacy & Terms
             </Link>
 
-            <Link to="/terms" className="hover:text-cyan-400">
+            {/* <Link to="/terms" className="hover:text-cyan-400">
               Terms
             </Link>
 
             <Link to="/security" className="hover:text-cyan-400">
               Security
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>

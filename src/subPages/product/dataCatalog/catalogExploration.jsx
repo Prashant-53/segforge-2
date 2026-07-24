@@ -7,7 +7,7 @@ import {
   BarChart3,
   CheckCircle2,
 } from "lucide-react";
-
+import CatalogExplorer from "../../../assets/Products/Data-Catalog/intelcatalog.webp";
 const features = [
   {
     icon: FolderTree,
@@ -75,15 +75,13 @@ const CatalogExploration = () => {
             Intelligent Catalog
           </div>
 
-          <h2 className="mt-6 text-4xl font-bold text-slate-900 lg:text-6xl">
+          <h2 className="mt-6 text-4xl font-bold text-slate-900 lg:text-4xl">
             Find the Right Data
             <br />
-            <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
-              in Seconds.
-            </span>
+            in Seconds.
           </h2>
 
-          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-600">
+          <p className="mx-auto mt-6 max-w-3xl text-md leading-6 text-slate-600">
             Navigate namespaces, inspect metadata, preview datasets, and
             understand your lakehouse through a powerful interactive catalog
             explorer built for modern data teams.
@@ -101,7 +99,7 @@ const CatalogExploration = () => {
         >
           <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
             <img
-              src="/images/catalog-explorer.webp"
+              src={CatalogExplorer}
               alt="Catalog Explorer"
               className="w-full"
             />
@@ -117,15 +115,16 @@ const CatalogExploration = () => {
               whileHover={{ y: -4 }}
               className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all hover:border-cyan-200 hover:shadow-xl"
             >
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-50">
-                <feature.icon className="h-7 w-7 text-cyan-600" />
+              <div className="flex gap-4 flex-row">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-50">
+                  <feature.icon className="h-7 w-7 text-cyan-600" />
+                </div>
+
+                <h3 className="mt-3  text-2xl font-semibold text-slate-900">
+                  {feature.title}
+                </h3>
               </div>
-
-              <h3 className="mt-6 text-2xl font-semibold text-slate-900">
-                {feature.title}
-              </h3>
-
-              <p className="mt-4 leading-8 text-slate-600">
+              <p className="mt-4 leading-6 text-slate-600">
                 {feature.description}
               </p>
             </motion.div>

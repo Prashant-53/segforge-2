@@ -8,6 +8,7 @@ import {
   UserCheck,
   LockKeyhole,
 } from "lucide-react";
+import Auth from "../../../assets/Products/Access-Control/enterpriseIdentity.webp";
 
 const capabilityGroups = [
   {
@@ -200,7 +201,7 @@ const IdentitySSOSection = () => {
 
             <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
               <img
-                src="/images/enterprise-sso-dashboard.webp"
+                src={Auth}
                 alt="Enterprise Identity & Single Sign-On"
                 className="w-full"
               />

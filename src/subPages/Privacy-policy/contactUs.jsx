@@ -132,7 +132,7 @@ const PrivacyContact = () => {
           </p>
 
           <a
-            href="mailto:privacy@segforge.ai"
+            href="/contact"
             className="group mt-10 inline-flex items-center justify-center overflow-hidden rounded-full border border-white/30 bg-white/10 px-8 py-4 font-semibold backdrop-blur-sm transition hover:border-white"
           >
             <span className="absolute inset-y-0 left-0 w-0 bg-white transition-all duration-300 group-hover:w-full" />

@@ -8,7 +8,7 @@ import {
   CheckCircle2,
   ShieldCheck,
 } from "lucide-react";
-
+import Monitoring from "../../../assets/Products/RealTimeCDC/operationalIQ.webp";
 const monitoringGroups = [
   {
     icon: Gauge,
@@ -96,7 +96,7 @@ const MonitoringSection = () => {
 
             <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
               <img
-                src="/images/cdc-monitoring-dashboard.webp"
+                src={Monitoring}
                 alt="CDC Monitoring Dashboard"
                 className="w-full"
               />

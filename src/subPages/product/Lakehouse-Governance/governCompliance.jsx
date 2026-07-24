@@ -2,145 +2,183 @@ import React from "react";
 import { motion } from "framer-motion";
 import {
   ShieldCheck,
-  CheckCircle2,
-  Workflow,
-  GitBranch,
-  FileCheck,
   Database,
-  Fingerprint,
+  CheckCircle2,
+  FileCheck,
+  Layers3,
 } from "lucide-react";
+import GovernCompliance from "../../../assets/Products/Lakehouse-Governance/lakegov.webp";
 
-const features = [
-  "OpenLineage Support",
-  "PII Tracking",
-  "Auditability",
-  "DataHub Integration",
-  "OpenMetadata Integration",
-  "Compliance Reporting",
+const capabilityGroups = [
+  {
+    icon: ShieldCheck,
+    title: "Governance",
+    items: [
+      "Audit History",
+      "Schema Evolution",
+      "Data Ownership",
+      "Metadata Governance",
+    ],
+  },
+  {
+    icon: Database,
+    title: "Open Architecture",
+    items: [
+      "Apache Iceberg",
+      "Apache Nessie",
+      "Open Standards",
+      "Customer-Owned Infrastructure",
+    ],
+  },
 ];
 
-const GovernanceComplianceSection = () => {
+const governanceFeatures = [
+  {
+    icon: FileCheck,
+    title: "Compliance Ready",
+    description:
+      "Maintain permanent audit trails, version history, and governance records to support regulatory reporting, internal compliance programs, and enterprise audit requirements.",
+  },
+  {
+    icon: Layers3,
+    title: "Flexible Evolution",
+    description:
+      "Safely evolve schemas by adding, renaming, or removing columns without rewriting existing data, allowing enterprise lakehouse architectures to adapt as business requirements change.",
+  },
+];
+
+const EnterpriseGovernanceSection = () => {
   return (
-    <section className="py-32 bg-slate-50 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
-          {/* LEFT CONTENT */}
+    <section className="relative overflow-hidden bg-gradient-to-b from-gray-50 to-white py-28">
+      {/* Animated Grid */}
+
+      <motion.div
+        animate={{
+          backgroundPosition: ["0px 0px", "120px 120px"],
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+        className="absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right,#06b6d4 1px,transparent 1px),
+            linear-gradient(to bottom,#06b6d4 1px,transparent 1px)
+          `,
+          backgroundSize: "80px 80px",
+        }}
+      />
+
+      {/* Glow */}
+
+      <div className="absolute right-0 top-32 h-[500px] w-[500px] rounded-full bg-cyan-400/10 blur-[180px]" />
+
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid items-center gap-20 lg:grid-cols-2">
+          {/* LEFT IMAGE */}
 
           <motion.div
-            initial={{ opacity: 0, x: -25 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="relative"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-50 text-cyan-700 text-sm font-medium mb-6">
-              <ShieldCheck className="w-4 h-4" />
-              Governance & Compliance
-            </div>
+            {/* Product Screenshot */}
 
-            <h2 className="text-2xl sm:text-4xl font-bold text-slate-900 leading-tight">
-              Maintain trust, governance, and compliance.
-            </h2>
-
-            <p className="mt-6 text-md text-slate-600 leading-relaxed max-w-xl">
-              Every data movement and transformation can be documented, audited,
-              and shared across governance systems.
-            </p>
-
-            <p className="mt-4 text-md text-slate-600 leading-relaxed max-w-xl">
-              Track sensitive data usage, support compliance initiatives, and
-              maintain a complete history of how information flows throughout
-              the organization.
-            </p>
-
-            <div className="mt-10 space-y-4">
-              {features.map((feature) => (
-                <div key={feature} className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-cyan-600" />
-
-                  <span className="text-slate-700">{feature}</span>
-                </div>
-              ))}
+            <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
+              <img
+                src={GovernCompliance}
+                alt="Enterprise Governance"
+                className="w-full"
+              />
             </div>
           </motion.div>
 
-          {/* RIGHT VISUAL */}
+          {/* RIGHT CONTENT */}
 
           <motion.div
-            initial={{ opacity: 0, x: 25 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
           >
-            <div className="bg-white border border-slate-200 rounded-[32px] overflow-hidden shadow-[0_30px_80px_rgba(15,23,42,0.08)]">
-              {/* Header */}
+            {/* Badge */}
 
-              <div className="px-6 py-4 border-b border-slate-200 bg-slate-50">
-                <h3 className="font-medium text-slate-900">
-                  Governance Ecosystem
-                </h3>
-              </div>
+            <div className="inline-flex rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">
+              Enterprise Governance
+            </div>
 
-              <div className="p-8">
-                {/* Pipeline */}
+            {/* Heading */}
 
-                <Node
-                  icon={Workflow}
-                  title="Pipeline"
-                  subtitle="Data Processing"
-                />
+            <h2 className="mt-6 text-4xl font-bold leading-none text-slate-900 lg:text-4xl">
+              Built for Enterprise
+              <br />
+              Trust and Compliance.
+            </h2>
 
-                <Connector />
+            {/* Description */}
 
-                {/* OpenLineage */}
+            <p className="mt-6 text-md leading-6 text-slate-600">
+              Maintain complete auditability, evolve schemas safely, and meet
+              regulatory requirements while preserving full ownership of your
+              infrastructure, metadata, and enterprise data assets.
+            </p>
 
-                <Node
-                  icon={GitBranch}
-                  title="OpenLineage Events"
-                  subtitle="Metadata & Lineage"
-                  highlight
-                />
+            {/* Capability Groups */}
 
-                <Connector />
+            <div className="mt-10 grid gap-6 md:grid-cols-2">
+              {capabilityGroups.map((group) => (
+                <div
+                  key={group.title}
+                  className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+                >
+                  <div className="flex items-center gap-3">
+                    <group.icon className="h-7 w-7 text-cyan-600" />
 
-                {/* Ecosystem */}
+                    <h3 className="text-xl font-semibold text-slate-900">
+                      {group.title}
+                    </h3>
+                  </div>
 
-                <div className="grid grid-cols-3 gap-4">
-                  <IntegrationCard title="DataHub" />
+                  <div className="mt-6 space-y-3">
+                    {group.items.map((item) => (
+                      <div key={item} className="flex items-center gap-3">
+                        <CheckCircle2 className="h-4 w-4 text-cyan-500" />
 
-                  <IntegrationCard title="Marquez" />
-
-                  <IntegrationCard title="OpenMetadata" />
+                        <span className="text-slate-700">{item}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
+              ))}
+            </div>
 
-                <Connector />
+            {/* Supporting Features */}
 
-                {/* Compliance */}
+            <div className="mt-10 space-y-5">
+              {governanceFeatures.map((feature) => (
+                <div
+                  key={feature.title}
+                  className="flex gap-5 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-cyan-200 hover:shadow-lg"
+                >
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-cyan-50">
+                    <feature.icon className="h-7 w-7 text-cyan-600" />
+                  </div>
 
-                <Node
-                  icon={FileCheck}
-                  title="Compliance Reports"
-                  subtitle="Audit & Governance"
-                  dark
-                />
+                  <div>
+                    <h3 className="text-lg font-semibold text-slate-900">
+                      {feature.title}
+                    </h3>
 
-                {/* Governance Metrics */}
-
-                <div className="grid grid-cols-3 gap-4 mt-8">
-                  <MetricCard value="100%" label="Traceable" />
-
-                  <MetricCard value="24/7" label="Auditable" />
-
-                  <MetricCard value="PII" label="Protected" />
+                    <p className="mt-2 leading-7 text-slate-600">
+                      {feature.description}
+                    </p>
+                  </div>
                 </div>
-
-                {/* Compliance Tags */}
-
-                <div className="flex flex-wrap gap-3 mt-8">
-                  <Tag icon={Fingerprint} text="PII Tracking" />
-
-                  <Tag icon={Database} text="Audit Logs" />
-
-                  <Tag icon={ShieldCheck} text="Governance Ready" />
-                </div>
-              </div>
+              ))}
             </div>
           </motion.div>
         </div>
@@ -149,65 +187,4 @@ const GovernanceComplianceSection = () => {
   );
 };
 
-const Connector = () => (
-  <div className="flex justify-center py-4">
-    <div className="w-px h-10 bg-cyan-300" />
-  </div>
-);
-
-const Node = ({ icon: Icon, title, subtitle, highlight, dark }) => (
-  <div
-    className={`rounded-2xl border p-5 flex items-center gap-4
-      ${
-        dark
-          ? "bg-slate-900 border-slate-900 text-white"
-          : highlight
-            ? "bg-cyan-50 border-cyan-200"
-            : "bg-white border-slate-200"
-      }`}
-  >
-    <div
-      className={`w-12 h-12 rounded-xl flex items-center justify-center
-        ${dark ? "bg-slate-800" : "bg-white border border-slate-200"}`}
-    >
-      <Icon className={`w-5 h-5 ${dark ? "text-white" : "text-cyan-600"}`} />
-    </div>
-
-    <div>
-      <h4 className={`font-semibold ${dark ? "text-white" : "text-slate-900"}`}>
-        {title}
-      </h4>
-
-      <p className={`text-sm ${dark ? "text-slate-400" : "text-slate-500"}`}>
-        {subtitle}
-      </p>
-    </div>
-  </div>
-);
-
-const IntegrationCard = ({ title }) => (
-  <div className="border border-slate-200 rounded-2xl p-5 text-center bg-slate-50">
-    <div className="w-10 h-10 rounded-xl bg-cyan-50 flex items-center justify-center mx-auto mb-3">
-      <Database className="w-4 h-4 text-cyan-600" />
-    </div>
-
-    <h4 className="font-medium text-slate-900">{title}</h4>
-  </div>
-);
-
-const MetricCard = ({ value, label }) => (
-  <div className="border border-slate-200 rounded-2xl p-4 text-center">
-    <div className="text-xl font-bold text-slate-900">{value}</div>
-
-    <div className="text-sm text-slate-500 mt-1">{label}</div>
-  </div>
-);
-
-const Tag = ({ icon: Icon, text }) => (
-  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-50 text-cyan-700 text-sm">
-    <Icon className="w-4 h-4" />
-    {text}
-  </div>
-);
-
-export default GovernanceComplianceSection;
+export default EnterpriseGovernanceSection;

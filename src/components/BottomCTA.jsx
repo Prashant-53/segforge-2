@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, PhoneCall } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export const CTABanner = () => {
   return (
@@ -39,9 +40,9 @@ export const CTABanner = () => {
 
             {/* Right */}
 
-            <div className="lg:col-span-4 flex flex-col gap-4 lg:items-end">
-              <a
-                href="/your-link"
+            <div className="lg:col-span-4 flex flex-col gap-4 md:items-center sm:items-center lg:items-end">
+              <Link
+                to="/contact"
                 className="group relative flex w-full sm:w-72 lg:w-64 items-center justify-center overflow-hidden rounded-lg border border-slate-600 px-6 py-3 font-semibold text-white transition"
               >
                 <span className="absolute inset-y-0 left-0 w-0 bg-[#18D0BB] transition-all duration-300 ease-out group-hover:w-full" />
@@ -50,10 +51,10 @@ export const CTABanner = () => {
                   Start for free
                   <ArrowRight className="h-4 w-4" />
                 </span>
-              </a>
+              </Link>
 
-              <a
-                href="/your-link"
+              <Link
+                to="/contact"
                 className="group relative flex w-full sm:w-72 lg:w-64 items-center justify-center overflow-hidden rounded-lg border border-slate-600 px-6 py-3 font-semibold text-white transition"
               >
                 <span className="absolute inset-y-0 left-0 w-0 bg-[#18D0BB] transition-all duration-300 ease-out group-hover:w-full" />
@@ -62,7 +63,7 @@ export const CTABanner = () => {
                   <PhoneCall className="h-4 w-4" />
                   Schedule Demo
                 </span>
-              </a>
+              </Link>
             </div>
           </div>
         </motion.div>

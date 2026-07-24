@@ -7,6 +7,7 @@ import {
   CheckCircle2,
   HardDrive,
 } from "lucide-react";
+import UniversalSource from "../../../assets/Products/RealTimeCDC/universalSource.webp";
 
 const capabilityGroups = [
   {
@@ -179,7 +180,7 @@ const DatabaseConnectivitySection = () => {
 
             <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
               <img
-                src="/images/database-connectivity-dashboard.webp"
+                src={UniversalSource}
                 alt="Universal Database Connectivity"
                 className="w-full"
               />

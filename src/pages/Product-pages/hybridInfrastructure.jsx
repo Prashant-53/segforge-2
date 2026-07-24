@@ -1,17 +1,20 @@
 import React from "react";
-import HybridCloudHero from "../../subPages/product/hybridInfrastructure/hero";
-import HybridConnectivitySection from "../../subPages/product/hybridInfrastructure/bringEveryEnvironmentTogether";
-import WorkloadDeploymentSection from "../../subPages/product/hybridInfrastructure/deployWorkloads";
-import InfrastructureManagementSection from "../../subPages/product/hybridInfrastructure/scaleInfra";
+import HybridInfrastructureHero from "../../subPages/product/hybridInfrastructure/hero";
+import ClusterProvisioningSection from "../../subPages/product/hybridInfrastructure/bringEveryEnvironmentTogether";
+import ClusterProfilesSection from "../../subPages/product/hybridInfrastructure/deployWorkloads";
+import CostGovernanceSection from "../../subPages/product/hybridInfrastructure/scaleInfra";
+import UnifiedControlPlaneSection from "../../subPages/product/hybridInfrastructure/unifiedcontrolPlane";
 import MainLayout from "../../layouts/mainLayout";
-
+import { CTABanner } from "../../components/BottomCTA";
 const HybridInfrastructure = () => {
   return (
     <MainLayout>
-      <HybridCloudHero />
-      <HybridConnectivitySection />
-      <WorkloadDeploymentSection />
-      <InfrastructureManagementSection />
+      <HybridInfrastructureHero />
+      <ClusterProvisioningSection />
+      <ClusterProfilesSection />
+      <CostGovernanceSection />
+      <UnifiedControlPlaneSection />
+      <CTABanner />
     </MainLayout>
   );
 };

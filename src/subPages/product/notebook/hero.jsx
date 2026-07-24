@@ -11,7 +11,7 @@ import {
   Users,
 } from "lucide-react";
 import { Link } from "react-router-dom";
-import HeroImg from "../../../assets/Products/NoteBook/hero.png";
+import HeroImg from "../../../assets/Products/NoteBook/hero.webp";
 
 const highlights = [
   {
@@ -119,7 +119,7 @@ const Hero = () => {
               </Link>
 
               <Link
-                to="/documentation"
+                to="/docs/user-guide/notebooks"
                 className="group inline-flex items-center gap-2 rounded-md border border-slate-300 bg-white px-7 py-3 font-semibold text-slate-700 transition hover:border-cyan-400 hover:text-cyan-600"
               >
                 <BookOpen className="h-4 w-4" />

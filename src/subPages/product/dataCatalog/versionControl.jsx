@@ -75,36 +75,16 @@ const VersionControlSection = () => {
             Apache Nessie Version Control
           </div>
 
-          <h2 className="mt-6 text-4xl font-bold leading-tight text-slate-900 lg:text-6xl">
+          <h2 className="mt-6 text-4xl font-bold leading-none text-slate-900 lg:text-4xl">
             Version Your Data
             <br />
-            <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
-              Like You Version Code.
-            </span>
+            Like You Version Code.
           </h2>
 
-          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-600">
+          <p className="mx-auto mt-6 max-w-3xl text-md leading-6 text-slate-600">
             Experiment safely, collaborate confidently, and recover instantly
             with Git-inspired version control built for your entire lakehouse.
           </p>
-        </motion.div>
-
-        {/* Large Image */}
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="mx-auto mt-16 max-w-6xl"
-        >
-          <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
-            <img
-              src="/images/catalog-version-control.webp"
-              alt="Apache Nessie Version Control"
-              className="w-full"
-            />
-          </div>
         </motion.div>
 
         {/* Features */}
@@ -116,15 +96,15 @@ const VersionControlSection = () => {
               whileHover={{ y: -4 }}
               className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition hover:border-cyan-200 hover:shadow-xl"
             >
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-50">
-                <feature.icon className="h-7 w-7 text-cyan-600" />
+              <div className="flex flex-row gap-3">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-50">
+                  <feature.icon className="h-7 w-7 text-cyan-600" />
+                </div>
+                <h3 className="mt-4 text-2xl font-semibold text-slate-900">
+                  {feature.title}
+                </h3>
               </div>
-
-              <h3 className="mt-6 text-2xl font-semibold text-slate-900">
-                {feature.title}
-              </h3>
-
-              <p className="mt-4 leading-8 text-slate-600">
+              <p className="mt-4 leading-6 text-slate-600">
                 {feature.description}
               </p>
             </motion.div>

@@ -1,5 +1,5 @@
 import React from "react";
-import AccessControlHero from "../../subPages/product/access-Control/hero";
+import SecurityHero from "../../subPages/product/access-Control/hero";
 import EnterpriseRolesSection from "../../subPages/product/access-Control/workspaceIsolation";
 import RBACSection from "../../subPages/product/access-Control/RBAC";
 import IdentitySSOSection from "../../subPages/product/access-Control/accessAuthen";
@@ -11,7 +11,7 @@ import MainLayout from "../../layouts/mainLayout";
 const AccessControl = () => {
   return (
     <MainLayout>
-      <AccessControlHero />
+      <SecurityHero />
       <RBACSection />
       <EnterpriseRolesSection />
       <IdentitySSOSection />

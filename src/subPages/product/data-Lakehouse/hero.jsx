@@ -11,29 +11,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { Link } from "react-router-dom";
-
-const highlights = [
-  {
-    icon: Database,
-    title: "Apache Iceberg Native",
-  },
-  {
-    icon: GitBranch,
-    title: "Git-like Versioning",
-  },
-  {
-    icon: ShieldCheck,
-    title: "ACID Transactions",
-  },
-  {
-    icon: Cloud,
-    title: "Multi-Cloud Storage",
-  },
-  {
-    icon: Layers3,
-    title: "Open Lakehouse",
-  },
-];
+import Hero from "../../../assets/Products/DataLakehouse/lakeHero.png";
 
 const LakehouseHero = () => {
   return (
@@ -58,10 +36,6 @@ const LakehouseHero = () => {
           backgroundSize: "80px 80px",
         }}
       />
-
-      {/* Glow */}
-
-      <div className="absolute left-1/2 top-20 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-cyan-400/10 blur-[180px]" />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid items-center gap-20 lg:grid-cols-2">
@@ -115,13 +89,13 @@ const LakehouseHero = () => {
                 </span>
               </Link>
 
-              <Link
+              {/* <Link
                 to="/documentation"
                 className="group inline-flex items-center gap-2 rounded-md border border-slate-300 bg-white px-7 py-3 font-semibold text-slate-700 transition hover:border-cyan-400 hover:text-cyan-600"
               >
                 <BookOpen className="h-4 w-4" />
                 View Documentation
-              </Link>
+              </Link> */}
             </div>
           </motion.div>
 
@@ -133,40 +107,14 @@ const LakehouseHero = () => {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            {/* Glow */}
-
-            <div className="absolute inset-0 rounded-[36px] bg-cyan-400/10 blur-3xl" />
-
             {/* Product Screenshot */}
 
-            <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
+            <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white ">
               <img
-                src="/images/lakehouse-hero.webp"
+                src={Hero}
                 alt="Seg Forge Data Lakehouse"
                 className="w-full"
               />
-            </div>
-
-            {/* Floating Card */}
-
-            <div className="absolute -left-6 top-10 hidden rounded-2xl border border-cyan-200 bg-white px-5 py-4 shadow-xl lg:block">
-              <p className="text-sm font-semibold text-slate-900">
-                Apache Iceberg
-              </p>
-
-              <p className="mt-1 text-xs text-slate-500">Open Table Format</p>
-            </div>
-
-            {/* Floating Card */}
-
-            <div className="absolute -right-6 bottom-10 hidden rounded-2xl border border-cyan-200 bg-white px-5 py-4 shadow-xl lg:block">
-              <p className="text-sm font-semibold text-slate-900">
-                Apache Nessie
-              </p>
-
-              <p className="mt-1 text-xs text-slate-500">
-                Git-like Data Versioning
-              </p>
             </div>
           </motion.div>
         </div>

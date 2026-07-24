@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Database, ShieldCheck, GitBranch, Clock3 } from "lucide-react";
-import LakehouseDestination from "../../../assets/Products/ETL/lakehouse.png";
+import LakehouseDestination from "../../../assets/Products/ETL/lakehouse.webp";
 const features = [
   {
     icon: Database,
@@ -79,11 +79,8 @@ const LakehouseDestinations = () => {
             <div className="inline-flex items-center rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">
               Open Lakehouse Architecture
             </div>
-            <h2 className="mt-6 text-4xl font-bold leading-tight text-slate-900 lg:text-5xl">
-              Open Table Foundation
-              <span className="block bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
-                Built for Modern Analytics
-              </span>
+            <h2 className="mt-6 text-4xl font-bold leading-none text-slate-900 lg:text-4xl">
+              Open Table Foundation Built for Modern Analytics
             </h2>
             <p className="mt-6 text-lg leading-8 text-slate-600">
               ETL Studio transforms raw enterprise data into governed Apache

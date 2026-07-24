@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Layers3, Wrench, ShieldAlert, ServerCrash } from "lucide-react";
 
-import CostImg from "../../assets/why-segforge/cost.png";
+import CostImg from "../../assets/why-segforge/cost.webp";
 
 const problems = [
   {

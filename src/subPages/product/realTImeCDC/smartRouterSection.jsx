@@ -8,7 +8,7 @@ import {
   CheckCircle2,
   ArrowRightLeft,
 } from "lucide-react";
-
+import SmartRouter from "../../../assets/Products/RealTimeCDC/smartRoute.webp";
 const executionModes = [
   {
     icon: Zap,
@@ -94,7 +94,7 @@ const SmartRouterSection = () => {
 
             <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
               <img
-                src="/images/smart-router-dashboard.webp"
+                src={SmartRouter}
                 alt="Seg Forge Smart Router"
                 className="w-full"
               />

@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, BookOpen, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
-
+import Hero from "../../../assets/Products/RealTimeCDC/cdcHero2.webp";
 const RealTimeCDCHero = () => {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-gray-50 via-white to-white pt-36 pb-24">
@@ -84,7 +84,7 @@ const RealTimeCDCHero = () => {
               </Link>
 
               <Link
-                to="/documentation"
+                to="/docs/user-guide/cdc-streams"
                 className="group inline-flex items-center gap-2 rounded-md border border-slate-300 bg-white px-7 py-3 font-semibold text-slate-700 transition hover:border-cyan-400 hover:text-cyan-600"
               >
                 <BookOpen className="h-4 w-4" />
@@ -109,7 +109,7 @@ const RealTimeCDCHero = () => {
 
             <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
               <img
-                src="/images/cdc-hero.webp"
+                src={Hero}
                 alt="Seg Forge Change Data Capture"
                 className="w-full"
               />

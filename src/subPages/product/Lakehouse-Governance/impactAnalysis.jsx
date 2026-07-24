@@ -1,142 +1,188 @@
 import React from "react";
 import { motion } from "framer-motion";
 import {
-  AlertTriangle,
+  History,
+  RotateCcw,
+  ShieldCheck,
   CheckCircle2,
-  Database,
-  BarChart3,
-  FileText,
-  Search,
+  SearchCheck,
 } from "lucide-react";
+import TimeTravel from "../../../assets/Products/Lakehouse-Governance/timetravel.webp";
 
-const features = [
-  "Impact Analysis",
-  "Dependency Tracking",
-  "Root Cause Discovery",
-  "Schema Change Assessment",
-  "Change Planning",
+const capabilityGroups = [
+  {
+    icon: History,
+    title: "Historical Access",
+    items: [
+      "Time Travel",
+      "Snapshot Queries",
+      "Historical Tables",
+      "Version Browsing",
+    ],
+  },
+  {
+    icon: RotateCcw,
+    title: "Recovery",
+    items: [
+      "Instant Rollbacks",
+      "Catalog Restore",
+      "Pipeline Recovery",
+      "Error Investigation",
+    ],
+  },
 ];
 
-const ImpactAnalysisSection = () => {
+const recoveryFeatures = [
+  {
+    icon: SearchCheck,
+    title: "Root Cause Analysis",
+    description:
+      "Identify exactly when data changed, which schema was modified, and the pipeline or user responsible. Trace every operation through complete version history to resolve production issues faster.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Business Continuity",
+    description:
+      "Recover trusted datasets instantly using Apache Iceberg snapshots and Apache Nessie catalog history without rebuilding pipelines or interrupting business operations.",
+  },
+];
+
+const TimeTravelSection = () => {
   return (
-    <section className="py-32 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
-          {/* VISUAL LEFT */}
+    <section className="relative overflow-hidden bg-gradient-to-b from-white to-gray-50 py-28">
+      {/* Animated Grid */}
+
+      <motion.div
+        animate={{
+          backgroundPosition: ["0px 0px", "120px 120px"],
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+        className="absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right,#06b6d4 1px,transparent 1px),
+            linear-gradient(to bottom,#06b6d4 1px,transparent 1px)
+          `,
+          backgroundSize: "80px 80px",
+        }}
+      />
+
+      {/* Glow */}
+
+      <div className="absolute left-0 top-32 h-[500px] w-[500px] rounded-full bg-cyan-400/10 blur-[180px]" />
+
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid items-center gap-20 lg:grid-cols-2">
+          {/* LEFT CONTENT */}
 
           <motion.div
-            initial={{ opacity: 0, x: -25 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
           >
-            <div className="bg-white border border-slate-200 rounded-[32px] overflow-hidden shadow-[0_30px_80px_rgba(15,23,42,0.08)]">
-              {/* Header */}
+            {/* Badge */}
 
-              <div className="px-6 py-4 border-b border-slate-200 bg-slate-50 flex items-center justify-between">
-                <h3 className="font-medium text-slate-900">
-                  Dependency Impact Explorer
-                </h3>
+            <div className="inline-flex rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">
+              Time Travel & Recovery
+            </div>
 
-                <div className="flex items-center gap-2 text-amber-600 text-sm font-medium">
-                  <AlertTriangle className="w-4 h-4" />
-                  Change Detected
-                </div>
-              </div>
+            {/* Heading */}
 
-              <div className="p-8">
-                {/* Root Change */}
+            <h2 className="mt-6 text-4xl font-bold leading-none text-slate-900 lg:text-4xl">
+              Recover Any Dataset
+              <br />
+              in Seconds.
+            </h2>
 
-                <ImpactNode
-                  icon={Database}
-                  title="Revenue Column Updated"
-                  subtitle="Source Change"
-                  primary
-                />
+            {/* Description */}
 
-                <Connector />
+            <p className="mt-6 text-md leading-6 text-slate-600">
+              Query historical snapshots, investigate data issues, and restore
+              previous catalog states instantly through Apache Iceberg Time
+              Travel and Apache Nessie version history.
+            </p>
 
-                <ImpactNode
-                  icon={Database}
-                  title="4 Affected Tables"
-                  subtitle="Curated Datasets"
-                />
+            {/* Capability Groups */}
 
-                <Connector />
+            <div className="mt-10 grid gap-6 md:grid-cols-2">
+              {capabilityGroups.map((group) => (
+                <div
+                  key={group.title}
+                  className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+                >
+                  <div className="flex items-center gap-3">
+                    <group.icon className="h-7 w-7 text-cyan-600" />
 
-                <ImpactNode
-                  icon={BarChart3}
-                  title="2 Dashboards"
-                  subtitle="Business Metrics"
-                />
+                    <h3 className="text-xl font-semibold text-slate-900">
+                      {group.title}
+                    </h3>
+                  </div>
 
-                <Connector />
+                  <div className="mt-6 space-y-3">
+                    {group.items.map((item) => (
+                      <div key={item} className="flex items-center gap-3">
+                        <CheckCircle2 className="h-4 w-4 text-cyan-500" />
 
-                <ImpactNode
-                  icon={FileText}
-                  title="7 Reports"
-                  subtitle="Executive Reporting"
-                  dark
-                />
-
-                {/* Summary */}
-
-                <div className="mt-8 rounded-2xl border border-amber-200 bg-amber-50 p-5">
-                  <div className="flex items-start gap-3">
-                    <Search className="w-5 h-5 text-amber-600 mt-0.5" />
-
-                    <div>
-                      <h4 className="font-medium text-slate-900">
-                        Impact Summary
-                      </h4>
-
-                      <p className="text-sm text-slate-600 mt-2">
-                        This change affects 13 downstream assets across
-                        analytics, reporting, and operations.
-                      </p>
-                    </div>
+                        <span className="text-slate-700">{item}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
-              </div>
+              ))}
+            </div>
+
+            {/* Supporting Features */}
+
+            <div className="mt-10 space-y-5">
+              {recoveryFeatures.map((feature) => (
+                <div
+                  key={feature.title}
+                  className="flex gap-5 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-cyan-200 hover:shadow-lg"
+                >
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-cyan-50">
+                    <feature.icon className="h-7 w-7 text-cyan-600" />
+                  </div>
+
+                  <div>
+                    <h3 className="text-lg font-semibold text-slate-900">
+                      {feature.title}
+                    </h3>
+
+                    <p className="mt-2 leading-7 text-slate-600">
+                      {feature.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
           </motion.div>
 
-          {/* CONTENT RIGHT */}
+          {/* RIGHT IMAGE */}
 
           <motion.div
-            initial={{ opacity: 0, x: 25 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="relative"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-50 text-cyan-700 text-sm font-medium mb-6">
-              <AlertTriangle className="w-4 h-4" />
-              Impact Analysis
-            </div>
+            {/* Glow */}
 
-            <h2 className="text-2xl sm:text-4xl font-bold text-slate-900 leading-tight">
-              Understand what changes
-              <br />
-              before you make them.
-            </h2>
+            <div className="absolute inset-0 rounded-[36px] bg-cyan-400/10 blur-3xl" />
 
-            <p className="mt-6 text-md text-slate-600 leading-relaxed max-w-xl">
-              Before modifying a schema, removing a column, or updating a
-              pipeline, see exactly which datasets, dashboards, and reports will
-              be affected.
-            </p>
+            {/* Product Screenshot */}
 
-            <p className="mt-4 text-md text-slate-600 leading-relaxed max-w-xl">
-              Reduce risk, avoid unexpected issues, and make changes with
-              confidence.
-            </p>
-
-            <div className="mt-10 space-y-4">
-              {features.map((feature) => (
-                <div key={feature} className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-cyan-600" />
-
-                  <span className="text-slate-700">{feature}</span>
-                </div>
-              ))}
+            <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
+              <img
+                src={TimeTravel}
+                alt="Time Travel & Recovery"
+                className="w-full"
+              />
             </div>
           </motion.div>
         </div>
@@ -145,40 +191,4 @@ const ImpactAnalysisSection = () => {
   );
 };
 
-const Connector = () => (
-  <div className="flex justify-center py-3">
-    <div className="w-px h-10 bg-cyan-300" />
-  </div>
-);
-
-const ImpactNode = ({ icon: Icon, title, subtitle, primary, dark }) => (
-  <div
-    className={`rounded-2xl border p-5 flex items-center gap-4
-      ${
-        dark
-          ? "bg-slate-900 border-slate-900 text-white"
-          : primary
-            ? "bg-cyan-50 border-cyan-200"
-            : "bg-white border-slate-200"
-      }`}
-  >
-    <div
-      className={`w-12 h-12 rounded-xl flex items-center justify-center
-        ${dark ? "bg-slate-800" : "bg-white border border-slate-200"}`}
-    >
-      <Icon className={`w-5 h-5 ${dark ? "text-white" : "text-cyan-600"}`} />
-    </div>
-
-    <div>
-      <h4 className={`font-semibold ${dark ? "text-white" : "text-slate-900"}`}>
-        {title}
-      </h4>
-
-      <p className={`text-sm ${dark ? "text-slate-400" : "text-slate-500"}`}>
-        {subtitle}
-      </p>
-    </div>
-  </div>
-);
-
-export default ImpactAnalysisSection;
+export default TimeTravelSection;

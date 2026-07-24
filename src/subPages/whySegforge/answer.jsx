@@ -12,7 +12,7 @@ import {
   Layers,
 } from "lucide-react";
 
-import SolutionImg from "../../assets/why-segforge/solution.png";
+import SolutionImg from "../../assets/why-segforge/solution.webp";
 
 const UnifiedAnswer = () => {
   return (

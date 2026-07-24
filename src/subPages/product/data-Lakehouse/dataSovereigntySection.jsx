@@ -9,6 +9,7 @@ import {
   ShieldCheck,
   Cloud,
 } from "lucide-react";
+import Sovereignity from "../../../assets/Products/DataLakehouse/soveriegnity.png";
 
 const capabilityGroups = [
   {
@@ -99,26 +100,10 @@ const DataSovereigntySection = () => {
 
             <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
               <img
-                src="/images/data-sovereignty-dashboard.webp"
+                src={Sovereignity}
                 alt="Storage & Data Sovereignty"
                 className="w-full"
               />
-            </div>
-
-            <div className="absolute -left-6 top-8 hidden rounded-2xl border border-cyan-200 bg-white px-5 py-4 shadow-xl lg:block">
-              <p className="text-sm font-semibold text-slate-900">
-                Customer Storage
-              </p>
-
-              <p className="mt-1 text-xs text-slate-500">Amazon S3 • MinIO</p>
-            </div>
-
-            <div className="absolute -right-6 bottom-8 hidden rounded-2xl border border-cyan-200 bg-white px-5 py-4 shadow-xl lg:block">
-              <p className="text-sm font-semibold text-slate-900">
-                Open Standards
-              </p>
-
-              <p className="mt-1 text-xs text-slate-500">No Vendor Lock-In</p>
             </div>
           </motion.div>
 

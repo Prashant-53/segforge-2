@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { GitBranch, Code2, FlaskConical, ShieldCheck } from "lucide-react";
-import FetauresIMG from "../../../assets/Products/ETL/features.png";
+import FetauresIMG from "../../../assets/Products/ETL/features.webp";
 const features = [
   {
     icon: GitBranch,
@@ -80,14 +80,11 @@ const IntelligentEngineering = () => {
               Intelligent Engineering
             </div>
 
-            <h2 className="mt-6 text-4xl font-bold leading-tight text-slate-900 lg:text-5xl">
-              Automation That Eliminates
-              <span className="block bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
-                Manual Data Engineering
-              </span>
+            <h2 className="mt-6 text-4xl font-bold leading-none text-slate-900 lg:text-4xl">
+              Automation That Eliminates Manual Data Engineering
             </h2>
 
-            <p className="mt-6 text-lg leading-8 text-slate-600">
+            <p className="mt-6 text-md leading-6 text-slate-600">
               ETL Studio continuously automates repetitive engineering tasks,
               allowing teams to focus on building reliable data products instead
               of managing schemas, debugging pipelines, or writing boilerplate

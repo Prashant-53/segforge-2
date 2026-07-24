@@ -1,111 +1,207 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Database, CheckCircle2, HardDrive, Brain } from "lucide-react";
+import {
+  Globe2,
+  MapPinned,
+  ShieldCheck,
+  Gauge,
+  CheckCircle2,
+} from "lucide-react";
+import Global from "../../../assets/Products/Multi-Cloud/help.webp";
 
-const storageOptions = [
-  "Amazon S3",
-  "Azure Data Lake",
-  "Google Cloud Storage",
-  "MinIO",
-  "HDFS",
-  "Apache Iceberg Portability",
+const capabilityGroups = [
+  {
+    icon: Globe2,
+    title: "Regional Support",
+    items: [
+      "US East (N. Virginia)",
+      "Europe (Ireland)",
+      "Asia Pacific (Singapore)",
+      "Additional Global Regions",
+    ],
+  },
+  {
+    icon: ShieldCheck,
+    title: "Data Sovereignty",
+    items: [
+      "Regional Data Residency",
+      "Cloud Boundary Control",
+      "Compliance Ready",
+      "Customer-Owned Storage",
+    ],
+  },
 ];
 
-const StoragePortabilitySection = () => {
+const residencyFeatures = [
+  {
+    icon: MapPinned,
+    title: "Global Deployment Flexibility",
+    description:
+      "Deploy workloads close to your users and data sources across AWS, Azure, and Google Cloud while maintaining complete control over where enterprise data is stored and processed.",
+  },
+  {
+    icon: Gauge,
+    title: "Low-Latency Performance",
+    description:
+      "Reduce network latency for CDC, streaming analytics, ETL pipelines, notebooks, and machine learning by deploying compute and storage within the same geographic region.",
+  },
+];
+
+const RegionalDeploymentSection = () => {
   return (
-    <section className="py-32 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 xl:gap-20 items-center">
-          {/* CONTENT */}
+    <section className="relative overflow-hidden bg-gradient-to-b from-gray-50 to-white py-28">
+      {/* Animated Grid */}
+
+      <motion.div
+        animate={{
+          backgroundPosition: ["0px 0px", "120px 120px"],
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+        className="absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right,#06b6d4 1px,transparent 1px),
+            linear-gradient(to bottom,#06b6d4 1px,transparent 1px)
+          `,
+          backgroundSize: "80px 80px",
+        }}
+      />
+
+      {/* Glow */}
+
+      <div className="absolute right-0 top-32 h-[500px] w-[500px] rounded-full bg-cyan-400/10 blur-[180px]" />
+
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid items-center gap-20 lg:grid-cols-2">
+          {/* LEFT IMAGE */}
 
           <motion.div
-            initial={{ opacity: 0, x: -25 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="relative"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-50 text-cyan-700 text-sm font-medium mb-6">
-              <Database className="w-4 h-4" />
-              Lakehouse Portability
-            </div>
+            <div className="absolute inset-0 rounded-[36px] bg-cyan-400/10 blur-3xl" />
 
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 leading-tight">
-              Keep data close to the workloads that need it.
-            </h2>
-
-            <p className="mt-6 text-md text-slate-600 leading-relaxed max-w-xl">
-              Choose the storage platform that best fits your performance,
-              compliance, and cost requirements.
-            </p>
-
-            <p className="mt-4 text-md text-slate-600 leading-relaxed max-w-xl">
-              Move workloads without rebuilding data architectures and maintain
-              a consistent lakehouse experience regardless of where data is
-              stored.
-            </p>
-
-            <div className="mt-10 space-y-4">
-              {storageOptions.map((item) => (
-                <div key={item} className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-cyan-600" />
-                  <span className="text-slate-700">{item}</span>
-                </div>
-              ))}
+            <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
+              <img
+                src={Global}
+                alt="Global Data Residency"
+                className="w-full"
+              />
             </div>
           </motion.div>
 
-          {/* VISUAL */}
+          {/* RIGHT CONTENT */}
 
           <motion.div
-            initial={{ opacity: 0, x: 25 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
           >
-            <div className="bg-white border border-slate-200 rounded-[32px] p-8 shadow-[0_30px_80px_rgba(15,23,42,0.08)]">
-              {/* Storage Nodes */}
+            {/* Badge */}
 
-              <div className="grid grid-cols-2 gap-4">
-                <StorageNode title="Amazon S3" />
-                <StorageNode title="Azure Data Lake" />
-                <StorageNode title="Google Cloud Storage" />
-                <StorageNode title="MinIO" />
-              </div>
+            <div className="inline-flex rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">
+              Global Data Residency
+            </div>
 
-              {/* Connector */}
+            {/* Heading */}
 
-              <div className="flex justify-center py-8">
-                <div className="w-px h-12 bg-cyan-300" />
-              </div>
+            <h2 className="mt-6 text-4xl font-bold leading-none text-slate-900 lg:text-4xl">
+              Keep Your Data
+              <br />
+              <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
+                Exactly Where It Belongs.
+              </span>
+            </h2>
 
-              {/* Lakehouse */}
+            {/* Description */}
 
-              <div className="rounded-3xl border border-cyan-200 bg-gradient-to-br from-cyan-50 to-blue-50 p-8 text-center">
-                <HardDrive className="w-10 h-10 text-cyan-600 mx-auto mb-4" />
+            <p className="mt-6 text-md leading-6 text-slate-600">
+              Deploy Seg Forge across strategic global regions while maintaining
+              complete control over where enterprise data is stored, processed,
+              and governed. Meet regional compliance requirements without
+              sacrificing performance or operational flexibility.
+            </p>
 
-                <h3 className="font-semibold text-slate-900 text-lg">
-                  Unified Lakehouse
-                </h3>
+            {/* Capability Groups */}
 
-                <p className="text-sm text-slate-500 mt-2">
-                  One open data layer across every storage backend.
-                </p>
-              </div>
+            <div className="mt-10 grid gap-6 md:grid-cols-2">
+              {capabilityGroups.map((group) => (
+                <div
+                  key={group.title}
+                  className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+                >
+                  <div className="flex items-center gap-3">
+                    <group.icon className="h-7 w-7 text-cyan-600" />
 
-              {/* Connector */}
+                    <h3 className="text-xl font-semibold text-slate-900">
+                      {group.title}
+                    </h3>
+                  </div>
 
-              <div className="flex justify-center py-8">
-                <div className="w-px h-12 bg-cyan-300" />
-              </div>
+                  <div className="mt-6 space-y-3">
+                    {group.items.map((item) => (
+                      <div key={item} className="flex items-center gap-3">
+                        <CheckCircle2 className="h-4 w-4 text-cyan-500" />
 
-              {/* Analytics */}
+                        <span className="text-slate-700">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
 
-              <div className="rounded-3xl bg-slate-900 text-white p-8 text-center">
-                <Brain className="w-8 h-8 mx-auto mb-3" />
+            {/* Supporting Features */}
 
-                <h3 className="font-semibold text-lg">Analytics & AI</h3>
+            <div className="mt-10 space-y-5">
+              {residencyFeatures.map((feature) => (
+                <div
+                  key={feature.title}
+                  className="flex gap-5 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-cyan-200 hover:shadow-lg"
+                >
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-cyan-50">
+                    <feature.icon className="h-7 w-7 text-cyan-600" />
+                  </div>
 
-                <p className="text-slate-400 text-sm mt-2">
-                  Consistent access regardless of storage location.
-                </p>
+                  <div>
+                    <h3 className="text-lg font-semibold text-slate-900">
+                      {feature.title}
+                    </h3>
+
+                    <p className="mt-2 leading-7 text-slate-600">
+                      {feature.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Bottom Highlight */}
+
+            <div className="mt-10 rounded-3xl border border-cyan-100 bg-gradient-to-r from-cyan-50 to-white p-6">
+              <div className="flex items-start gap-4">
+                <Globe2 className="mt-1 h-7 w-7 text-cyan-600" />
+
+                <div>
+                  <h3 className="text-xl font-semibold text-slate-900">
+                    Global Reach. Local Compliance.
+                  </h3>
+
+                  <p className="mt-3 leading-7 text-slate-600">
+                    Meet regional data residency requirements while delivering
+                    low-latency analytics, streaming, and machine learning
+                    workloads across a globally distributed enterprise
+                    infrastructure.
+                  </p>
+                </div>
               </div>
             </div>
           </motion.div>
@@ -115,11 +211,4 @@ const StoragePortabilitySection = () => {
   );
 };
 
-const StorageNode = ({ title }) => (
-  <div className="border border-slate-200 rounded-2xl p-5 text-center bg-slate-50">
-    <Database className="w-6 h-6 text-cyan-600 mx-auto mb-3" />
-    <h4 className="font-medium text-slate-900">{title}</h4>
-  </div>
-);
-
-export default StoragePortabilitySection;
+export default RegionalDeploymentSection;

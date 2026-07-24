@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Play, Sparkles, Database, Zap } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const WhySegForgeHero = () => {
   return (
@@ -69,22 +70,29 @@ const WhySegForgeHero = () => {
             transition={{ delay: 0.35 }}
             className="mt-2 flex flex-col sm:flex-row justify-center gap-2"
           >
-            <button className="group relative inline-flex items-center justify-center overflow-hidden rounded-md border border-slate-800 px-6 py-3 font-semibold text-black transition-colors duration-300 hover:text-white">
+            <Link
+              to="/contact"
+              className="group relative inline-flex items-center justify-center overflow-hidden rounded-md border border-slate-800 px-6 py-3 font-semibold text-black transition-colors duration-300 hover:text-white"
+            >
               <span className="absolute inset-y-0 left-0 w-0 bg-[#18D0BB] transition-all duration-300 ease-out group-hover:w-full"></span>
 
               <span className="relative z-10 flex items-center gap-2">
                 Start Building
                 <ArrowRight className="w-4 h-4" />
               </span>
-            </button>
-            <button className="group relative inline-flex items-center justify-center overflow-hidden rounded-md border border-slate-800 px-6 py-3 font-semibold text-black transition-colors duration-300 hover:text-white">
+            </Link>
+
+            <Link
+              to="/docs/getting-started/what-is-segforge"
+              className="group relative inline-flex items-center justify-center overflow-hidden rounded-md border border-slate-800 px-6 py-3 font-semibold text-black transition-colors duration-300 hover:text-white"
+            >
               <span className="absolute inset-y-0 left-0 w-0 bg-[#18D0BB] transition-all duration-300 ease-out group-hover:w-full"></span>
 
               <span className="relative z-10 flex items-center gap-2">
                 Get Product Tour
                 <ArrowRight className="w-4 h-4" />
               </span>
-            </button>
+            </Link>
           </motion.div>
 
           {/* Stats */}

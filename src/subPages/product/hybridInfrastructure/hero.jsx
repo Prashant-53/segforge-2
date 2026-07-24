@@ -2,108 +2,111 @@ import React from "react";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
-  Play,
-  Building2,
+  BookOpen,
   Cloud,
-  Network,
-  Database,
+  Server,
+  Zap,
+  Cpu,
+  Sparkles,
 } from "lucide-react";
+import { Link } from "react-router-dom";
+import Hero from "../../../assets/Products/Hybrid-Infra/hero.webp";
 
-const HybridCloudHero = () => {
+const HybridInfrastructureHero = () => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-gray-50 to-white pt-32 pb-24">
-      <div className="absolute inset-0 bg-grid opacity-[0.03]" />
+    <section className="relative overflow-hidden bg-gradient-to-b from-gray-50 via-white to-white pt-36 pb-24">
+      {/* Animated Grid */}
 
-      <div className="absolute top-0 right-0 w-[700px] h-[500px] bg-cyan-500/10 blur-[120px] rounded-full" />
+      <motion.div
+        animate={{
+          backgroundPosition: ["0px 0px", "120px 120px"],
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+        className="absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right,#06b6d4 1px,transparent 1px),
+            linear-gradient(to bottom,#06b6d4 1px,transparent 1px)
+          `,
+          backgroundSize: "80px 80px",
+        }}
+      />
 
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
-          {/* LEFT */}
+      {/* Glow */}
+
+      <div className="absolute left-1/2 top-20 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-cyan-400/10 blur-[180px]" />
+
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid items-center gap-20 lg:grid-cols-2">
+          {/* LEFT CONTENT */}
 
           <motion.div
-            initial={{ opacity: 0, x: -25 }}
+            initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-50 text-cyan-700 text-sm font-medium mb-6">
-              <Network className="w-4 h-4" />
-              Hybrid Cloud
+            {/* Badge */}
+
+            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">
+              <Sparkles className="h-4 w-4" />
+              Hybrid Infrastructure
             </div>
 
-            <h1 className="text-4xl sm:text-4xl lg:text-6xl font-bold text-slate-900 leading-[1.05]">
-              Connect on-premises and
+            {/* Heading */}
+
+            <h1 className="mt-8 text-4xl font-bold leading-none text-slate-900 lg:text-5xl">
+              On-Demand Power
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">
-                cloud environments.
+              <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
+                for Burstable Workloads.
               </span>
             </h1>
 
-            <p className="mt-8 text-md text-slate-600 leading-relaxed max-w-xl">
-              Unify infrastructure, data, and workloads across private data
-              centers and cloud providers without rebuilding existing systems.
+            {/* Description */}
+
+            <p className="mt-8 max-w-2xl text-md leading-6 text-slate-600">
+              Bridge the gap between local control and cloud-scale compute.
+              Maintain your primary Seg Forge environment while launching
+              on-demand EC2 Composable Clusters for large ETL pipelines,
+              streaming workloads, analytics, and machine learning. Gain the
+              elasticity of the cloud without managing permanent infrastructure,
+              and pay only for the compute you use when you need it.
             </p>
 
-            <p className="mt-4 text-md text-slate-600 leading-relaxed max-w-xl">
-              Operate from a single control plane while keeping data exactly
-              where it belongs.
-            </p>
+            {/* Buttons */}
 
-            <div className="mt-10 flex flex-col sm:flex-row gap-4">
-              <button className="px-6 py-4 bg-slate-900 text-white rounded-xl flex items-center justify-center gap-2">
-                Explore Hybrid Infrastructure
-                <ArrowRight className="w-4 h-4" />
-              </button>
+            <div className="mt-12 flex flex-wrap gap-4">
+              <Link
+                to="/contact"
+                className="group relative inline-flex items-center justify-center overflow-hidden rounded-md border border-cyan-500 px-7 py-3 font-semibold text-slate-900 transition-colors duration-300 hover:text-white"
+              >
+                <span className="absolute inset-y-0 left-0 w-0 bg-[#18D0BB] transition-all duration-300 ease-out group-hover:w-full" />
 
-              <button className="px-6 py-4 border border-slate-300 rounded-xl text-slate-700 flex items-center justify-center gap-2">
-                <Play className="w-4 h-4" />
-                Schedule Architecture Review
-              </button>
+                <span className="relative z-10 flex items-center gap-2">
+                  Launch Infrastructure Manager
+                  <ArrowRight className="h-4 w-4" />
+                </span>
+              </Link>
             </div>
           </motion.div>
 
-          {/* RIGHT */}
+          {/* RIGHT IMAGE */}
 
           <motion.div
-            initial={{ opacity: 0, x: 25 }}
+            initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
+            className="relative"
           >
-            <div className="bg-white border border-slate-200 rounded-[32px] p-8 shadow-[0_30px_80px_rgba(15,23,42,0.08)]">
-              <div className="relative h-[420px] flex items-center justify-center">
-                {/* SegForge */}
-
-                <div className="absolute w-48 h-48 rounded-full bg-gradient-to-br from-cyan-50 to-blue-50 border border-cyan-200 flex flex-col items-center justify-center z-10">
-                  <Database className="w-10 h-10 text-cyan-600 mb-3" />
-
-                  <h3 className="font-semibold text-slate-900">SegForge</h3>
-                </div>
-
-                {/* On Prem */}
-
-                <div className="absolute top-0 left-1/2 -translate-x-1/2">
-                  <div className="w-56 rounded-2xl border border-slate-200 bg-slate-50 p-5 text-center">
-                    <Building2 className="w-7 h-7 text-cyan-600 mx-auto mb-3" />
-
-                    <h4 className="font-medium text-slate-900">
-                      On-Prem Data Center
-                    </h4>
-                  </div>
-                </div>
-
-                {/* Clouds */}
-
-                <div className="absolute bottom-0 left-0">
-                  <CloudNode title="AWS" />
-                </div>
-
-                <div className="absolute bottom-0 left-1/2 -translate-x-1/2">
-                  <CloudNode title="Azure" />
-                </div>
-
-                <div className="absolute bottom-0 right-0">
-                  <CloudNode title="GCP" />
-                </div>
-              </div>
+            {/* Glow */}
+            <div className="absolute inset-0 rounded-[36px] bg-cyan-400/10 blur-3xl" />
+            {/* Product Screenshot */}
+            <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
+              <img src={Hero} alt="Hybrid Infrastructure" className="w-full" />
             </div>
           </motion.div>
         </div>
@@ -112,11 +115,4 @@ const HybridCloudHero = () => {
   );
 };
 
-const CloudNode = ({ title }) => (
-  <div className="w-28 rounded-2xl border border-slate-200 bg-white p-4 text-center shadow-sm">
-    <Cloud className="w-5 h-5 text-cyan-600 mx-auto mb-2" />
-    <span className="text-sm font-medium text-slate-900">{title}</span>
-  </div>
-);
-
-export default HybridCloudHero;
+export default HybridInfrastructureHero;

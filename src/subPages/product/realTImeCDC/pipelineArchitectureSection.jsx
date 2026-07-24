@@ -8,7 +8,7 @@ import {
   CheckCircle2,
   ShieldCheck,
 } from "lucide-react";
-
+import CDCPipeline from "../../../assets/Products/RealTimeCDC/CDCpipeline.webp";
 const pipelineStages = [
   {
     icon: Database,
@@ -190,7 +190,7 @@ const PipelineArchitectureSection = () => {
 
             <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
               <img
-                src="/images/cdc-pipeline-architecture.webp"
+                src={CDCPipeline}
                 alt="Enterprise CDC Pipeline Architecture"
                 className="w-full"
               />

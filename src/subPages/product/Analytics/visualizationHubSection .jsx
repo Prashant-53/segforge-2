@@ -12,6 +12,7 @@ import {
   CheckCircle2,
   AreaChart,
 } from "lucide-react";
+import Visualization from "../../../assets/Products/Analytics/visualization.webp";
 
 const capabilityGroups = [
   {
@@ -84,7 +85,7 @@ const VisualizationHubSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="relative"
+            className="relative order-2 lg:order-1"
           >
             {/* Glow */}
 
@@ -94,7 +95,7 @@ const VisualizationHubSection = () => {
 
             <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
               <img
-                src="/images/visualization-hub-dashboard.webp"
+                src={Visualization}
                 alt="Visualization Hub"
                 className="w-full"
               />
@@ -108,6 +109,7 @@ const VisualizationHubSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
+            className="order-2 lg:order-1"
           >
             {/* Badge */}
 
@@ -118,9 +120,7 @@ const VisualizationHubSection = () => {
             {/* Heading */}
 
             <h2 className="mt-6 text-4xl font-bold leading-none text-slate-900 lg:text-4xl">
-              Transform Data Into
-              <br />
-              Interactive Dashboards.
+              Transform Data Into Interactive Dashboards.
             </h2>
 
             {/* Description */}

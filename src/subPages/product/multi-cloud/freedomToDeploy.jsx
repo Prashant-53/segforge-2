@@ -1,108 +1,213 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Globe, CheckCircle2, Cloud, Server, Boxes } from "lucide-react";
+import {
+  Cloud,
+  Database,
+  HardDrive,
+  Settings2,
+  CheckCircle2,
+  Layers3,
+} from "lucide-react";
+import MultiStorage from "../../../assets/Products/Multi-Cloud/multicloud.webp";
 
-const features = [
-  "AWS",
-  "Azure",
-  "Google Cloud",
-  "On-Premises",
-  "Kubernetes",
-  "Docker Compose",
-  "Open Architecture",
+const capabilityGroups = [
+  {
+    icon: Cloud,
+    title: "Cloud Storage",
+    items: [
+      "Amazon S3",
+      "Azure Blob Storage",
+      "Azure Data Lake (ADLS)",
+      "Google Cloud Storage",
+    ],
+  },
+  {
+    icon: Database,
+    title: "Unified Configuration",
+    items: [
+      "Single Settings Panel",
+      "Credential Management",
+      "Storage Connections",
+      "Provider-Agnostic Setup",
+    ],
+  },
 ];
 
-const DeployAnywhereSection = () => {
+const storageFeatures = [
+  {
+    icon: HardDrive,
+    title: "Native Cloud Integrations",
+    description:
+      "Connect directly to Amazon S3, Azure Blob Storage, Azure Data Lake Storage (ADLS), and Google Cloud Storage using native cloud APIs. Manage enterprise object storage without provider-specific tooling.",
+  },
+  {
+    icon: Settings2,
+    title: "Unified Storage Management",
+    description:
+      "Configure every cloud storage backend through a single management interface. Switch between providers, manage credentials, and provision storage connections without changing your pipelines.",
+  },
+];
+
+const MultiCloudStorageSection = () => {
   return (
-    <section className="py-32 bg-slate-50 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 xl:gap-20 items-center">
-          {/* CONTENT */}
+    <section className="relative overflow-hidden bg-gradient-to-b from-white to-gray-50 py-28">
+      {/* Animated Grid */}
+
+      <motion.div
+        animate={{
+          backgroundPosition: ["0px 0px", "120px 120px"],
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+        className="absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right,#06b6d4 1px,transparent 1px),
+            linear-gradient(to bottom,#06b6d4 1px,transparent 1px)
+          `,
+          backgroundSize: "80px 80px",
+        }}
+      />
+
+      {/* Glow */}
+
+      <div className="absolute left-0 top-32 h-[500px] w-[500px] rounded-full bg-cyan-400/10 blur-[180px]" />
+
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid items-center gap-20 lg:grid-cols-2">
+          {/* LEFT CONTENT */}
 
           <motion.div
-            initial={{ opacity: 0, x: -25 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-50 text-cyan-700 text-sm font-medium mb-6">
-              <Globe className="w-4 h-4" />
-              Cloud-Agnostic Architecture
+            {/* Badge */}
+
+            <div className="inline-flex rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">
+              Multi-Cloud Storage
             </div>
 
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 leading-tight">
-              Choose the infrastructure
+            {/* Heading */}
+
+            <h2 className="mt-6 text-4xl font-bold leading-none text-slate-900 lg:text-4xl">
+              One Platform.
               <br />
-              that works for your business.
+              <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
+                Every Cloud Storage Service.
+              </span>
             </h2>
 
-            <p className="mt-6 text-md text-slate-600 leading-relaxed max-w-xl">
-              Run SegForge wherever your teams operate.
+            {/* Description */}
+
+            <p className="mt-6 text-md leading-6 text-slate-600">
+              Connect your enterprise lakehouse to the world's leading object
+              storage platforms through a single unified interface. Configure
+              Amazon S3, Azure Blob Storage, Azure Data Lake Storage, and Google
+              Cloud Storage without writing provider-specific code.
             </p>
 
-            <p className="mt-4 text-md text-slate-600 leading-relaxed max-w-xl">
-              Deploy in public clouds, private environments, or hybrid
-              architectures while maintaining a consistent platform experience.
-            </p>
+            {/* Capability Groups */}
 
-            <p className="mt-4 text-md text-slate-600 leading-relaxed max-w-xl">
-              Avoid vendor lock-in and retain the flexibility to move as your
-              requirements evolve.
-            </p>
+            <div className="mt-10 grid gap-6 md:grid-cols-2">
+              {capabilityGroups.map((group) => (
+                <div
+                  key={group.title}
+                  className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+                >
+                  <div className="flex items-center gap-3">
+                    <group.icon className="h-7 w-7 text-cyan-600" />
 
-            <div className="mt-10 space-y-4">
-              {features.map((feature) => (
-                <div key={feature} className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-cyan-600" />
-                  <span className="text-slate-700">{feature}</span>
+                    <h3 className="text-xl font-semibold text-slate-900">
+                      {group.title}
+                    </h3>
+                  </div>
+
+                  <div className="mt-6 space-y-3">
+                    {group.items.map((item) => (
+                      <div key={item} className="flex items-center gap-3">
+                        <CheckCircle2 className="h-4 w-4 text-cyan-500" />
+
+                        <span className="text-slate-700">{item}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               ))}
             </div>
+
+            {/* Supporting Features */}
+
+            <div className="mt-10 space-y-5">
+              {storageFeatures.map((feature) => (
+                <div
+                  key={feature.title}
+                  className="flex gap-5 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-cyan-200 hover:shadow-lg"
+                >
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-cyan-50">
+                    <feature.icon className="h-7 w-7 text-cyan-600" />
+                  </div>
+
+                  <div>
+                    <h3 className="text-lg font-semibold text-slate-900">
+                      {feature.title}
+                    </h3>
+
+                    <p className="mt-2 leading-7 text-slate-600">
+                      {feature.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Bottom Highlight */}
+
+            <div className="mt-10 rounded-3xl border border-cyan-100 bg-gradient-to-r from-cyan-50 to-white p-6">
+              <div className="flex items-start gap-4">
+                <Layers3 className="mt-1 h-7 w-7 text-cyan-600" />
+
+                <div>
+                  <h3 className="text-xl font-semibold text-slate-900">
+                    Configure Once. Deploy Across Every Cloud.
+                  </h3>
+
+                  <p className="mt-3 leading-7 text-slate-600">
+                    Use one storage management interface to connect AWS,
+                    Microsoft Azure, and Google Cloud storage backends while
+                    keeping your pipelines, notebooks, machine learning models,
+                    and analytics completely cloud agnostic.
+                  </p>
+                </div>
+              </div>
+            </div>
           </motion.div>
 
-          {/* VISUAL */}
+          {/* RIGHT IMAGE */}
 
           <motion.div
-            initial={{ opacity: 0, x: 25 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="relative"
           >
-            <div className="bg-white border border-slate-200 rounded-[32px] p-6 sm:p-8 shadow-[0_30px_80px_rgba(15,23,42,0.08)]">
-              <div className="grid grid-cols-2 gap-4">
-                <DeployCard icon={Cloud} title="Cloud A" />
-                <DeployCard icon={Cloud} title="Cloud B" />
-                <DeployCard icon={Cloud} title="Cloud C" />
-                <DeployCard icon={Server} title="On-Prem" />
-              </div>
+            {/* Glow */}
 
-              <div className="flex justify-center py-6">
-                <div className="w-px h-12 bg-cyan-300" />
-              </div>
+            <div className="absolute inset-0 rounded-[36px] bg-cyan-400/10 blur-3xl" />
 
-              <div className="rounded-3xl border border-cyan-200 bg-gradient-to-br from-cyan-50 to-blue-50 p-8 text-center">
-                <Boxes className="w-10 h-10 text-cyan-600 mx-auto mb-4" />
+            {/* Screenshot */}
 
-                <h3 className="font-semibold text-slate-900 text-lg">
-                  SegForge Platform
-                </h3>
-
-                <p className="text-sm text-slate-500 mt-2">
-                  Consistent deployment and operations across every environment.
-                </p>
-              </div>
-
-              <div className="flex justify-center py-6">
-                <div className="w-px h-12 bg-cyan-300" />
-              </div>
-
-              <div className="rounded-3xl bg-slate-900 text-white p-8 text-center">
-                <Globe className="w-8 h-8 mx-auto mb-3" />
-
-                <h3 className="font-semibold text-lg">Unified Operations</h3>
-
-                <p className="text-sm text-slate-400 mt-2">
-                  One platform. Any infrastructure.
-                </p>
-              </div>
+            <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
+              <img
+                src={MultiStorage}
+                alt="Multi Cloud Storage Settings"
+                className="w-full"
+              />
             </div>
           </motion.div>
         </div>
@@ -111,11 +216,4 @@ const DeployAnywhereSection = () => {
   );
 };
 
-const DeployCard = ({ icon: Icon, title }) => (
-  <div className="border border-slate-200 rounded-2xl p-5 text-center bg-slate-50">
-    <Icon className="w-6 h-6 text-cyan-600 mx-auto mb-3" />
-    <h4 className="font-medium text-slate-900">{title}</h4>
-  </div>
-);
-
-export default DeployAnywhereSection;
+export default MultiCloudStorageSection;

@@ -9,6 +9,7 @@ import {
   Users,
   CheckCircle2,
 } from "lucide-react";
+import Governance from "../../../assets/Products/Analytics/BIGov&share.webp";
 
 const capabilityGroups = [
   {
@@ -84,7 +85,7 @@ const AnalyticsGovernanceSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="relative"
+            className="relative order-2 lg:order-1"
           >
             {/* Glow */}
 
@@ -94,7 +95,7 @@ const AnalyticsGovernanceSection = () => {
 
             <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
               <img
-                src="/images/analytics-governance-dashboard.webp"
+                src={Governance}
                 alt="Analytics Governance & Sharing"
                 className="w-full"
               />
@@ -108,6 +109,7 @@ const AnalyticsGovernanceSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
+            className="order-1 lg:order-2"
           >
             {/* Badge */}
 

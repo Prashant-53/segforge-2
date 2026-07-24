@@ -1,117 +1,213 @@
 import React from "react";
 import { motion } from "framer-motion";
 import {
-  Settings2,
+  Wallet,
+  TimerReset,
+  DollarSign,
   CheckCircle2,
-  Server,
-  Database,
-  Brain,
-  BarChart3,
-  Layers,
+  PiggyBank,
+  BadgeDollarSign,
 } from "lucide-react";
+import Governance from "../../../assets/Products/Hybrid-Infra/advcostgov.webp";
 
-const features = [
-  "Infrastructure Manager",
-  "EKS Node Groups",
-  "EC2 Clusters",
-  "Auto Pause",
-  "Auto Termination",
-  "Cost Optimization",
+const capabilityGroups = [
+  {
+    icon: TimerReset,
+    title: "Cost Controls",
+    items: [
+      "Auto Pause",
+      "Auto Terminate",
+      "Idle Detection",
+      "Configurable Policies",
+    ],
+  },
+  {
+    icon: DollarSign,
+    title: "Resource Optimization",
+    items: [
+      "AWS Spot Instances",
+      "Elastic Scaling",
+      "Usage Monitoring",
+      "Budget Awareness",
+    ],
+  },
 ];
 
-const InfrastructureManagementSection = () => {
+const governanceFeatures = [
+  {
+    icon: PiggyBank,
+    title: "Automatic Cost Savings",
+    description:
+      "Clusters automatically pause after 30 minutes of inactivity and can be configured to terminate after a defined period, eliminating idle infrastructure costs without manual intervention.",
+  },
+  {
+    icon: BadgeDollarSign,
+    title: "Spot Instance Optimization",
+    description:
+      "Leverage AWS Spot Instances for fault-tolerant ETL, CDC, analytics, and machine learning workloads while reducing infrastructure costs by up to 90% compared to on-demand instances.",
+  },
+];
+
+const CostGovernanceSection = () => {
   return (
-    <section className="py-32 bg-slate-50 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 xl:gap-20 items-center">
+    <section className="relative overflow-hidden bg-gradient-to-b from-white to-gray-50 py-28">
+      {/* Animated Grid */}
+
+      <motion.div
+        animate={{
+          backgroundPosition: ["0px 0px", "120px 120px"],
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+        className="absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right,#06b6d4 1px,transparent 1px),
+            linear-gradient(to bottom,#06b6d4 1px,transparent 1px)
+          `,
+          backgroundSize: "80px 80px",
+        }}
+      />
+
+      {/* Glow */}
+
+      <div className="absolute left-0 top-32 h-[500px] w-[500px] rounded-full bg-cyan-400/10 blur-[180px]" />
+
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid items-center gap-20 lg:grid-cols-2">
           {/* LEFT CONTENT */}
 
           <motion.div
-            initial={{ opacity: 0, x: -25 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-50 text-cyan-700 text-sm font-medium mb-6">
-              <Settings2 className="w-4 h-4" />
-              Infrastructure Management
+            {/* Badge */}
+
+            <div className="inline-flex rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">
+              Advanced Cost Governance
             </div>
 
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 leading-tight">
-              Provision and manage compute
+            {/* Heading */}
+
+            <h2 className="mt-6 text-4xl font-bold leading-none text-slate-900 lg:text-4xl">
+              Cloud Performance
               <br />
-              from a single control plane.
+              <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
+                Without Cloud Waste.
+              </span>
             </h2>
 
-            <p className="mt-6 text-md text-slate-600 leading-relaxed max-w-xl">
-              Launch ETL, CDC, analytics, and machine learning infrastructure
-              directly from SegForge.
+            {/* Description */}
+
+            <p className="mt-6 text-md leading-6 text-slate-600">
+              Optimize infrastructure spending through intelligent lifecycle
+              management, automatic idle detection, and Spot Instance support.
+              Seg Forge continuously minimizes cloud costs while ensuring
+              enterprise workloads remain available whenever they're needed.
             </p>
 
-            <p className="mt-4 text-md text-slate-600 leading-relaxed max-w-xl">
-              Automatically scale resources, provision specialized clusters, and
-              optimize infrastructure usage without managing every component
-              manually.
-            </p>
+            {/* Capability Groups */}
 
-            <div className="mt-10 space-y-4">
-              {features.map((feature) => (
-                <div key={feature} className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-cyan-600" />
-                  <span className="text-slate-700">{feature}</span>
+            <div className="mt-10 grid gap-6 md:grid-cols-2">
+              {capabilityGroups.map((group) => (
+                <div
+                  key={group.title}
+                  className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+                >
+                  <div className="flex items-center gap-3">
+                    <group.icon className="h-7 w-7 text-cyan-600" />
+
+                    <h3 className="text-xl font-semibold text-slate-900">
+                      {group.title}
+                    </h3>
+                  </div>
+
+                  <div className="mt-6 space-y-3">
+                    {group.items.map((item) => (
+                      <div key={item} className="flex items-center gap-3">
+                        <CheckCircle2 className="h-4 w-4 text-cyan-500" />
+
+                        <span className="text-slate-700">{item}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               ))}
             </div>
+
+            {/* Supporting Features */}
+
+            <div className="mt-10 space-y-5">
+              {governanceFeatures.map((feature) => (
+                <div
+                  key={feature.title}
+                  className="flex gap-5 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-cyan-200 hover:shadow-lg"
+                >
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-cyan-50">
+                    <feature.icon className="h-7 w-7 text-cyan-600" />
+                  </div>
+
+                  <div>
+                    <h3 className="text-lg font-semibold text-slate-900">
+                      {feature.title}
+                    </h3>
+
+                    <p className="mt-2 leading-7 text-slate-600">
+                      {feature.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Bottom Highlight */}
+
+            <div className="mt-10 rounded-3xl border border-cyan-100 bg-gradient-to-r from-cyan-50 to-white p-6">
+              <div className="flex items-start gap-4">
+                <Wallet className="mt-1 h-7 w-7 text-cyan-600" />
+
+                <div>
+                  <h3 className="text-xl font-semibold text-slate-900">
+                    Intelligent Infrastructure That Optimizes Every Dollar.
+                  </h3>
+
+                  <p className="mt-3 leading-7 text-slate-600">
+                    Automatically pause idle clusters, terminate unused
+                    infrastructure, and leverage AWS Spot Instances to achieve
+                    significant cost savings while maintaining enterprise-grade
+                    performance and reliability for production workloads.
+                  </p>
+                </div>
+              </div>
+            </div>
           </motion.div>
 
-          {/* RIGHT VISUAL */}
+          {/* RIGHT IMAGE */}
 
           <motion.div
-            initial={{ opacity: 0, x: 25 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="relative"
           >
-            <div className="bg-white border border-slate-200 rounded-[32px] p-8 shadow-[0_30px_80px_rgba(15,23,42,0.08)]">
-              {/* Control Plane */}
+            {/* Glow */}
 
-              <div className="rounded-[28px] border border-cyan-200 bg-gradient-to-br from-cyan-50 to-blue-50 p-8 text-center">
-                <Layers className="w-10 h-10 text-cyan-600 mx-auto mb-4" />
+            <div className="absolute inset-0 rounded-[36px] bg-cyan-400/10 blur-3xl" />
 
-                <h3 className="font-semibold text-slate-900 text-lg">
-                  SegForge Control Plane
-                </h3>
+            {/* Screenshot */}
 
-                <p className="text-sm text-slate-500 mt-2">
-                  Centralized provisioning and infrastructure management.
-                </p>
-              </div>
-
-              <div className="flex justify-center py-8">
-                <div className="w-px h-12 bg-cyan-300" />
-              </div>
-
-              {/* Clusters */}
-
-              <div className="grid grid-cols-2 gap-4">
-                <ClusterCard icon={Server} title="ETL Cluster" />
-
-                <ClusterCard icon={Database} title="CDC Cluster" />
-
-                <ClusterCard icon={Brain} title="ML Cluster" />
-
-                <ClusterCard icon={BarChart3} title="Analytics Cluster" />
-              </div>
-
-              {/* Footer */}
-
-              <div className="mt-8 rounded-2xl bg-slate-900 text-white p-6 text-center">
-                <h4 className="font-semibold">
-                  Auto Scaling & Cost Optimization
-                </h4>
-
-                <p className="text-sm text-slate-400 mt-2">
-                  Scale resources automatically while reducing idle spend.
-                </p>
-              </div>
+            <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
+              <img
+                src={Governance}
+                alt="Advanced Cost Governance"
+                className="w-full"
+              />
             </div>
           </motion.div>
         </div>
@@ -120,12 +216,4 @@ const InfrastructureManagementSection = () => {
   );
 };
 
-const ClusterCard = ({ icon: Icon, title }) => (
-  <div className="border border-slate-200 rounded-2xl p-5 text-center bg-slate-50">
-    <Icon className="w-6 h-6 text-cyan-600 mx-auto mb-3" />
-
-    <h4 className="font-medium text-slate-900">{title}</h4>
-  </div>
-);
-
-export default InfrastructureManagementSection;
+export default CostGovernanceSection;
