@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ShieldCheck } from "lucide-react";
-import TraceabilityImg from "../../../assets/Solutions/Manufacturing/traceability.png";
+import TraceabilityImg from "../../../assets/Solutions/Manufacturing/traceability.webp";
 
 const trustStats = [
   {
@@ -120,3 +120,4 @@ const ManufacturingGovernance = () => {
 };
 
 export default ManufacturingGovernance;
+

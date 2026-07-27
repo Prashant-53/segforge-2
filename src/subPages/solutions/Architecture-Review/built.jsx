@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { TrendingUp } from "lucide-react";
-import FinOpsImg from "../../../assets/Solutions/ArchitectureReview/finops.png";
+import FinOpsImg from "../../../assets/Solutions/ArchitectureReview/finops.webp";
 
 const finOpsStats = [
   {
@@ -120,3 +120,4 @@ const FinOpsOperationalEfficiency = () => {
 };
 
 export default FinOpsOperationalEfficiency;
+

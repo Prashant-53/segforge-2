@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ShieldCheck } from "lucide-react";
-import ExplainabilityImg from "../../../assets/Solutions/MachineLearning/explainability.png";
+import ExplainabilityImg from "../../../assets/Solutions/MachineLearning/explainability.webp";
 
 const trustStats = [
   { value: "SHAP", label: "Explainability" },
@@ -100,3 +100,4 @@ const ExplainableAI = () => {
 };
 
 export default ExplainableAI;
+

@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ChartColumnBig } from "lucide-react";
-import ConnectivityImg from "../../../assets/Solutions/partner-Ecosystem/connectivity.png";
+import ConnectivityImg from "../../../assets/Solutions/partner-Ecosystem/connectivity.webp";
 
 const connectivityStats = [
   {
@@ -120,3 +120,4 @@ const AnalyticsGovernanceConnectivity = () => {
 };
 
 export default AnalyticsGovernanceConnectivity;
+

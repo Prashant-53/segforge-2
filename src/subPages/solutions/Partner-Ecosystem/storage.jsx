@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Database } from "lucide-react";
-import StorageImg from "../../../assets/Solutions/partner-Ecosystem/storage.png";
+import StorageImg from "../../../assets/Solutions/partner-Ecosystem/storage.webp";
 
 const storageStats = [
   {
@@ -123,3 +123,4 @@ const StorageFreedom = () => {
 };
 
 export default StorageFreedom;
+

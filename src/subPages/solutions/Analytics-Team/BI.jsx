@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { LayoutDashboard } from "lucide-react";
-import BIImg from "../../../assets/Solutions/Analytics-Team/business-intelligence.png";
+import BIImg from "../../../assets/Solutions/Analytics-Team/business-intelligence.webp";
 
 const biStats = [
   {
@@ -119,3 +119,4 @@ const RealTimeBI = () => {
 };
 
 export default RealTimeBI;
+

@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { RadioTower } from "lucide-react";
 
-import NetworkImg from "../../../assets/Solutions/Telecom/networkObservability.png";
-import ChurnImg from "../../../assets/Solutions/Telecom/churnReduction.png";
-import ModernizationImg from "../../../assets/Solutions/Telecom/ossbssModernization.png";
+import NetworkImg from "../../../assets/Solutions/Telecom/networkObservability.webp";
+import ChurnImg from "../../../assets/Solutions/Telecom/churnReduction.webp";
+import ModernizationImg from "../../../assets/Solutions/Telecom/ossbssModernization.webp";
 
 const useCases = [
   {
@@ -184,3 +184,4 @@ const TelecomUseCases = () => {
 };
 
 export default TelecomUseCases;
+

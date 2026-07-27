@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ShieldCheck } from "lucide-react";
-import SovereigntyImg from "../../../assets/Solutions/Telecom/sovereignty.png";
+import SovereigntyImg from "../../../assets/Solutions/Telecom/sovereignty.webp";
 
 const sovereigntyStats = [
   {
@@ -120,3 +120,4 @@ const TelecomSovereignty = () => {
 };
 
 export default TelecomSovereignty;
+

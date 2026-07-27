@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ShieldCheck } from "lucide-react";
-import GovernanceImg from "../../../assets/Solutions/Analytics-Team/governance.png";
+import GovernanceImg from "../../../assets/Solutions/Analytics-Team/governance.webp";
 
 const governanceStats = [
   {
@@ -118,3 +118,4 @@ const SelfServiceGovernance = () => {
 };
 
 export default SelfServiceGovernance;
+

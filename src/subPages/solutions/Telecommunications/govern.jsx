@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ShieldCheck } from "lucide-react";
-import GovernanceImg from "../../../assets/Solutions/Telecom/governance.png";
+import GovernanceImg from "../../../assets/Solutions/Telecom/governance.webp";
 
 const trustStats = [
   {
@@ -121,3 +121,4 @@ const TelecomGovernance = () => {
 };
 
 export default TelecomGovernance;
+

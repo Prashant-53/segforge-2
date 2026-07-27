@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, HeartPulse } from "lucide-react";
-import HeroImg from "../../../assets/Solutions/HealthCare/heroHealth.png";
+import HeroImg from "../../../assets/Solutions/HealthCare/heroHealth.webp";
 
 const HealthcareHero = () => {
   return (
@@ -83,3 +83,4 @@ const HealthcareHero = () => {
 };
 
 export default HealthcareHero;
+

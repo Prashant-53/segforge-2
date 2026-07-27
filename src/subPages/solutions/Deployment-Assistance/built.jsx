@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ServerCog } from "lucide-react";
-import AutomationImg from "../../../assets/Solutions/DeploymentAssistance/automation.png";
+import AutomationImg from "../../../assets/Solutions/DeploymentAssistance/automation.webp";
 
 const automationStats = [
   {
@@ -117,3 +117,4 @@ const AutomatedProvisioning = () => {
 };
 
 export default AutomatedProvisioning;
+

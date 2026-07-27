@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Boxes } from "lucide-react";
-import MLOpsHubImg from "../../../assets/Solutions/MachineLearning/mlops-hub.png";
+import MLOpsHubImg from "../../../assets/Solutions/MachineLearning/mlops-hub.webp";
 
 const mlopsStats = [
   { value: "MLflow", label: "Integrated" },
@@ -94,3 +94,4 @@ const MLOpsHub = () => {
 };
 
 export default MLOpsHub;
+

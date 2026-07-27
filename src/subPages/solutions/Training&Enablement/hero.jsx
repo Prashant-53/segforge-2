@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, GraduationCap } from "lucide-react";
-import TrainingHeroImg from "../../../assets/Services/TrainingEnablement/hero.png";
+import TrainingHeroImg from "../../../assets/Services/TrainingEnablement/hero.webp";
 
 const TrainingHero = () => {
   return (
@@ -87,3 +87,4 @@ const TrainingHero = () => {
 };
 
 export default TrainingHero;
+

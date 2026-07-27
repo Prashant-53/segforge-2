@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, ServerCog } from "lucide-react";
-import DeploymentHeroImg from "../../../assets/Solutions/DeploymentAssistance/hero.png";
+import DeploymentHeroImg from "../../../assets/Solutions/DeploymentAssistance/hero.webp";
 
 const DeploymentHero = () => {
   return (
@@ -88,3 +88,4 @@ const DeploymentHero = () => {
 };
 
 export default DeploymentHero;
+

@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ShieldCheck } from "lucide-react";
-import OptimizationImg from "../../../assets/Solutions/ArchitectureReview/optimization.png";
+import OptimizationImg from "../../../assets/Solutions/ArchitectureReview/optimization.webp";
 
 const optimizationStats = [
   {
@@ -118,3 +118,4 @@ const PerformanceSecurityOptimization = () => {
 };
 
 export default PerformanceSecurityOptimization;
+

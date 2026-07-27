@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ShieldCheck } from "lucide-react";
-import MigrationTrustImg from "../../../assets/Solutions/Migration/safeMigration.png";
+import MigrationTrustImg from "../../../assets/Solutions/Migration/safeMigration.webp";
 
 const migrationStats = [
   {
@@ -119,3 +119,4 @@ const SafeMigrations = () => {
 };
 
 export default SafeMigrations;
+

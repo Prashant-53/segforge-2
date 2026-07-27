@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Workflow } from "lucide-react";
-import DataEngineeringHeroImg from "../../../assets/Solutions/DataEngineering/hero.png";
+import DataEngineeringHeroImg from "../../../assets/Solutions/DataEngineering/hero.webp";
 
 const DataEngineeringHero = () => {
   return (
@@ -89,3 +89,4 @@ const DataEngineeringHero = () => {
 };
 
 export default DataEngineeringHero;
+

@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ShieldCheck } from "lucide-react";
-import GovernanceImg from "../../../assets/Solutions/Technology/governance.png";
+import GovernanceImg from "../../../assets/Solutions/Technology/governance.webp";
 
 const trustStats = [
   {
@@ -118,3 +118,4 @@ const TechnologyGovernance = () => {
 };
 
 export default TechnologyGovernance;
+

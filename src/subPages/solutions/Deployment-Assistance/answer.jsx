@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Layers3 } from "lucide-react";
-import FrameworkImg from "../../../assets/Solutions/DeploymentAssistance/framework.png";
+import FrameworkImg from "../../../assets/Solutions/DeploymentAssistance/framework.webp";
 
 const frameworkStats = [
   {
@@ -101,3 +101,4 @@ const DeploymentFramework = () => {
 };
 
 export default DeploymentFramework;
+

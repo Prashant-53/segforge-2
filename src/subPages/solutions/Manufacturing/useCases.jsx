@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Factory } from "lucide-react";
 
-import IoTImg from "../../../assets/Solutions/Manufacturing/industrialiot.png";
-import MaintenanceImg from "../../../assets/Solutions/Manufacturing/predictiveMaintainance.png";
-import SupplyChainImg from "../../../assets/Solutions/Manufacturing/supplychain.png";
+import IoTImg from "../../../assets/Solutions/Manufacturing/industrialiot.webp";
+import MaintenanceImg from "../../../assets/Solutions/Manufacturing/predictiveMaintainance.webp";
+import SupplyChainImg from "../../../assets/Solutions/Manufacturing/supplychain.webp";
 
 const useCases = [
   {
@@ -182,3 +182,4 @@ const ManufacturingUseCases = () => {
 };
 
 export default ManufacturingUseCases;
+

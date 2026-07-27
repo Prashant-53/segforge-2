@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Activity } from "lucide-react";
-import ServingImg from "../../../assets/Solutions/MachineLearning/serving.png";
+import ServingImg from "../../../assets/Solutions/MachineLearning/serving.webp";
 
 const servingStats = [
   {
@@ -112,3 +112,4 @@ const ProductionServing = () => {
 };
 
 export default ProductionServing;
+

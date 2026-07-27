@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Activity } from "lucide-react";
-import MonitoringImg from "../../../assets/Solutions/DataEngineering/monitoring.png";
+import MonitoringImg from "../../../assets/Solutions/DataEngineering/monitoring.webp";
 
 const monitoringStats = [
   {
@@ -120,3 +120,4 @@ const ResilientOrchestrationMonitoring = () => {
 };
 
 export default ResilientOrchestrationMonitoring;
+

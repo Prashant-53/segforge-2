@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Network } from "lucide-react";
-import FrameworkImg from "../../../assets/Solutions/partner-Ecosystem/framework.png";
+import FrameworkImg from "../../../assets/Solutions/partner-Ecosystem/framework.webp";
 
 const frameworkStats = [
   {
@@ -100,3 +100,4 @@ const OpenIntegrationFramework = () => {
 };
 
 export default OpenIntegrationFramework;
+

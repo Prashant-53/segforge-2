@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { AlertTriangle } from "lucide-react";
-import ChallengeImg from "../../../assets/Solutions/Telecom/challenge.png";
+import ChallengeImg from "../../../assets/Solutions/Telecom/challenge.webp";
 
 const challengeStats = [
   {
@@ -97,3 +97,4 @@ const TelecomChallenge = () => {
 };
 
 export default TelecomChallenge;
+

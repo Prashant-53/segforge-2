@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Factory } from "lucide-react";
-import HeroImg from "../../../assets/Solutions/Manufacturing/heromanufacture.png";
+import HeroImg from "../../../assets/Solutions/Manufacturing/heromanufacture.webp";
 const ManufacturingHero = () => {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-gray-50 to-white pt-32 pb-24">
@@ -83,3 +83,4 @@ const ManufacturingHero = () => {
 };
 
 export default ManufacturingHero;
+

@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Layers3 } from "lucide-react";
-import AnswerImg from "../../../assets/Solutions/HealthCare/answer.png";
+import AnswerImg from "../../../assets/Solutions/HealthCare/answer.webp";
 const platformStats = [
   {
     value: "1",
@@ -96,3 +96,4 @@ const HealthcarePlatform = () => {
 };
 
 export default HealthcarePlatform;
+

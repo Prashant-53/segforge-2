@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Layers3 } from "lucide-react";
-import PlatformImg from "../../../assets/Solutions/Migration/platform.png";
+import PlatformImg from "../../../assets/Solutions/Migration/platform.webp";
 
 const platformStats = [
   {
@@ -101,3 +101,4 @@ const MigrationPlatform = () => {
 };
 
 export default MigrationPlatform;
+

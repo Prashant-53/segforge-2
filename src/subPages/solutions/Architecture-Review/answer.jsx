@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Layers3 } from "lucide-react";
-import FrameworkImg from "../../../assets/Solutions/ArchitectureReview/framework.png";
+import FrameworkImg from "../../../assets/Solutions/ArchitectureReview/framework.webp";
 
 const frameworkStats = [
   {
@@ -100,3 +100,4 @@ const ArchitectureFramework = () => {
 };
 
 export default ArchitectureFramework;
+

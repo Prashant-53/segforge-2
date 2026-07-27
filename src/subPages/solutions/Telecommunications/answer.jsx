@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Layers3 } from "lucide-react";
-import PlatformImg from "../../../assets/Solutions/Telecom/platform.png";
+import PlatformImg from "../../../assets/Solutions/Telecom/platform.webp";
 
 const platformStats = [
   {
@@ -101,3 +101,4 @@ const TelecomPlatform = () => {
 };
 
 export default TelecomPlatform;
+

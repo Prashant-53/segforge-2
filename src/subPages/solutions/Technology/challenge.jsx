@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { AlertTriangle } from "lucide-react";
-import ChallengeImg from "../../../assets/Solutions/Technology/challenge.png";
+import ChallengeImg from "../../../assets/Solutions/Technology/challenge.webp";
 
 const challengeStats = [
   {
@@ -96,3 +96,4 @@ const TechnologyChallenge = () => {
 };
 
 export default TechnologyChallenge;
+
