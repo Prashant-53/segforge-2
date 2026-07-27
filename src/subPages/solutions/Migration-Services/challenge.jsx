@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { AlertTriangle } from "lucide-react";
-import ChallengeImg from "../../../assets/Solutions/Migration/challenge.png";
+import ChallengeImg from "../../../assets/Solutions/Migration/challenge.webp";
 
 const challengeStats = [
   {
@@ -98,3 +98,4 @@ const MigrationChallenge = () => {
 };
 
 export default MigrationChallenge;
+

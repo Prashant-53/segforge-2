@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { AlertTriangle } from "lucide-react";
-import ChallengeImg from "../../../assets/Solutions/ArchitectureReview/challenge.png";
+import ChallengeImg from "../../../assets/Solutions/ArchitectureReview/challenge.webp";
 
 const challengeStats = [
   {
@@ -99,3 +99,4 @@ const ArchitectureReviewChallenge = () => {
 };
 
 export default ArchitectureReviewChallenge;
+

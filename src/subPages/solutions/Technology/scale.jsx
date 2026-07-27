@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Globe } from "lucide-react";
-import DeploymentImg from "../../../assets/Solutions/Technology/deployment.png";
+import DeploymentImg from "../../../assets/Solutions/Technology/deployment.webp";
 
 const deploymentStats = [
   {
@@ -119,3 +119,4 @@ const TechnologyDeployment = () => {
 };
 
 export default TechnologyDeployment;
+

@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, ShoppingBag } from "lucide-react";
-import HeroImg from "../../../assets/Solutions/retail/hero.png";
+import HeroImg from "../../../assets/Solutions/retail/hero.webp";
 const RetailHero = () => {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-gray-50 to-white pt-32 pb-24">
@@ -81,3 +81,4 @@ const RetailHero = () => {
 };
 
 export default RetailHero;
+

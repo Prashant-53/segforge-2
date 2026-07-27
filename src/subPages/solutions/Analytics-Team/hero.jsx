@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, BarChart3 } from "lucide-react";
-import AnalyticsHeroImg from "../../../assets/Solutions/Analytics-Team/hero.png";
+import AnalyticsHeroImg from "../../../assets/Solutions/Analytics-Team/hero.webp";
 
 const AnalyticsHero = () => {
   return (
@@ -82,3 +82,4 @@ const AnalyticsHero = () => {
 };
 
 export default AnalyticsHero;
+

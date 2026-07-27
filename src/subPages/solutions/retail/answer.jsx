@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Layers3 } from "lucide-react";
-import PlatformImg from "../../../assets/Solutions/Retail/answer3.png";
+import PlatformImg from "../../../assets/Solutions/Retail/answer3.webp";
 
 const platformStats = [
   {
@@ -98,3 +98,4 @@ const RetailPlatform = () => {
 };
 
 export default RetailPlatform;
+

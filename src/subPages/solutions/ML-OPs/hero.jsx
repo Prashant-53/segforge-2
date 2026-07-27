@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, BrainCircuit } from "lucide-react";
-import MLHeroImg from "../../../assets/Solutions/MachineLearning/hero.png";
+import MLHeroImg from "../../../assets/Solutions/MachineLearning/hero.webp";
 
 const MachineLearningHero = () => {
   return (
@@ -79,3 +79,4 @@ const MachineLearningHero = () => {
 };
 
 export default MachineLearningHero;
+

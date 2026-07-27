@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Cpu } from "lucide-react";
-import HeroImg from "../../../assets/Solutions/Technology/hero.png";
+import HeroImg from "../../../assets/Solutions/Technology/hero.webp";
 const TechnologyHero = () => {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-gray-50 to-white pt-32 pb-24">
@@ -82,3 +82,4 @@ const TechnologyHero = () => {
 };
 
 export default TechnologyHero;
+

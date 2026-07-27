@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { History } from "lucide-react";
-import ForensicsImg from "../../../assets/Solutions/Analytics-Team/forensics.png";
+import ForensicsImg from "../../../assets/Solutions/Analytics-Team/forensics.webp";
 
 const forensicStats = [
   {
@@ -97,3 +97,4 @@ const HistoricalForensics = () => {
 };
 
 export default HistoricalForensics;
+

@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ShieldCheck } from "lucide-react";
-import ResilienceImg from "../../../assets/Services/DeploymentAssistance/resilience.png";
+import ResilienceImg from "../../../assets/Services/DeploymentAssistance/resilience.webp";
 
 const resilienceStats = [
   {
@@ -120,3 +120,4 @@ const DeploymentResilience = () => {
 };
 
 export default DeploymentResilience;
+

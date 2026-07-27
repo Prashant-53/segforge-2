@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, ShieldCheck } from "lucide-react";
-import ArchitectureReviewHeroImg from "../../../assets/Solutions/ArchitectureReview/hero.png";
+import ArchitectureReviewHeroImg from "../../../assets/Solutions/ArchitectureReview/hero.webp";
 
 const ArchitectureReviewHero = () => {
   return (
@@ -87,3 +87,4 @@ const ArchitectureReviewHero = () => {
 };
 
 export default ArchitectureReviewHero;
+

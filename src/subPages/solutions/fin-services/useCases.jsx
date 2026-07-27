@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-import CreditRiskImg from "../../../assets/Solutions/Finance/creditRisk.png";
-import ReportingImg from "../../../assets/Solutions/Finance/regulatoryReporting.png";
-import FraudImg from "../../../assets/Solutions/Finance/fraudDetection.png";
+import CreditRiskImg from "../../../assets/Solutions/Finance/creditRisk.webp";
+import ReportingImg from "../../../assets/Solutions/Finance/regulatoryReporting.webp";
+import FraudImg from "../../../assets/Solutions/Finance/fraudDetection.webp";
 
 const useCases = [
   {
@@ -167,3 +167,4 @@ const FinancialUseCases = () => {
 };
 
 export default FinancialUseCases;
+

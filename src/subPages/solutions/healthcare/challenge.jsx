@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { AlertTriangle } from "lucide-react";
-import ChallengeImg from "../../../assets/Solutions/HealthCare/challenge.png";
+import ChallengeImg from "../../../assets/Solutions/HealthCare/challenge.webp";
 const challengeStats = [
   {
     value: "20+",
@@ -96,3 +96,4 @@ const HealthcareChallenge = () => {
 };
 
 export default HealthcareChallenge;
+

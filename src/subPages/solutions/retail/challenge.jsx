@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { AlertTriangle } from "lucide-react";
-import ChallengeImg from "../../../assets/Solutions/Retail/challenge3.png";
+import ChallengeImg from "../../../assets/Solutions/Retail/challenge3.webp";
 
 const challengeStats = [
   {
@@ -87,3 +87,4 @@ const RetailChallenge = () => {
 };
 
 export default RetailChallenge;
+

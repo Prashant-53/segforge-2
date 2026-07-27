@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ShoppingBag } from "lucide-react";
 
-import Customer360Img from "../../../assets/Solutions/Retail/usecaseR1.png";
-import InventoryImg from "../../../assets/Solutions/Retail/usecaseR2.png";
-import PredictiveImg from "../../../assets/Solutions/Retail/usecaseR3.png";
+import Customer360Img from "../../../assets/Solutions/Retail/usecaseR1.webp";
+import InventoryImg from "../../../assets/Solutions/Retail/usecaseR2.webp";
+import PredictiveImg from "../../../assets/Solutions/Retail/usecaseR3.webp";
 
 const useCases = [
   {
@@ -182,3 +182,4 @@ const RetailUseCases = () => {
 };
 
 export default RetailUseCases;
+

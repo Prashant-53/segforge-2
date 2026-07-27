@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { HeartPulse } from "lucide-react";
 
-import Patient360Img from "../../../assets/Solutions/HealthCare/case1.png";
-import ResearchImg from "../../../assets/Solutions/HealthCare/case2.png";
-import ClaimsFraudImg from "../../../assets/Solutions/HealthCare/case3.png";
+import Patient360Img from "../../../assets/Solutions/HealthCare/case1.webp";
+import ResearchImg from "../../../assets/Solutions/HealthCare/case2.webp";
+import ClaimsFraudImg from "../../../assets/Solutions/HealthCare/case3.webp";
 
 const useCases = [
   {
@@ -167,3 +167,4 @@ const HealthcareUseCases = () => {
 };
 
 export default HealthcareUseCases;
+

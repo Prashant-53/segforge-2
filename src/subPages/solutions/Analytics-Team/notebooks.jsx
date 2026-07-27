@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { NotebookPen } from "lucide-react";
-import NotebookImg from "../../../assets/Solutions/Analytics-Team/notebooks.png";
+import NotebookImg from "../../../assets/Solutions/Analytics-Team/notebooks.webp";
 
 const notebookStats = [
   {
@@ -116,3 +116,4 @@ const InteractiveNotebooks = () => {
 };
 
 export default InteractiveNotebooks;
+

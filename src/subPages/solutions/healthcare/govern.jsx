@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Database } from "lucide-react";
-import SovereigntyImg from "../../../assets/Solutions/HealthCare/sovereignty.png";
+import SovereigntyImg from "../../../assets/Solutions/HealthCare/sovereignty.webp";
 
 const sovereigntyStats = [
   {
@@ -107,3 +107,4 @@ const HealthcareSovereignty = () => {
 };
 
 export default HealthcareSovereignty;
+

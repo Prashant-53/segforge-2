@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, RadioTower } from "lucide-react";
-import TelecomHeroImg from "../../../assets/Solutions/Telecom/hero.png";
+import TelecomHeroImg from "../../../assets/Solutions/Telecom/hero.webp";
 
 const TelecomHero = () => {
   return (
@@ -84,3 +84,4 @@ const TelecomHero = () => {
 };
 
 export default TelecomHero;
+

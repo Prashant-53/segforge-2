@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, DatabaseZap } from "lucide-react";
-import MigrationHeroImg from "../../../assets/Solutions/Migration/hero.png";
+import MigrationHeroImg from "../../../assets/Solutions/Migration/hero.webp";
 
 const MigrationHero = () => {
   return (
@@ -88,3 +88,4 @@ const MigrationHero = () => {
 };
 
 export default MigrationHero;
+

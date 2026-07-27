@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ShieldCheck, CheckCircle2 } from "lucide-react";
-import ReportImg from "../../../assets/Solutions/Finance/report.png";
+import ReportImg from "../../../assets/Solutions/Finance/report.webp";
 
 const RegulatoryReporting = () => {
   const features = [
@@ -80,3 +80,4 @@ const RegulatoryReporting = () => {
 };
 
 export default RegulatoryReporting;
+

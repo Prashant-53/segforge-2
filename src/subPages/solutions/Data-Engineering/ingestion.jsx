@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { RadioTower } from "lucide-react";
-import IngestionImg from "../../../assets/Solutions/DataEngineering/ingestion.png";
+import IngestionImg from "../../../assets/Solutions/DataEngineering/ingestion.webp";
 
 const ingestionStats = [
   {
@@ -120,3 +120,4 @@ const AutomatedIngestion = () => {
 };
 
 export default AutomatedIngestion;
+

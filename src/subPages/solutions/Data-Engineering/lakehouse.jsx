@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { GitBranch } from "lucide-react";
-import LakehouseImg from "../../../assets/Solutions/DataEngineering/lakehouse.png";
+import LakehouseImg from "../../../assets/Solutions/DataEngineering/lakehouse.webp";
 
 const lakehouseStats = [
   {
@@ -98,3 +98,4 @@ const ModernLakehouse = () => {
 };
 
 export default ModernLakehouse;
+

@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Network } from "lucide-react";
-import IntegrationsHeroImg from "../../../assets/Solutions/partner-Ecosystem/hero.png";
+import IntegrationsHeroImg from "../../../assets/Solutions/partner-Ecosystem/hero.webp";
 
 const IntegrationsHero = () => {
   return (
@@ -87,3 +87,4 @@ const IntegrationsHero = () => {
 };
 
 export default IntegrationsHero;
+

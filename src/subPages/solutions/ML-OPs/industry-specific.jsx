@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Rocket } from "lucide-react";
-import TemplatesImg from "../../../assets/Solutions/MachineLearning/templates.png";
+import TemplatesImg from "../../../assets/Solutions/MachineLearning/templates.webp";
 
 const templateStats = [
   {
@@ -110,3 +110,4 @@ const IndustryTemplates = () => {
 };
 
 export default IndustryTemplates;
+

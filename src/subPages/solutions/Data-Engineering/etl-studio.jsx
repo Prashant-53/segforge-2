@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Workflow } from "lucide-react";
-import EtlStudioImg from "../../../assets/Solutions/DataEngineering/etl-studio.png";
+import EtlStudioImg from "../../../assets/Solutions/DataEngineering/etl-studio.webp";
 
 const etlStats = [
   {
@@ -117,3 +117,4 @@ const ETLStudio = () => {
 };
 
 export default ETLStudio;
+

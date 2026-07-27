@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ServerCog } from "lucide-react";
-import DeploymentImg from "../../../assets/Solutions/Retail/challenge3.png";
+import DeploymentImg from "../../../assets/Solutions/Retail/challenge3.webp";
 
 const deploymentStats = [
   {
@@ -102,3 +102,4 @@ const RetailDeployment = () => {
 };
 
 export default RetailDeployment;
+

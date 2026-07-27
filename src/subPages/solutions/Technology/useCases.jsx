@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Cpu } from "lucide-react";
 
-import AIProductImg from "../../../assets/Solutions/Technology/aiProduct.png";
-import AnalyticsImg from "../../../assets/Solutions/Technology/realtimeAnalytics.png";
-import SaaSImg from "../../../assets/Solutions/Technology/multiTenant.png";
+import AIProductImg from "../../../assets/Solutions/Technology/aiProduct.webp";
+import AnalyticsImg from "../../../assets/Solutions/Technology/realtimeAnalytics.webp";
+import SaaSImg from "../../../assets/Solutions/Technology/multiTenant.webp";
 
 const useCases = [
   {
@@ -184,3 +184,4 @@ const TechnologyUseCases = () => {
 };
 
 export default TechnologyUseCases;
+

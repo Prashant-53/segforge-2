@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { PlugZap } from "lucide-react";
-import ConnectivityImg from "../../../assets/Solutions/Migration/connectivity.png";
+import ConnectivityImg from "../../../assets/Solutions/Migration/connectivity.webp";
 
 const connectivityStats = [
   {
@@ -120,3 +120,4 @@ const MigrationConnectivity = () => {
 };
 
 export default MigrationConnectivity;
+

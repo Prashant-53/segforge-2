@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { AlertTriangle } from "lucide-react";
-import ChallengeImg from "../../../assets/Solutions/partner-Ecosystem/challenge.png";
+import ChallengeImg from "../../../assets/Solutions/partner-Ecosystem/challenge.webp";
 
 const challengeStats = [
   {
@@ -100,3 +100,4 @@ const IntegrationChallenge = () => {
 };
 
 export default IntegrationChallenge;
+
