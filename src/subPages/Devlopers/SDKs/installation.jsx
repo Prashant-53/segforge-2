@@ -174,39 +174,6 @@ const Installation = () => {
             </motion.div>
           ))}
         </div>
-
-        {/* CTA */}
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="mt-24 rounded-[36px] bg-gradient-to-r from-slate-900 to-slate-800 px-10 py-16 text-center"
-        >
-          <h3 className="text-3xl font-bold text-white">
-            Ready to build on Seg Forge?
-          </h3>
-
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-300">
-            Install an SDK and begin automating your entire data platform in
-            minutes.
-          </p>
-
-          <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
-            <button className="group relative overflow-hidden rounded-xl bg-cyan-500 px-8 py-4 font-medium text-white">
-              <span className="absolute inset-0 origin-left scale-x-0 bg-cyan-400 transition-transform duration-500 group-hover:scale-x-100" />
-
-              <span className="relative flex items-center justify-center gap-2">
-                View Documentation
-                <ArrowRight className="h-4 w-4" />
-              </span>
-            </button>
-
-            <button className="rounded-xl border border-slate-700 px-8 py-4 font-medium text-white transition hover:bg-slate-800">
-              Explore Examples
-            </button>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

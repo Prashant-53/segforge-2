@@ -5,7 +5,7 @@ import ExplainableAI from "../../subPages/solutions/ML-OPs/ai&eval";
 import IndustryTemplates from "../../subPages/solutions/ML-OPs/industry-specific";
 import ProductionServing from "../../subPages/solutions/ML-OPs/serving-monitoring";
 import MLROISimulator from "../../subPages/solutions/ML-OPs/ROI-Simulator";
-import MachineLearningCTA from "../../subPages/solutions/ML-OPs/cta";
+import CTA from "../../components/BottomCTA";
 import MainLayout from "../../layouts/mainLayout";
 
 const MLOPSTeam = () => {
@@ -17,7 +17,7 @@ const MLOPSTeam = () => {
       <IndustryTemplates />
       <ProductionServing />
       <MLROISimulator />
-      <MachineLearningCTA />
+      <CTA />
     </MainLayout>
   );
 };

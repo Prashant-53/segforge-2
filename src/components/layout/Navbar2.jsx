@@ -27,6 +27,7 @@ import {
   Gpu,
 } from "lucide-react";
 import { path } from "framer-motion/client";
+// import Logo from "../../assets/segforge-logo.png";
 
 const NAV_ITEMS = [
   {
@@ -56,21 +57,20 @@ const NAV_ITEMS = [
           },
 
           {
-            name: "Workflow Engine",
+            name: "Orchestration",
             icon: GitBranch,
-            path: "/product/workflow-engine",
+            path: "/product/orchestration",
           },
 
+          // {
+          //   name: "Interactive Notebooks",
+          //   icon: BookOpen,
+          //   path: "/product/notebooks",
+          // },
           {
-            name: "Interactive Notebooks",
-            icon: BookOpen,
-            path: "/product/notebooks",
-          },
-
-          {
-            name: "Data Catalog",
-            icon: Database,
-            path: "/product/data-catalog",
+            name: "SQL Worksheets",
+            icon: Code2,
+            path: "/product/sql-worksheets",
           },
 
           {
@@ -91,13 +91,13 @@ const NAV_ITEMS = [
           },
 
           {
-            name: "Real-Time CDC",
+            name: "CDC",
             icon: Zap,
-            path: "/product/real-time-cdc",
+            path: "/product/cdc",
           },
 
           {
-            name: "Analytics",
+            name: "Analytics & BI",
             icon: ChartBar,
             path: "/product/analytics",
           },
@@ -108,28 +108,27 @@ const NAV_ITEMS = [
         title: "Governance",
 
         links: [
-          {
-            name: "Access Control",
-            icon: ShieldCheck,
-            path: "/product/access-control",
-          },
-          {
-            name: "Lakehouse Governance",
-            icon: Layers3,
-            path: "/product/lakehouse-governance",
-          },
-
-          {
-            name: "Data Lineage",
-            icon: ShieldCheck,
-            path: "/product/data-lineage",
-          },
+          // {
+          //   name: "Access Control",
+          //   icon: ShieldCheck,
+          //   path: "/product/access-control",
+          // },
+          // {
+          //   name: "Lakehouse Governance",
+          //   icon: Layers3,
+          //   path: "/product/lakehouse-governance",
+          // },
 
           // {
-          //   name: "Observability",
-          //   icon: Activity,
-          //   path: "/product/observability",
+          //   name: "Data Lineage",
+          //   icon: ShieldCheck,
+          //   path: "/product/data-lineage",
           // },
+          {
+            name: "Data Governance",
+            icon: ShieldCheck,
+            path: "/product/data-governance",
+          },
         ],
       },
 
@@ -225,11 +224,6 @@ const NAV_ITEMS = [
             path: "/solutions/deployment-assistance",
           },
 
-          // {
-          //   name: "Training & Enablement",
-          //   icon: Cpu,
-          //   path: "/solutions/training&enablement",
-          // },
           {
             name: "Partner Ecosystem",
             icon: Handshake,
@@ -237,35 +231,7 @@ const NAV_ITEMS = [
           },
         ],
       },
-      // {
-      //   title: "Use Cases",
 
-      //   links: [
-      //     {
-      //       name: "Real-Time Analytics",
-      //       icon: Activity,
-      //       path: "/solutions/real-time-analytics",
-      //     },
-
-      //     {
-      //       name: "Operational Intelligence",
-      //       icon: BrainCircuit,
-      //       path: "/solutions/operational-intelligence",
-      //     },
-
-      //     {
-      //       name: "Enterprise Reporting",
-      //       icon: BookOpen,
-      //       path: "/solutions/enterprise-reporting",
-      //     },
-
-      //     {
-      //       name: "Predictive Maintenance",
-      //       icon: Cpu,
-      //       path: "/solutions/predictive-maintenance",
-      //     },
-      //   ],
-      // },
       {
         title: "By Team",
 
@@ -287,22 +253,6 @@ const NAV_ITEMS = [
             icon: BookOpen,
             path: "/solutions/ML-teams",
           },
-
-          // {
-          //   name: "PLatform Engineering",
-          //   icon: Cpu,
-          //   path: "/solutions/platform-engineering",
-          // },
-          // {
-          //   name: "Data Governance Teams",
-          //   icon: Cpu,
-          //   path: "/solutions/data-governance-teams",
-          // },
-          // {
-          //   name: "IT & Infrastructure",
-          //   icon: Cpu,
-          //   path: "/solutions/it&infrastructure",
-          // },
         ],
       },
     ],
@@ -323,124 +273,82 @@ const NAV_ITEMS = [
             path: "/docs/getting-started/what-is-segforge",
           },
 
-          {
-            name: "Tutorials",
-            icon: Workflow,
-            path: "/resources/tutorials",
-          },
-
           // {
-          //   name: "Webinars",
-          //   icon: Activity,
-          //   path: "/resources/webinars",
-          // },
-
-          // {
-          //   name: "Certifications",
-          //   icon: ShieldCheck,
-          //   path: "/resources/certifications",
+          //   name: "Tutorials",
+          //   icon: Workflow,
+          //   path: "/resources/tutorials",
           // },
         ],
       },
 
-      {
-        title: "Insights",
+      // {
+      //   title: "Insights",
 
-        links: [
-          // {
-          //   name: "Engineering Blog",
-          //   icon: BookOpen,
-          //   path: "/resources/blog",
-          // },
-
-          // {
-          //   name: "Whitepapers",
-          //   icon: Layers3,
-          //   path: "/resources/whitepapers",
-          // },
-
-          // {
-          //   name: "Case Studies",
-          //   icon: Database,
-          //   path: "/resources/case-studies",
-          // },
-
-          {
-            name: "Changelog",
-            icon: GitBranch,
-            path: "/resources/changelog",
-          },
-        ],
-      },
+      //   links: [
+      //     {
+      //       name: "Changelog",
+      //       icon: GitBranch,
+      //       path: "/resources/changelog",
+      //     },
+      //   ],
+      // },
     ],
   },
 
-  {
-    label: "Developers",
-    path: "/developers",
+  // {
+  //   label: "Developers",
+  //   path: "/developers",
 
-    columns: [
-      {
-        title: "Build",
+  //   columns: [
+  //     {
+  //       title: "Build",
 
-        links: [
-          {
-            name: "APIs",
-            icon: Code2,
-            path: "/developers/apis",
-          },
+  //       links: [
+  //         {
+  //           name: "APIs",
+  //           icon: Code2,
+  //           path: "/developers/apis",
+  //         },
 
-          {
-            name: "SDKs",
-            icon: Cpu,
-            path: "/developers/sdks",
-          },
+  //         {
+  //           name: "SDKs",
+  //           icon: Cpu,
+  //           path: "/developers/sdks",
+  //         },
 
-          {
-            name: "CLI",
-            icon: Workflow,
-            path: "/developers/cli",
-          },
+  //         {
+  //           name: "CLI",
+  //           icon: Workflow,
+  //           path: "/developers/cli",
+  //         },
 
-          {
-            name: "Integrations",
-            icon: GitBranch,
-            path: "/developers/integrations",
-          },
-        ],
-      },
+  //         {
+  //           name: "Integrations",
+  //           icon: GitBranch,
+  //           path: "/developers/integrations",
+  //         },
+  //       ],
+  //     },
 
-      {
-        title: "Explore",
+  //     {
+  //       title: "Explore",
 
-        links: [
-          {
-            name: "GitHub",
-            icon: Code2,
-            path: "/developers/github",
-          },
+  //       links: [
+  //         {
+  //           name: "Open Source",
+  //           icon: Database,
+  //           path: "/developers/open-source",
+  //         },
 
-          {
-            name: "Quickstarts",
-            icon: Workflow,
-            path: "/developers/quickstarts",
-          },
-
-          {
-            name: "Open Source",
-            icon: Database,
-            path: "/developers/open-source",
-          },
-
-          {
-            name: "Reference Architectures",
-            icon: Layers3,
-            path: "/developers/reference-architectures",
-          },
-        ],
-      },
-    ],
-  },
+  //         // {
+  //         //   name: "Reference Architectures",
+  //         //   icon: Layers3,
+  //         //   path: "/developers/reference-architectures",
+  //         // },
+  //       ],
+  //     },
+  //   ],
+  // },
 
   {
     label: "Pricing",
@@ -494,14 +402,27 @@ const Navbar = () => {
         }`}
       >
         <div className="max-w-[1600px] mx-auto px-6 xl:px-10">
-          <div className="flex items-center justify-between h-24">
+          <div className="flex items-center justify-between h-20">
             {/* LOGO */}
             <Link to="/" className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg"></div>
-              <span className="text-xl font-bold text-slate-900">SegForge</span>
+              <span className="text-xl font-bold text-slate-900">
+                Seg<span className="text-[#18D0BB]">Forge</span>
+              </span>{" "}
             </Link>
+            {/* LOGO */}
+            {/* <Link to="/" className="flex items-center space-x-2">
+              <img
+                src={Logo}
+                alt="SegForge Logo"
+                className="h-18 w-18 object-contain"
+              />
+              <span className="text-xl font-bold text-slate-900">
+                Seg<span className="text-[#18D0BB]">Forge</span>
+              </span>
+            </Link> */}
             {/* DESKTOP NAV */}
-            <nav className="hidden 2xl:flex items-center gap-1">
+            <nav className="hidden xl:flex items-center gap-1">
               {NAV_ITEMS.map((item) => {
                 const hasMegaMenu = item.columns;
 
@@ -544,13 +465,6 @@ const Navbar = () => {
 
             {/* CTA */}
             <div className="hidden xl:flex items-center gap-3">
-              {/* <a
-                href="#"
-                className="text-md text-black hover:text-[#2e55a7] transition"
-              >
-                Sign In
-              </a> */}
-
               <Link
                 to="/contact"
                 className="group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-gray-200 px-6 py-3 font-semibold text-black transition-colors duration-300 hover:text-white"
@@ -561,17 +475,6 @@ const Navbar = () => {
                   Contact Sales
                 </span>
               </Link>
-              {/* <button className="group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-gray-200 px-6 py-3 font-semibold text-black transition-colors duration-300 hover:text-white">
-                <span className="absolute inset-y-0 left-0 w-0 bg-[#18D0BB] transition-all duration-300 ease-out group-hover:w-full"></span>
-
-                <span className="relative z-10 flex items-center gap-2">
-                  Start Building
-                </span>
-              </button> */}
-              {/* <a
-                href="#"
-                className="px-6 py-3 rounded-full bg-cyan-400 hover:bg-cyan-300 text-black font-semibold transition text-sm"
-              ></a> */}
             </div>
             {/* MOBILE TOGGLE */}
             <button
@@ -590,15 +493,19 @@ const Navbar = () => {
         {openMenu && (
           <div
             ref={megaMenuRef}
-            className="fixed left-0 top-24 w-screen bg-white/98 backdrop-blur-3xl border-t border-white/5 border-b border-white/5 z-50"
+            className="fixed left-0 top-20 w-screen bg-white/98 backdrop-blur-3xl border-t border-white/5 border-b border-white/5 z-50"
           >
             <div className="max-w-[1800px] mx-auto px-10 py-10">
               {NAV_ITEMS.filter((item) => item.label === openMenu).map(
                 (item) => (
-                  <div key={item.label} className="grid grid-cols-12 gap-12">
+                  <div
+                    key={item.label}
+                    className="grid grid-cols-1 xl:grid-cols-12 gap-10 xl:gap-12"
+                  >
+                    {" "}
                     {/* FEATURED */}
                     {item.featured && (
-                      <div className="col-span-3 pr-8 border-r border-white/5">
+                      <div className="order-2 xl:order-1 xl:col-span-3 border-t xl:border-t-0 xl:border-r border-slate-200 pt-8 xl:pt-0 xl:pr-8">
                         {" "}
                         <p className="text-xs uppercase tracking-[0.22em] text-cyan-500">
                           {" "}
@@ -625,7 +532,7 @@ const Navbar = () => {
                     )}
                     {/* MENU CONTENT */}
                     <div
-                      className={`grid gap-12 ${item.columns.length === 4 ? "grid-cols-4" : item.columns.length === 3 ? "grid-cols-3" : "grid-cols-2"} ${item.featured ? "col-span-9" : "col-span-12"}`}
+                      className={`order-1 xl:order-2 ${item.featured ? "xl:col-span-9" : "xl:col-span-12"} grid gap-8 sm:grid-cols-2 lg:grid-cols-3 ${item.columns.length === 4 ? "xl:grid-cols-4" : item.columns.length === 3 ? "xl:grid-cols-3" : "xl:grid-cols-2"}`}
                     >
                       {" "}
                       {item.columns.map((column, idx) => (
@@ -713,7 +620,7 @@ const Navbar = () => {
                             <div className="space-y-6">
                               {item.columns.map((column) => (
                                 <div key={column.title}>
-                                  <p className="text-[11px] uppercase tracking-[0.18em] text-cyan-400 mb-4">
+                                  <p className="mb-4 text-[11px] uppercase tracking-[0.18em] text-cyan-500">
                                     {column.title}
                                   </p>
 
@@ -729,13 +636,13 @@ const Navbar = () => {
                                               setMobileOpen(false);
                                               setMobileDropdown(null);
                                             }}
-                                            className="flex items-center gap text-black hover:text-cyan-500 transition"
+                                            className="flex items-center gap-3 rounded-xl p-2 transition hover:bg-slate-50"
                                           >
-                                            <div className="w-8 h-8 rounded-lg bg-white/[0.03] border border-white/5 flex items-center justify-center">
-                                              <Icon className="w-4 h-4 text-cyan-300" />
+                                            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-cyan-50">
+                                              <Icon className="h-4 w-4 text-cyan-600" />
                                             </div>
 
-                                            <span className="text-sm">
+                                            <span className="text-sm font-medium text-slate-700">
                                               {link.name}
                                             </span>
                                           </Link>
@@ -745,6 +652,36 @@ const Navbar = () => {
                                   </ul>
                                 </div>
                               ))}
+
+                              {/* ---------- FEATURED CARD ---------- */}
+
+                              {item.featured && (
+                                <div className="mt-8 rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                                  <p className="text-[11px] uppercase tracking-[0.2em] text-cyan-500">
+                                    Product
+                                  </p>
+
+                                  <h3 className="mt-3 text-xl font-semibold text-slate-900">
+                                    {item.featured.title}
+                                  </h3>
+
+                                  <p className="mt-3 text-sm leading-6 text-slate-600">
+                                    {item.featured.description}
+                                  </p>
+
+                                  <Link
+                                    to={item.featured.path}
+                                    onClick={() => {
+                                      setMobileOpen(false);
+                                      setMobileDropdown(null);
+                                    }}
+                                    className="mt-5 inline-flex items-center gap-2 font-medium text-cyan-600 transition hover:gap-3"
+                                  >
+                                    {item.featured.cta}
+                                    <ArrowRight className="h-4 w-4" />
+                                  </Link>
+                                </div>
+                              )}
                             </div>
                           </div>
                         )}
@@ -765,27 +702,15 @@ const Navbar = () => {
 
             {/* MOBILE CTA */}
             <div className="mt-6 flex flex-col gap-3">
-              {/* <Link
-                to="/contact-sales"
-                onClick={() => setMobileOpen(false)}
-                className="w-full py-3 rounded-full border border-cyan-400/30 text-black text-center"
+              <Link
+                to="/contact"
+                className="group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-gray-200 px-6 py-3 font-semibold text-black transition-colors duration-300 hover:text-white"
               >
-                Contact Sales
-              </Link> */}
-              <button className="group relative inline-flex items-center justify-center overflow-hidden rounded-md border border-slate-800 px-6 py-3 font-semibold text-black transition-colors duration-300 hover:text-white">
                 <span className="absolute inset-y-0 left-0 w-0 bg-[#18D0BB] transition-all duration-300 ease-out group-hover:w-full"></span>
 
                 <span className="relative z-10 flex items-center gap-2">
                   Contact Sales
-                  <ArrowRight className="w-4 h-4" />
                 </span>
-              </button>
-              <Link
-                to="/start-building"
-                onClick={() => setMobileOpen(false)}
-                className="w-full py-3 rounded-full bg-cyan-400 text-black font-semibold text-center"
-              >
-                Start Building
               </Link>
             </div>
           </div>

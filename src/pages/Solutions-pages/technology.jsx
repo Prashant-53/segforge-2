@@ -5,7 +5,7 @@ import TechnologyPlatform from "../../subPages/solutions/Technology/answer";
 import TechnologyUseCases from "../../subPages/solutions/Technology/useCases";
 import TechnologyGovernance from "../../subPages/solutions/Technology/govern";
 import TechnologyDeployment from "../../subPages/solutions/Technology/scale";
-import TechnologyCTA from "../../subPages/solutions/Technology/cta";
+import CTA from "../../components/BottomCTA";
 import MainLayout from "../../layouts/mainLayout";
 
 const Retail = () => {
@@ -17,7 +17,7 @@ const Retail = () => {
       <TechnologyUseCases />
       <TechnologyGovernance />
       <TechnologyDeployment />
-      <TechnologyCTA />
+      <CTA />
     </MainLayout>
   );
 };

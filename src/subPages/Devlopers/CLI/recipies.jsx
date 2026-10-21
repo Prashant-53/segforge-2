@@ -129,19 +129,22 @@ const DevOpsRecipes = () => {
               <motion.div
                 key={recipe.title}
                 whileHover={{ y: -6 }}
-                className="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition hover:border-cyan-300 hover:shadow-xl"
+                className="rounded-2xl lg:rounded-3xl border border-slate-200 bg-white p-5 sm:p-6 lg:p-7 shadow-sm transition hover:border-cyan-300 hover:shadow-xl"
               >
-                <div className="flex items-center gap-4">
-                  <div className="rounded-2xl bg-cyan-50 p-4">
+                <div className="flex items-start gap-4">
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-cyan-50">
+                    {" "}
                     <recipe.icon className="h-6 w-6 text-cyan-600" />
                   </div>
-
                   <div>
-                    <h3 className="text-xl font-bold text-slate-900">
+                    <h3 className="text-xl font-bold sm:text-2xl">
+                      {" "}
                       {recipe.title}
                     </h3>
 
-                    <p className="mt-1 text-slate-600">{recipe.description}</p>
+                    <p className="mt-2 text-sm leading-6 text-slate-600 sm:text-base sm:leading-7">
+                      {recipe.description}
+                    </p>
                   </div>
                 </div>
 
@@ -152,8 +155,11 @@ const DevOpsRecipes = () => {
                     <span className="text-xs text-slate-400">Terminal</span>
                   </div>
 
-                  <pre className="overflow-x-auto p-6 text-sm text-cyan-300">
-                    <code>{recipe.code}</code>
+                  <pre className="overflow-x-auto p-4 text-xs leading-7 text-cyan-300 sm:p-6 sm:text-sm">
+                    {" "}
+                    <code className="whitespace-pre-wrap break-all">
+                      {recipe.code}
+                    </code>{" "}
                   </pre>
                 </div>
               </motion.div>

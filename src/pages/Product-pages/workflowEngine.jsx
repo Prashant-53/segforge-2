@@ -1,9 +1,10 @@
 import React from "react";
 import WorkflowHero from "../../subPages/product/Workflow-Engine/hero";
-import DAGOrchestration from "../../subPages/product/Workflow-Engine/dag";
-import PrecisionScheduling from "../../subPages/product/Workflow-Engine/precision_scheduling";
-import ResilienceRecovery from "../../subPages/product/Workflow-Engine/recovery";
-import CentralizedObservability from "../../subPages/product/Workflow-Engine/centralized_observability";
+import WorkflowConcept from "../../subPages/product/Workflow-Engine/WorkflowConcept";
+import BuildYourWorkflow from "../../subPages/product/Workflow-Engine/BuildYourWorkflow";
+import WorkflowExecution from "../../subPages/product/Workflow-Engine/execution";
+import WorkflowReliability from "../../subPages/product/Workflow-Engine/reliability";
+import OrchestrationFAQ from "../../subPages/product/Workflow-Engine/faq";
 
 import CTABanner from "../../components/BottomCTA";
 import MainLayout from "../../layouts/mainLayout";
@@ -12,10 +13,11 @@ const WorkFlowEngine = () => {
   return (
     <MainLayout>
       <WorkflowHero />
-      <DAGOrchestration />
-      <PrecisionScheduling />
-      <ResilienceRecovery />
-      <CentralizedObservability />
+      <WorkflowConcept />
+      <WorkflowExecution />
+      <WorkflowReliability />
+      <BuildYourWorkflow />
+      {/* <OrchestrationFAQ /> */}
       <CTABanner />
     </MainLayout>
   );

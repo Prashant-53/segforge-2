@@ -1,217 +1,168 @@
 import React from "react";
 import { motion } from "framer-motion";
 import {
-  ShieldCheck,
-  BarChart3,
-  ScanSearch,
-  GitBranch,
-  CheckCircle2,
+  Code2,
+  Check,
+  ArrowUpRight,
+  Braces,
+  Terminal,
   Sparkles,
-  Brain,
 } from "lucide-react";
 
-import Hero from "../../../assets/Products/AI/fifth.png";
+import Hero from "../../../assets/Products/AI/fifth.webp";
 
-const capabilityGroups = [
-  {
-    icon: Brain,
-    title: "Explainability",
-    items: [
-      "SHAP Values",
-      "Feature Importance",
-      "Prediction Insights",
-      "Model Transparency",
-    ],
-  },
-  {
-    icon: BarChart3,
-    title: "Evaluation Hub",
-    items: ["Accuracy", "AUC", "F1 Score", "Confusion Matrix"],
-  },
+const codeLines = [
+  { number: "01", text: "function analyzeData(records) {" },
+  { number: "02", text: "  const results = records.filter(" },
+  { number: "03", text: "    (record) => record.active" },
+  { number: "04", text: "  );" },
+  { number: "05", text: "  return results;" },
+  { number: "06", text: "}" },
 ];
-
-const governanceFeatures = [
-  {
-    icon: ScanSearch,
-    title: "Understand Every Prediction",
-    description:
-      "Open the machine learning black box using SHAP value analysis and feature importance visualizations. Understand exactly which variables influence predictions, helping engineers, analysts, and business stakeholders trust AI-driven decisions.",
-  },
-  {
-    icon: BarChart3,
-    title: "Comprehensive Model Evaluation",
-    description:
-      "Evaluate every experiment through a centralized metrics dashboard covering Accuracy, Precision, Recall, F1 Score, ROC-AUC, Confusion Matrices, and additional performance indicators before promoting models into production.",
-  },
-  {
-    icon: GitBranch,
-    title: "Complete AI Auditability",
-    description:
-      "Every prediction is fully traceable through Seg Forge Data Lineage. Connect production models back to the exact Apache Iceberg dataset, feature engineering workflow, training pipeline, experiment, and model version used to generate each prediction.",
-  },
-];
-
 const Fifth = () => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-white to-slate-50 py-28">
-      {/* Animated Grid */}
-
-      <motion.div
-        animate={{
-          backgroundPosition: ["0px 0px", "120px 120px"],
-        }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          ease: "linear",
-        }}
-        className="absolute inset-0 opacity-[0.04]"
+    <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 to-white py-28">
+      {/* Background grid */}
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.08]"
         style={{
-          backgroundImage: `
-            linear-gradient(to right,#18D0BB 1px,transparent 1px),
-            linear-gradient(to bottom,#18D0BB 1px,transparent 1px)
-          `,
-          backgroundSize: "80px 80px",
+          backgroundImage:
+            "linear-gradient(#1affe5 1px, transparent 1px), linear-gradient(90deg, #1affe5 1px, transparent 1px)",
+          backgroundSize: "48px 48px",
+          maskImage: "linear-gradient(to bottom, black, transparent 90%)",
         }}
       />
 
-      {/* Glow */}
+      {/* Ambient glow */}
+      <div className="pointer-events-none absolute -right-32 top-20 h-96 w-96 rounded-full bg-cyan-500/10 blur-[120px]" />
+      <div className="pointer-events-none absolute -left-32 bottom-0 h-80 w-80 rounded-full bg-blue-500/10 blur-[110px]" />
 
-      <div className="absolute left-0 top-24 h-[500px] w-[500px] rounded-full bg-cyan-400/10 blur-[180px]" />
-
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid items-center gap-20 lg:grid-cols-2">
-          {/* LEFT */}
-
+      <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+        <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
+          {/* Text content */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="order-1 lg:order-2"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.65 }}
           >
-            {/* Badge */}
-
-            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">
-              <Sparkles className="h-4 w-4" />
-              AI Governance
+            {/* Eyebrow */}
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/[0.06] px-4 py-2 text-xs font-semibold tracking-[0.16em] text-cyan-600">
+              <Code2 size={15} />
+              Code Assist
             </div>
 
-            {/* Heading */}
-
-            <h2 className="mt-6 text-4xl font-bold leading-none text-slate-900 lg:text-4xl">
-              Trust Every Prediction.
-              <br />
-              Explain Every Decision.
+            <h2 className="max-w-2xl text-4xl font-semibold leading-tight tracking-tight text-slate-900 ">
+              Bring AI assistance into the developer workflow.
             </h2>
 
-            {/* Description */}
-
-            <p className="mt-6 text-md leading-8 text-slate-600">
-              Build enterprise AI systems with complete transparency. Understand
-              how every prediction is generated, evaluate model performance
-              through comprehensive metrics, and trace production decisions back
-              to the exact training data, feature engineering workflow, and
-              model version.
+            <p className="mt-6 max-w-xl text-base leading-6 text-slate-600 text-md">
+              Support development with AI-powered code assistance. SegForge Code
+              Assist brings AI into the coding experience, helping developers
+              work with code as part of their broader data and AI environment.
             </p>
-
-            {/* Capability Groups */}
-
-            <div className="mt-10 grid gap-6 md:grid-cols-2">
-              {capabilityGroups.map((group) => (
-                <div
-                  key={group.title}
-                  className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
-                >
-                  <div className="flex items-center gap-3">
-                    <group.icon className="h-7 w-7 text-cyan-600" />
-
-                    <h3 className="text-xl font-semibold text-slate-900">
-                      {group.title}
-                    </h3>
-                  </div>
-
-                  <div className="mt-6 space-y-3">
-                    {group.items.map((item) => (
-                      <div key={item} className="flex items-center gap-3">
-                        <CheckCircle2 className="h-4 w-4 text-cyan-500" />
-
-                        <span className="text-slate-700">{item}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Supporting Features */}
-
-            <div className="mt-10 space-y-5">
-              {governanceFeatures.map((feature) => (
-                <div
-                  key={feature.title}
-                  className="flex gap-5 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-cyan-200 hover:shadow-lg"
-                >
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-cyan-50">
-                    <feature.icon className="h-7 w-7 text-cyan-600" />
-                  </div>
-
-                  <div>
-                    <h3 className="text-lg font-semibold text-slate-900">
-                      {feature.title}
-                    </h3>
-
-                    <p className="mt-2 leading-7 text-slate-600">
-                      {feature.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Bottom Highlight */}
-
-            <div className="mt-10 overflow-hidden rounded-3xl border border-cyan-100 bg-gradient-to-r from-cyan-500 to-blue-600 p-[1px] shadow-lg">
-              <div className="rounded-[22px] bg-white px-8 py-6">
-                <div className="flex items-start gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-50">
-                    <ShieldCheck className="h-6 w-6 text-cyan-600" />
-                  </div>
-
-                  <div>
-                    <p className="text-lg font-semibold text-slate-900">
-                      Enterprise AI You Can Trust
-                    </p>
-
-                    <p className="mt-2 leading-7 text-slate-600">
-                      Explain every prediction, validate every model, and trace
-                      every production decision back to governed Apache Iceberg
-                      data through integrated model evaluation, explainability,
-                      and end-to-end data lineage.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
           </motion.div>
 
-          {/* RIGHT */}
-
+          {/* Developer code visual */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
+            initial={{ opacity: 0, y: 28, scale: 0.97 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.75, delay: 0.15 }}
             className="relative"
           >
-            <div className="absolute inset-0   bg-cyan-400/10 blur-3xl" />
+            {/* Outer glow */}
+            <div className="absolute -inset-5 rounded-3xl bg-cyan-400/[0.06] blur-2xl" />
 
-            <div className="overflow-hidden  border border-slate-200 bg-white shadow-2xl">
-              <img
-                src={Hero}
-                alt="AI Explainability & Governance"
-                className="w-full"
-              />
+            <div className="relative overflow-hidden rounded-2xl border border-slate-700/80 bg-[#090f1d] shadow-2xl shadow-black/30">
+              {/* Window header */}
+              <div className="flex items-center justify-between border-b border-slate-800 px-5 py-4">
+                <div className="flex items-center gap-2">
+                  <span className="h-2.5 w-2.5 rounded-full bg-rose-400/80" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-amber-300/80" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-emerald-400/80" />
+                </div>
+
+                <div className="flex items-center gap-2 text-xs text-slate-400">
+                  <Braces size={14} />
+                  data-analysis.js
+                </div>
+
+                <Terminal size={16} className="text-slate-500" />
+              </div>
+
+              {/* Code editor */}
+              <div className="p-5 sm:p-7">
+                <div className="mb-6 flex items-center gap-2 text-xs text-slate-500">
+                  <span className="text-cyan-300">src</span>
+                  <span>/</span>
+                  <span>data-analysis.js</span>
+                </div>
+
+                <div className="space-y-3 overflow-x-auto font-mono text-xs sm:text-sm">
+                  {codeLines.map((line, index) => (
+                    <motion.div
+                      key={line.number}
+                      initial={{ opacity: 0, x: 10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{
+                        duration: 0.35,
+                        delay: 0.25 + index * 0.08,
+                      }}
+                      className="flex min-w-max gap-5"
+                    >
+                      <span className="w-5 select-none text-right text-slate-600">
+                        {line.number}
+                      </span>
+                      <span
+                        className={
+                          index === 0 || index === 5
+                            ? "text-blue-300"
+                            : index === 2
+                              ? "text-cyan-200"
+                              : "text-slate-300"
+                        }
+                      >
+                        {line.text}
+                      </span>
+                    </motion.div>
+                  ))}
+                </div>
+
+                {/* AI assistance card */}
+                <motion.div
+                  initial={{ opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.7 }}
+                  className="mt-8 rounded-xl border border-cyan-400/20 bg-cyan-400/[0.06] p-4 sm:p-5"
+                >
+                  <div className="flex items-center gap-2 text-sm font-medium text-cyan-200">
+                    <Sparkles size={16} />
+                    Code Assist
+                  </div>
+
+                  <p className="mt-3 text-sm leading-6 text-slate-300">
+                    AI assistance for your code-related tasks, right within your
+                    development workflow.
+                  </p>
+
+                  <div className="mt-4 flex items-center gap-2 text-xs text-slate-500">
+                    <span className="h-1.5 w-1.5 rounded-full bg-cyan-300" />
+                    AI-powered developer assistance
+                  </div>
+                </motion.div>
+              </div>
+
+              {/* Bottom status bar */}
+              <div className="flex items-center justify-between border-t border-slate-800 px-5 py-3 text-[11px] text-slate-500">
+                <span className="flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-cyan-400" />
+                  SegForge Developer Workspace
+                </span>
+                <span>Code Assist</span>
+              </div>
             </div>
           </motion.div>
         </div>

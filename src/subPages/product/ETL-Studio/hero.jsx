@@ -46,16 +46,13 @@ const ETLStudioHero = () => {
             </div>
 
             <h1 className="mt-8 text-4xl font-bold leading-[1.05] text-slate-900 lg:text-5xl">
-              Move from
-              <br />
-              Point-Solution Chaos
-              <br />
+              Build data pipelines. <br />
               <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
-                to Unified ETL Excellence.
+                Run them at scale.
               </span>
             </h1>
 
-            <p className="mt-8 max-w-2xl text-md leading-8 text-slate-600">
+            <p className="mt-4 max-w-2xl text-md leading-6 text-slate-600">
               Design, execute, monitor, and optimize production-grade data
               pipelines in a single visual workspace powered by Apache Flink and
               Apache Iceberg. Build once, deploy anywhere, and orchestrate

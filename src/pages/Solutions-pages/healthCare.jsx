@@ -4,7 +4,7 @@ import HealthcareChallenge from "../../subPages/solutions/healthcare/challenge";
 import HealthcarePlatform from "../../subPages/solutions/healthcare/answer";
 import HealthcareUseCases from "../../subPages/solutions/healthcare/useCases";
 import HealthcareSovereignty from "../../subPages/solutions/healthcare/govern";
-import HealthcareCTA from "../../subPages/solutions/healthcare/cta";
+import CTA from "../../components/BottomCTA";
 import MainLayout from "../../layouts/mainLayout";
 
 const HealthCare = () => {
@@ -15,7 +15,7 @@ const HealthCare = () => {
       <HealthcarePlatform />
       <HealthcareUseCases />
       <HealthcareSovereignty />
-      <HealthcareCTA />
+      <CTA />
     </MainLayout>
   );
 };

@@ -109,14 +109,6 @@ const EnterpriseOperations = () => {
               to Production Tables.
             </h2>
 
-            {/* Description */}
-
-            <p className="mt-6 text-md leading-6 text-slate-600">
-              Automatically create, evolve, and manage enterprise lakehouse
-              tables using Apache Iceberg while maintaining transactional
-              consistency, open standards, and production-grade reliability.
-            </p>
-
             {/* Features */}
 
             <div className="mt-10 space-y-5">
@@ -141,26 +133,6 @@ const EnterpriseOperations = () => {
                   </div>
                 </motion.div>
               ))}
-            </div>
-
-            {/* Bottom Highlight */}
-
-            <div className="mt-10 rounded-3xl border border-cyan-100 bg-gradient-to-r from-cyan-50 to-white p-6">
-              <div className="flex items-start gap-4">
-                <CheckCircle2 className="mt-1 h-7 w-7 text-cyan-600" />
-
-                <div>
-                  <h3 className="text-xl font-semibold text-slate-900">
-                    Modern table management without operational complexity.
-                  </h3>
-
-                  <p className="mt-3 leading-7 text-slate-600">
-                    Automatically ingest data, evolve schemas, guarantee ACID
-                    consistency, and manage production-ready Apache Iceberg
-                    tables without manual administration.
-                  </p>
-                </div>
-              </div>
             </div>
           </motion.div>
         </div>

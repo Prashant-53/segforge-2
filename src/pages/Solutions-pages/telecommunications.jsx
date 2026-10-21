@@ -5,7 +5,7 @@ import TelecomPlatform from "../../subPages/solutions/Telecommunications/answer"
 import TelecomUseCases from "../../subPages/solutions/Telecommunications/usecases";
 import TelecomGovernance from "../../subPages/solutions/Telecommunications/govern";
 import TelecomSovereignty from "../../subPages/solutions/Telecommunications/sovereignty";
-import TelecomCTA from "../../subPages/solutions/Telecommunications/cta";
+import CTA from "../../components/BottomCTA";
 import MainLayout from "../../layouts/mainLayout";
 
 const Telecom = () => {
@@ -17,7 +17,7 @@ const Telecom = () => {
       <TelecomUseCases />
       <TelecomGovernance />
       <TelecomSovereignty />
-      <TelecomCTA />
+      <CTA />
     </MainLayout>
   );
 };

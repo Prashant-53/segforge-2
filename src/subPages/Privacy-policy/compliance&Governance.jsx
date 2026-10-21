@@ -132,14 +132,14 @@ const ComplianceGovernance = () => {
             Compliance & Governance
           </div>
 
-          <h2 className="mt-6 text-4xl font-bold text-slate-900 md:text-5xl">
+          <h2 className="mt-6 text-4xl font-bold text-slate-900 ">
             Enterprise Governance
             <span className="block bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
               Built Into The Platform
             </span>
           </h2>
 
-          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-600">
+          <p className="mx-auto mt-6 max-w-3xl text-md leading-6 text-slate-600">
             Seg Forge combines enterprise-grade governance, comprehensive
             auditing, and granular access control with open lakehouse
             technologies, enabling organizations to build secure and compliant
@@ -149,7 +149,7 @@ const ComplianceGovernance = () => {
 
         {/* Compliance Standards */}
 
-        <div className="mt-20">
+        <div className="mt-12">
           <div className="mb-10 flex items-center gap-4">
             <div className="h-12 w-1 rounded-full bg-cyan-500" />
 
@@ -231,9 +231,7 @@ const ComplianceGovernance = () => {
             {/* Audit Flow */}
 
             <div className="rounded-[32px] bg-slate-900 p-10 text-white shadow-xl">
-              <h3 className="text-2xl font-bold">
-                End-to-End Audit Trail
-              </h3>
+              <h3 className="text-2xl font-bold">End-to-End Audit Trail</h3>
 
               <p className="mt-4 text-slate-300 leading-8">
                 Every platform change is recorded and can be traced throughout
@@ -341,9 +339,7 @@ const ComplianceGovernance = () => {
                 <div className="flex items-center gap-3">
                   <CheckCircle2 className="h-7 w-7" />
 
-                  <h3 className="text-2xl font-bold">
-                    Governance by Design
-                  </h3>
+                  <h3 className="text-2xl font-bold">Governance by Design</h3>
                 </div>
 
                 <p className="mt-5 leading-8 text-cyan-100">

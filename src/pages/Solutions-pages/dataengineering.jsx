@@ -5,7 +5,7 @@ import AutomatedIngestion from "../../subPages/solutions/Data-Engineering/ingest
 import ModernLakehouse from "../../subPages/solutions/Data-Engineering/lakehouse";
 import ResilientOrchestrationMonitoring from "../../subPages/solutions/Data-Engineering/monitoring";
 import PipelineBlueprintGallery from "../../subPages/solutions/Data-Engineering/piplelineGallery";
-import DataEngineeringCTA from "../../subPages/solutions/Data-Engineering/cta";
+import CTA from "../../components/BottomCTA";
 import MainLayout from "../../layouts/mainLayout";
 
 const DataEngineering = () => {
@@ -17,7 +17,7 @@ const DataEngineering = () => {
       <ModernLakehouse />
       <ResilientOrchestrationMonitoring />
       <PipelineBlueprintGallery />
-      <DataEngineeringCTA />
+      <CTA />
     </MainLayout>
   );
 };

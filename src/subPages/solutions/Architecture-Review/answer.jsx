@@ -81,7 +81,7 @@ const ArchitectureFramework = () => {
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
                 {frameworkStats.map((stat) => (
                   <div key={stat.label}>
-                    <div className="text-2xl lg:text-2xl font-bold text-slate-900">
+                    <div className="text-xl lg:text-2xl font-bold text-slate-900">
                       {stat.value}
                     </div>
 
@@ -100,4 +100,3 @@ const ArchitectureFramework = () => {
 };
 
 export default ArchitectureFramework;
-

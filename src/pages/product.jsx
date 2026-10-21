@@ -499,12 +499,12 @@ const product = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className=" mb-16"
+              className=" mb-16 text-center"
             >
               <div className="inline-block px-4 py-2 bg-purple-50 text-purple-700 rounded-full text-sm font-medium mb-6">
                 Open Lakehouse
               </div>
-              <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6">
+              <h2 className="text-3xl md:text-5xl  font-bold text-slate-900 mb-6">
                 Built on Open Standards
               </h2>
               <p className="text-md text-slate-600 max-w-3xl mx-auto">
@@ -597,7 +597,7 @@ const product = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className=" mb-16"
+              className=" mb-16 text-center"
             >
               <div className="inline-block px-4 py-2 bg-green-50 text-green-700 rounded-full text-sm font-medium mb-6">
                 Governance & Security

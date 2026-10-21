@@ -40,7 +40,7 @@ const PrivacyPolicyHeader = () => {
 
           {/* Heading */}
 
-          <h1 className="mt-8 text-5xl font-bold tracking-tight text-slate-900 sm:text-6xl lg:text-7xl">
+          <h1 className="mt-8 text-5xl font-bold tracking-tight text-slate-900  ">
             Seg Forge
             <br />
             <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
@@ -50,7 +50,7 @@ const PrivacyPolicyHeader = () => {
 
           {/* Description */}
 
-          <p className="mx-auto mt-8 max-w-3xl text-lg leading-8 text-slate-600">
+          <p className="mx-auto mt-8 max-w-3xl text-md leading-6 text-slate-600">
             Your privacy matters to us. This Privacy Policy explains how Seg
             Forge collects, uses, stores, and protects your information when you
             use our products, services, website, and documentation.
@@ -58,7 +58,7 @@ const PrivacyPolicyHeader = () => {
 
           {/* Metadata */}
 
-          <div className="mx-auto mt-12 flex flex-col items-center justify-center gap-4 rounded-2xl border border-slate-200 bg-white px-8 py-6 shadow-sm sm:flex-row sm:gap-12">
+          <div className="mx-auto max-w-md mt-12 flex flex-col items-center justify-center gap-4 rounded-2xl border border-slate-200 bg-white px-8 py-6 shadow-sm sm:flex-row sm:gap-12">
             <div>
               <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
                 Last Updated

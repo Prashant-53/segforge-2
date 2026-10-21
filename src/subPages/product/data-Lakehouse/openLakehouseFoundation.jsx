@@ -1,191 +1,103 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { GitBranch, History, Tag, RotateCcw, CheckCircle2 } from "lucide-react";
-import Nessie from "../../../assets/Products/DataLakehouse/iceberg.png";
+import { Database } from "lucide-react";
 
-const capabilityGroups = [
-  {
-    icon: GitBranch,
-    title: "Branches",
-    items: ["Zero-copy Workspaces", "Development Environments"],
-  },
-  {
-    icon: History,
-    title: "Commits",
-    items: ["Track Schema Changes", "Data Updates", "Metadata Changes"],
-  },
-];
+// import NotebookSchemaImage from "../../../assets/Products/Notebooks/notebook-schema-browser.webp";
 
-const nessieFeatures = [
-  {
-    icon: Tag,
-    title: "Tags",
-    description:
-      "Create production checkpoints and snapshot releases to promote validated datasets through your development lifecycle.",
-  },
-  {
-    icon: RotateCcw,
-    title: "Rollbacks",
-    description:
-      "Recover instantly from mistakes, undo unwanted changes, and deploy updates safely with complete confidence.",
-  },
-];
-
-const NessieSection = () => {
+const WorkAcrossDataObjects = () => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-white to-gray-50 py-28">
-      {/* Animated Grid */}
+    <section className="relative overflow-hidden bg-white py-20 sm:py-24 lg:py-28">
+      {/* Background Grid */}
+      <div className="pointer-events-none absolute inset-0 opacity-[0.035]">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `
+              linear-gradient(to right, #1affe5 1px, transparent 1px),
+              linear-gradient(to bottom, #1affe5 1px, transparent 1px)
+            `,
+            backgroundSize: "80px 80px",
+          }}
+        />
+      </div>
 
-      <motion.div
-        animate={{
-          backgroundPosition: ["0px 0px", "120px 120px"],
-        }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          ease: "linear",
-        }}
-        className="absolute inset-0 opacity-[0.04]"
-        style={{
-          backgroundImage: `
-            linear-gradient(to right,#06b6d4 1px,transparent 1px),
-            linear-gradient(to bottom,#06b6d4 1px,transparent 1px)
-          `,
-          backgroundSize: "80px 80px",
-        }}
-      />
-
-      {/* Glow */}
-
-      <div className="absolute right-0 top-32 h-[500px] w-[500px] rounded-full bg-cyan-400/10 blur-[180px]" />
+      {/* Ambient Glow */}
+      <div className="pointer-events-none absolute left-[15%] top-1/2 h-[500px] w-[600px] -translate-y-1/2 rounded-full bg-[#1affe5]/10 blur-[180px]" />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid items-center gap-20 lg:grid-cols-2">
-          {/* LEFT IMAGE */}
-
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="relative"
-          >
-            {/* Glow */}
-
-            <div className="absolute inset-0 rounded-[36px] bg-cyan-400/10 blur-3xl" />
-
-            {/* Screenshot */}
-
-            <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
-              <img
-                src={Nessie}
-                alt="Apache Nessie Version Control"
-                className="w-full"
-              />
-            </div>
-          </motion.div>
-
-          {/* RIGHT CONTENT */}
-
+        <div className="grid items-center gap-12 lg:grid-cols-[1.25fr_0.75fr] lg:gap-16 xl:gap-20">
+          {/* =====================================================
+              TEXT
+              Mobile  → first
+              Desktop → right
+          ====================================================== */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="order-1 lg:order-1"
           >
-            {/* Badge */}
-
-            <div className="inline-flex rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">
-              Apache Nessie
+            {/* Eyebrow */}
+            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">
+              <Database className="h-4 w-4" />
+              Work Across Your Data Objects{" "}
             </div>
 
             {/* Heading */}
-
-            <h2 className="mt-6 text-4xl font-bold leading-none text-slate-900 lg:text-4xl">
-              Version Your Data
-              <br />
-              Like You Version Code.
+            <h2 className="mt-3 max-w-xl text-4xl font-bold tracking-tight text-slate-900 ">
+              One worksheet. <br />
+              Your entire data workspace.
             </h2>
 
             {/* Description */}
-
-            <p className="mt-6 text-md leading-6 text-slate-600">
-              Experiment safely using isolated branches, merge validated changes
-              into production, and recover instantly using Git-inspired data
-              versioning.
+            <p className="mt-3 max-w-lg text-base leading-7 text-slate-600 text-md">
+              Work with connections, tables, streams, pipelines, notebooks,
+              tasks, and other supported objects from a unified workspace. Move
+              between data ingestion, processing, and analytics while keeping
+              your work connected.{" "}
             </p>
+          </motion.div>
 
-            {/* Capability Groups */}
+          {/* =====================================================
+              PRODUCT SCREENSHOT
+              Mobile  → after text
+              Desktop → left
+          ====================================================== */}
+          <motion.div
+            initial={{ opacity: 0, x: -30, scale: 0.98 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{
+              duration: 0.8,
+              ease: "easeOut",
+              delay: 0.15,
+            }}
+            className="relative order-2 min-w-0 lg:order-2"
+          >
+            {/* Screenshot Glow */}
+            <div className="pointer-events-none absolute -inset-6 rounded-[40px] bg-[#1affe5]/10 blur-3xl" />
 
-            <div className="mt-10 grid gap-6 md:grid-cols-2">
-              {capabilityGroups.map((group) => (
-                <div
-                  key={group.title}
-                  className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
-                >
-                  <div className="flex items-center gap-3">
-                    <group.icon className="h-7 w-7 text-cyan-600" />
-
-                    <h3 className="text-xl font-semibold text-slate-900">
-                      {group.title}
-                    </h3>
-                  </div>
-
-                  <div className="mt-6 space-y-3">
-                    {group.items.map((item) => (
-                      <div key={item} className="flex items-center gap-3">
-                        <CheckCircle2 className="h-4 w-4 text-cyan-500" />
-
-                        <span className="text-slate-700">{item}</span>
-                      </div>
-                    ))}
-                  </div>
+            {/* Product Frame */}
+            <div className="relative overflow-hidden rounded-[24px] border border-slate-200 bg-white shadow-[0_25px_70px_rgba(15,23,42,0.12)] sm:rounded-[30px]">
+              {/* Browser Header */}
+              <div className="flex h-10 items-center border-b border-slate-200 bg-slate-50 px-4 sm:h-11">
+                <div className="flex items-center gap-1.5">
+                  <span className="h-2.5 w-2.5 rounded-full bg-slate-300" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-slate-300" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-slate-300" />
                 </div>
-              ))}
-            </div>
 
-            {/* Supporting Features */}
+                <div className="mx-auto hidden h-5 w-1/3 rounded-md border border-slate-200 bg-white sm:block" />
+              </div>
 
-            <div className="mt-10 space-y-5">
-              {nessieFeatures.map((feature) => (
-                <div
-                  key={feature.title}
-                  className="flex gap-5 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-cyan-200 hover:shadow-lg"
-                >
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-cyan-50">
-                    <feature.icon className="h-7 w-7 text-cyan-600" />
-                  </div>
-
-                  <div>
-                    <h3 className="text-lg font-semibold text-slate-900">
-                      {feature.title}
-                    </h3>
-
-                    <p className="mt-2 leading-7 text-slate-600">
-                      {feature.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Bottom Highlight */}
-
-            <div className="mt-10 rounded-3xl border border-cyan-100 bg-gradient-to-r from-cyan-50 to-white p-6">
-              <div className="flex items-start gap-4">
-                <CheckCircle2 className="mt-1 h-7 w-7 text-cyan-600" />
-
-                <div>
-                  <h3 className="text-xl font-semibold text-slate-900">
-                    Every Dataset Has a Complete Version History.
-                  </h3>
-
-                  <p className="mt-3 leading-7 text-slate-600">
-                    Build, test, merge, and recover data changes with Git-style
-                    version control that enables safe experimentation and
-                    enterprise-scale collaboration across your lakehouse.
-                  </p>
-                </div>
+              {/* Screenshot */}
+              <div className="w-full overflow-x-auto bg-white">
+                {/* <img
+                  src={NotebookSchemaImage}
+                  alt="SegForge Notebooks showing the integrated schema browser, workspace namespaces, table columns, and an inserted SQL query"
+                  className="block h-auto w-full object-contain"
+                /> */}
               </div>
             </div>
           </motion.div>
@@ -195,4 +107,4 @@ const NessieSection = () => {
   );
 };
 
-export default NessieSection;
+export default WorkAcrossDataObjects;

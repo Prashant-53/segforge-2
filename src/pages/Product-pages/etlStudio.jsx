@@ -1,10 +1,11 @@
 import React from "react";
 import ETLStudioHero from "../../subPages/product/ETL-Studio/hero";
-import ETLWorkspace from "../../subPages/product/ETL-Studio/drag-n-drop";
-import TransformationEngine from "../../subPages/product/ETL-Studio/tranformationEngine";
-import IntelligentEngineering from "../../subPages/product/ETL-Studio/features";
-import DualExecutionEngine from "../../subPages/product/ETL-Studio/dualEngine";
+import ETLWorkspace from "../../subPages/product/ETL-Studio/CapabilityOverview";
+import TransformationEngine from "../../subPages/product/ETL-Studio/VisualPipelineBuilder";
+import IntelligentEngineering from "../../subPages/product/ETL-Studio/IntelligentDataWorkflows";
+import BatchStreaming from "../../subPages/product/ETL-Studio/batchStreaming";
 import LakehouseDestinations from "../../subPages/product/ETL-Studio/lakehouseDestinations";
+import ETLStudioFAQ from "../../subPages/product/ETL-Studio/faq";
 import CTABanner from "../../components/BottomCTA";
 import MainLayout from "../../layouts/mainLayout";
 
@@ -15,8 +16,9 @@ const ETLSudio = () => {
       <ETLWorkspace />
       <TransformationEngine />
       <IntelligentEngineering />
-      <DualExecutionEngine />
+      <BatchStreaming />
       <LakehouseDestinations />
+      {/* <ETLStudioFAQ /> */}
       <CTABanner />
     </MainLayout>
   );

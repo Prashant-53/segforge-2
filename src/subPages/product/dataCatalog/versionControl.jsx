@@ -110,28 +110,6 @@ const VersionControlSection = () => {
             </motion.div>
           ))}
         </div>
-
-        {/* Bottom Highlight */}
-
-        <div className="mt-16 rounded-[32px] bg-gradient-to-r from-cyan-500 to-blue-600 p-[1px] shadow-xl">
-          <div className="rounded-[31px] bg-white px-10 py-12 text-center">
-            <CheckCircle2 className="mx-auto h-10 w-10 text-cyan-600" />
-
-            <h3 className="mt-6 text-3xl font-bold text-slate-900">
-              Every change is tracked.
-              <br />
-              <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
-                Every dataset is recoverable.
-              </span>
-            </h3>
-
-            <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-600">
-              From experimentation to production, Apache Nessie gives your
-              lakehouse the same confidence developers have enjoyed with Git for
-              years.
-            </p>
-          </div>
-        </div>
       </div>
     </section>
   );

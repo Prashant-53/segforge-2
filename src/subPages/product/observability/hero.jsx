@@ -32,7 +32,7 @@ const ObservabilityHero = () => {
               Observability Platform
             </div>
 
-            <h1 className="text-4xl sm:text-4xl lg:text-6xl font-bold text-slate-900 leading-[1.05]">
+            <h1 className="text-4xl lg:text-5xl font-bold text-slate-900 leading-none">
               See what's happening
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">

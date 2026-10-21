@@ -2,42 +2,35 @@ import React from "react";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
+  ArrowUpRight,
   Database,
-  Cpu,
-  Layers,
-  Shield,
   GitBranch,
   Container,
-  Zap,
   Terminal,
   Landmark,
   HeartPulse,
   ShoppingCart,
   Factory,
-  Laptop2,
   RadioTower,
   Braces,
-  Rocket,
   Code2,
-  CheckCircle2,
-  ShieldCheck,
+  Network,
   Cloud,
-  LockOpen,
+  Workflow,
+  BrainCircuit,
+  Boxes,
+  DatabaseZap,
+  Route,
+  Sparkles,
 } from "lucide-react";
 
-import { Workflow, Layers3, BrainCircuit } from "lucide-react";
-import { Boxes, DatabaseZap, Route } from "lucide-react";
-
 import { Link } from "react-router-dom";
-import { trustedCompanies } from "../mock";
 import { CTABanner } from "../components/BottomCTA";
 import MainLayout from "../layouts/mainLayout";
 import UnifiedPlatform from "../assets/homepage/UnifiedPlatform.webp";
-import Industries from "../assets/homepage/industries.webp";
-import OpenStandard from "../assets/homepage/openStandard.webp";
 import PlatformCapabalities from "../assets/homepage/platformCapabilities.webp";
 import DevExperience from "../assets/homepage/devexp.webp";
-
+import HeroVideo from "../assets/Hero.mp4";
 const HomePage = () => {
   const trustedCompanies = [
     "Fortune 500",
@@ -49,46 +42,7 @@ const HomePage = () => {
     "Logistics",
     "Energy",
   ];
-  const workflowSteps = [
-    {
-      icon: Database,
-      title: "Enterprise Sources",
-      description:
-        "Connect databases, cloud storage, Kafka streams, APIs, and enterprise applications through native connectors.",
-    },
-    {
-      icon: Workflow,
-      title: "Visual ETL",
-      description:
-        "Design production-grade pipelines using an intuitive drag-and-drop workspace with 90+ transformation nodes.",
-    },
-    {
-      icon: Cpu,
-      title: "Apache Flink",
-      description:
-        "Execute high-performance batch and streaming workloads using a unified distributed processing engine.",
-    },
-    {
-      icon: Layers3,
-      title: "Apache Iceberg",
-      description:
-        "Store governed datasets with ACID transactions, schema evolution, and open table formats.",
-    },
-    {
-      icon: BrainCircuit,
-      title: "Analytics & AI",
-      description:
-        "Power dashboards, machine learning, notebooks, and enterprise AI directly from governed lakehouse data.",
-    },
-  ];
 
-  const highlights = [
-    "Enterprise Connectivity",
-    "Visual Pipeline Design",
-    "Real-Time Processing",
-    "Lakehouse Storage",
-    "AI & BI Consumption",
-  ];
   const capabilities = [
     {
       icon: Boxes,
@@ -130,57 +84,66 @@ const HomePage = () => {
 
   const industries = [
     {
-      icon: Landmark,
       title: "Financial Services",
+      path: "/solutions/financial-services",
+      icon: Landmark,
       solutions: [
-        "Real-time Fraud Detection",
-        "Regulatory Reporting",
-        "Customer Risk Analytics",
+        "Real-time transaction processing",
+        "Risk analytics and reporting",
+        "Governed financial data",
       ],
     },
     {
-      icon: HeartPulse,
       title: "Healthcare",
+      path: "/solutions/healthcare",
+      icon: HeartPulse,
       solutions: [
-        "Unified Patient Records",
-        "Clinical Analytics",
-        "Predictive Healthcare",
+        "Connected healthcare data",
+        "Real-time operational insights",
+        "Analytics-ready datasets",
       ],
     },
     {
+      title: "Retail & E-commerce",
+      path: "/solutions/retail",
       icon: ShoppingCart,
-      title: "Retail & E-Commerce",
-      solutions: ["Customer 360", "Demand Forecasting", "Dynamic Pricing"],
+      solutions: [
+        "Customer and sales analytics",
+        "Real-time inventory insights",
+        "Unified data pipelines",
+      ],
     },
     {
-      icon: Factory,
       title: "Manufacturing",
+      path: "/solutions/manufacturing",
+      icon: Factory,
       solutions: [
-        "IoT Analytics",
-        "Predictive Maintenance",
-        "Supply Chain Optimization",
+        "Operational data integration",
+        "Production monitoring",
+        "Predictive analytics foundations",
       ],
     },
     {
-      icon: Laptop2,
-      title: "Technology",
-      solutions: [
-        "SaaS Analytics",
-        "Product Telemetry",
-        "Operational Intelligence",
-      ],
-    },
-    {
-      icon: RadioTower,
       title: "Telecommunications",
+      path: "/solutions/telecommunications",
+      icon: RadioTower,
       solutions: [
-        "Network Monitoring",
-        "Subscriber Analytics",
-        "Usage Optimization",
+        "Streaming network data",
+        "Usage and performance analytics",
+        "Scalable data processing",
+      ],
+    },
+    {
+      title: "Technology & SaaS",
+      path: "/solutions/technology",
+      icon: Cloud,
+      solutions: [
+        "Product usage analytics",
+        "Connected application data",
+        "Scalable data infrastructure",
       ],
     },
   ];
-
   const developerFeatures = [
     {
       icon: Container,
@@ -220,77 +183,74 @@ const HomePage = () => {
     },
   ];
 
-  const features = [
-    {
-      icon: Container,
-      title: "Docker Deployment",
-      description:
-        "Spin up the complete Seg Forge platform locally in minutes using Docker Compose.",
-    },
-    {
-      icon: Braces,
-      title: "REST APIs",
-      description:
-        "Integrate every platform capability through secure REST APIs built for automation.",
-    },
-    {
-      icon: Code2,
-      title: "Python & TypeScript SDKs",
-      description:
-        "Develop faster using modern SDKs with type-safe models and IDE autocomplete.",
-    },
-    {
-      icon: Terminal,
-      title: "CLI Automation",
-      description:
-        "Deploy pipelines, manage workflows, and operate your platform directly from the terminal.",
-    },
-    {
-      icon: Workflow,
-      title: "CI/CD Ready",
-      description:
-        "Automate deployments using GitHub Actions and enterprise DevOps pipelines.",
-    },
-    {
-      icon: GitBranch,
-      title: "Infrastructure as Code",
-      description:
-        "Version, review, and deploy your complete data platform using Git workflows.",
-    },
-  ];
+  const technology = [
+    { name: "Apache Flink", logo: "/logos/flink.svg", row: 1 },
+    { name: "Apache Iceberg", logo: "/logos/iceberg.svg", row: 1 },
+    { name: "Apache Kafka", logo: "/logos/kafka.svg", row: 1 },
+    { name: "Debezium", logo: "/logos/debezium.svg", row: 1 },
 
-  const technologies = [
+    { name: "Trino", logo: "/logos/trino.svg", row: 2 },
+    // { name: "Project Nessie", logo: "/logos/nessie.svg", row: 2 },
+    { name: "PostgreSQL", logo: "/logos/postgresql.svg", row: 2 },
+    { name: "Redis", logo: "/logos/redis.svg", row: 2 },
+    { name: "MLflow", logo: "/logos/MLflow.svg", row: 2 },
+
+    { name: "Apache Superset", logo: "/logos/superset.svg", row: 3 },
+    { name: "MinIO", logo: "/logos/minio.svg", row: 3 },
+    // { name: "FastAPI", logo: "/logos/fastapi.svg", row: 3 },
+    // { name: "Apache Parquet", logo: "/logos/parquet.svg", row: 3 },
+  ];
+  const aiCapabilities = [
     {
-      icon: Workflow,
-      title: "Apache Flink",
-      subtitle: "Distributed Stream & Batch Processing",
+      icon: BrainCircuit,
+      title: "Machine Learning & MLOps",
+      description:
+        "Build data-driven ML workflows with experiment tracking, model evaluation, and batch scoring integrated into your data platform.",
+      tag: "ML WORKFLOWS",
     },
     {
-      icon: Layers3,
-      title: "Apache Iceberg",
-      subtitle: "Open Lakehouse Table Format",
-    },
-    {
-      icon: GitBranch,
-      title: "Apache Nessie",
-      subtitle: "Git-like Data Version Control",
+      icon: Sparkles,
+      title: "AI Agents & LLMs",
+      description:
+        "Bring AI-powered experiences into your platform with capabilities for working with language models and AI-driven tasks.",
+      tag: "AI INTELLIGENCE",
     },
     {
       icon: Database,
-      title: "Apache Kafka",
-      subtitle: "Event Streaming Platform",
+      title: "RAG & Lakehouse Context",
+      description:
+        "Connect AI workflows with enterprise data to support context-aware retrieval and more relevant information access.",
+      tag: "DATA + AI",
+    },
+    {
+      icon: Workflow,
+      title: "AI Workflow Automation",
+      description:
+        "Connect data processing and AI tasks within coordinated workflows, bringing data preparation and downstream operations together.",
+      tag: "ORCHESTRATION",
+    },
+    {
+      icon: Code2,
+      title: "AI Developer Tools",
+      description:
+        "Bring AI-assisted development capabilities closer to the data engineering workflows where teams build and manage their solutions.",
+      tag: "DEVELOPER EXPERIENCE",
+    },
+    {
+      icon: Network,
+      title: "Semantic Intelligence",
+      description:
+        "Organize business terminology and shared context to make enterprise data assets easier to discover and understand.",
+      tag: "DATA CONTEXT",
     },
   ];
 
-  const benefits = [
-    "Open Table Formats",
-    "Cloud Agnostic Deployment",
-    "No Proprietary Storage",
-    "Customer-Owned Infrastructure",
-    "Git-like Data Versioning",
-    "Enterprise Governance",
-    "Standards-Based Architecture",
+  const rows = [
+    technology.filter((item) => item.row === 1),
+    technology.filter((item) => item.row === 2),
+    technology.filter((item) => item.row === 3),
   ];
+
   return (
     <MainLayout>
       <div className="min-h-screen bg-white">
@@ -346,108 +306,31 @@ const HomePage = () => {
               </motion.div>
               {/* RIGHT VISUAL */}
               <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, x: 30, scale: 0.95 }}
+                animate={{ opacity: 1, x: 0, scale: 1 }}
                 transition={{ duration: 0.8 }}
-                className="relative order-2 flex h-[260px] items-center justify-center sm:h-[380px] lg:h-[500px]"
+                className="relative order-2 flex w-full items-center justify-center"
               >
-                {/* Glow */}
+                {/* Glow behind video */}
+                <div className="absolute h-[260px] w-[260px] sm:h-[380px] sm:w-[380px] lg:h-[500px] lg:w-[500px] rounded-full bg-white/10 blur-3xl" />
 
-                <div className="absolute w-[220px] h-[220px] sm:w-[320px] sm:h-[320px] lg:w-[450px] lg:h-[450px] bg-white/10 rounded-full blur-3xl" />
+                {/* Video container */}
+                <div className="relative z-10 w-full max-w-[620px] overflow-hidden rounded-2xl border border-white/30 bg-black/10 shadow-2xl backdrop-blur-sm">
+                  <video
+                    className="block aspect-video h-auto w-full object-cover"
+                    src={HeroVideo}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                  >
+                    Your browser does not support the video tag.
+                  </video>
 
-                {/* Orbit Ring */}
-
-                <motion.div
-                  animate={{ rotate: 360 }}
-                  transition={{
-                    duration: 45,
-                    repeat: Infinity,
-                    ease: "linear",
-                  }}
-                  className="absolute w-[220px] h-[220px] sm:w-[320px] sm:h-[320px]lg:w-[420px] lg:h-[420px] rounded-full border border-white/20"
-                >
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3 h-3 bg-white rounded-full" />
-                  <div className="absolute bottom-10 left-10 w-2 h-2 bg-white/80 rounded-full" />
-                  <div className="absolute top-1/3 right-8 w-2 h-2 bg-white/80 rounded-full" />
-                </motion.div>
-
-                {/* Crystal */}
-
-                <motion.svg
-                  className="w-40 sm:w-60 lg:w-80 h-auto"
-                  viewBox="0 0 340 340"
-                  animate={{
-                    y: [0, -12, 0],
-                    rotate: [-2, 2, -2],
-                  }}
-                  transition={{
-                    duration: 7,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                >
-                  {/* Top */}
-
-                  <polygon
-                    points="170,40 250,150 90,150"
-                    fill="white"
-                    fillOpacity="0.95"
-                  />
-
-                  {/* Left */}
-
-                  <polygon
-                    points="90,150 170,150 130,250 50,250"
-                    fill="white"
-                    fillOpacity="0.7"
-                  />
-
-                  {/* Right */}
-
-                  <polygon
-                    points="170,150 250,150 290,250 210,250"
-                    fill="white"
-                    fillOpacity="0.7"
-                  />
-
-                  {/* Bottom */}
-
-                  <polygon
-                    points="130,250 210,250 170,300"
-                    fill="white"
-                    fillOpacity="0.95"
-                  />
-
-                  {/* Outline */}
-
-                  <polygon
-                    points="170,40 250,150 290,250 210,250 170,300 130,250 50,250 90,150"
-                    fill="none"
-                    stroke="rgba(255,255,255,0.35)"
-                    strokeWidth="2"
-                  />
-                </motion.svg>
-
-                {/* Floating Particles */}
-
-                {[...Array(8)].map((_, i) => (
-                  <motion.div
-                    key={i}
-                    animate={{
-                      y: [0, -20, 0],
-                      opacity: [0.3, 1, 0.3],
-                    }}
-                    transition={{
-                      duration: 3 + i,
-                      repeat: Infinity,
-                    }}
-                    className="absolute w-2 h-2 rounded-full bg-white"
-                    style={{
-                      left: `${15 + i * 10}%`,
-                      top: `${20 + (i % 4) * 15}%`,
-                    }}
-                  />
-                ))}
+                  {/* Subtle glass overlay/border */}
+                  <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/20" />
+                </div>
               </motion.div>
             </div>
           </div>
@@ -495,30 +378,29 @@ const HomePage = () => {
           </div>
         </section>
         {/* Platform Overview */}
-        <section className="relative overflow-hidden bg-white py-28">
-          {/* Background Grid */}
 
+        <section className="relative overflow-hidden bg-white py-20 ">
+          {/* Background Grid */}
           <div className="absolute inset-0 opacity-[0.04]">
             <div
               className="absolute inset-0"
               style={{
                 backgroundImage: `
-              linear-gradient(to right,#06b6d4 1px,transparent 1px),
-              linear-gradient(to bottom,#06b6d4 1px,transparent 1px)
-            `,
+          linear-gradient(to right,#06b6d4 1px,transparent 1px),
+          linear-gradient(to bottom,#06b6d4 1px,transparent 1px)
+        `,
                 backgroundSize: "80px 80px",
               }}
             />
           </div>
 
           {/* Glow */}
-
           <div className="absolute right-0 top-24 h-[500px] w-[500px] rounded-full bg-cyan-400/10 blur-[180px]" />
 
           <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="grid items-center gap-20 lg:grid-cols-2">
+            {/* Main Content: Paragraph + Image */}
+            <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
               {/* LEFT CONTENT */}
-
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -529,73 +411,139 @@ const HomePage = () => {
                   Unified Platform
                 </div>
 
-                <h2 className="mt-6 text-4xl font-bold leading-none text-slate-900 lg:text-4xl">
+                <h2 className="mt-6 text-4xl font-bold leading-tight text-slate-900 ">
                   One Workspace.
                   <br />
                   Every Data Workflow.
                 </h2>
 
-                <p className="mt-6 text-md leading-6 text-slate-600">
-                  Move from raw enterprise data to production-ready analytics
-                  without switching between disconnected tools. Design,
-                  orchestrate, transform, govern, and monitor every workflow
-                  inside one intelligent platform built for modern data
-                  engineering.
+                <p className="mt-6 text-base leading-7 text-slate-600">
+                  SegForge brings the entire data lifecycle into one
+                  workspace—from connecting data sources and building visual
+                  pipelines to managing and automating workflows. It helps teams
+                  prepare reliable data, maintain governance, monitor
+                  operations, and deliver analytics, dashboards, notebooks, and
+                  machine learning from a shared platform, reducing the need for
+                  disconnected tools.
                 </p>
-
-                {/* Workflow */}
-
-                <div className="mt-12 space-y-6">
-                  {workflowSteps.map((step, index) => (
-                    <div key={step.title}>
-                      <div className="flex items-start gap-5">
-                        <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-cyan-50">
-                          <step.icon className="h-7 w-7 text-cyan-600" />
-                        </div>
-
-                        <div>
-                          <h3 className="text-xl font-semibold text-slate-900">
-                            {step.title}
-                          </h3>
-
-                          <p className="mt-2 leading-7 text-slate-600">
-                            {step.description}
-                          </p>
-                        </div>
-                      </div>
-
-                      {index !== workflowSteps.length - 1 && (
-                        <div className="ml-7 my-4 flex">
-                          <ArrowRight className="h-5 w-5 rotate-90 text-cyan-400" />
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
               </motion.div>
 
               {/* RIGHT IMAGE */}
-
               <motion.div
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7 }}
               >
-                <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
+                <div className="overflow-hidden  border border-slate-200 bg-white shadow-xl shadow-slate-900/10">
                   <img
                     src={UnifiedPlatform}
-                    alt="Unified Platform Architecture"
-                    className="w-full"
+                    alt="SegForge unified data platform architecture"
+                    className="h-full w-full object-cover"
                   />
                 </div>
               </motion.div>
+            </div>
+
+            {/* Platform Highlights: Below Paragraph + Image */}
+            <div className="mt-20 grid grid-cols-1 gap-12 border-t border-slate-200 pt-12 sm:grid-cols-2 lg:mt-24 lg:grid-cols-3 lg:gap-12">
+              {[
+                {
+                  label: "UNIFIED",
+                  title: "Every workflow in one workspace",
+                  description:
+                    "Connect enterprise sources, build visual ETL pipelines, and orchestrate data workloads without switching between disconnected tools.",
+                  icon: (
+                    <svg
+                      viewBox="0 0 48 48"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.7"
+                      className="h-12 w-12"
+                    >
+                      <rect x="5" y="7" width="15" height="12" rx="2" />
+                      <rect x="28" y="7" width="15" height="12" rx="2" />
+                      <rect x="16" y="30" width="16" height="12" rx="2" />
+                      <path d="M20 13h8M24 13v11M12 19v5h24v-5M24 24v6" />
+                    </svg>
+                  ),
+                },
+                {
+                  label: "CONNECTED",
+                  title: "Real-time data, open lakehouse",
+                  description:
+                    "Combine CDC, Apache Flink processing, and Apache Iceberg storage to move data from operational systems into analytics-ready datasets.",
+                  icon: (
+                    <svg
+                      viewBox="0 0 48 48"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.7"
+                      className="h-12 w-12"
+                    >
+                      <circle cx="24" cy="24" r="6" />
+                      <circle cx="24" cy="6" r="3" />
+                      <circle cx="40" cy="15" r="3" />
+                      <circle cx="40" cy="33" r="3" />
+                      <circle cx="24" cy="42" r="3" />
+                      <circle cx="8" cy="33" r="3" />
+                      <circle cx="8" cy="15" r="3" />
+                      <path d="M24 9v9M37 16l-8 5M37 32l-8-5M24 39v-9M11 32l8-5M11 16l8 5" />
+                    </svg>
+                  ),
+                },
+                {
+                  label: "CONTROLLED",
+                  title: "Reliable, observable operations",
+                  description:
+                    "Manage workspace access, monitor job health, inspect execution logs, and recover workflows with visibility into data operations.",
+                  icon: (
+                    <svg
+                      viewBox="0 0 48 48"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.7"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="h-12 w-12"
+                    >
+                      <path d="M24 4 39 10v12c0 10-6 17-15 22C15 39 9 32 9 22V10L24 4Z" />
+                      <path d="m17 24 5 5 10-11" />
+                    </svg>
+                  ),
+                },
+              ].map((item, index) => (
+                <motion.div
+                  key={item.label}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.5, delay: index * 0.12 }}
+                  className="group"
+                >
+                  <div className="mb-7 text-[#26DEC9] transition-transform duration-300 group-hover:-translate-y-1">
+                    {item.icon}
+                  </div>
+
+                  <p className="mb-3 text-sm font-medium uppercase tracking-wide text-[#26DEC9]">
+                    {item.label}
+                  </p>
+
+                  <h3 className="mb-4 text-xl font-semibold leading-snug text-slate-950">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-base leading-7 text-slate-600">
+                    {item.description}
+                  </p>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
 
         {/* Platform Capabilities */}
-        <section className="relative overflow-hidden bg-gradient-to-b from-white to-gray-50 py-28">
+        <section className="relative overflow-hidden bg-gradient-to-b from-white to-gray-50 py-6">
           {/* Background */}
 
           <div className="absolute inset-0 opacity-[0.04]">
@@ -663,7 +611,7 @@ const HomePage = () => {
                   {capabilities.map((feature) => (
                     <div key={feature.title} className="flex gap-5">
                       <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-cyan-50">
-                        <feature.icon className="h-7 w-7 text-cyan-600" />
+                        <feature.icon className="h-7 w-7 text-[#26DEC9]" />
                       </div>
 
                       <div>
@@ -683,393 +631,225 @@ const HomePage = () => {
           </div>
         </section>
 
-        {/* Open Lakehouse */}
-        <section className="relative overflow-hidden bg-white py-28">
-          {/* Background */}
-
-          <div className="absolute inset-0 opacity-[0.04]">
+        <section className="relative overflow-hidden bg-white py-20 sm:py-24 lg:py-28">
+          {/* Background Grid */}
+          <div className="pointer-events-none absolute inset-0 opacity-[0.035]">
             <div
               className="absolute inset-0"
               style={{
                 backgroundImage: `
-              linear-gradient(to right,#06b6d4 1px,transparent 1px),
-              linear-gradient(to bottom,#06b6d4 1px,transparent 1px)
+              linear-gradient(to right, #1affe5 1px, transparent 1px),
+              linear-gradient(to bottom, #1affe5 1px, transparent 1px)
             `,
                 backgroundSize: "80px 80px",
               }}
             />
           </div>
 
-          <div className="absolute right-0 top-32 h-[450px] w-[450px] rounded-full bg-cyan-400/10 blur-[180px]" />
+          {/* Ambient Glow */}
+          <div className="pointer-events-none absolute right-[5%] top-1/2 h-[450px] w-[450px] -translate-y-1/2 rounded-full bg-[#1affe5]/10 blur-[150px]" />
 
-          <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="grid items-center gap-20 lg:grid-cols-2">
+          <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+            <div className="grid min-w-0 items-center gap-12 lg:grid-cols-[1fr_1fr] lg:gap-16">
               {/* LEFT CONTENT */}
-
               <motion.div
-                initial={{ opacity: 0, x: -40 }}
+                initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7 }}
+                viewport={{ once: true, amount: 0.25 }}
+                transition={{ duration: 0.7, ease: "easeOut" }}
+                className="order-1 min-w-0"
               >
-                <div className="inline-flex rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">
-                  Industry Solutions
-                </div>
-
-                <h2 className="mt-6 text-4xl font-bold leading-none text-slate-900 lg:text-4xl">
-                  Built for Every
-                  <br />
-                  Data-Driven Industry
-                </h2>
-
-                <p className="mt-6 text-md leading-8 text-slate-600">
-                  Whether you're modernizing financial platforms, enabling
-                  real-time healthcare insights, or building AI-powered customer
-                  experiences, Seg Forge provides a unified platform that adapts
-                  to every industry while maintaining enterprise reliability and
-                  governance.
-                </p>
-
-                <div className="mt-12 grid gap-5 sm:grid-cols-2">
-                  {industries.map((industry) => (
-                    <div
-                      key={industry.title}
-                      className="rounded-2xl border border-slate-200 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-200 hover:shadow-xl"
-                    >
-                      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-50">
-                        <industry.icon className="h-6 w-6 text-cyan-600" />
-                      </div>
-
-                      <h3 className="text-lg font-semibold text-slate-900">
-                        {industry.title}
-                      </h3>
-
-                      <ul className="mt-4 space-y-2">
-                        {industry.solutions.map((item) => (
-                          <li key={item} className="text-sm text-slate-600">
-                            • {item}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-
-              {/* RIGHT IMAGE */}
-
-              <motion.div
-                initial={{ opacity: 0, x: 40 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7 }}
-              >
-                <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
-                  <img
-                    src={Industries}
-                    alt="Industry Solutions"
-                    className="w-full"
-                  />
-                </div>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* AI & ML Section */}
-        <section className="relative overflow-hidden bg-white py-28">
-          {/* Background */}
-
-          <div className="absolute inset-0 opacity-[0.04]">
-            <div
-              className="absolute inset-0"
-              style={{
-                backgroundImage: `
-              linear-gradient(to right,#06b6d4 1px,transparent 1px),
-              linear-gradient(to bottom,#06b6d4 1px,transparent 1px)
-            `,
-                backgroundSize: "80px 80px",
-              }}
-            />
-          </div>
-
-          <div className="absolute left-1/3 top-32 h-[450px] w-[450px] rounded-full bg-cyan-400/10 blur-[180px]" />
-
-          <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="grid items-center gap-20 lg:grid-cols-2">
-              {/* LEFT CONTENT */}
-
-              <motion.div
-                initial={{ opacity: 0, x: -40 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7 }}
-              >
-                <div className="inline-flex rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">
-                  Developer Experience
-                </div>
-
-                <h2 className="mt-6 text-4xl font-bold leading-tight text-slate-900 lg:text-5xl">
-                  Built for Developers.
-                  <br />
-                  Ready for Enterprise.
-                </h2>
-
-                <p className="mt-6 text-md leading-8 text-slate-600">
-                  From local development to enterprise deployment, Seg Forge
-                  provides everything engineering teams need to automate,
-                  integrate, and operate modern data platforms with confidence.
-                </p>
-
-                {/* Features */}
-
-                <div className="mt-10 grid gap-6">
-                  {developerFeatures.map((feature) => (
-                    <div key={feature.title} className="flex items-start gap-5">
-                      <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-cyan-50">
-                        <feature.icon className="h-7 w-7 text-cyan-600" />
-                      </div>
-
-                      <div>
-                        <h3 className="text-lg font-semibold text-slate-900">
-                          {feature.title}
-                        </h3>
-
-                        <p className="mt-2 leading-7 text-slate-600">
-                          {feature.description}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Terminal Preview */}
-
-                <div className="mt-12 overflow-hidden rounded-2xl border border-slate-200 bg-slate-950 shadow-xl">
-                  <div className="flex items-center gap-2 border-b border-slate-800 px-5 py-3">
-                    <div className="h-3 w-3 rounded-full bg-red-500" />
-                    <div className="h-3 w-3 rounded-full bg-yellow-500" />
-                    <div className="h-3 w-3 rounded-full bg-green-500" />
-                  </div>
-
-                  <div className="space-y-4 p-6 font-mono text-sm">
-                    <div>
-                      <span className="text-cyan-400">$</span>{" "}
-                      <span className="text-white">docker compose up -d</span>
-                    </div>
-
-                    <div className="text-green-400">
-                      ✔ Seg Forge Platform Running
-                    </div>
-
-                    <div className="text-cyan-300">
-                      ✔ Start Building Pipelines
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* RIGHT IMAGE */}
-
-              <motion.div
-                initial={{ opacity: 0, x: 40 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7 }}
-              >
-                <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
-                  <img
-                    src={DevExperience}
-                    alt="Developer Experience"
-                    className="w-full"
-                  />
-                </div>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* Infrastructure Section */}
-        <section className="relative overflow-hidden bg-gradient-to-b from-gray-50 to-white py-28">
-          {/* Background */}
-
-          <motion.div
-            animate={{
-              backgroundPosition: ["0px 0px", "120px 120px"],
-            }}
-            transition={{
-              duration: 20,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-            className="absolute inset-0 opacity-[0.04]"
-            style={{
-              backgroundImage: `
-            linear-gradient(to right,#06b6d4 1px,transparent 1px),
-            linear-gradient(to bottom,#06b6d4 1px,transparent 1px)
-          `,
-              backgroundSize: "80px 80px",
-            }}
-          />
-
-          <div className="absolute left-0 top-1/3 h-[500px] w-[500px] rounded-full bg-cyan-400/10 blur-[180px]" />
-
-          <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="grid items-center gap-20 lg:grid-cols-2">
-              {/* LEFT IMAGE */}
-
-              <motion.div
-                initial={{ opacity: 0, x: -40 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7 }}
-                className="lg:order-1 order-2"
-              >
-                <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-2xl">
-                  <img
-                    src={OpenStandard}
-                    alt="Open Standards Architecture"
-                    className="w-full"
-                  />
-                </div>
-              </motion.div>
-
-              {/* RIGHT CONTENT */}
-
-              <motion.div
-                initial={{ opacity: 0, x: 40 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7 }}
-                className="lg:order-2 order-1"
-              >
-                {/* Badge */}
-
-                <div className="inline-flex items-center rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">
-                  Open Standards
+                {/* Eyebrow */}
+                <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">
+                  <BrainCircuit className="h-4 w-4" />
+                  AI &amp; Machine Learning
                 </div>
 
                 {/* Heading */}
-
-                <h2 className="mt-6 text-4xl font-bold leading-tight text-slate-900 lg:text-4xl">
-                  Built on Open Standards.
+                <h2 className="mt-3 max-w-xl text-4xl font-bold tracking-tight text-slate-900">
+                  From trusted data
                   <br />
-                  Free from Vendor Lock-In.
+                  to intelligent outcomes.
                 </h2>
 
                 {/* Description */}
-
-                <p className="mt-6 text-md leading-8 text-slate-600">
-                  Your infrastructure. Your data. Your ownership.
+                <p className="mt-6 max-w-xl text-base leading-7 text-slate-600">
+                  Bring analytics, machine learning, and AI-powered workflows
+                  closer to your data. SegForge provides a unified environment
+                  to explore datasets, develop models, build context-aware AI
+                  applications, and turn data into actionable insights.
                 </p>
+              </motion.div>
 
-                <p className="mt-4 text-md leading-8 text-slate-600">
-                  Seg Forge is built on the industry's most trusted open-source
-                  technologies, allowing you to deploy anywhere while keeping
-                  complete control over your data. Your tables remain in your
-                  own Amazon S3 or MinIO storage, your metadata stays under your
-                  control, and your pipelines are built on open formats that
-                  evolve with your business—not your vendor.
-                </p>
+              {/* RIGHT VISUAL */}
+              <motion.div
+                initial={{ opacity: 0, x: 30, scale: 0.98 }}
+                whileInView={{ opacity: 1, x: 0, scale: 1 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{
+                  duration: 0.8,
+                  ease: "easeOut",
+                  delay: 0.1,
+                }}
+                className="relative order-2 min-w-0 w-full"
+              >
+                <div className="pointer-events-none absolute -inset-5 rounded-[32px] bg-[#1affe5]/10 blur-3xl" />
 
-                {/* Technology Cards */}
-
-                <div className="mt-10 grid gap-4">
-                  {technologies.map((tech) => (
-                    <motion.div
-                      key={tech.title}
-                      whileHover={{ y: -3 }}
-                      className="flex items-center gap-5 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:border-cyan-200 hover:shadow-lg"
-                    >
-                      <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-cyan-50">
-                        <tech.icon className="h-7 w-7 text-cyan-600" />
-                      </div>
-
-                      <div>
-                        <h3 className="text-lg font-semibold text-slate-900">
-                          {tech.title}
-                        </h3>
-
-                        <p className="mt-1 text-sm text-slate-600">
-                          {tech.subtitle}
-                        </p>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-
-                {/* Trust Statement */}
-
-                <div className="mt-10 overflow-hidden rounded-3xl border border-cyan-100 bg-gradient-to-r from-cyan-500 to-blue-600 p-[1px] shadow-xl">
-                  <div className="rounded-[22px] bg-white p-8">
-                    <div className="flex items-start gap-4">
-                      <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-cyan-50">
-                        <ShieldCheck className="h-7 w-7 text-cyan-600" />
-                      </div>
-
-                      <div>
-                        <h3 className="text-xl font-semibold text-slate-900">
-                          Your Infrastructure. Your Data.
-                        </h3>
-
-                        <p className="mt-4 leading-8 text-slate-600">
-                          Your tables live in your own Amazon S3 or MinIO
-                          buckets using open formats. You retain complete
-                          ownership of your infrastructure, metadata, and data
-                          while Seg Forge provides the intelligence to build,
-                          orchestrate, and operate your modern data platform.
-                        </p>
-                      </div>
-                    </div>
-
-                    {/* Trust Badges */}
-
-                    <div className="mt-8 grid gap-4 sm:grid-cols-3">
-                      <div className="flex items-center gap-3 rounded-2xl border border-slate-200 p-4">
-                        <Cloud className="h-6 w-6 text-cyan-600" />
-
-                        <div>
-                          <p className="font-semibold text-slate-900">
-                            Cloud Agnostic
-                          </p>
-
-                          <p className="text-sm text-slate-500">
-                            Deploy Anywhere
-                          </p>
-                        </div>
-                      </div>
-
-                      <div className="flex items-center gap-3 rounded-2xl border border-slate-200 p-4">
-                        <LockOpen className="h-6 w-6 text-cyan-600" />
-
-                        <div>
-                          <p className="font-semibold text-slate-900">
-                            No Vendor Lock-In
-                          </p>
-
-                          <p className="text-sm text-slate-500">
-                            Open Standards
-                          </p>
-                        </div>
-                      </div>
-
-                      <div className="flex items-center gap-3 rounded-2xl border border-slate-200 p-4">
-                        <Database className="h-6 w-6 text-cyan-600" />
-
-                        <div>
-                          <p className="font-semibold text-slate-900">
-                            Customer Owned
-                          </p>
-
-                          <p className="text-sm text-slate-500">
-                            Data & Infrastructure
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                <div className="relative w-full overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_25px_70px_rgba(15,23,42,0.12)] sm:rounded-3xl">
+                  <img
+                    src="/src/assets/Products/AI/ai-platform.webp"
+                    alt="AI and machine learning capabilities connected to a shared data platform"
+                    className="block h-auto w-full object-contain"
+                    loading="lazy"
+                  />
                 </div>
               </motion.div>
+            </div>
+          </div>
+        </section>
+        {/* Industry Solutions */}
+        <section className="relative overflow-hidden bg-white py-20 sm:py-24 lg:py-28">
+          {/* Background Grid */}
+          <div className="pointer-events-none absolute inset-0 opacity-[0.04]">
+            <div
+              className="absolute inset-0"
+              style={{
+                backgroundImage: `
+          linear-gradient(to right,#06b6d4 1px,transparent 1px),
+          linear-gradient(to bottom,#06b6d4 1px,transparent 1px)
+        `,
+                backgroundSize: "64px 64px",
+              }}
+            />
+          </div>
+
+          {/* Background Glow */}
+          <div className="pointer-events-none absolute left-1/2 top-20 h-[400px] w-[700px] -translate-x-1/2 rounded-full bg-cyan-400/10 blur-[150px]" />
+
+          <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+            {/* Centered Heading */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="mx-auto max-w-3xl text-center"
+            >
+              <div className="inline-flex items-center rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">
+                Industry Solutions
+              </div>
+
+              <h2 className="mt-6 text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl">
+                Built for Every
+                <br className="hidden sm:block" />{" "}
+                <span className="text-cyan-600">Data-Driven Industry</span>
+              </h2>
+
+              <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
+                From financial services to healthcare and retail, SegForge helps
+                teams connect data, orchestrate workloads, and turn complex
+                information into actionable insights.
+              </p>
+            </motion.div>
+
+            {/* Industry Cards */}
+            <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3">
+              {industries.map((industry, index) => (
+                <motion.div
+                  key={industry.title}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.15 }}
+                  transition={{ duration: 0.45, delay: index * 0.08 }}
+                >
+                  <Link
+                    to={industry.path}
+                    className="group relative flex h-full min-h-[250px] flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-cyan-300 hover:shadow-xl hover:shadow-cyan-950/[0.07] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:ring-offset-4"
+                  >
+                    {/* Hover Accent */}
+                    <div className="absolute inset-x-0 top-0 h-1 origin-left scale-x-0 bg-gradient-to-r from-cyan-400 to-sky-500 transition-transform duration-300 group-hover:scale-x-100" />
+
+                    <div className="flex items-start justify-between">
+                      <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-cyan-100 bg-cyan-50 transition-colors duration-300 group-hover:bg-cyan-100">
+                        <industry.icon className="h-7 w-7 text-cyan-600" />
+                      </div>
+
+                      <ArrowUpRight className="h-5 w-5 text-slate-400 transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-cyan-600" />
+                    </div>
+
+                    <h3 className="mt-7 text-xl font-semibold tracking-tight text-slate-900 transition-colors group-hover:text-cyan-700">
+                      {industry.title}
+                    </h3>
+
+                    <ul className="mt-4 space-y-2">
+                      {industry.solutions.map((item) => (
+                        <li
+                          key={item}
+                          className="flex items-start gap-2 text-sm leading-6 text-slate-600"
+                        >
+                          <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-500" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <div className="mt-auto flex items-center gap-2 pt-6 text-sm font-semibold text-cyan-700">
+                      Explore solution
+                      <span className="transition-transform duration-300 group-hover:translate-x-1">
+                        →
+                      </span>
+                    </div>
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="relative overflow-hidden bg-[#faf8f7] px-5 py-20 sm:py-24">
+          {/* Subtle background glow */}
+          <div className="pointer-events-none absolute left-1/2 top-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-200/20 blur-[120px]" />
+
+          <div className="relative mx-auto max-w-6xl">
+            <div className="mb-12 text-center">
+              <p className="inline-flex rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">
+                Open-source foundations
+              </p>
+
+              <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+                Powered by proven technologies
+              </h2>
+
+              <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-slate-600">
+                SegForge brings together trusted open-source technologies to
+                power data engineering, real-time processing, and lakehouse
+                analytics.
+              </p>
+            </div>
+
+            {/* Three centered rows: 4 / 5 / 4 */}
+            <div className="flex flex-col items-center gap-3 sm:gap-4">
+              {rows.map((row, rowIndex) => (
+                <div
+                  key={rowIndex}
+                  className="flex w-full flex-wrap items-center justify-center gap-3 sm:gap-4"
+                >
+                  {row.map((tech) => (
+                    <div
+                      key={tech.name}
+                      title={tech.name}
+                      className="flex h-[88px] w-[calc(50%-0.375rem)] items-center justify-center rounded-2xl border border-slate-200 bg-white/90 p-4 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-300 hover:shadow-lg hover:shadow-cyan-900/5 sm:h-24 sm:w-[150px] lg:w-[170px]"
+                    >
+                      <img
+                        src={tech.logo}
+                        alt={tech.name}
+                        loading="lazy"
+                        className="max-h-12 max-w-full object-contain"
+                      />
+                    </div>
+                  ))}
+                </div>
+              ))}
             </div>
           </div>
         </section>

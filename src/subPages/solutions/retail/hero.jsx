@@ -2,6 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, ShoppingBag } from "lucide-react";
 import HeroImg from "../../../assets/Solutions/retail/hero.webp";
+import { Link } from "react-router-dom";
+
 const RetailHero = () => {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-gray-50 to-white pt-32 pb-24">
@@ -40,22 +42,17 @@ const RetailHero = () => {
             </p>
 
             <div className="mt-10 flex flex-wrap gap-4">
-              <button className="group relative inline-flex items-center justify-center overflow-hidden rounded-md border border-slate-800 px-6 py-3 font-semibold text-black transition-colors duration-300 hover:text-white">
+              <Link
+                to="/contact"
+                className="group relative inline-flex items-center justify-center overflow-hidden rounded-md border border-slate-800 px-6 py-3 font-semibold text-black transition-colors duration-300 hover:text-white"
+              >
                 <span className="absolute inset-y-0 left-0 w-0 bg-[#18D0BB] transition-all duration-300 ease-out group-hover:w-full"></span>
 
                 <span className="relative z-10 flex items-center gap-2">
                   Explore Retail Solutions
                   <ArrowRight className="w-4 h-4" />
                 </span>
-              </button>
-
-              <button className="group relative inline-flex items-center justify-center overflow-hidden rounded-md border border-slate-800 px-6 py-3 font-semibold text-black transition-colors duration-300 hover:text-white">
-                <span className="absolute inset-y-0 left-0 w-0 bg-[#18D0BB] transition-all duration-300 ease-out group-hover:w-full"></span>
-
-                <span className="relative z-10">
-                  Request Architecture Review
-                </span>
-              </button>
+              </Link>
             </div>
           </motion.div>
 
@@ -81,4 +78,3 @@ const RetailHero = () => {
 };
 
 export default RetailHero;
-

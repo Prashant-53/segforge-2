@@ -2,14 +2,20 @@ import { methodStyles } from "./methodStyles";
 
 const EndpointRow = ({ method, path }) => {
   return (
-    <div className="flex items-center gap-4 rounded-xl bg-slate-50 px-4 py-3">
-      <span
-        className={`px-3 py-1 rounded-lg text-xs font-semibold ${methodStyles[method]}`}
-      >
-        {method}
-      </span>
+    <div className="rounded-xl bg-slate-50 px-4 py-3 transition hover:bg-slate-100">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+        {/* HTTP Method */}
+        <span
+          className={`inline-flex w-fit items-center justify-center rounded-lg px-3 py-1 text-xs font-semibold ${methodStyles[method]}`}
+        >
+          {method}
+        </span>
 
-      <code className="text-sm text-slate-700 font-mono">{path}</code>
+        {/* Endpoint */}
+        <code className="min-w-0 break-all font-mono text-sm text-slate-700 sm:text-base">
+          {path}
+        </code>
+      </div>
     </div>
   );
 };

@@ -11,7 +11,7 @@ import {
   Users,
 } from "lucide-react";
 import { Link } from "react-router-dom";
-import HeroImg from "../../../assets/Products/NoteBook/hero.webp";
+import HeroImg from "../../../assets/Products/NoteBooks/hero.webp";
 
 const highlights = [
   {
@@ -64,14 +64,15 @@ const Hero = () => {
 
       <div className="absolute left-1/2 top-20 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-cyan-400/10 blur-[180px]" />
 
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid items-center gap-20 lg:grid-cols-2">
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-6">
+        <div className="grid items-center gap-10 lg:grid-cols-2">
           {/* LEFT CONTENT */}
 
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
+            className="mt-22"
           >
             {/* Badge */}
 
@@ -82,25 +83,20 @@ const Hero = () => {
 
             {/* Heading */}
 
-            <h1 className="mt-8 text-5xl font-bold leading-none text-slate-900 lg:text-5xl">
-              Explore,
-              <br />
-              Prototype,
-              <br />
-              and Analyze
-              <br />
+            <h1 className="mt-8 text-4xl font-bold leading-none text-slate-900 lg:text-5xl">
+              Write.Query.
               <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
-                in Real Time.
+                Explore
               </span>
             </h1>
 
             {/* Description */}
 
             <p className="mt-8 max-w-2xl text-md leading-6 text-slate-600">
-              Write SQL, Python, and Markdown in a collaborative notebook
-              environment built directly into Seg Forge. Explore your lakehouse,
-              validate transformations, and turn ideas into production-ready
-              workflows without leaving your workspace.
+              Work with lakehouse data in an interactive notebook built for SQL
+              queries, Python transformations, and analytical workflows. Combine
+              executable cells with Markdown notes to explore data and prototype
+              ideas in one workspace.{" "}
             </p>
 
             {/* Buttons */}
@@ -134,7 +130,7 @@ const Hero = () => {
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="relative"
+            className="relative mt-22"
           >
             {/* Glow */}
 
@@ -146,28 +142,6 @@ const Hero = () => {
                 alt="Interactive Notebooks"
                 className="w-full"
               />
-            </div>
-
-            {/* Floating Card */}
-
-            <div className="absolute -left-6 -top-5 hidden rounded-2xl border border-cyan-200 bg-white px-5 py-4 shadow-xl lg:block">
-              <p className="text-sm font-semibold text-slate-900">
-                SQL + Python
-              </p>
-
-              <p className="mt-1 text-xs text-slate-500">
-                Collaborative Notebook
-              </p>
-            </div>
-
-            {/* Floating Card */}
-
-            <div className="absolute -right-10 -bottom-1 hidden rounded-2xl border border-cyan-200 bg-white px-5 py-4 shadow-xl lg:block">
-              <p className="text-sm font-semibold text-slate-900">
-                Live Exploration
-              </p>
-
-              <p className="mt-1 text-xs text-slate-500">Batch & Streaming</p>
             </div>
           </motion.div>
         </div>

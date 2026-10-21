@@ -130,28 +130,6 @@ const CatalogExploration = () => {
             </motion.div>
           ))}
         </div>
-
-        {/* Bottom Highlight */}
-
-        <div className="mt-16 rounded-[32px] bg-gradient-to-r from-cyan-500 to-blue-600 p-[1px] shadow-xl">
-          <div className="rounded-[31px] bg-white px-10 py-12 text-center">
-            <CheckCircle2 className="mx-auto h-10 w-10 text-cyan-600" />
-
-            <h3 className="mt-6 text-3xl font-bold text-slate-900">
-              Everything you need to understand your data
-              <br />
-              <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
-                without writing a query.
-              </span>
-            </h3>
-
-            <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-600">
-              Explore schemas, inspect metadata, preview records, and analyze
-              table statistics from one intelligent catalog experience designed
-              for enterprise-scale lakehouses.
-            </p>
-          </div>
-        </div>
       </div>
     </section>
   );

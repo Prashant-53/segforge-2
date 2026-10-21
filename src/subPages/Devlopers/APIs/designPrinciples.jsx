@@ -92,7 +92,7 @@ const APIDesignPrinciples = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.08 }}
                   viewport={{ once: true }}
-                  className="rounded-3xl bg-white border border-slate-200 p-6"
+                  className="group rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-cyan-200 hover:shadow-xl"
                 >
                   <div className="flex gap-5">
                     <div className="w-12 h-12 rounded-2xl bg-cyan-50 flex items-center justify-center shrink-0">
@@ -100,11 +100,11 @@ const APIDesignPrinciples = () => {
                     </div>
 
                     <div>
-                      <h3 className="text-xl font-semibold text-slate-900">
+                      <h3 className="text-lg font-semibold text-slate-900">
                         {item.title}
                       </h3>
 
-                      <p className="mt-2 text-slate-600 leading-7">
+                      <p className="mt-3 text-slate-600 leading-7">
                         {item.description}
                       </p>
                     </div>
@@ -118,57 +118,69 @@ const APIDesignPrinciples = () => {
 
           <div className="space-y-8">
             {/* Success */}
+            <div className="overflow-hidden rounded-[28px] border border-slate-200 shadow-lg">
+              <div className="flex items-center gap-2 border-b border-slate-200 bg-slate-100 px-6 py-4">
+                <div className="h-3 w-3 rounded-full bg-red-400" />
+                <div className="h-3 w-3 rounded-full bg-yellow-400" />
+                <div className="h-3 w-3 rounded-full bg-green-400" />
 
-            <div className="rounded-[28px] overflow-hidden border border-slate-200 shadow-sm">
-              <div className="px-6 py-4 bg-slate-900 text-white font-medium">
-                Standard Response
+                <span className="ml-4 text-sm font-medium text-slate-600">
+                  Standard Response
+                </span>
               </div>
 
-              <div className="bg-slate-950 p-6 overflow-x-auto">
-                <pre>
-                  <code className="text-slate-300">
-                    {`{
+              <div className="bg-slate-950 p-8">
+                {" "}
+                <code className="text-slate-300">
+                  {`{
   "id": "uuid",
   "name": "resource",
   "created_at": "timestamp"
 }`}
-                  </code>
-                </pre>
+                </code>
               </div>
             </div>
 
             {/* Error */}
 
-            <div className="rounded-[28px] overflow-hidden border border-slate-200 shadow-sm">
-              <div className="px-6 py-4 bg-red-50 text-red-700 font-medium">
-                Error Response
+            <div className="overflow-hidden rounded-[28px] border border-slate-200 shadow-lg">
+              <div className="flex items-center gap-2 border-b border-slate-200 bg-slate-100 px-6 py-4">
+                <div className="h-3 w-3 rounded-full bg-red-400" />
+                <div className="h-3 w-3 rounded-full bg-yellow-400" />
+                <div className="h-3 w-3 rounded-full bg-green-400" />
+
+                <span className="ml-4 text-sm font-medium text-red-600">
+                  Error Response
+                </span>
               </div>
 
-              <div className="bg-slate-950 p-6 overflow-x-auto">
-                <pre>
-                  <code className="text-slate-300">
-                    {`{
+              <div className="bg-slate-950 p-8">
+                {" "}
+                <code className="text-slate-300">
+                  {`{
   "detail": "error message"
 }`}
-                  </code>
-                </pre>
+                </code>
               </div>
             </div>
 
             {/* Pagination */}
+            <div className="overflow-hidden rounded-[28px] border border-slate-200 shadow-lg">
+              <div className="flex items-center gap-2 border-b border-slate-200 bg-slate-100 px-6 py-4">
+                <div className="h-3 w-3 rounded-full bg-red-400" />
+                <div className="h-3 w-3 rounded-full bg-yellow-400" />
+                <div className="h-3 w-3 rounded-full bg-green-400" />
 
-            <div className="rounded-[28px] overflow-hidden border border-slate-200 shadow-sm">
-              <div className="px-6 py-4 bg-cyan-50 text-cyan-700 font-medium">
-                Pagination
+                <span className="ml-4 text-sm font-medium text-cyan-600">
+                  Pagination{" "}
+                </span>
               </div>
 
-              <div className="bg-slate-950 p-6 overflow-x-auto">
-                <pre>
-                  <code className="text-slate-300">
-                    {`GET /api/workspaces/{id}/pipelines
-?skip=0&limit=50`}
-                  </code>
-                </pre>
+              <div className="bg-slate-950  p-8">
+                {" "}
+                <code className="text-slate-300 ">
+                  {`GET /api/workspaces/{id}/pipelines?skip=0&limit=50`}
+                </code>
               </div>
             </div>
           </div>
@@ -177,7 +189,7 @@ const APIDesignPrinciples = () => {
         {/* Status Codes */}
 
         <div className="mt-28">
-          <h3 className="text-3xl font-bold text-slate-900 mb-10">
+          <h3 className="text-2xl  lg:text-3xl font-bold text-slate-900 mb-10">
             HTTP Status Codes
           </h3>
 
@@ -205,17 +217,17 @@ const APIDesignPrinciples = () => {
               <div className="flex items-center gap-3">
                 <Clock className="w-6 h-6 text-cyan-400" />
 
-                <h3 className="text-3xl font-bold">Rate Limits</h3>
+                <h3 className=" text-2xl lg:text-3xl font-bold">Rate Limits</h3>
               </div>
 
-              <p className="mt-4 text-slate-300 text-lg">
+              <p className="mt-4 text-slate-300 text-md">
                 Cloud managed deployments apply request limits per API key to
                 ensure platform stability and fair resource allocation.
               </p>
             </div>
 
             <div className="rounded-3xl bg-white/5 border border-white/10 px-10 py-8">
-              <div className="text-5xl font-bold text-cyan-400">1,000</div>
+              <div className="text-3xl font-bold text-cyan-400">1,000</div>
 
               <div className="mt-2 text-slate-300">
                 requests / minute / API key

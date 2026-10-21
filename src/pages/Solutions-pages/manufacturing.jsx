@@ -5,7 +5,7 @@ import ManufacturingPlatform from "../../subPages/solutions/Manufacturing/answer
 import ManufacturingUseCases from "../../subPages/solutions/Manufacturing/useCases";
 import ManufacturingGovernance from "../../subPages/solutions/Manufacturing/govern";
 import ManufacturingSovereignty from "../../subPages/solutions/Manufacturing/sovereinity";
-import ManufacturingCTA from "../../subPages/solutions/Manufacturing/cta";
+import CTA from "../../components/BottomCTA";
 import MainLayout from "../../layouts/mainLayout";
 
 const HealthCare = () => {
@@ -17,7 +17,7 @@ const HealthCare = () => {
       <ManufacturingUseCases />
       <ManufacturingGovernance />
       <ManufacturingSovereignty />
-      <ManufacturingCTA />
+      <CTA />
     </MainLayout>
   );
 };

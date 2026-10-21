@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, ShieldCheck } from "lucide-react";
 import ArchitectureReviewHeroImg from "../../../assets/Solutions/ArchitectureReview/hero.webp";
+import { Link } from "react-router-dom";
 
 const ArchitectureReviewHero = () => {
   return (
@@ -46,22 +47,17 @@ const ArchitectureReviewHero = () => {
             {/* CTA */}
 
             <div className="mt-10 flex flex-wrap gap-4">
-              <button className="group relative inline-flex items-center justify-center overflow-hidden rounded-md border border-slate-800 px-6 py-3 font-semibold text-black transition-colors duration-300 hover:text-white">
+              <Link
+                to="/contact"
+                className="group relative inline-flex items-center justify-center overflow-hidden rounded-md border border-slate-800 px-6 py-3 font-semibold text-black transition-colors duration-300 hover:text-white"
+              >
                 <span className="absolute inset-y-0 left-0 w-0 bg-[#18D0BB] transition-all duration-300 ease-out group-hover:w-full"></span>
 
                 <span className="relative z-10 flex items-center gap-2">
                   Request a Production Review
                   <ArrowRight className="w-4 h-4" />
                 </span>
-              </button>
-
-              <button className="group relative inline-flex items-center justify-center overflow-hidden rounded-md border border-slate-800 px-6 py-3 font-semibold text-black transition-colors duration-300 hover:text-white">
-                <span className="absolute inset-y-0 left-0 w-0 bg-[#18D0BB] transition-all duration-300 ease-out group-hover:w-full"></span>
-
-                <span className="relative z-10">
-                  Download the Production Hardening Checklist
-                </span>
-              </button>
+              </Link>
             </div>
           </motion.div>
 
@@ -87,4 +83,3 @@ const ArchitectureReviewHero = () => {
 };
 
 export default ArchitectureReviewHero;
-

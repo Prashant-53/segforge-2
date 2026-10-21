@@ -1,33 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Database, ShieldCheck, GitBranch, Clock3 } from "lucide-react";
-import LakehouseDestination from "../../../assets/Products/ETL/lakehouse.webp";
-const features = [
-  {
-    icon: Database,
-    title: "Apache Iceberg",
-    description:
-      "Store analytical datasets in an open table format supporting ACID transactions, schema evolution, partition optimization, and high-performance analytics at enterprise scale.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Complete Data Lineage",
-    description:
-      "Track every transformation from source systems through Apache Flink pipelines to governed Iceberg tables with end-to-end visibility and traceability.",
-  },
-  {
-    icon: Clock3,
-    title: "Time Travel & Schema Evolution",
-    description:
-      "Safely evolve schemas without breaking downstream workloads while querying historical versions of your data for auditing and recovery.",
-  },
-  {
-    icon: GitBranch,
-    title: "Nessie Version Control",
-    description:
-      "Manage your lakehouse using Git-like operations including branching, commits, merges, and rollbacks to safely develop and promote data changes.",
-  },
-];
+import LakehouseDestination from "../../../assets/Products/ETL/openlakehouse-architecture.webp";
 
 const LakehouseDestinations = () => {
   return (
@@ -50,7 +24,7 @@ const LakehouseDestinations = () => {
       <div className="absolute left-1/4 top-24 h-[450px] w-[450px] rounded-full bg-cyan-400/10 blur-[180px]" />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid items-center gap-20 lg:grid-cols-2">
+        <div className="grid items-center gap-18 lg:grid-cols-[1.2fr_0.8fr]">
           {/* LEFT IMAGE */}
 
           <motion.div
@@ -58,12 +32,13 @@ const LakehouseDestinations = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
+            className="w-full"
           >
-            <div className="overflow-hidden rounded-[30px] border border-slate-200 bg-white shadow-2xl">
+            <div className="w-full overflow-hidden rounded-[30px] border border-slate-200 bg-white shadow-xl">
               <img
                 src={LakehouseDestination}
                 alt="Apache Iceberg Lakehouse Architecture"
-                className="w-full"
+                className="block  h-auto w-full"
               />
             </div>
           </motion.div>
@@ -82,33 +57,13 @@ const LakehouseDestinations = () => {
             <h2 className="mt-6 text-4xl font-bold leading-none text-slate-900 lg:text-4xl">
               Open Table Foundation Built for Modern Analytics
             </h2>
-            <p className="mt-6 text-lg leading-8 text-slate-600">
-              ETL Studio transforms raw enterprise data into governed Apache
-              Iceberg tables through Apache Flink while Apache Nessie provides
-              Git-style version control. The result is a modern open lakehouse
-              that supports analytics, machine learning, and AI workloads
-              without vendor lock-in.
+            <p className="mt-6 text-md leading-8 text-slate-600">
+              An open, scalable, and AI-ready data architecture built on open
+              standards—giving organizations complete freedom to choose their
+              storage, compute, analytics, and AI technologies. The concept of
+              an open lakehouse emphasizes open data formats, interchangeable
+              compute engines, independent storage, and reduced vendor lock-in.
             </p>
-            <div className="mt-12 space-y-8">
-              {features.map((feature) => (
-                <div key={feature.title} className="flex items-start gap-5">
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-cyan-50">
-                    <feature.icon className="h-7 w-7 text-cyan-600" />
-                  </div>
-
-                  <div>
-                    <h3 className="text-xl font-semibold text-slate-900">
-                      {feature.title}
-                    </h3>
-
-                    <p className="mt-2 leading-7 text-slate-600">
-                      {feature.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-            {/* Bottom Stats */}=
           </motion.div>
         </div>
       </div>

@@ -173,13 +173,6 @@ const AnalyticsIntegrations = () => {
                 <p className="mt-3 text-sm leading-7 text-slate-600">
                   {tool.description}
                 </p>
-
-                <button className="group mt-8 flex items-center gap-2 text-cyan-600 font-semibold">
-                  Learn More
-                  <span className="transition-transform group-hover:translate-x-1">
-                    →
-                  </span>
-                </button>
               </motion.div>
             );
           })}

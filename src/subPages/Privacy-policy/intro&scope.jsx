@@ -42,24 +42,6 @@ const platforms = [
     description:
       "Enterprise deployments on Kubernetes and cloud-native environments.",
   },
-  {
-    title: "REST APIs",
-    icon: Code2,
-    description:
-      "Programmatic access through authenticated REST API endpoints.",
-  },
-  {
-    title: "SDKs",
-    icon: Braces,
-    description:
-      "Official language SDKs including Python and TypeScript clients.",
-  },
-  {
-    title: "CLI",
-    icon: Terminal,
-    description:
-      "Seg Forge Command Line Interface for automation and DevOps workflows.",
-  },
 ];
 
 const PrivacyScope = () => {
@@ -96,11 +78,11 @@ const PrivacyScope = () => {
             Introduction & Scope
           </div>
 
-          <h2 className="mt-6 text-4xl font-bold tracking-tight text-slate-900 md:text-5xl">
+          <h2 className="mt-6 text-4xl font-bold tracking-tight text-slate-900 ">
             Where This Privacy Policy Applies
           </h2>
 
-          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-600">
+          <p className="mx-auto mt-6 max-w-3xl text-md leading-6 text-slate-600">
             This Privacy Policy explains how Seg Forge collects, processes,
             stores, and protects information across our products, services, and
             developer tooling. Whether you're evaluating the platform, deploying
@@ -111,7 +93,7 @@ const PrivacyScope = () => {
 
         {/* Platform Cards */}
 
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+        <div className="mt-16 grid gap-6 sm:grid-cols-2 xl:grid-cols-5">
           {platforms.map((item, index) => (
             <motion.div
               key={item.title}

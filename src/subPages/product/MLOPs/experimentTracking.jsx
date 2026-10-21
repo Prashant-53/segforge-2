@@ -1,54 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  BrainCircuit,
-  Cpu,
-  History,
-  SlidersHorizontal,
-  BarChart3,
-  GitCompare,
-  CheckCircle2,
-} from "lucide-react";
 import ModelTrain from "../../../assets/Products/ML&OPs/ModelTrain.png";
-
-const trainingFeatures = [
-  {
-    icon: Cpu,
-    title: "Distributed Training",
-    description:
-      "Scale training across multiple compute nodes for faster model development.",
-  },
-  {
-    icon: SlidersHorizontal,
-    title: "Hyperparameter Configuration",
-    description:
-      "Configure and tune model parameters through an intuitive enterprise interface.",
-  },
-  {
-    icon: History,
-    title: "Experiment History",
-    description:
-      "Every training run is automatically versioned with complete execution history.",
-  },
-  {
-    icon: BarChart3,
-    title: "Metrics Tracking",
-    description:
-      "Monitor accuracy, precision, recall, loss curves, and training performance in real time.",
-  },
-  {
-    icon: GitCompare,
-    title: "Model Comparison",
-    description:
-      "Compare multiple experiments side-by-side to identify the highest-performing model.",
-  },
-  {
-    icon: BrainCircuit,
-    title: "Reproducible Runs",
-    description:
-      "Recreate any experiment instantly using stored configurations, datasets, and parameters.",
-  },
-];
 
 const ModelTrainingSection = () => {
   return (
@@ -112,45 +64,20 @@ const ModelTrainingSection = () => {
             {/* Heading */}
 
             <h2 className="mt-6 text-4xl font-bold leading-none text-slate-900 lg:text-4xl">
-              Train Smarter.
-              <br />
-              <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
-                Compare Faster. Deploy Better.
-              </span>
+              Train Smarter. Compare Faster. Deploy Better.
             </h2>
 
             {/* Description */}
 
             <p className="mt-6 text-md leading-6 text-slate-600">
-              Launch distributed training jobs, configure hyperparameters,
-              compare experiments, and reproduce every model with complete
-              execution history from a single enterprise MLOps platform.
+              Train across multiple compute nodes, configure and tune
+              hyperparameters, and monitor key training metrics such as
+              accuracy, precision, recall, loss, and performance. Compare
+              experiments side-by-side to evaluate different approaches, while
+              maintaining versioned execution history and stored configurations
+              so successful training runs can be reproduced consistently—all
+              within a unified enterprise MLOps platform.{" "}
             </p>
-
-            {/* Features */}
-
-            <div className="mt-10 space-y-5">
-              {trainingFeatures.map((feature) => (
-                <div
-                  key={feature.title}
-                  className="flex gap-5 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-cyan-200 hover:shadow-lg"
-                >
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-cyan-50">
-                    <feature.icon className="h-7 w-7 text-cyan-600" />
-                  </div>
-
-                  <div>
-                    <h3 className="text-lg font-semibold text-slate-900">
-                      {feature.title}
-                    </h3>
-
-                    <p className="mt-2 leading-7 text-slate-600">
-                      {feature.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
           </motion.div>
         </div>
       </div>

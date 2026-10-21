@@ -1,17 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, BrainCircuit, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 
-import Hero from "../../../assets/Products/AI/aihero.png";
-
-const highlights = [
-  "Feature Engineering",
-  "Model Training",
-  "Model Registry",
-  "Model Serving",
-  "AI Monitoring",
-];
+import Hero from "../../../assets/Products/AI/aihero.webp";
 
 const AIHero = () => {
   return (
@@ -51,11 +43,11 @@ const AIHero = () => {
             transition={{ duration: 0.7 }}
           >
             <div className="inline-flex items-center gap-2 rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">
-              <BrainCircuit className="h-4 w-4" />
+              <Sparkles className="h-4 w-4" />
               Machine Learning Platform
             </div>
 
-            <h1 className="mt-8 text-5xl font-bold leading-none text-slate-900 lg:text-5xl">
+            <h1 className="mt-8 text-4xl font-bold leading-none text--900 lg:text-5xl">
               From Raw Data
               <br />
               to Production AI
@@ -77,7 +69,7 @@ const AIHero = () => {
 
             <div className="mt-12 flex flex-wrap gap-4">
               <Link
-                to="/contact"
+                to="/product/ai-capabilities"
                 className="group relative inline-flex items-center justify-center overflow-hidden rounded-md border border-cyan-500 px-7 py-3 font-semibold text-slate-900 transition-colors duration-300 hover:text-white"
               >
                 <span className="absolute inset-y-0 left-0 w-0 bg-[#18D0BB] transition-all duration-300 ease-out group-hover:w-full" />
@@ -87,13 +79,6 @@ const AIHero = () => {
                   <ArrowRight className="h-4 w-4" />
                 </span>
               </Link>
-
-              {/* <Link
-                to="/developers/documentation"
-                className="inline-flex items-center rounded-md border border-slate-300 bg-white px-7 py-3 font-semibold text-slate-700 transition hover:border-cyan-400 hover:text-cyan-600"
-              >
-                View Documentation
-              </Link> */}
             </div>
           </motion.div>
 

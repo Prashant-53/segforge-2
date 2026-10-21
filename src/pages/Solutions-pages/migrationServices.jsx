@@ -5,7 +5,7 @@ import MigrationPlatform from "../../subPages/solutions/Migration-Services/answe
 import MigrationSimulator from "../../subPages/solutions/Migration-Services/simulator";
 import SafeMigrations from "../../subPages/solutions/Migration-Services/built";
 import MigrationConnectivity from "../../subPages/solutions/Migration-Services/enterprise";
-import MigrationCTA from "../../subPages/solutions/Migration-Services/cta";
+import CTA from "../../components/BottomCTA";
 import MainLayout from "../../layouts/mainLayout";
 
 const MigrationServices = () => {
@@ -17,7 +17,7 @@ const MigrationServices = () => {
       <MigrationSimulator />
       <SafeMigrations />
       <MigrationConnectivity />
-      <MigrationCTA />
+      <CTA />
     </MainLayout>
   );
 };

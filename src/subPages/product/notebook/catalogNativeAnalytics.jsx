@@ -9,7 +9,7 @@ import {
   Download,
   CheckCircle2,
 } from "lucide-react";
-import NotebookAssist from "../../../assets/Products/NoteBook/notebookassist.webp";
+import NotebookAssist from "../../../assets/Products/NoteBooks/notebookassist.webp";
 
 const HeroCatalogNativeAnalytics = () => {
   return (

@@ -5,7 +5,7 @@ import RetailPlatform from "../../subPages/solutions/retail/answer";
 import RetailUseCases from "../../subPages/solutions/retail/RetailCases";
 import RetailGovernance from "../../subPages/solutions/retail/govern";
 import RetailDeployment from "../../subPages/solutions/retail/deploy";
-import RetailCTA from "../../subPages/solutions/retail/cta";
+import CTA from "../../components/BottomCTA";
 import MainLayout from "../../layouts/mainLayout";
 
 const Retail = () => {
@@ -17,7 +17,7 @@ const Retail = () => {
       <RetailUseCases />
       <RetailGovernance />
       <RetailDeployment />
-      <RetailCTA />
+      <CTA />
     </MainLayout>
   );
 };

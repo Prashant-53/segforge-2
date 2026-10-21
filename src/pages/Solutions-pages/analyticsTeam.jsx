@@ -5,7 +5,7 @@ import RealTimeBI from "../../subPages/solutions/Analytics-Team/BI";
 import HistoricalForensics from "../../subPages/solutions/Analytics-Team/forensics";
 import QueryToChartPrototyper from "../../subPages/solutions/Analytics-Team/query-chart";
 import SelfServiceGovernance from "../../subPages/solutions/Analytics-Team/governance";
-import AnalyticsCTA from "../../subPages/solutions/Analytics-Team/cta";
+import CTA from "../../components/BottomCTA";
 import MainLayout from "../../layouts/mainLayout";
 
 const AnalyticsTeam = () => {
@@ -17,7 +17,7 @@ const AnalyticsTeam = () => {
       <HistoricalForensics />
       <QueryToChartPrototyper />
       <SelfServiceGovernance />
-      <AnalyticsCTA />
+      <CTA />
     </MainLayout>
   );
 };

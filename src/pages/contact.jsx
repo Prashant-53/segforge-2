@@ -1,10 +1,10 @@
-import React from "react";
 import { motion } from "framer-motion";
-import { Send, Check, Mail, Phone, Clock3, CheckCircle2 } from "lucide-react";
+import { Send, Mail, Clock3, CheckCircle2 } from "lucide-react";
 import MainLayout from "../layouts/mainLayout";
 import emailjs from "@emailjs/browser";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
+const DEMO_BOOKING_API = import.meta.env.VITE_DEMO_BOOKING_API;
 const ContactSales = () => {
   /* =====================================================
    FORM STATE
@@ -36,6 +36,26 @@ const ContactSales = () => {
 
   const [submitted, setSubmitted] = useState(false);
 
+  const [demoDate, setDemoDate] = useState("");
+  const [slots, setSlots] = useState([]);
+  const [selectedSlot, setSelectedSlot] = useState("");
+
+  const [loadingSlots, setLoadingSlots] = useState(false);
+  const [bookingError, setBookingError] = useState("");
+  const interestOptions = [
+    "Batch Pipeline",
+    "Real-Time CDC",
+    "Visual ETL",
+    "Lakehouse",
+    "Orchestration",
+    "Segforge SQL",
+    "Notebook Analytics",
+    "Workflow Engine",
+    "ML & AI",
+    "Data Governance",
+    "Other",
+  ];
+
   /* =====================================================
    INPUT REFS
    (Used to focus first invalid field)
@@ -58,6 +78,44 @@ const ContactSales = () => {
     message: useRef(null),
     consent: useRef(null),
   };
+
+  const [interestedTopic, setInterestedTopic] = useState("");
+  const [otherInterest, setOtherInterest] = useState("");
+  // Slot Booking API Call
+
+  useEffect(() => {
+    if (!demoDate) {
+      setSlots([]);
+      setSelectedSlot("");
+      return;
+    }
+
+    const fetchAvailability = async () => {
+      try {
+        setLoadingSlots(true);
+        setBookingError("");
+        setSelectedSlot("");
+
+        const response = await fetch(`${DEMO_BOOKING_API}?date=${demoDate}`);
+
+        const data = await response.json();
+
+        if (!data.success) {
+          throw new Error(data.message || "Unable to fetch availability.");
+        }
+
+        setSlots(data.slots);
+      } catch (error) {
+        console.error("Availability error:", error);
+        setSlots([]);
+        setBookingError("Unable to load available demo slots.");
+      } finally {
+        setLoadingSlots(false);
+      }
+    };
+
+    fetchAvailability();
+  }, [demoDate]);
 
   /* =====================================================
    REGEX
@@ -275,7 +333,7 @@ const ContactSales = () => {
     if (submitting) return;
 
     /* ---------------------------------
-     Validate form synchronously
+     Validate form
   ----------------------------------*/
 
     const newErrors = {};
@@ -292,13 +350,33 @@ const ContactSales = () => {
 
     // Mark everything as touched
     const touchedFields = {};
+
     Object.keys(formData).forEach((key) => {
       touchedFields[key] = true;
     });
 
     setTouched(touchedFields);
 
-    // Focus first invalid field
+    /* ---------------------------------
+     Validate demo booking
+  ----------------------------------*/
+
+    setBookingError("");
+
+    if (!demoDate) {
+      setBookingError("Please select a demo date.");
+      return;
+    }
+
+    if (!selectedSlot) {
+      setBookingError("Please select an available time slot.");
+      return;
+    }
+
+    /* ---------------------------------
+     Stop if normal form has errors
+  ----------------------------------*/
+
     if (Object.keys(newErrors).length > 0) {
       const firstInvalid = Object.keys(newErrors)[0];
 
@@ -309,6 +387,58 @@ const ContactSales = () => {
 
     try {
       setSubmitting(true);
+
+      /* ---------------------------------
+       STEP 1: Reserve the demo slot
+    ----------------------------------*/
+
+      const bookingResponse = await fetch(`${DEMO_BOOKING_API}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "text/plain;charset=utf-8",
+        },
+        body: JSON.stringify({
+          date: demoDate,
+          slot: selectedSlot,
+          name: `${formData.firstName.trim()} ${formData.lastName.trim()}`,
+          email: formData.email.trim(),
+          company: formData.company.trim(),
+        }),
+      });
+
+      const bookingData = await bookingResponse.json();
+
+      /* ---------------------------------
+       Slot was already booked
+    ----------------------------------*/
+
+      if (!bookingData.success) {
+        setBookingError(
+          bookingData.message ||
+            "This time slot is no longer available. Please select another slot.",
+        );
+
+        // Refresh availability
+        try {
+          const availabilityResponse = await fetch(
+            `${DEMO_BOOKING_API}?date=${demoDate}`,
+          );
+
+          const availabilityData = await availabilityResponse.json();
+
+          if (availabilityData.success) {
+            setSlots(availabilityData.slots);
+          }
+        } catch (availabilityError) {
+          console.error("Availability refresh error:", availabilityError);
+        }
+
+        return;
+      }
+
+      /* ---------------------------------
+       STEP 2: Send EmailJS notification
+    ----------------------------------*/
 
       await emailjs.send(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
@@ -329,18 +459,30 @@ const ContactSales = () => {
           data_volume: formData.expectedVolume,
           message: formData.message.trim(),
           marketing_consent: formData.consent ? "Yes" : "No",
+
+          // Demo booking information
+          demo_date: demoDate,
+          demo_slot: selectedSlot,
+          interested_topic:
+            interestedTopic === "Other" ? otherInterest : interestedTopic,
         },
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
       );
 
+      /* ---------------------------------
+       STEP 3: Success
+    ----------------------------------*/
+
       setSubmitted(true);
 
-      // Hide success message after 5 seconds
       setTimeout(() => {
         setSubmitted(false);
       }, 5000);
 
-      // Reset form
+      /* ---------------------------------
+       STEP 4: Reset form
+    ----------------------------------*/
+
       setFormData({
         firstName: "",
         lastName: "",
@@ -359,12 +501,19 @@ const ContactSales = () => {
         consent: false,
       });
 
+      setDemoDate("");
+      setSelectedSlot("");
+      setSlots([]);
+      setBookingError("");
+
       setErrors({});
       setTouched({});
     } catch (err) {
-      console.error("EmailJS Error:", err);
+      console.error("Demo booking error:", err);
 
-      alert("Failed to send your request. Please try again in a few moments.");
+      setBookingError(
+        "We couldn't complete your booking. Please try again in a few moments.",
+      );
     } finally {
       setSubmitting(false);
     }
@@ -776,7 +925,124 @@ const ContactSales = () => {
                     <option value="More than 100 TB">More than 100 TB</option>
                   </select>
                 </div>
+                <div className="space-y-2">
+                  <label className="block text-sm font-medium text-slate-700">
+                    Select Demo Date
+                  </label>
 
+                  <input
+                    type="date"
+                    value={demoDate}
+                    onChange={(e) => setDemoDate(e.target.value)}
+                    min={new Date().toISOString().split("T")[0]}
+                    className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-700 outline-none transition focus:border-cyan-500 focus:ring-2 focus:ring-cyan-100"
+                  />
+                </div>
+                {demoDate && (
+                  <div className="mt-6">
+                    <label className="block text-sm font-medium text-slate-700">
+                      Select a Time Slot
+                    </label>
+
+                    {loadingSlots ? (
+                      <div className="mt-3 rounded-xl border border-slate-200 bg-slate-50 px-4 py-4 text-sm text-slate-500">
+                        Checking available slots...
+                      </div>
+                    ) : (
+                      <div className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-3">
+                        {slots.map((item) => {
+                          const isSelected = selectedSlot === item.slot;
+
+                          return (
+                            <button
+                              key={item.slot}
+                              type="button"
+                              disabled={!item.available}
+                              onClick={() => {
+                                if (item.available) {
+                                  setSelectedSlot(item.slot);
+                                  setBookingError("");
+                                }
+                              }}
+                              className={`rounded-xl border px-4 py-4 text-left transition
+                ${
+                  !item.available
+                    ? "cursor-not-allowed border-slate-200 bg-slate-100 text-slate-400"
+                    : isSelected
+                      ? "border-cyan-500 bg-cyan-50 text-cyan-700 ring-2 ring-cyan-100"
+                      : "border-slate-200 bg-white text-slate-700 hover:border-cyan-400 hover:bg-cyan-50"
+                }
+              `}
+                            >
+                              <div className="font-medium">{item.slot}</div>
+
+                              <div
+                                className={`mt-1 text-xs font-medium ${
+                                  item.available
+                                    ? isSelected
+                                      ? "text-cyan-600"
+                                      : "text-green-600"
+                                    : "text-red-500"
+                                }`}
+                              >
+                                {item.available
+                                  ? isSelected
+                                    ? "Selected"
+                                    : "Available"
+                                  : "Booked"}
+                              </div>
+                            </button>
+                          );
+                        })}
+                      </div>
+                    )}
+                  </div>
+                )}
+                {/* Interest Topic */}
+                <div>
+                  <label className="block text-sm font-medium text-slate-700">
+                    What are you interested in?
+                  </label>
+
+                  <div className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                    {interestOptions.map((option) => (
+                      <button
+                        key={option}
+                        type="button"
+                        onClick={() => setInterestedTopic(option)}
+                        className={`rounded-xl border px-4 py-3 text-left text-sm font-medium transition ${
+                          interestedTopic === option
+                            ? "border-cyan-500 bg-cyan-50 text-cyan-700 shadow-sm"
+                            : "border-slate-200 bg-slate-50 text-slate-700 hover:border-cyan-300 hover:bg-cyan-50/50"
+                        }`}
+                      >
+                        {option}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {interestedTopic === "Other" && (
+                  <div className="mt-4">
+                    <label
+                      htmlFor="other_interest"
+                      className="block text-sm font-medium text-slate-700"
+                    >
+                      Tell us what you're interested in
+                    </label>
+
+                    <input
+                      id="other_interest"
+                      type="text"
+                      name="other_interest"
+                      value={otherInterest}
+                      onChange={(e) => setOtherInterest(e.target.value)}
+                      placeholder="Tell us what you're looking for..."
+                      className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-cyan-500 focus:ring-2 focus:ring-cyan-100"
+                      required
+                    />
+                  </div>
+                )}
                 {/* Message */}
 
                 <div>
@@ -874,21 +1140,7 @@ const ContactSales = () => {
                       <p className="text-sm text-slate-500">Email</p>
 
                       <p className="font-medium text-slate-900">
-                        enquiry@seganalytics.com
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-cyan-50">
-                      <Phone className="h-5 w-5 text-cyan-600" />
-                    </div>
-
-                    <div>
-                      <p className="text-sm text-slate-500">Phone</p>
-
-                      <p className="font-medium text-slate-900">
-                        +91-9920322489{" "}
+                        gaurav@seganalytics.com
                       </p>
                     </div>
                   </div>
@@ -940,18 +1192,19 @@ const ContactSales = () => {
 
               {/* Enterprise Features */}
 
-              <div className="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm">
+              {/* <div className="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm">
                 <h3 className="text-xl font-semibold text-slate-900">
                   Enterprise Features
                 </h3>
 
                 <div className="mt-6 grid grid-cols-2 gap-3">
                   {[
-                    "Apache Flink",
-                    "Apache Iceberg",
+                    "Batch Pipeline",
                     "Real-Time CDC",
                     "Visual ETL",
                     "Lakehouse",
+                    "Orchestration",
+                    "Segforge SQL",
                     "Notebook Analytics",
                     "Workflow Engine",
                     "ML & AI",
@@ -965,7 +1218,7 @@ const ContactSales = () => {
                     </div>
                   ))}
                 </div>
-              </div>
+              </div> */}
 
               {/* Response Time */}
 

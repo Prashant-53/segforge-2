@@ -7,6 +7,7 @@ import {
   FaEnvelope,
   FaYoutube,
 } from "react-icons/fa";
+import Logo from "../../assets/segforge-logo.png";
 
 const footerSections = [
   {
@@ -17,28 +18,28 @@ const footerSections = [
         to: "/product/etl-studio",
       },
       {
-        title: "Workflow Engine",
-        to: "/product/workflow-engine",
+        title: "Orchestration",
+        to: "/product/orchestration",
       },
       {
-        title: "Interactive Notebooks",
-        to: "/product/notebooks",
-      },
-      {
-        title: "Data Catalog",
-        to: "/product/catalog",
+        title: "SQL Worksheets",
+        to: "/product/sql-worksheets",
       },
       {
         title: "Real-Time CDC",
-        to: "/product/cdc",
+        to: "/product/real-time-cdc",
       },
       {
-        title: "Lakehouse",
-        to: "/product/lakehouse",
+        title: "Data Lakehouse",
+        to: "/product/data-lakehouse",
       },
       {
-        title: "ML & AI",
-        to: "/product/mlops",
+        title: "MLOPs",
+        to: "/product/ml-ops",
+      },
+      {
+        title: "AI Features",
+        to: "/product/ai",
       },
     ],
   },
@@ -77,19 +78,19 @@ const footerSections = [
     links: [
       {
         title: "Migration Services",
-        to: "/services/migration",
+        to: "/solutions/migration-services",
       },
       {
         title: "Architecture Review",
-        to: "/services/architecture-review",
+        to: "/solutions/architecture-review",
       },
       {
         title: "Deployment Assistance",
-        to: "/services/deployment",
+        to: "/solutions/deployment-assistance",
       },
       {
         title: "Partner Ecosystem",
-        to: "/services/partners",
+        to: "/solutions/partner-ecosystem",
       },
     ],
   },
@@ -99,48 +100,49 @@ const footerSections = [
     links: [
       {
         title: "Data Engineering",
-        to: "/teams/data-engineering",
+        to: "/solutions/data-enginnering",
       },
       {
         title: "Analytics Teams",
-        to: "/teams/analytics",
+        to: "/solutions/analytics-team",
       },
       {
         title: "Machine Learning Teams",
-        to: "/teams/ml",
+        to: "/solutions/ML-teams",
       },
     ],
   },
 
-  {
-    title: "Developers",
-    links: [
-      {
-        title: "Documentation",
-        to: "/docs",
-      },
-      {
-        title: "APIs",
-        to: "/developers/apis",
-      },
-      {
-        title: "SDKs",
-        to: "/developers/sdks",
-      },
-      {
-        title: "CLI",
-        to: "/developers/cli",
-      },
-      {
-        title: "Integrations",
-        to: "/developers/integrations",
-      },
-      {
-        title: "GitHub",
-        to: "/github",
-      },
-    ],
-  },
+  // {
+  //   title: "Developers",
+  //   links: [
+  //     {
+  //       title: "APIs",
+  //       to: "/developers/apis",
+  //     },
+  //     {
+  //       title: "SDKs",
+  //       to: "/developers/sdks",
+  //     },
+  //     {
+  //       title: "CLI",
+  //       to: "/developers/cli",
+  //     },
+  //     {
+  //       title: "Integrations",
+  //       to: "/developers/integrations",
+  //     },
+  //     {
+  //       title: "GitHub",
+  //       to: "/github",
+  //     },
+
+  //     {
+  //       title: "Open Source",
+  //       to: "/developers/quickstarts",
+  //     },
+  //   ],
+  // },
 
   {
     title: "Resources",
@@ -149,111 +151,31 @@ const footerSections = [
         title: "Documentation",
         to: "/docs/getting-started/what-is-segforge",
       },
-      {
-        title: "Tutorials",
-        to: "/resources/tutorials",
-      },
-      {
-        title: "Quickstarts",
-        to: "/resources/quickstarts",
-      },
-      {
-        title: "Reference Architectures",
-        to: "/reference-architectures",
-      },
-      {
-        title: "Changelog",
-        to: "/resources/changelog",
-      },
+      // {
+      //   title: "Tutorials",
+      //   to: "/resources/tutorials",
+      // },
+
+      // {
+      //   title: "Changelog",
+      //   to: "/resources/changelog",
+      // },
     ],
   },
-
-  // {
-  //   title: "Company",
-  //   links: [
-  //     {
-  //       title: "About",
-  //       to: "/about",
-  //     },
-  //     {
-  //       title: "Pricing",
-  //       to: "/pricing",
-  //     },
-  //     {
-  //       title: "Contact Sales",
-  //       to: "/contact",
-  //     },
-  //     {
-  //       title: "Security",
-  //       to: "/security",
-  //     },
-  //     {
-  //       title: "Compliance",
-  //       to: "/compliance",
-  //     },
-  //     {
-  //       title: "Privacy Policy",
-  //       to: "/privacy",
-  //     },
-  //     {
-  //       title: "Terms of Service",
-  //       to: "/terms",
-  //     },
-  //   ],
-  // },
 ];
 const Footer = () => {
   return (
     <footer className="bg-slate-900 text-white">
-      <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <div className="grid gap-20 lg:grid-cols-[340px_1fr]">
-          {/* ================= LEFT ================= */}
-
-          <div>
-            <div className="flex items-center gap-3">
-              <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600" />
-
-              <span className="text-2xl font-bold">SegForge</span>
-            </div>
-
-            <p className="mt-6 max-w-sm leading-7 text-slate-400">
-              Unified platform for ETL, CDC, lakehouse analytics, orchestration,
-              notebooks and AI.
-            </p>
-
-            <div className="mt-8 flex gap-5">
-              <a
-                href="https://github.com/vaibhav-zoro/ETL-Studio-development/tree/kubernetes"
-                className="text-slate-400 transition hover:text-cyan-400"
-              >
-                <FaGithub size={18} />
-              </a>
-
-              <a
-                href="https://www.linkedin.com/company/segmetriq-analytics-llp/"
-                className="text-slate-400 transition hover:text-cyan-400"
-              >
-                <FaLinkedin size={18} />
-              </a>
-              <a
-                href="https://www.youtube.com/@seganalytics"
-                className="text-slate-400 transition hover:text-cyan-400"
-              >
-                <FaYoutube size={18} />
-              </a>
-            </div>
-          </div>
-
-          {/* ================= RIGHT ================= */}
-
-          <div className="grid grid-cols-2 gap-x-14 gap-y-14 md:grid-cols-3 xl:grid-cols-4">
+      <div className="mx-auto max-w-7xl px-6 py-8 lg:px-8">
+        <div className="flex flex-col">
+          <div className="grid grid-cols-2 gap-x-10 gap-y-10 md:grid-cols-3 xl:grid-cols-5">
             {footerSections.map((section) => (
               <div key={section.title}>
                 <h3 className="mb-6 text-sm font-semibold uppercase tracking-widest text-white">
                   {section.title}
                 </h3>
 
-                <ul className="space-y-4">
+                <ul className="space-y-3">
                   {section.links.map((link) => {
                     const Icon = link.icon;
 
@@ -276,11 +198,44 @@ const Footer = () => {
               </div>
             ))}
           </div>
+
+          <div className=" flex flex-col items-center justify-center">
+            <div className="flex  mt-5 gap-3">
+              {/* <img
+                src={Logo}
+                alt="SegForge Logo"
+                className="h-18 w-18 object-contain"
+              /> */}
+              <span className="text-2xl mt-5 font-bold">
+                Seg<span className="text-[#18D0BB]">Forge</span>
+              </span>
+            </div>
+
+            <p className="mt-5 max-w-sm text-md text-center leading-6 text-slate-400">
+              Unified platform for ETL, CDC, lakehouse analytics, orchestration,
+              notebooks and AI.
+            </p>
+
+            <div className="mt-4 flex gap-5">
+              <a
+                href="https://www.linkedin.com/company/segmetriq-analytics-llp/"
+                className="text-slate-400 transition hover:text-cyan-400"
+              >
+                <FaLinkedin size={20} />
+              </a>
+              <a
+                href="https://www.youtube.com/@seganalytics"
+                className="text-slate-400 transition hover:text-cyan-400"
+              >
+                <FaYoutube size={20} />
+              </a>
+            </div>
+          </div>
         </div>
 
         {/* ================= Bottom ================= */}
 
-        <div className="mt-16 flex flex-col gap-4 border-t border-slate-800 pt-8 text-sm text-slate-500 md:flex-row md:items-center md:justify-between">
+        <div className="mt-5 flex flex-col gap-4 border-t border-slate-800 pt-8 text-sm text-slate-500 md:flex-row md:items-center md:justify-between">
           <p>© 2026 SegForge. All rights reserved.</p>
 
           <div className="flex gap-6">

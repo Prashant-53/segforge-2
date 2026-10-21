@@ -1,9 +1,11 @@
 import React from "react";
 import AnalyticsHero from "../../subPages/product/Analytics/analyticsHero";
-import EmbeddedSupersetSection from "../../subPages/product/Analytics/embeddedSupersetSection ";
-import VisualizationHubSection from "../../subPages/product/Analytics/visualizationHubSection ";
-import SQLLabSection from "../../subPages/product/Analytics/SQLLabSection ";
-import AnalyticsGovernanceSection from "../../subPages/product/Analytics/analyticsGovernanceSection ";
+import EmbeddedBISection from "../../subPages/product/Analytics/EmbeddedBISection";
+import InteractiveAnalyticsNotebooks from "../../subPages/product/Analytics/InteractiveAnalyticsNotebooks";
+import DirectLakehouseQuerying from "../../subPages/product/Analytics/DirectLakehouseQuerying";
+import AnalyticsAcrossWorkspace from "../../subPages/product/Analytics/AnalyticsAcrossWorkspace";
+import MLRiskModels from "../../subPages/product/Analytics/MLRiskModels";
+import AnalyticsFAQ from "../../subPages/product/Analytics/faq";
 import { CTABanner } from "../../components/BottomCTA";
 import MainLayout from "../../layouts/mainLayout";
 
@@ -11,10 +13,12 @@ const Analytics = () => {
   return (
     <MainLayout>
       <AnalyticsHero />
-      <EmbeddedSupersetSection />
-      <VisualizationHubSection />
-      <SQLLabSection />
-      <AnalyticsGovernanceSection />
+      <EmbeddedBISection />
+      <InteractiveAnalyticsNotebooks />
+      <DirectLakehouseQuerying />
+      <AnalyticsAcrossWorkspace />
+      <MLRiskModels />
+      {/* <AnalyticsFAQ /> */}
       <CTABanner />
     </MainLayout>
   );

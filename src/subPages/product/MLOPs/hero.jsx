@@ -53,7 +53,7 @@ const MLOpsHero = () => {
             {/* Badge */}
 
             <div className="inline-flex items-center gap-2 rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">
-              <Sparkles className="h-4 w-4" />
+              <BrainCircuit className="h-4 w-4" />
               Machine Learning & MLOps
             </div>
 

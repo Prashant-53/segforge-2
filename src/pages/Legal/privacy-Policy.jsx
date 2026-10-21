@@ -17,6 +17,7 @@ const PrivacyPolicy = () => {
   return (
     <MainLayout>
       <PrivacyPolicyHeader />
+      <PrivacyScope />
       <ComplianceGovernance />
       <CookiesSection />
       <DataRetention />
@@ -24,7 +25,6 @@ const PrivacyPolicy = () => {
       <PrivacyNotice />
       <InformationCollected />
       <TechnicalSecurity />
-      <PrivacyScope />
       <PrivacyRights />
       <PrivacyContact />
     </MainLayout>

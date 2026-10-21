@@ -5,14 +5,6 @@ import { ArrowRight, Play, CheckCircle2, Workflow } from "lucide-react";
 
 import HeroImage from "../../../assets/Products/WorkflowEngine/workflowhero.webp";
 
-const highlights = [
-  "Visual DAG Orchestration",
-  "Enterprise Scheduling",
-  "Automatic Recovery",
-  "Batch & Streaming",
-  "Real-Time Monitoring",
-];
-
 const WorkflowHero = () => {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 via-white to-white pt-36 pb-24">
@@ -54,31 +46,25 @@ const WorkflowHero = () => {
 
             <div className="inline-flex items-center gap-2 rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">
               <Workflow className="h-4 w-4" />
-              Workflow Engine
+              Orchestration
             </div>
 
             {/* Heading */}
 
-            <h1 className="mt-8 text-5xl font-bold leading-none text-slate-900 lg:text-5xl">
-              Eliminate Manual
-              <br />
-              Pipeline Operations
+            <h1 className="mt-8 text-4xl font-bold leading-none text-slate-900 lg:text-5xl">
+              From pipeline to production,
               <br />
               <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
-                with Intelligent
-                <br />
-                Orchestration.
+                automatically.
               </span>
             </h1>
 
             {/* Description */}
 
-            <p className="mt-8 max-w-2xl text-md leading-6 text-slate-600">
-              Design resilient data workflows, automate execution, recover
-              automatically from failures, and meet enterprise SLAs through a
-              visual orchestration engine powered by Apache Flink. Coordinate
-              complex dependencies with confidence while maintaining complete
-              operational visibility.
+            <p className="mt-5 max-w-2xl text-md leading-6 text-slate-600">
+              Orchestrate pipelines, CDC jobs, SQL, and data workloads with
+              dependencies, scheduling, retries, notifications, and execution
+              controls in one workflow.
             </p>
 
             {/* CTA */}

@@ -6,7 +6,7 @@ import UnifiedFinancialPlatform from "../../subPages/solutions/fin-services/unif
 import FinancialUseCases from "../../subPages/solutions/fin-services/useCases";
 import FinancialGovernance from "../../subPages/solutions/fin-services/tgc";
 import FinancialDeployment from "../../subPages/solutions/fin-services/deploymentStats";
-import FinancialCTA from "../../subPages/solutions/fin-services/finCTA";
+import CTA from "../../components/BottomCTA";
 import MainLayout from "../../layouts/mainLayout";
 
 const FinancialServices = () => {
@@ -18,7 +18,7 @@ const FinancialServices = () => {
       <FinancialUseCases />
       <FinancialGovernance />
       <FinancialDeployment />
-      <FinancialCTA />
+      <CTA />
     </MainLayout>
   );
 };

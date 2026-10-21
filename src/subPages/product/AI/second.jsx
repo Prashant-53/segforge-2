@@ -1,204 +1,163 @@
 import React from "react";
 import { motion } from "framer-motion";
 import {
-  Blocks,
+  Bot,
+  BrainCircuit,
   SlidersHorizontal,
-  Binary,
+  ArrowUpRight,
   Sparkles,
-  CheckCircle2,
-  ShieldCheck,
-  Wand2,
+  Network,
+  Layers3,
 } from "lucide-react";
-
-import Hero from "../../../assets/Products/AI/second.png";
-
-const capabilityGroups = [
-  {
-    icon: SlidersHorizontal,
-    title: "Preprocessing",
-    items: ["Scaler", "Encoder", "Imputer", "Normalization"],
-  },
-  {
-    icon: Binary,
-    title: "Feature Engineering",
-    items: [
-      "Feature Selection",
-      "Feature Cross",
-      "Derived Features",
-      "ML Transformations",
-    ],
-  },
-];
 
 const features = [
   {
-    icon: Blocks,
-    title: "90+ Visual ML Transformation Nodes",
+    number: "01",
+    title: "AI Agents",
     description:
-      "Prepare production-ready datasets using an extensive library of drag-and-drop transformation nodes purpose-built for feature engineering. Clean, reshape, encode, normalize, and enrich data without writing complex preprocessing code.",
+      "Create AI-powered experiences designed to support tasks, interact with information, and assist users across workflows.",
+    icon: Bot,
+    accent: "from-cyan-400 to-blue-500",
+    glow: "group-hover:shadow-cyan-500/10",
   },
   {
-    icon: ShieldCheck,
-    title: "Built-In Data Validation",
+    number: "02",
+    title: "LLM Hub",
     description:
-      "Validate every dataset before training using profiling, assertions, schema validation, and quality rules that act as an intelligent circuit breaker, ensuring only trusted data reaches machine learning pipelines.",
+      "Bring language model access into your AI environment, providing a central place to work with the models that power your applications.",
+    icon: BrainCircuit,
+    accent: "from-blue-400 to-indigo-500",
+    glow: "group-hover:shadow-blue-500/10",
   },
   {
-    icon: Wand2,
-    title: "Advanced Feature Engineering",
+    number: "03",
+    title: "Model Tuning",
     description:
-      "Create interaction features, identify high-impact variables, remove noisy attributes, and automatically prepare optimized feature sets for downstream model training and experimentation.",
+      "Adapt model configurations to your requirements and use cases, helping align AI behavior with your intended applications.",
+    icon: SlidersHorizontal,
+    accent: "from-indigo-400 to-violet-500",
+    glow: "group-hover:shadow-indigo-500/10",
   },
 ];
 
-const Second = () => {
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: {
+    opacity: 0,
+    y: 30,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
+
+export default function AIAgentsSection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-white to-slate-50 py-28">
-      {/* Animated Grid */}
+    <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 via-white to-white pt-36 pb-12">
+      {/* Background effects */}
+      <div className="pointer-events-none absolute inset-0">
+        <div
+          className="absolute inset-0 opacity-[0.07]"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(34,211,238,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(34,211,238,0.5) 1px, transparent 1px)",
+            backgroundSize: "48px 48px",
+            maskImage:
+              "linear-gradient(to bottom, transparent, black 20%, black 80%, transparent)",
+          }}
+        />
 
-      <motion.div
-        animate={{
-          backgroundPosition: ["0px 0px", "120px 120px"],
-        }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          ease: "linear",
-        }}
-        className="absolute inset-0 opacity-[0.04]"
-        style={{
-          backgroundImage: `
-            linear-gradient(to right,#18D0BB 1px,transparent 1px),
-            linear-gradient(to bottom,#18D0BB 1px,transparent 1px)
-          `,
-          backgroundSize: "80px 80px",
-        }}
-      />
+        <div className="absolute -left-40 top-20 h-96 w-96 rounded-full bg-cyan-500/10 blur-[130px]" />
 
-      <div className="absolute left-0 top-32 h-[500px] w-[500px] rounded-full bg-cyan-400/10 blur-[180px]" />
+        <div className="absolute -right-40 bottom-0 h-96 w-96 rounded-full bg-blue-600/10 blur-[130px]" />
+      </div>
 
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid items-center gap-20 lg:grid-cols-2">
-          {/* LEFT */}
+      <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+        {/* Section heading */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.65 }}
+          className="mx-auto mb-8 max-w-4xl text-center "
+        >
+          {/* Eyebrow */}
+          <div className="inline-flex items-center gap-2 rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">
+            <Sparkles size={15} />
+            AI Agents · LLM Hub · Model Tuning
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-          >
-            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">
-              <Sparkles className="h-4 w-4" />
-              Visual Feature Engineering
-            </div>
+          {/* Heading */}
+          <h2 className="text-4xl mt-4 font-semibold leading-tight tracking-tight text-slate-900 ">
+            Build intelligent AI experiences with models that fit your needs.
+          </h2>
 
-            <h2 className="mt-6 text-4xl font-bold leading-none text-slate-900 lg:text-4xl">
-              Build Your Foundation
-              <br />
-              for Production AI.
-            </h2>
+          {/* {/* Description*/}
 
-            <p className="mt-6 text-md leading-8 text-slate-600">
-              Prepare high-quality machine learning datasets through an
-              intuitive visual interface. Apply preprocessing, engineer
-              meaningful features, and validate data quality using more than 90
-              enterprise-ready transformation nodes designed specifically for ML
-              workloads.
-            </p>
+          <p className="mx-auto mt-6 max-w-3xl text-base leading-7 text-slate-600 ">
+            Bring AI agents, language models, and model configuration together
+            in one platform. SegForge helps teams work with AI capabilities
+            while shaping model behavior for their use cases.
+          </p>
+        </motion.div>
 
-            {/* Capability Groups */}
+        {/* Feature cards */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.15 }}
+          className="grid grid-cols-1 gap-5 md:grid-cols-3 lg:gap-6"
+        >
+          {features.map((feature) => {
+            const Icon = feature.icon;
 
-            <div className="mt-10 grid gap-6 md:grid-cols-2">
-              {capabilityGroups.map((group) => (
-                <div
-                  key={group.title}
-                  className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
-                >
-                  <div className="flex items-center gap-3">
-                    <group.icon className="h-7 w-7 text-cyan-600" />
+            return (
+              <motion.div
+                key={feature.number}
+                variants={itemVariants}
+                className={`group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.035] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/30 hover:bg-white/[0.055] hover:shadow-2xl sm:p-8 ${feature.glow}`}
+              >
+                {/* Card glow */}
+                <div className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-cyan-400/[0.04] blur-3xl transition-all duration-500 group-hover:bg-cyan-400/[0.10]" />
 
-                    <h3 className="text-xl font-semibold text-slate-900">
-                      {group.title}
-                    </h3>
-                  </div>
-
-                  <div className="mt-6 space-y-3">
-                    {group.items.map((item) => (
-                      <div key={item} className="flex items-center gap-3">
-                        <CheckCircle2 className="h-4 w-4 text-cyan-500" />
-
-                        <span className="text-slate-700">{item}</span>
-                      </div>
-                    ))}
+                {/* Card header */}
+                <div className="relative mb-10 flex items-center justify-between">
+                  <div
+                    className={`flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br ${feature.accent} shadow-lg shadow-black/20`}
+                  >
+                    <Icon size={27} className="text-white" strokeWidth={1.8} />
                   </div>
                 </div>
-              ))}
-            </div>
 
-            {/* Supporting Features */}
+                {/* Card content */}
+                <div className="relative flex flex-1 flex-col">
+                  <h3 className="text-xl font-semibold tracking-tight text-slate-900 sm:text-2xl">
+                    {feature.title}
+                  </h3>
 
-            <div className="mt-10 space-y-5">
-              {features.map((feature) => (
-                <div
-                  key={feature.title}
-                  className="flex gap-5 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-cyan-200 hover:shadow-lg"
-                >
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-cyan-50">
-                    <feature.icon className="h-7 w-7 text-cyan-600" />
-                  </div>
-
-                  <div>
-                    <h3 className="text-lg font-semibold text-slate-900">
-                      {feature.title}
-                    </h3>
-
-                    <p className="mt-2 leading-7 text-slate-600">
-                      {feature.description}
-                    </p>
-                  </div>
+                  <p className="mt-4 flex-1 text-sm leading-7 text-slate-600 sm:text-base">
+                    {feature.description}
+                  </p>
                 </div>
-              ))}
-            </div>
-
-            {/* Bottom Highlight */}
-
-            <div className="mt-10 overflow-hidden rounded-3xl border border-cyan-100 bg-gradient-to-r from-cyan-500 to-blue-600 p-[1px] shadow-lg">
-              <div className="rounded-[22px] bg-white px-8 py-6">
-                <p className="text-lg font-semibold text-slate-900">
-                  Every great model starts with trustworthy features.
-                </p>
-
-                <p className="mt-2 leading-7 text-slate-600">
-                  Prepare, validate, and engineer production-ready datasets
-                  through a visual workflow before a single model is trained.
-                </p>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* RIGHT */}
-
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="relative"
-          >
-            <div className="absolute inset-0   bg-cyan-400/10 blur-3xl" />
-
-            <div className="overflow-hidden  border border-slate-200 bg-white shadow-2xl">
-              <img
-                src={Hero}
-                alt="Visual Feature Engineering"
-                className="w-full"
-              />
-            </div>
-          </motion.div>
-        </div>
+              </motion.div>
+            );
+          })}
+        </motion.div>
       </div>
     </section>
   );
-};
-
-export default Second;
+}

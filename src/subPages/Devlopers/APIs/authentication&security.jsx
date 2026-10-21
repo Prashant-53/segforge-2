@@ -184,28 +184,28 @@ Bearer sgf_api_xxxxxxxxxxxxxx`}
 
         {/* Technical Architecture */}
 
-        <div className="mt-24 rounded-[32px] bg-slate-950 p-10 overflow-hidden">
+        <div className="mt-24 rounded-[32px] text-center bg-slate-950 p-10 overflow-hidden">
           <h3 className="text-2xl font-semibold text-white mb-8">
             Request Authorization Flow
           </h3>
 
           <pre className="text-slate-300 leading-8 overflow-x-auto">
-            {`Client Request
+            {`   Client Request
       │
       ▼
-JWT Validation
+    JWT Validation
       │
       ▼
-User Lookup
+   User Lookup
       │
       ▼
-Workspace Scope Check
+   Workspace Scope Check
       │
       ▼
-RBAC Permission Check
+   RBAC Permission Check
       │
       ▼
-Route Handler
+   Route Handler
 `}
           </pre>
         </div>

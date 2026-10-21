@@ -24,7 +24,7 @@ const PricingHero = () => {
               Simple, Transparent Pricing
             </div>
 
-            <h1 className="text-4xl lg:text-6xl font-bold text-slate-900 leading-[1.05]">
+            <h1 className="text-4xl lg:text-5xl font-bold text-slate-900 leading-[1.05]">
               Modern lakehouse economics
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">
@@ -48,12 +48,6 @@ const PricingHero = () => {
                 <span className="relative z-10  flex  items-center gap-2">
                   Start Free with $400 Cloud Credits
                   <ArrowRight className="w-4 h-4" />
-                </span>
-              </button>
-
-              <button className="group relative inline-flex items-center justify-center overflow-hidden rounded-md border border-slate-300 bg-white px-6 py-3 font-semibold text-slate-700 transition-all duration-300 hover:border-slate-400">
-                <span className="relative z-10">
-                  Deploy the Open Source Docker Image
                 </span>
               </button>
             </div>

@@ -4,7 +4,7 @@ import IntegrationChallenge from "../../subPages/solutions/Deployment-Assistance
 import OpenIntegrationFramework from "../../subPages/solutions/Deployment-Assistance/answer";
 import AnalyticsGovernanceConnectivity from "../../subPages/solutions/Deployment-Assistance/simulator";
 import StorageFreedom from "../../subPages/solutions/Deployment-Assistance/built";
-import IntegrationsCTA from "../../subPages/solutions/Deployment-Assistance/cta";
+import CTA from "../../components/BottomCTA";
 import MainLayout from "../../layouts/mainLayout";
 
 const PartnerEcosystem = () => {
@@ -15,7 +15,7 @@ const PartnerEcosystem = () => {
       <OpenIntegrationFramework />
       <AnalyticsGovernanceConnectivity />
       <StorageFreedom />
-      <IntegrationsCTA />
+      <CTA />
     </MainLayout>
   );
 };

@@ -10,32 +10,32 @@ export const CTABanner = () => {
       data-testid="cta-section "
       className="relative section-pad  py-5"
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 ">
+      <div className="max-w-7xl mx-auto px-4 lg:px-10 ">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8 }}
-          className="relative overflow-hidden rounded-3xl border border-black bg-[#0F172B] px-6 py-10 sm:px-10 sm:py-14 lg:px-16 lg:py-16"
+          className="relative overflow-hidden rounded-3xl border border-black bg-[#0F172B] px-6 py-10 sm:px-10 sm:py-14 lg:px-8 lg:py-8"
         >
           <div className="absolute inset-0 bg-grid opacity-30 [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,black,transparent_75%)]" />
 
-          <div className="relative grid lg:grid-cols-12 gap-10 items-center">
+          <div className="relative grid lg:grid-cols-12 gap-5 items-center">
             {/* Left */}
 
-            <div className="lg:col-span-8 text-center lg:text-left">
+            <div className="lg:col-span-8  text-center lg:text-left">
               <p className="text-xs sm:text-sm font-mono uppercase tracking-[0.3em] text-white/70">
                 Get Started
               </p>
 
-              <h2 className="mt-4 text-3xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
+              <h2 className="mt-2 text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-white  ">
                 Work Your Data
               </h2>
 
-              <p className="mt-5 max-w-2xl mx-auto lg:mx-0 text-sm sm:text-base text-slate-300 leading-7">
+              {/* <p className="mt-3 max-w-2xl mx-auto lg:mx-0 text-sm text-slate-300 leading-7">
                 Build pipelines, orchestrate workflows, stream CDC, and power
                 your lakehouse from one unified data platform.
-              </p>
+              </p> */}
             </div>
 
             {/* Right */}

@@ -1,11 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Download, ChevronRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const SDKHero = () => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 via-white to-white pt-36 pb-32">
-      {/* Background Grid */}
+    <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 via-white to-white pt-28 pb-5 lg:pt-36 lg:pb-32">
+      {/* Grid */}
 
       <div
         className="absolute inset-0 opacity-[0.04]"
@@ -20,20 +21,23 @@ const SDKHero = () => {
 
       {/* Glow */}
 
-      <div className="absolute top-20 left-1/3 w-[500px] h-[500px] bg-cyan-400/10 rounded-full blur-[140px]" />
+      <div className="absolute left-1/3 top-20 h-[500px] w-[500px] rounded-full bg-cyan-400/10 blur-[140px]" />
+      <div className="absolute bottom-0 right-1/4 h-[600px] w-[600px] rounded-full bg-blue-400/10 blur-[160px]" />
 
-      <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-blue-400/10 rounded-full blur-[160px]" />
-
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
           {/* LEFT */}
 
-          <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7 }}
+          >
+            <div className="inline-flex items-center rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700">
               SDKs
             </div>
 
-            <h1 className="mt-8 text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 leading-[1.05]">
+            <h1 className="mt-8 text-4xl font-bold leading-none tracking-tight text-slate-900 sm:text-5xl lg:text-5xl">
               Native client libraries for
               <br />
               <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
@@ -41,34 +45,38 @@ const SDKHero = () => {
               </span>
             </h1>
 
-            <p className="mt-8 max-w-2xl text-md leading-relaxed text-slate-600">
+            <p className="mt-6 max-w-2xl text-base leading-7 text-slate-600 lg:text-md">
               Programmatically manage pipelines, CDC streams, catalogs,
               notebooks, and monitoring through type-safe, language-native SDKs.
             </p>
 
             {/* Buttons */}
 
-            <div className="mt-10 flex flex-wrap gap-4">
-              <button className="group relative overflow-hidden rounded-2xl bg-slate-900 px-7 py-4 text-white font-medium">
-                <span className="absolute inset-0 bg-cyan-500 origin-left scale-x-0 transition-transform duration-500 group-hover:scale-x-100" />
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+              <Link
+                to="/docs/getting-started/what-is-segforge"
+                className="group relative inline-flex items-center justify-center overflow-hidden rounded-xl bg-slate-900 px-7 py-4 font-medium text-white"
+              >
+                <span className="absolute inset-0 origin-left scale-x-0 bg-cyan-500 transition-transform duration-500 group-hover:scale-x-100" />
 
                 <span className="relative flex items-center gap-2">
                   View Documentation
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="h-4 w-4" />
                 </span>
-              </button>
+              </Link>
 
-              <button className="group rounded-2xl border border-slate-300 px-7 py-4 font-medium text-slate-700 transition hover:border-cyan-300 hover:bg-cyan-50">
-                <span className="flex items-center gap-2">
-                  <Download className="w-4 h-4" />
-                  Install SDK
-                </span>
-              </button>
+              {/* <Link
+                to="/developers/sdk-installation"
+                className="inline-flex items-center justify-center rounded-xl border border-slate-300 px-7 py-4 font-medium text-slate-700 transition hover:border-cyan-300 hover:bg-cyan-50"
+              >
+                <Download className="mr-2 h-4 w-4" />
+                Install SDK
+              </Link> */}
             </div>
 
             {/* Languages */}
 
-            <div className="mt-10 flex flex-wrap gap-3">
+            <div className="mt-8 flex flex-wrap gap-3">
               {["Python", "TypeScript", "Java", "Go", ".NET"].map((lang) => (
                 <div
                   key={lang}
@@ -78,21 +86,21 @@ const SDKHero = () => {
                 </div>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* RIGHT */}
 
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
             className="relative"
           >
-            <div className="overflow-hidden rounded-[32px] border border-slate-800 bg-slate-950 shadow-2xl">
+            <div className="overflow-hidden rounded-3xl border border-slate-800 bg-slate-950 shadow-2xl">
               {/* Header */}
 
-              <div className="flex items-center justify-between border-b border-slate-800 px-6 py-4">
-                <div className="flex items-center gap-2">
+              <div className="flex items-center justify-between border-b border-slate-800 px-4 py-4 sm:px-6">
+                <div className="flex gap-2">
                   <span className="h-3 w-3 rounded-full bg-red-500" />
                   <span className="h-3 w-3 rounded-full bg-yellow-500" />
                   <span className="h-3 w-3 rounded-full bg-green-500" />
@@ -105,7 +113,7 @@ const SDKHero = () => {
 
               {/* Code */}
 
-              <pre className="overflow-x-auto p-8 text-sm leading-8 text-slate-300">
+              <pre className="overflow-x-auto p-5 text-xs leading-7 text-slate-300 sm:p-8 sm:text-sm sm:leading-8">
                 <code>{`from segforge import SegForgeClient
 
 client = SegForgeClient(
@@ -119,21 +127,6 @@ pipeline = client.pipelines.get(
 
 pipeline.run()`}</code>
               </pre>
-            </div>
-
-            {/* Floating card */}
-
-            <div className="absolute -bottom-6 -left-6 rounded-2xl border border-slate-200 bg-white p-5 shadow-xl">
-              <div className="text-sm text-slate-500">Supported SDKs</div>
-
-              <div className="mt-2 text-2xl font-bold text-slate-900">
-                5 Languages
-              </div>
-
-              <div className="mt-2 flex items-center gap-1 text-cyan-600 text-sm font-medium">
-                Type-safe APIs
-                <ChevronRight className="w-4 h-4" />
-              </div>
             </div>
           </motion.div>
         </div>

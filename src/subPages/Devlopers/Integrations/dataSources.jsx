@@ -203,11 +203,6 @@ const InboundDataSources = () => {
                   <CheckCircle2 className="h-4 w-4" />
                   Production Ready
                 </div>
-
-                <button className="group/button flex items-center gap-2 rounded-xl bg-slate-900 px-5 py-3 text-sm font-medium text-white transition hover:bg-cyan-500">
-                  View Setup
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover/button:translate-x-1" />
-                </button>
               </div>
             </motion.div>
           ))}

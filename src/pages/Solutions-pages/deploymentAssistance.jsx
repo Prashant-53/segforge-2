@@ -5,7 +5,7 @@ import DeploymentFramework from "../../subPages/solutions/Deployment-Assistance/
 import InfrastructureBlueprintConfigurator from "../../subPages/solutions/Deployment-Assistance/simulator";
 import AutomatedProvisioning from "../../subPages/solutions/Deployment-Assistance/built";
 import DeploymentResilience from "../../subPages/solutions/Deployment-Assistance/enterprise";
-import DeploymentCTA from "../../subPages/solutions/Deployment-Assistance/cta";
+import CTA from "../../components/BottomCTA";
 import MainLayout from "../../layouts/mainLayout";
 
 const DeploymentAssistance = () => {
@@ -17,7 +17,7 @@ const DeploymentAssistance = () => {
       <InfrastructureBlueprintConfigurator />
       <AutomatedProvisioning />
       <DeploymentResilience />
-      <DeploymentCTA />
+      <CTA />
     </MainLayout>
   );
 };

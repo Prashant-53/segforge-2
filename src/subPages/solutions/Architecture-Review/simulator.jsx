@@ -174,36 +174,6 @@ const ProductionReadinessScorecard = () => {
             </div>
           </div>
         </div>
-
-        {/* Bottom Enterprise Bar */}
-
-        <div className="mt-16 border-y border-slate-200 py-8">
-          <div className="grid grid-cols-2 lg:grid-cols-5 gap-8">
-            <div>
-              <div className="text-2xl font-bold text-slate-900">
-                Infrastructure
-              </div>
-            </div>
-
-            <div>
-              <div className="text-2xl font-bold text-slate-900">Security</div>
-            </div>
-
-            <div>
-              <div className="text-2xl font-bold text-slate-900">Streaming</div>
-            </div>
-
-            <div>
-              <div className="text-2xl font-bold text-slate-900">
-                Governance
-              </div>
-            </div>
-
-            <div>
-              <div className="text-2xl font-bold text-slate-900">FinOps</div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

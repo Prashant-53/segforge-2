@@ -1,58 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  BarChart3,
-  PieChart,
-  BrainCircuit,
-  CheckCircle2,
-  Activity,
-} from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import ModelEval from "../../../assets/Products/ML&OPs/ModelEval.png";
-
-const evaluationCategories = [
-  {
-    icon: BarChart3,
-    title: "Model Metrics",
-    items: ["Accuracy", "Precision", "Recall", "F1 Score", "ROC-AUC", "RMSE"],
-  },
-  {
-    icon: PieChart,
-    title: "Visualization",
-    items: [
-      "Confusion Matrix",
-      "ROC Curves",
-      "Precision Recall",
-      "Learning Curves",
-    ],
-  },
-];
-
-const explainabilityFeatures = [
-  {
-    icon: BrainCircuit,
-    title: "SHAP Values",
-    description:
-      "Understand how every feature contributes to model predictions through industry-standard explainability techniques.",
-  },
-  {
-    icon: Activity,
-    title: "Feature Importance",
-    description:
-      "Identify the variables driving model performance and prioritize impactful business features.",
-  },
-  {
-    icon: PieChart,
-    title: "Prediction Breakdown",
-    description:
-      "Visualize individual predictions with detailed contribution analysis for every input feature.",
-  },
-  {
-    icon: CheckCircle2,
-    title: "Model Interpretability",
-    description:
-      "Increase trust in machine learning decisions through transparent, explainable AI workflows.",
-  },
-];
 
 const ModelEvaluationSection = () => {
   return (
@@ -122,64 +71,14 @@ const ModelEvaluationSection = () => {
             </h2>
 
             <p className="mt-6 text-md leading-6 text-slate-600">
-              Evaluate every model with production-grade metrics, compare
-              multiple versions, and understand prediction behavior through
-              explainable AI before deploying models into production.
+              Evaluate every model with production-grade metrics such as
+              accuracy, precision, recall, F1 score, ROC-AUC, and RMSE. Compare
+              model versions through visualizations like confusion matrices, ROC
+              curves, precision-recall curves, and learning curves, while using
+              SHAP values, feature importance, and prediction breakdowns to
+              understand how individual features influence model behavior before
+              deployment.
             </p>
-
-            {/* Evaluation Categories */}
-
-            <div className="mt-10 grid gap-6 md:grid-cols-2">
-              {evaluationCategories.map((category) => (
-                <div
-                  key={category.title}
-                  className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
-                >
-                  <div className="flex items-center gap-3">
-                    <category.icon className="h-7 w-7 text-cyan-600" />
-
-                    <h3 className="text-xl font-semibold text-slate-900">
-                      {category.title}
-                    </h3>
-                  </div>
-
-                  <div className="mt-6 space-y-3">
-                    {category.items.map((item) => (
-                      <div key={item} className="flex items-center gap-3">
-                        <CheckCircle2 className="h-4 w-4 text-cyan-500" />
-
-                        <span className="text-slate-700">{item}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Explainability */}
-
-            <div className="mt-10 space-y-5">
-              {explainabilityFeatures.map((feature) => (
-                <div
-                  key={feature.title}
-                  className="flex gap-5 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-cyan-200 hover:shadow-lg"
-                >
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-cyan-50">
-                    <feature.icon className="h-7 w-7 text-cyan-600" />
-                  </div>
-
-                  <div>
-                    <h3 className="text-lg font-semibold text-slate-900">
-                      {feature.title}
-                    </h3>
-
-                    <p className="mt-2 leading-7 text-slate-600">
-                      {feature.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
           </motion.div>
         </div>
       </div>

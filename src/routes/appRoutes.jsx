@@ -5,16 +5,13 @@ import WhySegforge from "../pages/whySegforge";
 import Product from "../pages/product";
 import ETLStudio from "../pages/Product-pages/etlStudio";
 import WorkflowEngine from "../pages/Product-pages/workflowEngine";
-import NoteBooks from "../pages/Product-pages/noteBooks";
-import DataCatalog from "../pages/Product-pages/dataCatalog";
+import SQLWorksheet from "../pages/Product-pages/sqlWorksheet";
 import MLOPs from "../pages/Product-pages/MLOPs";
 import DataLakeHouse from "../pages/Product-pages/dataLakeHouse";
 import RealTimeCDC from "../pages/Product-pages/realTimeCDC";
 import Analytics from "../pages/Product-pages/analytics";
 import LakehouseGovernance from "../pages/Product-pages/lakehouseGovernance";
-import AccessControl from "../pages/Product-pages/accessControl";
-import DataLineage from "../pages/Product-pages/dataLineage";
-import Observability from "../pages/Product-pages/observability";
+import DataGovernance from "../pages/Product-pages/dataGovernance";
 import SelfHosted from "../pages/Product-pages/selfhosted";
 import MultiCloud from "../pages/Product-pages/multiCloud";
 import HybridInfrastructure from "../pages/Product-pages/hybridInfrastructure";
@@ -33,14 +30,11 @@ import AnalyticsTeam from "../pages/Solutions-pages/analyticsTeam";
 import MLOPSTeam from "../pages/Solutions-pages/MlOPS-Teams";
 import Pricing from "../pages/pricing";
 import Documentation from "../pages/Resources/documentation";
-import APIs from "../pages/Developers/APIs";
-import SDKs from "../pages/Developers/SDKs";
-import CLI from "../pages/Developers/CLI";
-import Integrations from "../pages/Developers/Integrations";
 import AI from "../pages/Product-pages/ai";
 import ContactSales from "../pages/contact";
 import PrivacyPolicy from "../pages/Legal/privacy-Policy";
 import ComingSoon from "../pages/ComingSoon";
+import AICapabilities from "../pages/Product-pages/aiCapabilities";
 function AppRoutes() {
   return (
     <BrowserRouter>
@@ -50,21 +44,19 @@ function AppRoutes() {
 
         <Route path="/why-segforge" element={<WhySegforge />} />
         <Route path="/product/ETL-Studio" element={<ETLStudio />} />
-        <Route path="/product/workflow-engine" element={<WorkflowEngine />} />
-        <Route path="/product/notebooks" element={<NoteBooks />} />
-        <Route path="/product/data-Catalog" element={<DataCatalog />} />
+        <Route path="/product/orchestration" element={<WorkflowEngine />} />
+        <Route path="/product/sql-worksheets" element={<SQLWorksheet />} />
         <Route path="/product/ml-ops" element={<MLOPs />} />
         <Route path="/product/ai" element={<AI />} />
+        <Route path="/product/ai-capabilities" element={<AICapabilities />} />
         <Route path="/product/data-lakehouse" element={<DataLakeHouse />} />
-        <Route path="/product/real-time-cdc" element={<RealTimeCDC />} />
+        <Route path="/product/cdc" element={<RealTimeCDC />} />
         <Route path="/product/analytics" element={<Analytics />} />
         <Route
           path="/product/lakehouse-governance"
           element={<LakehouseGovernance />}
         />
-        <Route path="/product/access-control" element={<AccessControl />} />
-        <Route path="/product/data-lineage" element={<DataLineage />} />
-        <Route path="/product/observability" element={<Observability />} />
+        <Route path="/product/data-governance" element={<DataGovernance />} />
         <Route path="/product/self-hosted" element={<SelfHosted />} />
         <Route path="/product/multi-cloud" element={<MultiCloud />} />
         <Route
@@ -109,21 +101,11 @@ function AppRoutes() {
         <Route path="/solutions/ML-teams" element={<MLOPSTeam />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/docs/:category/:page" element={<Documentation />} />
-        <Route path="/developers/apis" element={<APIs />} />
-        <Route path="/developers/sdks" element={<SDKs />} />
-        <Route path="/developers/cli" element={<CLI />} />
-        <Route path="/developers/integrations" element={<Integrations />} />
         <Route path="/contact" element={<ContactSales />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/resources/tutorials" element={<ComingSoon />} />
         <Route path="/resources/changelog" element={<ComingSoon />} />
         <Route path="/resources/changelog" element={<ComingSoon />} />
-        <Route path="/developers/quickstarts" element={<ComingSoon />} />
-        <Route path="/developers/open-source" element={<ComingSoon />} />
-        <Route
-          path="/developers/reference-architectures"
-          element={<ComingSoon />}
-        />
       </Routes>
     </BrowserRouter>
   );

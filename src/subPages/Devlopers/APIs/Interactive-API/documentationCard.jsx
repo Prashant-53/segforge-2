@@ -53,17 +53,6 @@ const DocumentationCard = ({ doc }) => {
             );
           })}
         </div>
-
-        {/* Button */}
-
-        <button className="group/button mt-10 relative overflow-hidden rounded-2xl bg-slate-900 px-7 py-4 text-white font-medium">
-          <span className="absolute inset-0 bg-cyan-500 translate-x-[-100%] group-hover/button:translate-x-0 transition-transform duration-500" />
-
-          <span className="relative flex items-center gap-2">
-            Open {doc.title}
-            <ArrowUpRight className="w-4 h-4" />
-          </span>
-        </button>
       </div>
     </div>
   );

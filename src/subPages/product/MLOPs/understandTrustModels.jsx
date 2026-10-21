@@ -1,62 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  Activity,
-  Server,
-  Clock3,
-  Gauge,
-  CalendarClock,
-  Database,
-  Boxes,
-  History,
-  CheckCircle2,
-} from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import ModelDeploy from "../../../assets/Products/ML&OPs/deployment.png";
-
-const deploymentModes = [
-  {
-    icon: Activity,
-    title: "Real-Time Inference",
-    items: ["REST APIs", "Low Latency", "Autoscaling", "Live Predictions"],
-  },
-  {
-    icon: Database,
-    title: "Batch Inference",
-    items: [
-      "Historical Processing",
-      "Scheduled Jobs",
-      "Distributed Execution",
-      "Large Dataset Scoring",
-    ],
-  },
-];
-
-const platformFeatures = [
-  {
-    icon: Boxes,
-    title: "Stable Runtime Versions",
-    description:
-      "Deploy reproducible models using versioned enterprise runtime environments.",
-  },
-  {
-    icon: Server,
-    title: "Endpoint Management",
-    description:
-      "Manage inference endpoints, scaling policies, authentication, and monitoring from one dashboard.",
-  },
-  {
-    icon: Gauge,
-    title: "Model Registry Integration",
-    description:
-      "Deploy directly from the Model Registry while preserving lineage and version history.",
-  },
-  {
-    icon: History,
-    title: "Deployment History",
-    description:
-      "Track every deployment, rollback, configuration update, and runtime change.",
-  },
-];
 
 const MLInferenceSection = () => {
   return (
@@ -105,74 +50,19 @@ const MLInferenceSection = () => {
             {/* Heading */}
 
             <h2 className="mt-6 text-4xl font-bold leading-none text-slate-900 lg:text-4xl">
-              Deploy Models
-              <br />
-              <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
-                Wherever Decisions Happen.
-              </span>
+              Deploy Models Wherever Decisions Happen.
             </h2>
 
             {/* Description */}
 
             <p className="mt-6 text-md leading-6 text-slate-600">
-              Serve predictions in milliseconds through real-time APIs or
-              process billions of records using scheduled batch inference— both
-              from the same validated model.
+              Serve predictions through low-latency REST APIs for real-time
+              applications or process large datasets with scheduled batch
+              inference—all from the same validated model. SegForge provides
+              stable runtime versions, endpoint management, Model Registry
+              integration, and complete deployment history to help teams deploy,
+              monitor, and reproduce models consistently.
             </p>
-
-            {/* Deployment Modes */}
-
-            <div className="mt-10 grid gap-6 md:grid-cols-2">
-              {deploymentModes.map((mode) => (
-                <div
-                  key={mode.title}
-                  className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
-                >
-                  <div className="flex items-center gap-3">
-                    <mode.icon className="h-7 w-7 text-cyan-600" />
-
-                    <h3 className="text-xl font-semibold text-slate-900">
-                      {mode.title}
-                    </h3>
-                  </div>
-
-                  <div className="mt-6 space-y-3">
-                    {mode.items.map((item) => (
-                      <div key={item} className="flex items-center gap-3">
-                        <CheckCircle2 className="h-4 w-4 text-cyan-500" />
-
-                        <span className="text-slate-700">{item}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Platform Features */}
-
-            <div className="mt-10 space-y-5">
-              {platformFeatures.map((feature) => (
-                <div
-                  key={feature.title}
-                  className="flex gap-5 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-cyan-200 hover:shadow-lg"
-                >
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-cyan-50">
-                    <feature.icon className="h-7 w-7 text-cyan-600" />
-                  </div>
-
-                  <div>
-                    <h3 className="text-lg font-semibold text-slate-900">
-                      {feature.title}
-                    </h3>
-
-                    <p className="mt-2 leading-7 text-slate-600">
-                      {feature.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
           </motion.div>
 
           {/* RIGHT IMAGE */}

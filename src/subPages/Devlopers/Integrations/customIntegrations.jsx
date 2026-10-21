@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   Workflow,
   Code2,
@@ -237,32 +238,29 @@ const BuildCustomIntegrations = () => {
             </div>
 
             <div className="flex flex-wrap gap-4">
-              <button className="group relative overflow-hidden rounded-xl bg-slate-900 px-7 py-4 font-medium text-white transition">
+              <Link
+                to="/developers/apis"
+                className="group relative overflow-hidden rounded-xl bg-slate-900 px-7 py-4 font-medium text-white transition"
+              >
                 <span className="absolute inset-0 origin-left scale-x-0 bg-cyan-500 transition-transform duration-500 group-hover:scale-x-100" />
 
                 <span className="relative flex items-center gap-2">
                   View APIs
                   <ArrowRight className="h-4 w-4" />
                 </span>
-              </button>
+              </Link>
 
-              <button className="group relative overflow-hidden rounded-xl bg-slate-900 px-7 py-4 font-medium text-white transition">
+              <Link
+                to="/developers/sdks"
+                className="group relative overflow-hidden rounded-xl bg-slate-900 px-7 py-4 font-medium text-white transition"
+              >
                 <span className="absolute inset-0 origin-left scale-x-0 bg-cyan-500 transition-transform duration-500 group-hover:scale-x-100" />
 
                 <span className="relative flex items-center gap-2">
                   View SDKs
                   <ArrowRight className="h-4 w-4" />
                 </span>
-              </button>
-
-              <button className="group relative overflow-hidden rounded-xl bg-slate-900 px-7 py-4 font-medium text-white transition">
-                <span className="absolute inset-0 origin-left scale-x-0 bg-cyan-500 transition-transform duration-500 group-hover:scale-x-100" />
-
-                <span className="relative flex items-center gap-2">
-                  CLI Documentation
-                  <ArrowRight className="h-4 w-4" />
-                </span>
-              </button>
+              </Link>
             </div>
           </div>
         </div>
